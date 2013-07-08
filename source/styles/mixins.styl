@@ -1,0 +1,7 @@
+bg($colors, $direction=top)
+
+	if length($colors) == 1
+		background: $colors
+	else
+		background: linear-gradient($direction, $colors[0], $colors[1])
+

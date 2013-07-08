@@ -1,0 +1,8 @@
+extends base
+block title
+	title #{post.title} - #{data.title}
+block content
+	article.post
+		h1= post.title
+		h2.date= moment(post.date).format("MMMM Do, YYYY")
+		div!= post.content
