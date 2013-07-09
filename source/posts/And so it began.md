@@ -1,7 +1,20 @@
 {
 	title: "And so it began",
-	date: "2013-7-1",
-	author: "Davis, Larry"
+    description: 'We all started somewhere. This is where I started.',
+    date: "2013-7-1",
+    tags: [
+        'programming',
+        'commodore',
+        'c64',
+        'basic'
+    ],
+    image: '<pre class="code c64 animate small">\
+<div class="center">\
+**** COMMODORE 64 BASIC V2 ****\n\
+64K RAM SYSTEM  38911 BASIC BYTES FREE</div>\
+READY.\n\
+<span class="c64_cursor"></span>\
+</pre>'
 }
 
 I turned the knob to channel 4 and flicked the switch to `ON`. A light blue screen faded in as the old Zenith TV warmed up.
@@ -60,7 +73,7 @@ I pressed the RUN/STOP key.
 
 All I had really done was instruct the computer to print my name in an infinite loop, but I felt empowered, as if I could tell this little machine to cook my breakfast and it would oblige.
 
-That little book had opened the door to a new world.
+That book had opened the door to a new world.
 
 <pre class="code c64 animate">
 BREAK IN 10

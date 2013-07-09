@@ -1,55 +1,5 @@
-$c64_bg = rgb(16, 0, 156)
-$c64_text = rgb(115, 115, 255)
-$c64_width = 25em
-
-@keyframes fadeIn {
-	0% {
-		opacity: 0
-	}
-	100% {
-		opacity 1
-	}
-}
-
-@keyframes blink {
-	0% {
-		opacity: 0
-	}
-	50% {
-		opacity: 1
-	}
-	100% {
-		opacity: 0
-	}
-}
-
-@keyframes c64_fadeIn {
-	0% {
-		background: black
-		border-color: transparent
-		color: transparent
-	}
-	100% {
-		background: $c64_bg
-		border-color: c64_text
-		color: $c64_text
-	}
-}
-
-@keyframes c64_blink {
-	0% {
-		background: transparent
-	}
-	50% {
-		background: $c64_text
-	}
-	100% {
-		background: transparent
-	}
-}
-code {
+code
 	font-size: 1.25em
-}
 
 pre.code
 	margin: 1em 1.5em
@@ -58,6 +8,7 @@ pre.code
 pre.c64,
 .c64_width
 	width: $c64_width
+	box-sizing: border-box
 
 pre.c64
 	margin-left: auto
@@ -72,6 +23,9 @@ pre.c64
 	font-weight: bolder
 	line-height: 0.815em
 	text-shadow: none
+
+	&.small
+		font-size: 1em
 
 	&.fade
 		animation: c64_fadeIn 4s ease-out

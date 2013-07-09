@@ -1,9 +1,21 @@
 html
-	min-height: 100%
+	height: 100%
 	
-	bg: url('/images/brushed_metal.jpg')
+	bg: $page_bg
 
 	font-family: $font
+	font-weight: 300
 
 body
-	margin: 0
+	position: relative // Let footer position itself correctly
+	box-sizing: border-box
+	max-width: 1024px
+
+	min-height: 100%
+
+	margin: 0 auto
+	padding-bottom: $footer_height
+
+	bg: $content_bg
+
+	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25)

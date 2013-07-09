@@ -1,19 +1,8 @@
-$post_textColor = rgb(10, 10, 10)
-$post_bg = rgba(0,0,0,0.35)
-
 .post
 	position: relative
-	max-width: 1024px
-	margin: auto
 	padding: 1rem
-
-	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25)
 	
-	bg: $bg
-
 	color: $post_textColor
-
-	text-shadow: 0 1px rgba(255, 255, 255, 0.4)
 
 	h1
 		margin-top: 0
@@ -22,3 +11,59 @@ $post_bg = rgba(0,0,0,0.35)
 		position: absolute
 		top: 0
 		right: 1em
+
+.post,
+.postPreview
+	text-shadow: 0 1px rgba(255, 255, 255, 0.4)
+
+.postPreviews
+	list-style: none
+	margin: 0
+	padding: 1em
+
+.postPreview
+	position: relative
+
+	width: $postPreview_width
+	height: $postPreview_height
+
+	margin: 1em
+
+	border-bottom: 0.125rem solid yellow
+
+	a
+		display: block
+		text-decoration: none
+		color: inherit
+		width: $postPreview_width
+		height: $postPreview_height
+
+	pre
+		width: 100%
+
+	h2
+		font-size: 1rem
+		font-weight: normal
+		margin: 0.25rem 0
+
+	.date
+		margin: 0.25rem 0
+
+		color: gray
+		font-size: 0.75rem
+
+	.description
+		margin: 0.5rem 0
+		font-size: 0.75rem
+
+	.tag
+		position: absolute
+		top: -0.75rem
+		left: 0
+
+		padding: 0.25rem 0.5rem
+
+		background: yellow
+		
+		font-size: 0.8125rem
+		text-transform: uppercase

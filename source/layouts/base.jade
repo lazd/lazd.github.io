@@ -2,7 +2,7 @@ doctype 5
 html
 	head
 		meta(charset="utf8")
-		meta(name="viewport", content="width=device-width")
+		meta(name="viewport", content="width=320, initial-scale=1")
 		meta(name="description", content=data.description)
 
 		link(href="/styles/blog.css", rel="stylesheet")
@@ -14,8 +14,14 @@ html
 			title= data.title
 	body
 		block header
-			ul
-				li
-					a(href="/") Home
+			header.header
+				div.topLogo= "lazd.net"
+				nav.topNav
+					a(href="/") Blog
+					a(href="https://github.com/lazd") Github
+					a(href="http://www.linkedin.com/pub/larry-davis/30/b10/505") LinkedIn
+
 		block content
+
 		block footer
+			footer.footer &copy; #{new Date().getFullYear()} lazd | <a href="mailto:lazdnet@gmail.com">e-mail</a>

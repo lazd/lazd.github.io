@@ -1,0 +1,45 @@
+@keyframes fadeIn {
+	0% {
+		opacity: 0
+	}
+	100% {
+		opacity 1
+	}
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0
+	}
+	50% {
+		opacity: 1
+	}
+	100% {
+		opacity: 0
+	}
+}
+
+@keyframes c64_fadeIn {
+	0% {
+		background: black
+		border-color: transparent
+		color: transparent
+	}
+	100% {
+		background: $c64_bg
+		border-color: c64_text
+		color: $c64_text
+	}
+}
+
+@keyframes c64_blink {
+	0% {
+		background: transparent
+	}
+	50% {
+		background: $c64_text
+	}
+	100% {
+		background: transparent
+	}
+}

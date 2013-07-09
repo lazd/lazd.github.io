@@ -4,5 +4,5 @@ block title
 block content
 	article.post
 		h1= post.title
-		h2.date= moment(post.date).format("MMMM Do, YYYY")
+		h2.date= data.moment(post.date).format("MMMM Do, YYYY")
 		div!= post.content

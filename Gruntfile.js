@@ -1,10 +1,16 @@
+var moment = require('moment');
+
 /*global module:false*/
 module.exports = function(grunt) {
+	// Tempalte data
+	var data = grunt.file.readJSON('source/layouts/variables.json');
+	data.moment = moment;
+
 	grunt.initConfig({
 		pages: {
 			options: {
 				pageSrc: 'source/pages',
-				data: grunt.file.readJSON('source/layouts/variables.json')
+				data: data
 			},
 			posts: {
 				src: 'source/posts',
@@ -32,7 +38,8 @@ module.exports = function(grunt) {
 					'$',
 					'jQuery',
 					'FastClick',
-					'Modernizr'
+					'Modernizr',
+					'require'
 				]
 			},
 			gruntfile: {

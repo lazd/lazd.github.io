@@ -1,0 +1,37 @@
+$nav_item_bg = rgba(138,150,168,1) rgba(94,114,126,1)
+$nav_item_divider = rgba(0, 0, 0, 0.15) rgba(255, 255, 255, 0.15) 
+
+nav.topNav
+	position: absolute
+	top: 0
+	right: 0
+
+	height: $header_height
+
+	border-left: 0.0625rem solid rgba(0, 0, 0, 0.20)
+
+	a
+		display: inline-block
+		padding: 0 1em
+		min-width: 4rem
+
+		bg: $nav_item_bg
+
+		line-height: $header_height
+		text-align: center
+		color: white
+		text-decoration: none
+		text-shadow: 0 -1px rgba(0,0,0,0.25)
+
+		opacity: 0.85
+
+		border-left: 0.0625rem solid $nav_item_divider[1]
+
+		&:hover
+			opacity: 0.95
+
+		&:active
+			opacity: 1
+
+		&:not(:last-child)
+			border-right: 0.0625rem solid $nav_item_divider[0]
