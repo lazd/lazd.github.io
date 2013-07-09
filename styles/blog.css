@@ -55,8 +55,8 @@ pre.code{margin:1em 1.5em;text-align:left}
 pre.c64,.c64_width{width:27em;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 pre.c64{margin-left:auto;margin-right:auto;background:#10009c;border:1em solid #7373ff;color:#7373ff;font-size:1.5em;font-weight:bolder;line-height:.815em;text-shadow:none;}
 pre.c64.small{font-size:1em}
-pre.c64.fade{-webkit-animation:c64_fadeIn 4s ease-out;-moz-animation:c64_fadeIn 4s ease-out;-o-animation:c64_fadeIn 4s ease-out;-ms-animation:c64_fadeIn 4s ease-out;animation:c64_fadeIn 4s ease-out;}
-pre.c64.fade .c64_cursor{-webkit-animation:fadeIn 4s,c64_blink 1s infinite;-moz-animation:fadeIn 4s,c64_blink 1s infinite;-o-animation:fadeIn 4s,c64_blink 1s infinite;-ms-animation:fadeIn 4s,c64_blink 1s infinite;animation:fadeIn 4s,c64_blink 1s infinite}
+pre.c64.fade{-webkit-animation:c64_fadeIn 4.5s ease-out;-moz-animation:c64_fadeIn 4.5s ease-out;-o-animation:c64_fadeIn 4.5s ease-out;-ms-animation:c64_fadeIn 4.5s ease-out;animation:c64_fadeIn 4.5s ease-out;}
+pre.c64.fade .c64_cursor{-webkit-animation:fadeIn 4.5s,c64_blink 1s infinite;-moz-animation:fadeIn 4.5s,c64_blink 1s infinite;-o-animation:fadeIn 4.5s,c64_blink 1s infinite;-ms-animation:fadeIn 4.5s,c64_blink 1s infinite;animation:fadeIn 4.5s,c64_blink 1s infinite}
 .c64_cursor{display:inline-block;width:1em;height:1em;background:#7373ff}
 pre.code:hover .c64_cursor,pre.code.animate .c64_cursor{-webkit-animation:fadeIn 4s,c64_blink 1s infinite;-moz-animation:fadeIn 4s,c64_blink 1s infinite;-o-animation:fadeIn 4s,c64_blink 1s infinite;-ms-animation:fadeIn 4s,c64_blink 1s infinite;animation:fadeIn 4s,c64_blink 1s infinite}
 pre.code:hover .c64_flash,pre.code.animate .c64_flash{-webkit-animation:blink .05s infinite;-moz-animation:blink .05s infinite;-o-animation:blink .05s infinite;-ms-animation:blink .05s infinite;animation:blink .05s infinite}
