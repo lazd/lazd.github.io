@@ -8,11 +8,14 @@
         'c64',
         'basic'
     ],
-    image: '<pre class="code c64 animate small">\
+    image: '<pre class="code c64 animate noMargin small">\
 <div class="center">\
 **** COMMODORE 64 BASIC V2 ****\n\
 64K RAM SYSTEM  38911 BASIC BYTES FREE</div>\
-READY.\n\
+READY.\n\n\
+10 PRINT "LARRY"\n\
+20 GOTO 10\n\
+RUN\
 <span class="c64_cursor"></span>\
 </pre>'
 }

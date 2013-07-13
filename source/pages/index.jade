@@ -3,9 +3,22 @@ block content
 	ul.postPreviews
 		each post in posts
 			li.postPreview
-				div.tag #{post.tags[0]}
-				a(href = "#{post.url}")
-					| !{post.image}
+				div(class="tag icon-#{post.tags[0]}") #{post.tags[0]}
+				a.postLink(href = "#{post.url}")
+					div.postPreview_image !{post.image}
 					h2 #{post.title}
 					.date #{data.moment(post.date).format("MMMM Do, YYYY")}
 					p.description !{post.description}
+				a.commentLink(href = "#{post.url}#disqus_thread")
+
+	| <script type="text/javascript">
+	| 	var disqus_shortname = 'lazdnet';
+	|	if (window.location.hostname !== 'localhost') {
+	| 		(function () {
+	| 			var s = document.createElement('script'); s.async = true;
+	| 			s.type = 'text/javascript';
+	| 			s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+	| 			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	| 		}());
+	|	}
+	| </script>

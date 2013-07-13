@@ -3,6 +3,20 @@ block title
 	title #{post.title} - #{data.title}
 block content
 	article.post
-		h1= post.title
 		h2.date= data.moment(post.date).format("MMMM Do, YYYY")
+		h1= post.title
 		div!= post.content
+
+		hr
+
+		| <div id="disqus_thread"></div>
+		| <script>
+		| 	var disqus_shortname = 'lazdnet';
+		|	if (window.location.hostname !== 'localhost') {
+		| 		(function() {
+		| 			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		| 			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		| 			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		| 		})();
+		|	}
+		| </script>

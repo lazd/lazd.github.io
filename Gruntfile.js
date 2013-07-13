@@ -10,7 +10,10 @@ module.exports = function(grunt) {
 		pages: {
 			options: {
 				pageSrc: 'source/pages',
-				data: data
+				data: data,
+				formatPostUrl: function (urlSegment) {
+					return urlSegment.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+				}
 			},
 			posts: {
 				src: 'source/posts',
@@ -47,6 +50,10 @@ module.exports = function(grunt) {
 			}
 		},
 
+		clean: {
+			build: ['build/']
+		},
+
 		copy: {
 			images: {
 				expand: true,
@@ -65,6 +72,12 @@ module.exports = function(grunt) {
 				cwd: 'source/styles/',
 				src: '*.css',
 				dest: 'build/styles/'
+			},
+			icons: {
+				expand: true,
+				cwd: 'source/icons/',
+				src: '**',
+				dest: 'build/icons/'
 			}
 		},
 
@@ -87,6 +100,10 @@ module.exports = function(grunt) {
 				files: 'source/images/**',
 				tasks: ['copy:images']
 			},
+			icons: {
+				files: 'source/icons/**',
+				tasks: ['copy:icons']
+			},
 			js: {
 				files: 'source/scripts/**',
 				tasks: ['copy:scripts']
@@ -106,6 +123,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-pages');
 
 	grunt.registerTask('default', ['jshint', 'pages', 'copy', 'stylus']);

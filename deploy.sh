@@ -3,7 +3,7 @@ target="../lazd.github.io-deploy"
 
 # Perform build
 echo "Performing build..."
-grunt
+grunt clean default
 
 if [ $? != 0 ]; then
 	echo "Build failed, aborting deploy"

@@ -1,7 +1,13 @@
-bg($colors, $direction=top)
-
+bg($colors, $direction = top)
 	if length($colors) == 1
 		background: $colors
 	else
 		background: linear-gradient($direction, $colors[0], $colors[1])
 
+adjustColors(list, by = 10%)
+	newList = ()
+	for color in list {
+		push(newList, lighten(color, by))
+	}
+	
+	return newList

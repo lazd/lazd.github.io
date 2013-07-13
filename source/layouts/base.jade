@@ -5,9 +5,9 @@ html
 		meta(name="viewport", content="width=620")
 		meta(name="description", content=data.description)
 
+		link(href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,600,300", rel="stylesheet")
+		link(href="/icons/style.css", rel="stylesheet")
 		link(href="/styles/blog.css", rel="stylesheet")
-
-		link(href="http://fonts.googleapis.com/css?family=Merriweather+Sans:300,700,700italic,300italic,400,400italic", rel="stylesheet")
 
 		script(src="/scripts/blog.js")
 		block title
@@ -15,13 +15,17 @@ html
 	body
 		block header
 			header.header
-				div.topLogo= "lazd.net"
+				a.topLogo(href="/")
+					i.icon-blog
+					!{data.title}
 				nav.topNav
-					a(href="/") Blog
-					a(href="https://github.com/lazd") Github
-					a(href="http://www.linkedin.com/pub/larry-davis/30/b10/505") LinkedIn
+					a.icon-github(href="https://github.com/lazd") Github
+					a.icon-linkedin(href="http://www.linkedin.com/pub/larry-davis/30/b10/505") LinkedIn
+					a.icon-twitter(href="https://twitter.com/lazdnet") Twitter
 
 		block content
 
 		block footer
-			footer.footer &copy; #{new Date().getFullYear()} lazd | <a href="mailto:lazdnet@gmail.com">e-mail</a>
+			footer.footer
+				hr
+				&copy; #{new Date().getFullYear()} Larry Davis

@@ -12,7 +12,8 @@
     "grunt-contrib-stylus": "0.5.x",
     "grunt-contrib-watch": "0.4.x",
     "grunt-pages": "0.2.x",
-    "moment": "2.1.x"
+    "moment": "2.1.x",
+    "grunt-contrib-clean": "~0.4.1"
   },
   "scripts": {
     "build": "grunt"
