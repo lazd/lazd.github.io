@@ -4,26 +4,42 @@
     <meta charset="utf8">
     <meta name="viewport" content="width=620">
     <meta name="description" content="A place for all things lazd">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,600,300" rel="stylesheet">
+    <link href="/icons/style.css" rel="stylesheet">
     <link href="/styles/blog.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Merriweather+Sans:300,700,700italic,300italic,400,400italic" rel="stylesheet">
     <script src="/scripts/blog.js"></script>
     <title>lazdBlog</title>
   </head>
   <body>
-    <header class="header">
-      <div class="topLogo">lazd.net</div>
-      <nav class="topNav"><a href="/">Blog</a><a href="https://github.com/lazd">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505">LinkedIn</a></nav>
+    <header class="header"><a href="/" class="topLogo"><i class="icon-blog"></i>lazdBlog</a>
+      <nav class="topNav"><a href="https://github.com/lazd" class="icon-github">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505" class="icon-linkedin">LinkedIn</a><a href="https://twitter.com/lazdnet" class="icon-twitter">Twitter</a></nav>
     </header>
     <ul class="postPreviews">
       <li class="postPreview">
-        <div class="tag">programming</div><a href="And-so-it-began.html"><pre class="code c64 animate small"><div class="center">**** COMMODORE 64 BASIC V2 ****
+        <div class="tag icon-programming">programming</div><a href="and-so-it-began.html" class="postLink">
+          <div class="postPreview_image"><pre class="code c64 animate noMargin small"><div class="center">**** COMMODORE 64 BASIC V2 ****
 64K RAM SYSTEM  38911 BASIC BYTES FREE</div>READY.
-<span class="c64_cursor"></span></pre>
+
+10 PRINT "LARRY"
+20 GOTO 10
+RUN<span class="c64_cursor"></span></pre></div>
           <h2>And so it began</h2>
           <div class="date">July 1st, 2013</div>
-          <p class="description">We all started somewhere. This is where I started.</p></a>
+          <p class="description">We all started somewhere. This is where I started.</p></a><a href="and-so-it-began.html#disqus_thread" class="commentLink"></a>
       </li>
-    </ul>
-    <footer class="footer">&copy; 2013 lazd | <a href="mailto:lazdnet@gmail.com">e-mail</a></footer>
+    </ul><script type="text/javascript">
+    	var disqus_shortname = 'lazdnet';
+    	if (window.location.hostname !== 'localhost') {
+    		(function () {
+    			var s = document.createElement('script'); s.async = true;
+    			s.type = 'text/javascript';
+    			s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+    			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    		}());
+    	}
+    </script>
+    <footer class="footer">
+      <hr>&copy; 2013 Larry Davis
+    </footer>
   </body>
 </html>

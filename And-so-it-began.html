@@ -4,19 +4,19 @@
     <meta charset="utf8">
     <meta name="viewport" content="width=620">
     <meta name="description" content="A place for all things lazd">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,600,300" rel="stylesheet">
+    <link href="/icons/style.css" rel="stylesheet">
     <link href="/styles/blog.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Merriweather+Sans:300,700,700italic,300italic,400,400italic" rel="stylesheet">
     <script src="/scripts/blog.js"></script>
     <title>And so it began - lazdBlog</title>
   </head>
   <body>
-    <header class="header">
-      <div class="topLogo">lazd.net</div>
-      <nav class="topNav"><a href="/">Blog</a><a href="https://github.com/lazd">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505">LinkedIn</a></nav>
+    <header class="header"><a href="/" class="topLogo"><i class="icon-blog"></i>lazdBlog</a>
+      <nav class="topNav"><a href="https://github.com/lazd" class="icon-github">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505" class="icon-linkedin">LinkedIn</a><a href="https://twitter.com/lazdnet" class="icon-twitter">Twitter</a></nav>
     </header>
     <article class="post">
-      <h1>And so it began</h1>
       <h2 class="date">July 1st, 2013</h2>
+      <h1>And so it began</h1>
       <div><p>I turned the knob to channel 4 and flicked the switch to <code>ON</code>. A  blue screen faded in as the old Zenith TV warmed up.</p>
 <pre class="code c64 fade animate">
 <div class="center">
@@ -74,7 +74,20 @@ READY.
 
 <p>A white block blinked below. And so it began.</p>
 </div>
+      <hr> <div id="disqus_thread"></div>
+       <script>
+       	var disqus_shortname = 'lazdnet';
+      	if (window.location.hostname !== 'localhost') {
+       		(function() {
+       			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+       			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       		})();
+      	}
+       </script>
     </article>
-    <footer class="footer">&copy; 2013 lazd | <a href="mailto:lazdnet@gmail.com">e-mail</a></footer>
+    <footer class="footer">
+      <hr>&copy; 2013 Larry Davis
+    </footer>
   </body>
 </html>
