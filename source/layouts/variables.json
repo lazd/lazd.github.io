@@ -1,4 +1,6 @@
 {
 	"title": "lazdBlog",
-	"description": "A place for all things lazd"
+	"description": "The blog of Larry Davis",
+	"url": "http://lazd.github.io/",
+	"author": "Larry Davis"
 }
