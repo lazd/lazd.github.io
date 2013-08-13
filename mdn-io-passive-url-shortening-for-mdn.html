@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=480">
+    <meta name="description" content="The blog of Larry Davis">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,600,300" rel="stylesheet">
+    <link href="/icons/style.css" rel="stylesheet">
+    <link href="/styles/blog.css" rel="stylesheet">
+    <link href="/styles/solarized-dark.syntax.css" rel="stylesheet">
+    <script src="/scripts/blog.js"></script>
+    <title>mdn.io - Passive URL shortening for MDN - lazdBlog</title>
+  </head>
+  <body>
+    <header class="header"><a href="/" class="topLogo"><i class="icon-blog"></i>lazdBlog</a>
+      <nav class="topNav"><a href="https://github.com/lazd" target="_blank" class="icon-github">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505" target="_blank" class="icon-linkedin">LinkedIn</a><a href="https://twitter.com/lazdnet" target="_blank" class="icon-twitter">Twitter</a></nav>
+    </header>
+    <article class="post">
+      <h2 class="date">August 13th, 2013</h2>
+      <h1>mdn.io - Passive URL shortening for MDN</h1>
+      <div><p><img src="/images/mdn.png" class="left" alt="MDN" style="width: 128px">
+Whenever you need to look something up on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Mozilla Developer Network</a>, you usually end up typing something like <code>mdn defineproperty</code> into the search bar and clicking the first link.</p>
+<p>We&#39;ve taken that already simple process and made it simpler with mdn.io, the &quot;I&#39;m feeling lucky&quot; URL shortener for MDN.</p>
+<div class="clear"></div>
+
+<a name="how-do-i-use-it-" class="anchor" href="#how-do-i-use-it-"><h2>How do I use it?</h2>
+</a><p>Simply type something like this in your address bar:</p>
+<blockquote>
+<p><a href="http://mdn.io/defineproperty" target="_blank">mdn.io/defineproperty</a></p>
+</blockquote>
+<p>You can even include spaces:</p>
+<blockquote>
+<p><a href="http://mdn.io/css%20transitions" target="_blank">mdn.io/css transitions</a></p>
+</blockquote>
+<p>Or hashes:</p>
+<blockquote>
+<p><a href="http://mdn.io/array#Methods_of_Array_instances" target="_blank">mdn.io/array#Methods_of_Array_instances</a></p>
+</blockquote>
+<a name="why-" class="anchor" href="#why-"><h2>Why?</h2>
+</a><p>MDN URLs are quite long:</p>
+<blockquote>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_of_Array_instances">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_of_Array_instances</a></p>
+</blockquote>
+<p>We needed a way to </p>
+<a name="code-reviews" class="anchor" href="#code-reviews"><h3>Code reviews</h3>
+</a><p>Let&#39;s say you&#39;re doing a code review and you need to link a peer to the documentation for the Array object:</p>
+<pre><code><div class="highlight"><pre><span class="c1">// Array has an inbuilt forEach method, see mdn.io/array</span>
+</pre></div>
+</code></pre>
+<a name="comments" class="anchor" href="#comments"><h3>Comments</h3>
+</a><p>If you&#39;re writing JavaScript code that relies on some interesting in-built functionality others aren&#39;t familar with, it might be helpful to link to the documentation for it:</p>
+<pre><code><div class="highlight"><pre><span class="c1">// See mdn.io/defineproperty</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">writeable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">enumerable</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">})</span>
+</pre></div>
+</code></pre>
+<a name="common-questions" class="anchor" href="#common-questions"><h3>Common questions</h3>
+</a><p>Sometimes you just get asked the same question so many times you wish your chat client would auto-reply with the URL to the FM:</p>
+<blockquote>
+<p><strong>friend:</strong> hey dude, is it call or apply that takes an array?</p>
+<p><strong>you:</strong> RTFM mdn.io/apply</p>
+</blockquote>
+<a name="what-is-this-sorcery-" class="anchor" href="#what-is-this-sorcery-"><h2>What is this sorcery?</h2>
+</a><p>mdn.io isn&#39;t <em>really</em> a URL shortener. There&#39;s no need to create an entry for each page you want to link to; mdn.io simply redirects to a Google &quot;I&#39;m feeling lucky&quot; search for your query + <code>site:developer.mozilla.org</code>, which in turn redirects you to the first result.</p>
+<p>Simple and hands off, like it should be. Check out <a href="https://github.com/lazd/mdn.io">the source on Github</a> for more details.</p>
+</div>
+      <hr> <div id="disqus_thread"></div>
+       <script>
+       	var disqus_shortname = 'lazdnet';
+      	if (window.location.hostname !== 'localhost') {
+       		(function() {
+       			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+       			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       		})();
+      	}
+       </script>
+    </article>
+    <footer class="footer">
+      <hr>&copy; 2013 Larry Davis
+    </footer>
+  </body>
+</html>

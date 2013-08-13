@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>NodeJS RSS Module</generator><lastBuildDate>Tue, 13 Aug 2013 21:33:17 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Tue, 13 Aug 2013 21:33:17 GMT</pubDate><copyright><![CDATA[2013 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[mdn.io - Passive URL shortening for MDN]]></title><description><![CDATA[<p><img src="/images/mdn.png" class="left" alt="MDN" style="width: 128px">
+Whenever you need to look something up on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Mozilla Developer Network</a>, you usually end up typing something like <code>mdn defineproperty</code> into the search bar and clicking the first link.</p>
+<p>We&#39;ve taken that already simple process and made it simpler with mdn.io, the &quot;I&#39;m feeling lucky&quot; URL shortener for MDN.</p>
+<div class="clear"></div>
+
+<a name="how-do-i-use-it-" class="anchor" href="#how-do-i-use-it-"><h2>How do I use it?</h2>
+</a><p>Simply type something like this in your address bar:</p>
+<blockquote>
+<p><a href="http://mdn.io/defineproperty" target="_blank">mdn.io/defineproperty</a></p>
+</blockquote>
+<p>You can even include spaces:</p>
+<blockquote>
+<p><a href="http://mdn.io/css%20transitions" target="_blank">mdn.io/css transitions</a></p>
+</blockquote>
+<p>Or hashes:</p>
+<blockquote>
+<p><a href="http://mdn.io/array#Methods_of_Array_instances" target="_blank">mdn.io/array#Methods_of_Array_instances</a></p>
+</blockquote>
+<a name="why-" class="anchor" href="#why-"><h2>Why?</h2>
+</a><p>MDN URLs are quite long:</p>
+<blockquote>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_of_Array_instances">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_of_Array_instances</a></p>
+</blockquote>
+<p>We needed a way to </p>
+<a name="code-reviews" class="anchor" href="#code-reviews"><h3>Code reviews</h3>
+</a><p>Let&#39;s say you&#39;re doing a code review and you need to link a peer to the documentation for the Array object:</p>
+<pre><code><div class="highlight"><pre><span class="c1">// Array has an inbuilt forEach method, see mdn.io/array</span>
+</pre></div>
+</code></pre>
+<a name="comments" class="anchor" href="#comments"><h3>Comments</h3>
+</a><p>If you&#39;re writing JavaScript code that relies on some interesting in-built functionality others aren&#39;t familar with, it might be helpful to link to the documentation for it:</p>
+<pre><code><div class="highlight"><pre><span class="c1">// See mdn.io/defineproperty</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">writeable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">enumerable</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">})</span>
+</pre></div>
+</code></pre>
+<a name="common-questions" class="anchor" href="#common-questions"><h3>Common questions</h3>
+</a><p>Sometimes you just get asked the same question so many times you wish your chat client would auto-reply with the URL to the FM:</p>
+<blockquote>
+<p><strong>friend:</strong> hey dude, is it call or apply that takes an array?</p>
+<p><strong>you:</strong> RTFM mdn.io/apply</p>
+</blockquote>
+<a name="what-is-this-sorcery-" class="anchor" href="#what-is-this-sorcery-"><h2>What is this sorcery?</h2>
+</a><p>mdn.io isn&#39;t <em>really</em> a URL shortener. There&#39;s no need to create an entry for each page you want to link to; mdn.io simply redirects to a Google &quot;I&#39;m feeling lucky&quot; search for your query + <code>site:developer.mozilla.org</code>, which in turn redirects you to the first result.</p>
+<p>Simple and hands off, like it should be. Check out <a href="https://github.com/lazd/mdn.io">the source on Github</a> for more details.</p>
+]]></description><link>http://lazd.github.io/mdn-io-passive-url-shortening-for-mdn.html</link><guid isPermaLink="true">http://lazd.github.io/mdn-io-passive-url-shortening-for-mdn.html</guid><category><![CDATA[resources]]></category><category><![CDATA[javascript]]></category><category><![CDATA[node.js]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Tue, 13 Aug 2013 07:00:00 GMT</pubDate></item><item><title><![CDATA[Scaleable interfaces with rem units]]></title><description><![CDATA[<a name="what-are-rem-units-" class="anchor" href="#what-are-rem-units-"><h2>What are rem units?</h2>
+</a><p>According to <a href="http://www.w3.org/TR/css3-values/#rem-unit">W3 candidate reccomendation</a>, one root elastic measurement (rem) unit is equal to the <code>font-size</code> of the <code>&lt;html&gt;</code> element ([spec]).</p>
+<a name="hello-rem" class="anchor" href="#hello-rem"><h2>Hello rem</h2>
+</a><p>Let&#39;s say you&#39;ve defined the <code>font-size</code> of the <code>&lt;html&gt;</code> element as 16 pixels, and you want a 32 pixel tall <code>&lt;header&gt;</code>. Basic math tells us that&#39;s 2 rem.</p>
+<pre><code><div class="highlight"><pre><span class="nx">html</span> <span class="p">{</span>
+    <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">16</span><span class="nx">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">header</span> <span class="p">{</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mi">2</span><span class="nx">rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</code></pre>
+<a name="wait--how-is-that-different-from-em-" class="anchor" href="#wait--how-is-that-different-from-em-"><h2>Wait, how is that different from em?</h2>
+</a><p>Elastic measurement units cascade (<a href="http://www.w3.org/TR/css3-values/#em-unit">em spec</a>), whereas root elastic measurement units are always relative to the root element.</p>
+<a name="why-should-we-do-this-again-" class="anchor" href="#why-should-we-do-this-again-"><h2>Why should we do this again?</h2>
+</a><p>If you have a need to dynamically scale your interface, in part or in whole, with absolute precision, rems can be useful.</p>
+<ol>
+<li><strong>A mobile interface that targets iPad Mini</strong> - You may want a slightly larger interface for the oddly sized iPad Mini display</li>
+<li><strong>User preferences for the size of the site</strong> - You could provide a preference to increase the size of your site for a given user across all their devices</li>
+<li><strong>You just want things a tad bigger</strong> - If your designers say &quot;make everything 2 pixels bigger,&quot; you&#39;re gonna have a bad time, unlesss you&#39;re using rem units</li>
+</ol>
+<a name="execution" class="anchor" href="#execution"><h2>Execution</h2>
+</a><a name="but-fractions-are-hard--what-if-i-want-9-pixels-" class="anchor" href="#but-fractions-are-hard--what-if-i-want-9-pixels-"><h3>But fractions are hard, what if I want 9 pixels?</h3>
+</a><p>If you&#39;re using a CSS preprocessor, which you should be, it&#39;s easy to create a variable that represents a pixel:</p>
+<a name="stylus" class="anchor" href="#stylus"><h3>Stylus</h3>
+</a><pre><code><div class="highlight"><pre><span class="c1">// The smallest size we want to support</span>
+<span class="nx">$baseSize</span> <span class="o">=</span> <span class="mi">16</span>
+
+<span class="c1">// The size of a &quot;pixel&quot; based on the smallest size</span>
+<span class="nx">$px</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="nx">$baseSize</span> <span class="o">+</span> <span class="mi">0</span><span class="nx">rem</span>
+
+<span class="c1">// The size of a pixel when the font-size is 1rem</span>
+<span class="nx">$vpx</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="nx">$baseSize</span> <span class="o">+</span> <span class="mi">0</span><span class="nx">em</span>
+</pre></div>
+</code></pre>
+<a name="where-you-should-still-use-px" class="anchor" href="#where-you-should-still-use-px"><h2>Where you should still use px</h2>
+</a><p>You&#39;ll want to specify the <code>font-size</code> of the <code>&lt;html&gt;</code> element in pixels, but there are a few cases where you might want to use pixels elsewhere in your CSS.</p>
+<ul>
+<li>As the distance for <code>text-shadow</code> when used for a beveled effect<ul>
+<li>Generally, this effect looks bad for &gt; 1px</li>
+</ul>
+</li>
+<li>Elements that you do not want to scale with the rest of the page<ul>
+<li>Maybe you want the fine print to stay fine</li>
+<li>I really can&#39;t think of a great example here</li>
+</ul>
+</li>
+</ul>
+<a name="where-you-should-still-use-em" class="anchor" href="#where-you-should-still-use-em"><h2>Where you should still use em</h2>
+</a><p>If you want the flexibility of resizing a particular widget independently of the rest of the page, you should use a mix of em and rem:</p>
+<pre><code><div class="highlight"><pre><span class="nx">button</span> <span class="p">{</span>
+    <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">1</span><span class="nx">rem</span><span class="p">;</span>
+    <span class="nx">margin</span><span class="o">:</span> <span class="mf">0.5</span><span class="nx">em</span><span class="p">;</span>
+    <span class="nx">border</span><span class="o">:</span> <span class="mf">0.0625</span><span class="nx">em</span><span class="p">;</span>
+    <span class="nx">padding</span><span class="o">:</span> <span class="mf">0.25</span><span class="nx">em</span> <span class="mf">0.75</span><span class="nx">em</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</code></pre>
+<p>Then, to make a large button:</p>
+<pre><code><div class="highlight"><pre><span class="nx">button</span><span class="p">.</span><span class="nx">large</span> <span class="p">{</span>
+    <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mf">1.5</span><span class="nx">rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</code></pre>
+<p>The rest of the properties, specified in em units, will scale to be 50% larger.</p>
+<a name="compatibility" class="anchor" href="#compatibility"><h2>Compatibility</h2>
+</a><p>Where rems don&#39;t work:</p>
+<ul>
+<li>IE 8</li>
+<li>iOS 3</li>
+<li>Safari 4</li>
+</ul>
+<p>That said, all modern browsers support rem units. See the <a href="http://caniuse.com/#search=rem">caniuse tables</a> for details.</p>
+<a name="fallbacks" class="anchor" href="#fallbacks"><h3>Fallbacks</h3>
+</a><p>You can specify units in pixels above if you&#39;d like support for older browsers (minus the scalability):</p>
+<pre><code class="lang-css"><div class="highlight"><pre><span class="nt">width</span><span class="o">:</span> <span class="nt">16px</span><span class="o">;</span>
+<span class="nt">width</span><span class="o">:</span> <span class="nt">1rem</span><span class="o">;</span>
+</pre></div>
+</code></pre>
+<a name="try-it" class="anchor" href="#try-it"><h2>Try it</h2>
+</a><p>This blog is built using rem units; click the buttons below to given rems a try.</p>
+<p><div id="resize">
+    <button class="button large" id="decrease">-</button>
+    <div id="pagePixelSize">16px</div>
+    <button class="button large" id="increase">+</button>
+</div></p>
+<script>
+    var fontSize = 16;
+    function setSize(amount) {
+        fontSize = (fontSize+amount);
+        document.getElementById("pagePixelSize").innerHTML=fontSize+"px";
+        document.querySelector("html").style.fontSize = fontSize+"px";
+    }
+    document.getElementById("resize").addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); return false; }, false);
+    document.getElementById("increase").addEventListener("click", function(e) { setSize(2);
+    }, false);
+    document.getElementById("decrease").addEventListener("click", function(e) { setSize(-2);
+    }, false);
+</script>
+
+]]></description><link>http://lazd.github.io/scaleable-interfaces-with-rem-units.html</link><guid isPermaLink="true">http://lazd.github.io/scaleable-interfaces-with-rem-units.html</guid><category><![CDATA[css3]]></category><category><![CDATA[mobile]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Sat, 10 Aug 2013 07:00:00 GMT</pubDate></item><item><title><![CDATA[And so it began]]></title><description><![CDATA[<p>I turned the knob to channel 4 and flicked the switch to <code>ON</code>. A  blue screen faded in as the old Zenith TV warmed up.</p>
+<pre class="code c64 c64_width fade animate">
+<div class="center">
+**** COMMODORE 64 BASIC V2 ****
+64K RAM SYSTEM  38911 BASIC BYTES FREE</div>
+READY.
+<span class="c64_cursor"></span>
+</pre>
+
+<p>A white block blinked below.</p>
+<p>I picked up <a href="http://www.commodore.ca/manuals/c64_users_guide/c64-users_guide.htm">the book</a>. It was spiral bound with a colorful cardboard cover decorated with graphs and a photo of the machine. It looked a bit cheesy even to my 10-year-old self, but I was curious and itching to learn what it had to offer.</p>
+<p>I leafed through the pages. <code>PRINT</code>, <code>GOTO</code>, <code>BASIC</code>. It was Greek to me, but there was a section in black and white that looked like a screenshot. I carefully typed the contents, substituting my name for the text between the quotes.</p>
+<pre class="code c64 c64_width">
+10 PRINT "LARRY"
+20 GOTO 10
+RUN
+</pre>
+
+<p>I pressed <code>RETURN</code> eagerly. The screen filled with my name as the machine executed the first computer program I ever wrote.</p>
+<pre class="code c64 c64_width">
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+LARRY
+<span class="c64_flash">LARRY</span>
+</pre>
+
+<p>All I had really done was instruct the computer to print <code>LARRY</code> in an infinite loop, but I felt empowered. It was as if I could instruct this little machine to work miracles and it would instantly oblige, in capital letters, of course.</p>
+<p>That book had opened the door to a new world. I pressed the <code>RUN/STOP</code> key.</p>
+<pre class="code c64 c64_width animate">
+BREAK IN 10
+READY.
+<span class="c64_cursor"></span>
+</pre>
+
+<p>A white block blinked below. And so it began.</p>
+<hr>
+
+<p>Flip a switch and start coding. Using a computer meant writing code, and a casual user could become an hobbyist programmer in an afternoon with no additional equipment or materials.</p>
+<p>As computing became more common place, graphical user interfaces began to replace the commands we used to type with icons we could click. Computing became accessible to everyone as the workings of the machine were hidden by layer upon layer of abstraction. This transformation was amazing and beautiful, but it came at a cost: The machine transformed from a playground that encouraged tinkering to an appliance that forbid it.</p>
+<p>Eventually, computers began to ship with no development environment.</p>
+<a name="the-renaissance" class="anchor" href="#the-renaissance"><h2>The renaissance</h2>
+</a><p>JavaScript is everywhere. Nearly every device we own is capable of running human-readable JavaScript code. Hit command+option+i <em>right now</em> and you&#39;ll drop to the console. Type this and hit enter:</p>
+<pre><code class="lang-javascript"><div class="highlight"><pre><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">);</span>
+</pre></div>
+</code></pre>
+<p>You just wrote your first computer program.</p>
+<p>Things are different now. You won&#39;t have to leaf through the dusty pages of an old spiral bound user&#39;s guide. Thousands of tutorials and resources are available for free, and you have the most powerful knowledge search system mankind has ever created beneath your fingertips, ready to find them.</p>
+<p>Your journey begins <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">here</a>.</p>
+]]></description><link>http://lazd.github.io/and-so-it-began.html</link><guid isPermaLink="true">http://lazd.github.io/and-so-it-began.html</guid><category><![CDATA[programming]]></category><category><![CDATA[commodore]]></category><category><![CDATA[c64]]></category><category><![CDATA[basic]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Mon, 01 Jul 2013 07:00:00 GMT</pubDate></item></channel></rss>

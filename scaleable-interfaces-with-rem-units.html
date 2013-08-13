@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=480">
+    <meta name="description" content="The blog of Larry Davis">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,600,300" rel="stylesheet">
+    <link href="/icons/style.css" rel="stylesheet">
+    <link href="/styles/blog.css" rel="stylesheet">
+    <link href="/styles/solarized-dark.syntax.css" rel="stylesheet">
+    <script src="/scripts/blog.js"></script>
+    <title>Scaleable interfaces with rem units - lazdBlog</title>
+  </head>
+  <body>
+    <header class="header"><a href="/" class="topLogo"><i class="icon-blog"></i>lazdBlog</a>
+      <nav class="topNav"><a href="https://github.com/lazd" target="_blank" class="icon-github">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505" target="_blank" class="icon-linkedin">LinkedIn</a><a href="https://twitter.com/lazdnet" target="_blank" class="icon-twitter">Twitter</a></nav>
+    </header>
+    <article class="post">
+      <h2 class="date">August 10th, 2013</h2>
+      <h1>Scaleable interfaces with rem units</h1>
+      <div><a name="what-are-rem-units-" class="anchor" href="#what-are-rem-units-"><h2>What are rem units?</h2>
+</a><p>According to <a href="http://www.w3.org/TR/css3-values/#rem-unit">W3 candidate reccomendation</a>, one root elastic measurement (rem) unit is equal to the <code>font-size</code> of the <code>&lt;html&gt;</code> element ([spec]).</p>
+<a name="hello-rem" class="anchor" href="#hello-rem"><h2>Hello rem</h2>
+</a><p>Let&#39;s say you&#39;ve defined the <code>font-size</code> of the <code>&lt;html&gt;</code> element as 16 pixels, and you want a 32 pixel tall <code>&lt;header&gt;</code>. Basic math tells us that&#39;s 2 rem.</p>
+<pre><code><div class="highlight"><pre><span class="nx">html</span> <span class="p">{</span>
+    <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">16</span><span class="nx">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">header</span> <span class="p">{</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mi">2</span><span class="nx">rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</code></pre>
+<a name="wait--how-is-that-different-from-em-" class="anchor" href="#wait--how-is-that-different-from-em-"><h2>Wait, how is that different from em?</h2>
+</a><p>Elastic measurement units cascade (<a href="http://www.w3.org/TR/css3-values/#em-unit">em spec</a>), whereas root elastic measurement units are always relative to the root element.</p>
+<a name="why-should-we-do-this-again-" class="anchor" href="#why-should-we-do-this-again-"><h2>Why should we do this again?</h2>
+</a><p>If you have a need to dynamically scale your interface, in part or in whole, with absolute precision, rems can be useful.</p>
+<ol>
+<li><strong>A mobile interface that targets iPad Mini</strong> - You may want a slightly larger interface for the oddly sized iPad Mini display</li>
+<li><strong>User preferences for the size of the site</strong> - You could provide a preference to increase the size of your site for a given user across all their devices</li>
+<li><strong>You just want things a tad bigger</strong> - If your designers say &quot;make everything 2 pixels bigger,&quot; you&#39;re gonna have a bad time, unlesss you&#39;re using rem units</li>
+</ol>
+<a name="execution" class="anchor" href="#execution"><h2>Execution</h2>
+</a><a name="but-fractions-are-hard--what-if-i-want-9-pixels-" class="anchor" href="#but-fractions-are-hard--what-if-i-want-9-pixels-"><h3>But fractions are hard, what if I want 9 pixels?</h3>
+</a><p>If you&#39;re using a CSS preprocessor, which you should be, it&#39;s easy to create a variable that represents a pixel:</p>
+<a name="stylus" class="anchor" href="#stylus"><h3>Stylus</h3>
+</a><pre><code><div class="highlight"><pre><span class="c1">// The smallest size we want to support</span>
+<span class="nx">$baseSize</span> <span class="o">=</span> <span class="mi">16</span>
+
+<span class="c1">// The size of a &quot;pixel&quot; based on the smallest size</span>
+<span class="nx">$px</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="nx">$baseSize</span> <span class="o">+</span> <span class="mi">0</span><span class="nx">rem</span>
+
+<span class="c1">// The size of a pixel when the font-size is 1rem</span>
+<span class="nx">$vpx</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="nx">$baseSize</span> <span class="o">+</span> <span class="mi">0</span><span class="nx">em</span>
+</pre></div>
+</code></pre>
+<a name="where-you-should-still-use-px" class="anchor" href="#where-you-should-still-use-px"><h2>Where you should still use px</h2>
+</a><p>You&#39;ll want to specify the <code>font-size</code> of the <code>&lt;html&gt;</code> element in pixels, but there are a few cases where you might want to use pixels elsewhere in your CSS.</p>
+<ul>
+<li>As the distance for <code>text-shadow</code> when used for a beveled effect<ul>
+<li>Generally, this effect looks bad for &gt; 1px</li>
+</ul>
+</li>
+<li>Elements that you do not want to scale with the rest of the page<ul>
+<li>Maybe you want the fine print to stay fine</li>
+<li>I really can&#39;t think of a great example here</li>
+</ul>
+</li>
+</ul>
+<a name="where-you-should-still-use-em" class="anchor" href="#where-you-should-still-use-em"><h2>Where you should still use em</h2>
+</a><p>If you want the flexibility of resizing a particular widget independently of the rest of the page, you should use a mix of em and rem:</p>
+<pre><code><div class="highlight"><pre><span class="nx">button</span> <span class="p">{</span>
+    <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">1</span><span class="nx">rem</span><span class="p">;</span>
+    <span class="nx">margin</span><span class="o">:</span> <span class="mf">0.5</span><span class="nx">em</span><span class="p">;</span>
+    <span class="nx">border</span><span class="o">:</span> <span class="mf">0.0625</span><span class="nx">em</span><span class="p">;</span>
+    <span class="nx">padding</span><span class="o">:</span> <span class="mf">0.25</span><span class="nx">em</span> <span class="mf">0.75</span><span class="nx">em</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</code></pre>
+<p>Then, to make a large button:</p>
+<pre><code><div class="highlight"><pre><span class="nx">button</span><span class="p">.</span><span class="nx">large</span> <span class="p">{</span>
+    <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mf">1.5</span><span class="nx">rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</code></pre>
+<p>The rest of the properties, specified in em units, will scale to be 50% larger.</p>
+<a name="compatibility" class="anchor" href="#compatibility"><h2>Compatibility</h2>
+</a><p>Where rems don&#39;t work:</p>
+<ul>
+<li>IE 8</li>
+<li>iOS 3</li>
+<li>Safari 4</li>
+</ul>
+<p>That said, all modern browsers support rem units. See the <a href="http://caniuse.com/#search=rem">caniuse tables</a> for details.</p>
+<a name="fallbacks" class="anchor" href="#fallbacks"><h3>Fallbacks</h3>
+</a><p>You can specify units in pixels above if you&#39;d like support for older browsers (minus the scalability):</p>
+<pre><code class="lang-css"><div class="highlight"><pre><span class="nt">width</span><span class="o">:</span> <span class="nt">16px</span><span class="o">;</span>
+<span class="nt">width</span><span class="o">:</span> <span class="nt">1rem</span><span class="o">;</span>
+</pre></div>
+</code></pre>
+<a name="try-it" class="anchor" href="#try-it"><h2>Try it</h2>
+</a><p>This blog is built using rem units; click the buttons below to given rems a try.</p>
+<p><div id="resize">
+    <button class="button large" id="decrease">-</button>
+    <div id="pagePixelSize">16px</div>
+    <button class="button large" id="increase">+</button>
+</div></p>
+<script>
+    var fontSize = 16;
+    function setSize(amount) {
+        fontSize = (fontSize+amount);
+        document.getElementById("pagePixelSize").innerHTML=fontSize+"px";
+        document.querySelector("html").style.fontSize = fontSize+"px";
+    }
+    document.getElementById("resize").addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); return false; }, false);
+    document.getElementById("increase").addEventListener("click", function(e) { setSize(2);
+    }, false);
+    document.getElementById("decrease").addEventListener("click", function(e) { setSize(-2);
+    }, false);
+</script>
+
+</div>
+      <hr> <div id="disqus_thread"></div>
+       <script>
+       	var disqus_shortname = 'lazdnet';
+      	if (window.location.hostname !== 'localhost') {
+       		(function() {
+       			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+       			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       		})();
+      	}
+       </script>
+    </article>
+    <footer class="footer">
+      <hr>&copy; 2013 Larry Davis
+    </footer>
+  </body>
+</html>
