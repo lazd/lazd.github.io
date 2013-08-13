@@ -11,7 +11,7 @@
 
 	.date
 		float: right
-		margin-top: 0.5rem
+		margin-top: 0.25rem
 
 .post,
 .postPreview
@@ -19,20 +19,32 @@
 
 .postPreviews
 	list-style: none
-	margin: 0
-	padding: 1em
+	width: $postPreview_width * 2 + 4rem
+	margin: 0 auto
+	padding: 1em 0
+	overflow: hidden // Clear floats
 
 .postPreview_image
-	width: $postPreview_width
+	display: flex
+	align-items: center;
+	justify-content: center;
+
+	width: 100%
 	height: $postPreview_image_height
 	overflow: hidden
+
+	background: rgba(255, 255, 255, 0.15)
+	box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.15)
+
+	text-align: center
 
 	img
 		max-width: 100%
 
 .postPreview
-	display: inline-block
+	display: block
 	position: relative
+	float: left
 	vertical-align: top
 
 	width: $postPreview_width
@@ -46,7 +58,7 @@
 		display: block
 		text-decoration: none
 		color: inherit
-		width: $postPreview_width
+		width: 100%
 		height: $postPreview_height
 
 	a.commentLink
@@ -57,6 +69,9 @@
 		font-size: 0.75rem
 		color: gray
 		text-decoration: none
+
+		&:before
+			margin-right: 0.25rem
 
 	pre
 		width: 100%
@@ -83,7 +98,7 @@
 
 		padding: 0.25rem 0.5rem
 
-		background: rgba($postPreview_highlightColor, 0.75)
+		background: rgba($postPreview_highlightColor, 0.90)
 		
 		color: $postPreview_tag_textColor
 		font-size: 0.8125rem

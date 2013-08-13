@@ -2,12 +2,13 @@ doctype 5
 html
 	head
 		meta(charset="utf8")
-		meta(name="viewport", content="width=620")
+		meta(name="viewport", content="width=480")
 		meta(name="description", content=data.description)
 
 		link(href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,600,300", rel="stylesheet")
 		link(href="/icons/style.css", rel="stylesheet")
 		link(href="/styles/blog.css", rel="stylesheet")
+		link(href="/styles/solarized-dark.syntax.css", rel="stylesheet")
 
 		script(src="/scripts/blog.js")
 		block title
@@ -19,9 +20,9 @@ html
 					i.icon-blog
 					!{data.title}
 				nav.topNav
-					a.icon-github(href="https://github.com/lazd") Github
-					a.icon-linkedin(href="http://www.linkedin.com/pub/larry-davis/30/b10/505") LinkedIn
-					a.icon-twitter(href="https://twitter.com/lazdnet") Twitter
+					a.icon-github(href="https://github.com/lazd", target="_blank") Github
+					a.icon-linkedin(href="http://www.linkedin.com/pub/larry-davis/30/b10/505", target="_blank") LinkedIn
+					a.icon-twitter(href="https://twitter.com/lazdnet", target="_blank") Twitter
 
 		block content
 

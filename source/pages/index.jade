@@ -9,7 +9,7 @@ block content
 					h2 #{post.title}
 					.date #{data.moment(post.date).format("MMMM Do, YYYY")}
 					p.description !{post.description}
-				a.commentLink(href = "#{post.url}#disqus_thread")
+				a.commentLink.icon-comments(href = "#{post.url}#disqus_thread") 0 comments
 
 	| <script type="text/javascript">
 	| 	var disqus_shortname = 'lazdnet';

@@ -11,8 +11,9 @@ module.exports = function(grunt) {
 			options: {
 				pageSrc: 'source/pages',
 				data: data,
+				rss: data,
 				formatPostUrl: function (urlSegment) {
-					return urlSegment.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+					return urlSegment.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')+'.html';
 				}
 			},
 			posts: {
@@ -22,7 +23,6 @@ module.exports = function(grunt) {
 				url: ':title' 
 			}
 		},
-
 		jshint: {
 			options: {
 				eqeqeq: true,
