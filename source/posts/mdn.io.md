@@ -74,5 +74,10 @@ mdn.io isn't *really* a URL shortener. There's no need to create an entry for ea
 Simple and hands off, like it should be. Check out [the source on Github] for more details.
 
 
+## A big thanks
+
+[Blake Embrey](http://blakeembrey.me/) and I collaborated on this project and he continues to support it by hosting mdn.io. Thanks, Blake!<br>
+
+
 [the source on Github]: https://github.com/lazd/mdn.io
 [Mozilla Developer Network]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
