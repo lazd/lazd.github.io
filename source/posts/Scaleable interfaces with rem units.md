@@ -29,7 +29,7 @@
 
 ## What are rem units?
 
-According to [W3 candidate reccomendation][rem spec], one root elastic measurement (rem) unit is equal to the `font-size` of the `<html>` element ([spec]).
+According to [W3 candidate reccomendation][rem spec], one root elastic measurement (rem) unit is equal to the `font-size` of the `<html>` element.
 
 ## Hello rem
 
@@ -47,7 +47,149 @@ header {
 
 ## Wait, how is that different from em?
 
-Elastic measurement units cascade ([em spec]), whereas root elastic measurement units are always relative to the root element.
+Elastic measurement units cascade ([em spec]), whereas root elastic measurement units are always relative to the root element. 
+
+With ems, the following situation becomes confusing:
+
+### CSS:
+```css
+.container {
+    font-size: 16px;
+}
+.em1 {
+    font-size: 2em;
+    border-top: 1em solid red;
+}
+.em2 {
+    font-size: 3em;
+    border-top: 1em solid green;
+}
+.div3 {
+    font-size: 2em;
+    border-top: 1em solid blue;
+}
+```
+
+### HTML:
+```html
+<div class="container">
+    <div class="em1">
+        Text 1
+        <div class="em2">
+            Text 2
+            <div class="em3">
+                Text 3
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+The result?
+
+<style>
+.container {
+    font-size: 16px;
+    margin: 0 2rem;
+    padding: 1rem;
+    background: rgb(240, 240, 240);
+    border: 0.0625rem solid rgb(100, 100, 100);
+}
+.em1 {
+    font-size: 1em;
+    border-top: 1em solid red;
+}
+.em2 {
+    font-size: 2em;
+    border-top: 1em solid green;
+}
+.em3 {
+    font-size: 1em;
+    border-top: 1em solid blue;
+}
+</style>
+<div class="container">
+    <div class="em1">
+        Text 1
+        <div class="em2">
+            Text 2
+            <div class="em3">
+                Text 3
+            </div>
+        </div>
+    </div>
+</div>
+
+As ems cascade, the `font-size` of "Text 3" is effectively:
+
+> 10px &times; 1 &times; 2 &times; 1 = 20px.
+
+The same code, done with rems would work as follows:
+
+
+### CSS:
+```css
+html {
+    font-size: 16px;
+}
+.rem1 {
+    font-size: 2rem;
+    border-top: 1rem solid red;
+}
+.rem2 {
+    font-size: 3rem;
+    border-top: 1rem solid green;
+}
+.rem3 {
+    font-size: 2rem;
+    border-top: 1rem solid blue;
+}
+```
+
+### HTML:
+```html
+<html>
+    <div class="em1">
+        Text 1
+        <div class="em2">
+            Text 2
+            <div class="div3">
+                Text 3
+            </div>
+        </div>
+    </div>
+</html>
+```
+
+<style>
+.rem1 {
+    font-size: 1rem;
+    border-top: 1rem solid red;
+}
+.rem2 {
+    font-size: 2rem;
+    border-top: 1rem solid green;
+}
+.rem3 {
+    font-size: 1rem;
+    border-top: 1rem solid blue;
+}
+</style>
+<div class="container">
+    <div class="rem1">
+        Text 1
+        <div class="rem2">
+            Text 2
+            <div class="rem3">
+                Text 3
+            </div>
+        </div>
+    </div>
+</div>
+
+Since rems are always root-relative, the `font-size` of "Text 3" is effectively:
+
+> 10px &times; 1 = 10px.
 
 
 ## Why should we do this again?
@@ -61,12 +203,23 @@ If you have a need to dynamically scale your interface, in part or in whole, wit
 
 ## Execution
 
+Simply use rems in place of pixels in your code:
+
+```
+html {
+    font-size: 16px;
+}
+.header {
+    height: 2rem; /* 32px */
+    padding: 0.5rem; /* 8px */
+}
+```
+
 ### But fractions are hard, what if I want 9 pixels?
 
 If you're using a CSS preprocessor, which you should be, it's easy to create a variable that represents a pixel:
 
-### Stylus
-
+### Stylus:
 ```
 // The smallest size we want to support
 $baseSize = 16
