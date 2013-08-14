@@ -83,9 +83,9 @@ body{position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;
 .button.red{background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #ea5a4a), color-stop(1, #da1e1e));background:-webkit-linear-gradient(top, #ea5a4a 0, #da1e1e 100%);background:-moz-linear-gradient(top, #ea5a4a 0, #da1e1e 100%);background:-o-linear-gradient(top, #ea5a4a 0, #da1e1e 100%);background:-ms-linear-gradient(top, #ea5a4a 0, #da1e1e 100%);background:linear-gradient(top, #ea5a4a 0, #da1e1e 100%);text-shadow:0 1px 0 rgba(255,255,255,0.3);}
 .button.red:hover{background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #eb6253), color-stop(1, #e12424));background:-webkit-linear-gradient(top, #eb6253 0, #e12424 100%);background:-moz-linear-gradient(top, #eb6253 0, #e12424 100%);background:-o-linear-gradient(top, #eb6253 0, #e12424 100%);background:-ms-linear-gradient(top, #eb6253 0, #e12424 100%);background:linear-gradient(top, #eb6253 0, #e12424 100%)}
 .button.red:active{background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #e84d3c), color-stop(1, #cf1c1c));background:-webkit-linear-gradient(top, #e84d3c 0, #cf1c1c 100%);background:-moz-linear-gradient(top, #e84d3c 0, #cf1c1c 100%);background:-o-linear-gradient(top, #e84d3c 0, #cf1c1c 100%);background:-ms-linear-gradient(top, #e84d3c 0, #cf1c1c 100%);background:linear-gradient(top, #e84d3c 0, #cf1c1c 100%)}
-h1,font-size: 2rem{color:#323232}
-h2,h3{font-size:1.25rem;color:#464646}
-h3{font-size:1.125rem}
+h1,font-size: 2rem{color:#191919}
+h2,h3{font-size:1.5rem;color:#323232}
+h3{font-size:1.125rem;color:#3c3c3c}
 .header{position:relative;overflow:hidden;height:3rem;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #b5bdc8), color-stop(1, #788d99));background:-webkit-linear-gradient(top, #b5bdc8 0, #788d99 100%);background:-moz-linear-gradient(top, #b5bdc8 0, #788d99 100%);background:-o-linear-gradient(top, #b5bdc8 0, #788d99 100%);background:-ms-linear-gradient(top, #b5bdc8 0, #788d99 100%);background:linear-gradient(top, #b5bdc8 0, #788d99 100%);-webkit-box-shadow:0 0 1rem rgba(0,0,0,0.25);box-shadow:0 0 1rem rgba(0,0,0,0.25);}
 .header .topLogo{position:absolute;left:0;height:3rem;padding:0 .5em;font-size:1.5rem;color:#fff;line-height:3rem;text-shadow:0 -1px 0 rgba(0,0,0,0.5);text-decoration:none;}
 .header .topLogo i{margin-right:.25rem}

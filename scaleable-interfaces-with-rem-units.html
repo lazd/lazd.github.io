@@ -19,7 +19,7 @@
       <h2 class="date">August 10th, 2013</h2>
       <h1>Scaleable interfaces with rem units</h1>
       <div><a name="what-are-rem-units-" class="anchor" href="#what-are-rem-units-"><h2>What are rem units?</h2>
-</a><p>According to <a href="http://www.w3.org/TR/css3-values/#rem-unit">W3 candidate reccomendation</a>, one root elastic measurement (rem) unit is equal to the <code>font-size</code> of the <code>&lt;html&gt;</code> element ([spec]).</p>
+</a><p>According to <a href="http://www.w3.org/TR/css3-values/#rem-unit">W3 candidate reccomendation</a>, one root elastic measurement (rem) unit is equal to the <code>font-size</code> of the <code>&lt;html&gt;</code> element.</p>
 <a name="hello-rem" class="anchor" href="#hello-rem"><h2>Hello rem</h2>
 </a><p>Let&#39;s say you&#39;ve defined the <code>font-size</code> of the <code>&lt;html&gt;</code> element as 16 pixels, and you want a 32 pixel tall <code>&lt;header&gt;</code>. Basic math tells us that&#39;s 2 rem.</p>
 <pre><code><div class="highlight"><pre><span class="nx">html</span> <span class="p">{</span>
@@ -32,7 +32,141 @@
 </pre></div>
 </code></pre>
 <a name="wait--how-is-that-different-from-em-" class="anchor" href="#wait--how-is-that-different-from-em-"><h2>Wait, how is that different from em?</h2>
-</a><p>Elastic measurement units cascade (<a href="http://www.w3.org/TR/css3-values/#em-unit">em spec</a>), whereas root elastic measurement units are always relative to the root element.</p>
+</a><p>Elastic measurement units cascade (<a href="http://www.w3.org/TR/css3-values/#em-unit">em spec</a>), whereas root elastic measurement units are always relative to the root element. </p>
+<p>With ems, the following situation becomes confusing:</p>
+<a name="css:" class="anchor" href="#css:"><h3>CSS:</h3>
+</a><pre><code class="lang-css"><div class="highlight"><pre><span class="nc">.container</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.em1</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+    <span class="k">border-top</span><span class="o">:</span> <span class="m">1em</span> <span class="k">solid</span> <span class="nb">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.em2</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">3em</span><span class="p">;</span>
+    <span class="k">border-top</span><span class="o">:</span> <span class="m">1em</span> <span class="k">solid</span> <span class="nb">green</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.div3</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+    <span class="k">border-top</span><span class="o">:</span> <span class="m">1em</span> <span class="k">solid</span> <span class="nb">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</code></pre>
+<a name="html:" class="anchor" href="#html:"><h3>HTML:</h3>
+</a><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;em1&quot;</span><span class="nt">&gt;</span>
+        Text 1
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;em2&quot;</span><span class="nt">&gt;</span>
+            Text 2
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;em3&quot;</span><span class="nt">&gt;</span>
+                Text 3
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</code></pre>
+<p>The result?</p>
+<p><style>
+.container {
+    font-size: 16px;
+    margin: 0 2rem;
+    padding: 1rem;
+    background: rgb(240, 240, 240);
+    border: 0.0625rem solid rgb(100, 100, 100);
+}
+.em1 {
+    font-size: 1em;
+    border-top: 1em solid red;
+}
+.em2 {
+    font-size: 2em;
+    border-top: 1em solid green;
+}
+.em3 {
+    font-size: 1em;
+    border-top: 1em solid blue;
+}
+</style></p>
+<div class="container">
+    <div class="em1">
+        Text 1
+        <div class="em2">
+            Text 2
+            <div class="em3">
+                Text 3
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>As ems cascade, the <code>font-size</code> of &quot;Text 3&quot; is effectively:</p>
+<blockquote>
+<p>10px &times; 1 &times; 2 &times; 1 = 20px.</p>
+</blockquote>
+<p>The same code, done with rems would work as follows:</p>
+<a name="css:" class="anchor" href="#css:"><h3>CSS:</h3>
+</a><pre><code class="lang-css"><div class="highlight"><pre><span class="nt">html</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.rem1</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">2</span><span class="n">rem</span><span class="p">;</span>
+    <span class="k">border-top</span><span class="o">:</span> <span class="m">1</span><span class="n">rem</span> <span class="k">solid</span> <span class="nb">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.rem2</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">3</span><span class="n">rem</span><span class="p">;</span>
+    <span class="k">border-top</span><span class="o">:</span> <span class="m">1</span><span class="n">rem</span> <span class="k">solid</span> <span class="nb">green</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.rem3</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">2</span><span class="n">rem</span><span class="p">;</span>
+    <span class="k">border-top</span><span class="o">:</span> <span class="m">1</span><span class="n">rem</span> <span class="k">solid</span> <span class="nb">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</code></pre>
+<a name="html:" class="anchor" href="#html:"><h3>HTML:</h3>
+</a><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;em1&quot;</span><span class="nt">&gt;</span>
+        Text 1
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;em2&quot;</span><span class="nt">&gt;</span>
+            Text 2
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;div3&quot;</span><span class="nt">&gt;</span>
+                Text 3
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</code></pre>
+<p><style>
+.rem1 {
+    font-size: 1rem;
+    border-top: 1rem solid red;
+}
+.rem2 {
+    font-size: 2rem;
+    border-top: 1rem solid green;
+}
+.rem3 {
+    font-size: 1rem;
+    border-top: 1rem solid blue;
+}
+</style></p>
+<div class="container">
+    <div class="rem1">
+        Text 1
+        <div class="rem2">
+            Text 2
+            <div class="rem3">
+                Text 3
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>Since rems are always root-relative, the <code>font-size</code> of &quot;Text 3&quot; is effectively:</p>
+<blockquote>
+<p>10px &times; 1 = 10px.</p>
+</blockquote>
 <a name="why-should-we-do-this-again-" class="anchor" href="#why-should-we-do-this-again-"><h2>Why should we do this again?</h2>
 </a><p>If you have a need to dynamically scale your interface, in part or in whole, with absolute precision, rems can be useful.</p>
 <ol>
@@ -41,9 +175,19 @@
 <li><strong>You just want things a tad bigger</strong> - If your designers say &quot;make everything 2 pixels bigger,&quot; you&#39;re gonna have a bad time, unlesss you&#39;re using rem units</li>
 </ol>
 <a name="execution" class="anchor" href="#execution"><h2>Execution</h2>
-</a><a name="but-fractions-are-hard--what-if-i-want-9-pixels-" class="anchor" href="#but-fractions-are-hard--what-if-i-want-9-pixels-"><h3>But fractions are hard, what if I want 9 pixels?</h3>
+</a><p>Simply use rems in place of pixels in your code:</p>
+<pre><code><div class="highlight"><pre><span class="nx">html</span> <span class="p">{</span>
+    <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">16</span><span class="nx">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nx">header</span> <span class="p">{</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mi">2</span><span class="nx">rem</span><span class="p">;</span> <span class="cm">/* 32px */</span>
+    <span class="nx">padding</span><span class="o">:</span> <span class="mf">0.5</span><span class="nx">rem</span><span class="p">;</span> <span class="cm">/* 8px */</span>
+<span class="p">}</span>
+</pre></div>
+</code></pre>
+<a name="but-fractions-are-hard--what-if-i-want-9-pixels-" class="anchor" href="#but-fractions-are-hard--what-if-i-want-9-pixels-"><h3>But fractions are hard, what if I want 9 pixels?</h3>
 </a><p>If you&#39;re using a CSS preprocessor, which you should be, it&#39;s easy to create a variable that represents a pixel:</p>
-<a name="stylus" class="anchor" href="#stylus"><h3>Stylus</h3>
+<a name="stylus:" class="anchor" href="#stylus:"><h3>Stylus:</h3>
 </a><pre><code><div class="highlight"><pre><span class="c1">// The smallest size we want to support</span>
 <span class="nx">$baseSize</span> <span class="o">=</span> <span class="mi">16</span>
 
