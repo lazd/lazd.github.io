@@ -29,16 +29,17 @@
       <div><a name="what-are-rem-units-" class="anchor" href="#what-are-rem-units-"><h2>What are rem units?</h2>
 </a><p>According to <a href="http://www.w3.org/TR/css3-values/#rem-unit">W3 candidate reccomendation</a>, one root elastic measurement (rem) unit is equal to the <code>font-size</code> of the <code>&lt;html&gt;</code> element.</p>
 <a name="hello-rem" class="anchor" href="#hello-rem"><h2>Hello rem</h2>
-</a><p>Let&#39;s say you&#39;ve defined the <code>font-size</code> of the <code>&lt;html&gt;</code> element as 16 pixels, and you want a 32 pixel tall <code>&lt;header&gt;</code>. Basic math tells us that&#39;s 2 rem.</p>
+</a><p>Let&#39;s say you&#39;ve defined the <code>font-size</code> of the <code>&lt;html&gt;</code> element as 16 pixels, and you want a 48 pixel tall <code>&lt;header&gt;</code>. Basic math tells us that&#39;s 3 rem.</p>
 <pre><code><div class="highlight"><pre><span class="nx">html</span> <span class="p">{</span>
     <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">16</span><span class="nx">px</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nx">header</span> <span class="p">{</span>
-    <span class="nx">height</span><span class="o">:</span> <span class="mi">2</span><span class="nx">rem</span><span class="p">;</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mi">3</span><span class="nx">rem</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </code></pre>
+<p>For a live demo of the above code, inspect the header of this blog.</p>
 <a name="wait--how-is-that-different-from-em-" class="anchor" href="#wait--how-is-that-different-from-em-"><h2>Wait, how is that different from em?</h2>
 </a><p>Elastic measurement units cascade (<a href="http://www.w3.org/TR/css3-values/#em-unit">em spec</a>), whereas root elastic measurement units are always relative to the root element. </p>
 <p>With ems, the following situation becomes confusing:</p>

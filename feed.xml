@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>NodeJS RSS Module</generator><lastBuildDate>Wed, 28 Aug 2013 00:10:59 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Wed, 28 Aug 2013 00:10:59 GMT</pubDate><copyright><![CDATA[2013 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[mdn.io - Passive URL shortening for MDN]]></title><description><![CDATA[<p><img src="/images/mdn.png" class="left" alt="MDN" style="width: 128px">
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>NodeJS RSS Module</generator><lastBuildDate>Wed, 28 Aug 2013 00:18:01 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Wed, 28 Aug 2013 00:18:01 GMT</pubDate><copyright><![CDATA[2013 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[mdn.io - Passive URL shortening for MDN]]></title><description><![CDATA[<p><img src="/images/mdn.png" class="left" alt="MDN" style="width: 128px">
 Whenever you need to look something up on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Mozilla Developer Network</a>, you usually end up typing something like <code>mdn defineproperty</code> into the search bar and clicking the first link.</p>
 <p>We&#39;ve taken that already simple process and made it simpler with mdn.io, the &quot;I&#39;m feeling lucky&quot; URL shortener for MDN.</p>
 <div class="clear"></div>
@@ -51,16 +51,17 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
 ]]></description><link>http://lazd.github.io/mdn-io-passive-url-shortening-for-mdn.html</link><guid isPermaLink="true">http://lazd.github.io/mdn-io-passive-url-shortening-for-mdn.html</guid><category><![CDATA[resources]]></category><category><![CDATA[javascript]]></category><category><![CDATA[node.js]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Tue, 13 Aug 2013 07:00:00 GMT</pubDate></item><item><title><![CDATA[Scaleable interfaces with rem units]]></title><description><![CDATA[<a name="what-are-rem-units-" class="anchor" href="#what-are-rem-units-"><h2>What are rem units?</h2>
 </a><p>According to <a href="http://www.w3.org/TR/css3-values/#rem-unit">W3 candidate reccomendation</a>, one root elastic measurement (rem) unit is equal to the <code>font-size</code> of the <code>&lt;html&gt;</code> element.</p>
 <a name="hello-rem" class="anchor" href="#hello-rem"><h2>Hello rem</h2>
-</a><p>Let&#39;s say you&#39;ve defined the <code>font-size</code> of the <code>&lt;html&gt;</code> element as 16 pixels, and you want a 32 pixel tall <code>&lt;header&gt;</code>. Basic math tells us that&#39;s 2 rem.</p>
+</a><p>Let&#39;s say you&#39;ve defined the <code>font-size</code> of the <code>&lt;html&gt;</code> element as 16 pixels, and you want a 48 pixel tall <code>&lt;header&gt;</code>. Basic math tells us that&#39;s 3 rem.</p>
 <pre><code><div class="highlight"><pre><span class="nx">html</span> <span class="p">{</span>
     <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">16</span><span class="nx">px</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nx">header</span> <span class="p">{</span>
-    <span class="nx">height</span><span class="o">:</span> <span class="mi">2</span><span class="nx">rem</span><span class="p">;</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mi">3</span><span class="nx">rem</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </code></pre>
+<p>For a live demo of the above code, inspect the header of this blog.</p>
 <a name="wait--how-is-that-different-from-em-" class="anchor" href="#wait--how-is-that-different-from-em-"><h2>Wait, how is that different from em?</h2>
 </a><p>Elastic measurement units cascade (<a href="http://www.w3.org/TR/css3-values/#em-unit">em spec</a>), whereas root elastic measurement units are always relative to the root element. </p>
 <p>With ems, the following situation becomes confusing:</p>
