@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>NodeJS RSS Module</generator><lastBuildDate>Wed, 28 Aug 2013 04:34:01 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Wed, 28 Aug 2013 04:34:01 GMT</pubDate><copyright><![CDATA[2013 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[mdn.io - Passive URL shortening for MDN]]></title><description><![CDATA[<p><img src="/images/mdn.png" class="left" alt="MDN" style="width: 128px">
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>NodeJS RSS Module</generator><lastBuildDate>Wed, 28 Aug 2013 23:05:20 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Wed, 28 Aug 2013 23:05:20 GMT</pubDate><copyright><![CDATA[2013 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[mdn.io - Passive URL shortening for MDN]]></title><description><![CDATA[<p><img src="/images/mdn.png" class="left" alt="MDN" style="width: 128px">
 Whenever you need to look something up on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Mozilla Developer Network</a>, you usually end up typing something like <code>mdn defineproperty</code> into the search bar and clicking the first link.</p>
 <p>We&#39;ve taken that already simple process and made it simpler with mdn.io, the &quot;I&#39;m feeling lucky&quot; URL shortener for MDN.</p>
 <div class="clear"></div>
@@ -153,12 +153,12 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
 
 <p>As ems cascade, the <code>font-size</code> of &quot;Text 3&quot; is effectively:</p>
 <blockquote>
-<p>10px &times; 1 &times; 2 &times; 1 = 20px.</p>
+<p>16px &times; 1 &times; 2 &times; 1 = 32px.</p>
 </blockquote>
 <a name="the-same-example--but-with-rems" class="anchor" href="#the-same-example--but-with-rems"><h2>The same example, but with rems</h2>
 </a><p>If we use rem instead of em in the above example, since rems are always root-relative, the <code>font-size</code> of &quot;Text 3&quot; becomes:</p>
 <blockquote>
-<p>10px &times; 1 = 10px.</p>
+<p>16px &times; 1 = 16px.</p>
 </blockquote>
 <a name="css:" class="anchor" href="#css:"><h3>CSS:</h3>
 </a><pre><code class="lang-css"><div class="highlight"><pre><span class="nt">html</span> <span class="p">{</span>
