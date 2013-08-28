@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>NodeJS RSS Module</generator><lastBuildDate>Wed, 28 Aug 2013 00:27:14 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Wed, 28 Aug 2013 00:27:14 GMT</pubDate><copyright><![CDATA[2013 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[mdn.io - Passive URL shortening for MDN]]></title><description><![CDATA[<p><img src="/images/mdn.png" class="left" alt="MDN" style="width: 128px">
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>NodeJS RSS Module</generator><lastBuildDate>Wed, 28 Aug 2013 01:07:36 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Wed, 28 Aug 2013 01:07:36 GMT</pubDate><copyright><![CDATA[2013 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[mdn.io - Passive URL shortening for MDN]]></title><description><![CDATA[<p><img src="/images/mdn.png" class="left" alt="MDN" style="width: 128px">
 Whenever you need to look something up on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Mozilla Developer Network</a>, you usually end up typing something like <code>mdn defineproperty</code> into the search bar and clicking the first link.</p>
 <p>We&#39;ve taken that already simple process and made it simpler with mdn.io, the &quot;I&#39;m feeling lucky&quot; URL shortener for MDN.</p>
 <div class="clear"></div>
@@ -70,15 +70,15 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
     <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nc">.em1</span> <span class="p">{</span>
-    <span class="k">font-size</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
     <span class="k">border-top</span><span class="o">:</span> <span class="m">1em</span> <span class="k">solid</span> <span class="nb">red</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nc">.em2</span> <span class="p">{</span>
-    <span class="k">font-size</span><span class="o">:</span> <span class="m">3em</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
     <span class="k">border-top</span><span class="o">:</span> <span class="m">1em</span> <span class="k">solid</span> <span class="nb">green</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nc">.em3</span> <span class="p">{</span>
-    <span class="k">font-size</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
     <span class="k">border-top</span><span class="o">:</span> <span class="m">1em</span> <span class="k">solid</span> <span class="nb">blue</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -141,15 +141,15 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
     <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nc">.rem1</span> <span class="p">{</span>
-    <span class="k">font-size</span><span class="o">:</span> <span class="m">2</span><span class="n">rem</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">1</span><span class="n">rem</span><span class="p">;</span>
     <span class="k">border-top</span><span class="o">:</span> <span class="m">1</span><span class="n">rem</span> <span class="k">solid</span> <span class="nb">red</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nc">.rem2</span> <span class="p">{</span>
-    <span class="k">font-size</span><span class="o">:</span> <span class="m">3</span><span class="n">rem</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">2</span><span class="n">rem</span><span class="p">;</span>
     <span class="k">border-top</span><span class="o">:</span> <span class="m">1</span><span class="n">rem</span> <span class="k">solid</span> <span class="nb">green</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nc">.rem3</span> <span class="p">{</span>
-    <span class="k">font-size</span><span class="o">:</span> <span class="m">2</span><span class="n">rem</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">1</span><span class="n">rem</span><span class="p">;</span>
     <span class="k">border-top</span><span class="o">:</span> <span class="m">1</span><span class="n">rem</span> <span class="k">solid</span> <span class="nb">blue</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -227,6 +227,11 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
 
 <span class="c1">// The size of a pixel when the font-size is 1rem</span>
 <span class="nx">$vpx</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="nx">$baseSize</span> <span class="o">+</span> <span class="mi">0</span><span class="nx">em</span>
+</pre></div>
+</code></pre>
+<p>Then, in your code, use the variable to define dimensions:</p>
+<a name="stylus:" class="anchor" href="#stylus:"><h3>Stylus:</h3>
+</a><pre><code><div class="highlight"><pre>
 </pre></div>
 </code></pre>
 <a name="where-you-should-still-use-px" class="anchor" href="#where-you-should-still-use-px"><h2>Where you should still use px</h2>
