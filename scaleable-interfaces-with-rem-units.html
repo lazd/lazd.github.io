@@ -33,13 +33,33 @@
 <pre><code><div class="highlight"><pre><span class="nx">html</span> <span class="p">{</span>
     <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">16</span><span class="nx">px</span><span class="p">;</span>
 <span class="p">}</span>
-
 <span class="nx">header</span> <span class="p">{</span>
     <span class="nx">height</span><span class="o">:</span> <span class="mi">3</span><span class="nx">rem</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </code></pre>
-<p>For a live demo of the above code, inspect the header of this blog.</p>
+<a name="try-it" class="anchor" href="#try-it"><h2>Try it</h2>
+</a><p>This blog is built using rem units; click the buttons below to adjust the <code>font-size</code> of the <code>&lt;html&gt;</code> element, and in turn, the entire site.</p>
+<div id="resize">
+    <button class="button large" id="decrease">-</button>
+    <div id="pagePixelSize">16px</div>
+    <button class="button large" id="increase">+</button>
+</div>
+
+<script>
+    var fontSize = 16;
+    function setSize(amount) {
+        fontSize = (fontSize+amount);
+        document.getElementById("pagePixelSize").innerHTML=fontSize+"px";
+        document.querySelector("html").style.fontSize = fontSize+"px";
+    }
+    document.getElementById("resize").addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); return false; }, false);
+    document.getElementById("increase").addEventListener("click", function(e) { setSize(2);
+    }, false);
+    document.getElementById("decrease").addEventListener("click", function(e) { setSize(-2);
+    }, false);
+</script>
+
 <a name="wait--how-is-that-different-from-em-" class="anchor" href="#wait--how-is-that-different-from-em-"><h2>Wait, how is that different from em?</h2>
 </a><p>Elastic measurement units cascade (<a href="http://www.w3.org/TR/css3-values/#em-unit">em spec</a>), whereas root elastic measurement units are always relative to the root element. </p>
 <p>With ems, the following situation becomes confusing:</p>
@@ -75,27 +95,27 @@
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
 </code></pre>
-<p>The result?</p>
-<p><style>
-.container {
-    font-size: 16px;
-    margin: 0 2rem;
-    padding: 1rem;
-    background: rgb(240, 240, 240);
-    border: 0.0625rem solid rgb(100, 100, 100);
-}
-.em1 {
-    font-size: 1em;
-    border-top: 1em solid red;
-}
-.em2 {
-    font-size: 2em;
-    border-top: 1em solid green;
-}
-.em3 {
-    font-size: 1em;
-    border-top: 1em solid blue;
-}
+<a name="result:" class="anchor" href="#result:"><h3>Result:</h3>
+</a><p><style>
+    .container {
+        font-size: 16px;
+        margin: 0 2rem;
+        padding: 1rem;
+        background: rgb(240, 240, 240);
+        border: 0.0625rem solid rgb(100, 100, 100);
+    }
+    .em1 {
+        font-size: 1em;
+        border-top: 1em solid red;
+    }
+    .em2 {
+        font-size: 2em;
+        border-top: 1em solid green;
+    }
+    .em3 {
+        font-size: 1em;
+        border-top: 1em solid blue;
+    }
 </style></p>
 <div class="container">
     <div class="em1">
@@ -113,7 +133,11 @@
 <blockquote>
 <p>10px &times; 1 &times; 2 &times; 1 = 20px.</p>
 </blockquote>
-<p>The same code, done with rems would work as follows:</p>
+<a name="the-same-example--but-with-rems" class="anchor" href="#the-same-example--but-with-rems"><h2>The same example, but with rems</h2>
+</a><p>If we use rem instead of em in the above example, since rems are always root-relative, the <code>font-size</code> of &quot;Text 3&quot; becomes:</p>
+<blockquote>
+<p>10px &times; 1 = 10px.</p>
+</blockquote>
 <a name="css:" class="anchor" href="#css:"><h3>CSS:</h3>
 </a><pre><code class="lang-css"><div class="highlight"><pre><span class="nt">html</span> <span class="p">{</span>
     <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
@@ -146,19 +170,20 @@
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </code></pre>
-<p><style>
-.rem1 {
-    font-size: 1rem;
-    border-top: 1rem solid red;
-}
-.rem2 {
-    font-size: 2rem;
-    border-top: 1rem solid green;
-}
-.rem3 {
-    font-size: 1rem;
-    border-top: 1rem solid blue;
-}
+<a name="result:" class="anchor" href="#result:"><h3>Result:</h3>
+</a><p><style>
+    .rem1 {
+        font-size: 1rem;
+        border-top: 1rem solid red;
+    }
+    .rem2 {
+        font-size: 2rem;
+        border-top: 1rem solid green;
+    }
+    .rem3 {
+        font-size: 1rem;
+        border-top: 1rem solid blue;
+    }
 </style></p>
 <div class="container">
     <div class="rem1">
@@ -172,10 +197,7 @@
     </div>
 </div>
 
-<p>Since rems are always root-relative, the <code>font-size</code> of &quot;Text 3&quot; is effectively:</p>
-<blockquote>
-<p>10px &times; 1 = 10px.</p>
-</blockquote>
+
 <a name="why-should-we-do-this-again-" class="anchor" href="#why-should-we-do-this-again-"><h2>Why should we do this again?</h2>
 </a><p>If you have a need to dynamically scale your interface, in part or in whole, with absolute precision, rems can be useful.</p>
 <ol>
@@ -184,7 +206,7 @@
 <li><strong>You just want things a tad bigger</strong> - If your designers say &quot;make everything 2 pixels bigger,&quot; you&#39;re gonna have a bad time, unlesss you&#39;re using rem units</li>
 </ol>
 <a name="execution" class="anchor" href="#execution"><h2>Execution</h2>
-</a><p>Simply use rems in place of pixels in your code:</p>
+</a><p>Simply use rems in place of pixels in your CSS:</p>
 <pre><code><div class="highlight"><pre><span class="nx">html</span> <span class="p">{</span>
     <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">16</span><span class="nx">px</span><span class="p">;</span>
 <span class="p">}</span>
@@ -197,19 +219,22 @@
 <a name="but-fractions-are-hard--what-if-i-want-9-pixels-" class="anchor" href="#but-fractions-are-hard--what-if-i-want-9-pixels-"><h3>But fractions are hard, what if I want 9 pixels?</h3>
 </a><p>If you&#39;re using a CSS preprocessor, which you should be, it&#39;s easy to create a variable that represents a pixel:</p>
 <a name="stylus:" class="anchor" href="#stylus:"><h3>Stylus:</h3>
-</a><pre><code><div class="highlight"><pre><span class="c1">// The smallest size we want to support</span>
+</a><pre><code><div class="highlight"><pre><span class="c1">// The size of 1rem in pixels</span>
 <span class="nx">$baseSize</span> <span class="o">=</span> <span class="mi">16</span>
 
-<span class="c1">// The size of a &quot;pixel&quot; based on the smallest size</span>
+<span class="c1">// The size of a pixel in rems</span>
 <span class="nx">$px</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="nx">$baseSize</span> <span class="o">+</span> <span class="mi">0</span><span class="nx">rem</span>
-
-<span class="c1">// The size of a pixel when the font-size is 1rem</span>
-<span class="nx">$vpx</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="nx">$baseSize</span> <span class="o">+</span> <span class="mi">0</span><span class="nx">em</span>
 </pre></div>
 </code></pre>
-<p>Then, in your code, use the variable to define dimensions:</p>
+<p>Then, in your code, multiply the number of pixels you want by the variable:</p>
 <a name="stylus:" class="anchor" href="#stylus:"><h3>Stylus:</h3>
-</a><pre><code><div class="highlight"><pre>
+</a><pre><code><div class="highlight"><pre><span class="nx">html</span>
+    <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="nx">$baseSize</span>
+
+<span class="p">.</span><span class="nx">header</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mi">48</span><span class="o">*</span><span class="nx">$px</span>
+    <span class="nx">border</span><span class="o">:</span> <span class="nx">$px</span> <span class="nx">solid</span> <span class="nx">black</span>
+    <span class="nx">margin</span><span class="o">-</span><span class="nx">bottom</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="nx">$px</span>
 </pre></div>
 </code></pre>
 <a name="where-you-should-still-use-px" class="anchor" href="#where-you-should-still-use-px"><h2>Where you should still use px</h2>
@@ -255,27 +280,6 @@
 <span class="nt">width</span><span class="o">:</span> <span class="nt">1rem</span><span class="o">;</span>
 </pre></div>
 </code></pre>
-<a name="try-it" class="anchor" href="#try-it"><h2>Try it</h2>
-</a><p>This blog is built using rem units; click the buttons below to given rems a try.</p>
-<p><div id="resize">
-    <button class="button large" id="decrease">-</button>
-    <div id="pagePixelSize">16px</div>
-    <button class="button large" id="increase">+</button>
-</div></p>
-<script>
-    var fontSize = 16;
-    function setSize(amount) {
-        fontSize = (fontSize+amount);
-        document.getElementById("pagePixelSize").innerHTML=fontSize+"px";
-        document.querySelector("html").style.fontSize = fontSize+"px";
-    }
-    document.getElementById("resize").addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); return false; }, false);
-    document.getElementById("increase").addEventListener("click", function(e) { setSize(2);
-    }, false);
-    document.getElementById("decrease").addEventListener("click", function(e) { setSize(-2);
-    }, false);
-</script>
-
 <a name="show-me-the-code" class="anchor" href="#show-me-the-code"><h2>Show me the code</h2>
 </a><p>Take a look at the source of <a href="https://github.com/lazd/iOCSS">iOCSS</a> and <a href="https://github.com/lazd/lazd.github.io/tree/build">this blog</a> for a few examples that combine rem units with media queries, ems, and CSS preprocessors.</p>
 </div>
