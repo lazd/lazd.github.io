@@ -33,17 +33,40 @@ According to [W3 candidate reccomendation][rem spec], one root elastic measureme
 
 ## Hello rem
 
-Let's say you've defined the `font-size` of the `<html>` element as 16 pixels, and you want a 32 pixel tall `<header>`. Basic math tells us that's 2 rem.
+Let's say you've defined the `font-size` of the `<html>` element as 16 pixels, and you want a 48 pixel tall `<header>`. Basic math tells us that's 3 rem.
 
 ```
 html {
     font-size: 16px;
 }
-
 header {
-    height: 2rem;
+    height: 3rem;
 }
 ```
+
+## Try it
+
+This blog is built using rem units; click the buttons below to adjust the `font-size` of the `<html>` element, and in turn, the entire site.
+
+<div id="resize">
+    <button class="button large" id="decrease">-</button>
+    <div id="pagePixelSize">16px</div>
+    <button class="button large" id="increase">+</button>
+</div>
+
+<script>
+    var fontSize = 16;
+    function setSize(amount) {
+        fontSize = (fontSize+amount);
+        document.getElementById("pagePixelSize").innerHTML=fontSize+"px";
+        document.querySelector("html").style.fontSize = fontSize+"px";
+    }
+    document.getElementById("resize").addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); return false; }, false);
+    document.getElementById("increase").addEventListener("click", function(e) { setSize(2);
+    }, false);
+    document.getElementById("decrease").addEventListener("click", function(e) { setSize(-2);
+    }, false);
+</script>
 
 ## Wait, how is that different from em?
 
@@ -57,15 +80,15 @@ With ems, the following situation becomes confusing:
     font-size: 16px;
 }
 .em1 {
-    font-size: 2em;
+    font-size: 1em;
     border-top: 1em solid red;
 }
 .em2 {
-    font-size: 3em;
+    font-size: 2em;
     border-top: 1em solid green;
 }
-.div3 {
-    font-size: 2em;
+.em3 {
+    font-size: 1em;
     border-top: 1em solid blue;
 }
 ```
@@ -85,28 +108,28 @@ With ems, the following situation becomes confusing:
 </div>
 ```
 
-The result?
+### Result:
 
 <style>
-.container {
-    font-size: 16px;
-    margin: 0 2rem;
-    padding: 1rem;
-    background: rgb(240, 240, 240);
-    border: 0.0625rem solid rgb(100, 100, 100);
-}
-.em1 {
-    font-size: 1em;
-    border-top: 1em solid red;
-}
-.em2 {
-    font-size: 2em;
-    border-top: 1em solid green;
-}
-.em3 {
-    font-size: 1em;
-    border-top: 1em solid blue;
-}
+    .container {
+        font-size: 16px;
+        margin: 0 2rem;
+        padding: 1rem;
+        background: rgb(240, 240, 240);
+        border: 0.0625rem solid rgb(100, 100, 100);
+    }
+    .em1 {
+        font-size: 1em;
+        border-top: 1em solid red;
+    }
+    .em2 {
+        font-size: 2em;
+        border-top: 1em solid green;
+    }
+    .em3 {
+        font-size: 1em;
+        border-top: 1em solid blue;
+    }
 </style>
 <div class="container">
     <div class="em1">
@@ -122,10 +145,13 @@ The result?
 
 As ems cascade, the `font-size` of "Text 3" is effectively:
 
-> 10px &times; 1 &times; 2 &times; 1 = 20px.
+> 16px &times; 1 &times; 2 &times; 1 = 32px.
 
-The same code, done with rems would work as follows:
+## The same example, but with rems
 
+If we use rem instead of em in the above example, since rems are always root-relative, the `font-size` of "Text 3" becomes:
+
+> 16px &times; 1 = 16px.
 
 ### CSS:
 ```css
@@ -133,15 +159,15 @@ html {
     font-size: 16px;
 }
 .rem1 {
-    font-size: 2rem;
+    font-size: 1rem;
     border-top: 1rem solid red;
 }
 .rem2 {
-    font-size: 3rem;
+    font-size: 2rem;
     border-top: 1rem solid green;
 }
 .rem3 {
-    font-size: 2rem;
+    font-size: 1rem;
     border-top: 1rem solid blue;
 }
 ```
@@ -149,11 +175,11 @@ html {
 ### HTML:
 ```html
 <html>
-    <div class="em1">
+    <div class="rem1">
         Text 1
-        <div class="em2">
+        <div class="rem2">
             Text 2
-            <div class="div3">
+            <div class="rem3">
                 Text 3
             </div>
         </div>
@@ -161,19 +187,21 @@ html {
 </html>
 ```
 
+### Result:
+
 <style>
-.rem1 {
-    font-size: 1rem;
-    border-top: 1rem solid red;
-}
-.rem2 {
-    font-size: 2rem;
-    border-top: 1rem solid green;
-}
-.rem3 {
-    font-size: 1rem;
-    border-top: 1rem solid blue;
-}
+    .rem1 {
+        font-size: 1rem;
+        border-top: 1rem solid red;
+    }
+    .rem2 {
+        font-size: 2rem;
+        border-top: 1rem solid green;
+    }
+    .rem3 {
+        font-size: 1rem;
+        border-top: 1rem solid blue;
+    }
 </style>
 <div class="container">
     <div class="rem1">
@@ -187,10 +215,6 @@ html {
     </div>
 </div>
 
-Since rems are always root-relative, the `font-size` of "Text 3" is effectively:
-
-> 10px &times; 1 = 10px.
-
 
 ## Why should we do this again?
 
@@ -203,7 +227,7 @@ If you have a need to dynamically scale your interface, in part or in whole, wit
 
 ## Execution
 
-Simply use rems in place of pixels in your code:
+Simply use rems in place of pixels in your CSS:
 
 ```
 html {
@@ -221,14 +245,24 @@ If you're using a CSS preprocessor, which you should be, it's easy to create a v
 
 ### Stylus:
 ```
-// The smallest size we want to support
+// The size of 1rem in pixels
 $baseSize = 16
 
-// The size of a "pixel" based on the smallest size
+// The size of a pixel in rems
 $px = 1 / $baseSize + 0rem
+```
 
-// The size of a pixel when the font-size is 1rem
-$vpx = 1 / $baseSize + 0em
+Then, in your code, multiply the number of pixels you want by the variable:
+
+### Stylus:
+```
+html
+    font-size: $baseSize
+
+.header
+    height: 48*$px
+    border: $px solid black
+    margin-bottom: -1*$px
 ```
 
 ## Where you should still use px
@@ -239,7 +273,6 @@ You'll want to specify the `font-size` of the `<html>` element in pixels, but th
     * Generally, this effect looks bad for > 1px
 * Elements that you do not want to scale with the rest of the page
     * Maybe you want the fine print to stay fine
-    * I really can't think of a great example here
 
 ## Where you should still use em
 
@@ -284,29 +317,13 @@ width: 16px;
 width: 1rem;
 ```
 
-## Try it
+## Show me the code
 
-This blog is built using rem units; click the buttons below to given rems a try.
+Take a look at the source of [iOCSS] and [this blog] for a few examples that combine rem units with media queries, ems, and CSS preprocessors.
 
-<div id="resize">
-    <button class="button large" id="decrease">-</button>
-    <div id="pagePixelSize">16px</div>
-    <button class="button large" id="increase">+</button>
-</div>
-<script>
-    var fontSize = 16;
-    function setSize(amount) {
-        fontSize = (fontSize+amount);
-        document.getElementById("pagePixelSize").innerHTML=fontSize+"px";
-        document.querySelector("html").style.fontSize = fontSize+"px";
-    }
-    document.getElementById("resize").addEventListener("click", function(e) { e.preventDefault(); e.stopPropagation(); return false; }, false);
-    document.getElementById("increase").addEventListener("click", function(e) { setSize(2);
-    }, false);
-    document.getElementById("decrease").addEventListener("click", function(e) { setSize(-2);
-    }, false);
-</script>
 
+[iOCSS]: https://github.com/lazd/iOCSS
+[this blog]: https://github.com/lazd/lazd.github.io/tree/build
 [em spec]: http://www.w3.org/TR/css3-values/#em-unit
 [rem spec]: http://www.w3.org/TR/css3-values/#rem-unit
 [rem compatibilty]: http://caniuse.com/#search=rem

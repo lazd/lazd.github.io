@@ -86,11 +86,11 @@ A white block blinked below. And so it began.
 
 <hr>
 
-Flip a switch and start coding. Using a computer meant writing code, and a casual user could become an hobbyist programmer in an afternoon with no additional equipment or materials.
+Flip a switch and start coding. Using a computer meant writing code, and a casual user could become a hobbyist programmer in an afternoon with no additional equipment or materials.
 
-As computing became more common place, graphical user interfaces began to replace the commands we used to type with icons we could click. Computing became accessible to everyone as the workings of the machine were hidden by layer upon layer of abstraction. This transformation was amazing and beautiful, but it came at a cost: The machine transformed from a playground that encouraged tinkering to an appliance that forbid it.
+As computing became more common place, graphical user interfaces sustituted tthe commands we used to type with clickable icons. Computing became accessible to everyone as the workings of the machine were hidden by layer upon layer of abstraction. This transformation was amazing and beautiful, but it came at a cost: The machine transformed from a playground that encouraged tinkering to an appliance that forbade it.
 
-Eventually, computers began to ship with no development environment.
+Eventually, computers began to ship with no development environment and no casual path for a user to transition to a hobbyist.
 
 ## The renaissance
 

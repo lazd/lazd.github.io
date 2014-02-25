@@ -38,7 +38,7 @@ MDN URLs are quite long:
 
 > https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_of_Array_instances
 
-We needed a way to 
+We needed a way to keep them short so they could be directly included in places we would otherwise say "search for ____."
 
 ### Code reviews
 Let's say you're doing a code review and you need to link a peer to the documentation for the Array object:
