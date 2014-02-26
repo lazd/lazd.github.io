@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+buildRepo=`pwd`
 target="../lazd.github.io-deploy"
 
 # Perform build
@@ -13,7 +14,13 @@ fi
 # Go to the target dir
 cd $target
 
+if [ $? != 0 ]; then
+	echo "Switching to target directory failed, aborting deploy"
+	exit
+fi
+
 # Fetch the latest
+echo "Pulling the latest deployment from github..."
 git pull
 
 if [ $? != 0 ]; then
@@ -22,20 +29,44 @@ if [ $? != 0 ]; then
 fi
 
 # Blow it all away
+echo "Cleaning out old files..."
 rm -rf *.html styles scripts
 
 # Go back to the build dir
-cd -
+cd $buildRepo
+
+if [ $? != 0 ]; then
+	echo "Switching to build directory failed, aborting deploy"
+	exit
+fi
 
 # Copy all files
+echo "Copying new files..."
 cp -r build/* $target/
+
+if [ $? != 0 ]; then
+	echo "File copy failed, aborting deploy"
+	exit
+fi
 
 # Go back to the target dir
 cd $target
 
+if [ $? != 0 ]; then
+	echo "Switching to target failed, aborting deploy"
+	exit
+fi
+
 # Commit to git
+echo "Deploying to git..."
+git checkout master
 git add .
 git commit -m "Updated"
-git push
+git push origin master
 
-echo "Deploy complete"
+if [ $? != 0 ]; then
+	echo "Deploy failed"
+	exit
+else
+	echo "Deploy complete"
+fi
