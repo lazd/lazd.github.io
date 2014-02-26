@@ -3,8 +3,8 @@ buildRepo=`pwd`
 target="../lazd.github.io-deploy"
 
 # Perform build
-echo "Performing build..."
-grunt default
+echo "Performing deploy build..."
+grunt deploy
 
 if [ $? != 0 ]; then
 	echo "Build failed, aborting deploy"

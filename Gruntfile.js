@@ -23,6 +23,16 @@ module.exports = function(grunt) {
 				url: ':title' 
 			}
 		},
+
+		connect: {
+			server: {
+				options: {
+					port: 8000,
+					base: 'build'
+				}
+			}
+		},
+
 		jshint: {
 			options: {
 				eqeqeq: true,
@@ -119,6 +129,7 @@ module.exports = function(grunt) {
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-contrib-watch');
@@ -126,5 +137,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-pages');
 
-	grunt.registerTask('default', [ 'jshint', 'clean', 'pages', 'copy', 'stylus']);
+	grunt.registerTask('deploy', [ 'clean', 'build' ]);
+	grunt.registerTask('build', [ 'jshint', 'pages', 'copy', 'stylus' ]);
+	grunt.registerTask('default', [ 'build', 'connect', 'watch' ]);
 };
