@@ -1,6 +1,6 @@
 {
     title: "No-nonsense vertical centering",
-    description: "Two no-nonsense, reliable techniques to vertically center your content with CSS.",
+    description: "Two simple, reliable techniques to vertically center your content with CSS.",
     date: "2014-2-26",
     tags: [
         'css3'
