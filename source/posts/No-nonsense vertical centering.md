@@ -20,6 +20,8 @@
         color: black;
 
         text-decoration: none;
+
+        text-shadow: none;
     }
 
     .navbar a:not(:last-child) {
