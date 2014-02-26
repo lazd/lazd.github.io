@@ -126,5 +126,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-pages');
 
-	grunt.registerTask('default', ['jshint', 'pages', 'copy', 'stylus']);
+	grunt.registerTask('default', [ 'jshint', 'clean', 'pages', 'copy', 'stylus']);
 };
