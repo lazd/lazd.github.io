@@ -126,7 +126,7 @@ nav.topNav a:before{color:#fff;text-shadow:0 -1px rgba(0,0,0,0.25)}
 .titleImage.left{margin:0 1rem 1rem 0}
 .titleImage.right{margin:0 0 1rem 1rem}
 .postPreviews{list-style:none;width:54rem;margin:0 auto;padding:1em 0;overflow:hidden}
-.postPreview_image{display:-webkit-box;display:-moz-box;display:-ms-box;display:-webkit-flex;display:box;display:flex;-webkit-box-align:center;-moz-box-align:center;-o-box-align:center;-ms-box-align:center;-webkit-align-items:center;align-items:center;-webkit-box-pack:center;-moz-box-pack:center;-o-box-pack:center;-ms-box-pack:center;-webkit-justify-content:center;justify-content:center;width:100%;height:8.5rem;overflow:hidden;background:rgba(255,255,255,0.15);-webkit-box-shadow:0 0 .25rem rgba(0,0,0,0.15);box-shadow:0 0 .25rem rgba(0,0,0,0.15);text-align:center;}
+.postPreview_image{display:-webkit-box;display:-moz-box;display:-ms-box;display:-webkit-flex;display:box;display:flex;-webkit-box-align:center;-moz-box-align:center;-o-box-align:center;-ms-box-align:center;-webkit-align-items:center;align-items:center;-webkit-box-pack:center;-moz-box-pack:center;-o-box-pack:center;-ms-box-pack:center;-webkit-justify-content:center;justify-content:center;width:100%;height:8rem;overflow:hidden;background:rgba(255,255,255,0.15);-webkit-box-shadow:0 0 .25rem rgba(0,0,0,0.15);box-shadow:0 0 .25rem rgba(0,0,0,0.15);text-align:center;}
 .postPreview_image img{max-width:100%}
 .postPreview{display:block;position:relative;float:left;vertical-align:top;width:25rem;height:16rem;margin:1.75em 1em 1em 1em;border-bottom:.125rem solid #808080;}
 .postPreview a.postLink{display:block;text-decoration:none;color:inherit;width:100%;height:16rem}
