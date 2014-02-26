@@ -7,7 +7,7 @@
         'javascript',
         'node.js'
     ],
-    image: '<div style="width: 100%; height: 100%; background-size: auto 100%; background-image: url(images/mdn_promo.png); padding-top: 0.8625rem"><button class="button red">I\'m feeling MDNy</button></div>'
+    image: '<div class="fullMast" style="background-image: url(images/mdn_promo.png); padding-top: 0.8625rem"><button class="button red">I\'m feeling MDNy</button></div>'
 }
 
 <img src="/images/mdn.png" class="left" alt="MDN" style="width: 128px">

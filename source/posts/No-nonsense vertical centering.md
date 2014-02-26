@@ -1,11 +1,11 @@
 {
     title: "No-nonsense vertical centering",
     description: "Two no-nonsense, reliable techniques to vertically center your content with CSS.",
-    date: "2013-9-12",
+    date: "2014-2-26",
     tags: [
         'css3'
     ],
-    image: "<div class='vCenter grayText'>Don't off yourself with a rusty spoon, <br>cringe-free CSS vertical centering is possible.</div>"
+    image: "<div class='vCenter fullMast whiteText bigShadow' style='background-image: url(images/rusty-spoon-and-recipe-book.jpg);'>Don't off yourself with a rusty spoon just yet, <br>cringe-free CSS vertical centering is possible.</div>"
 }
 
 <style>
@@ -51,11 +51,16 @@
     }
 </style>
 
+<figure class="headingImage">
+<img src="images/rusty-spoon-and-recipe-book-large.jpg" title="Rusty spoon and recipe book, courtsey of Abandoned Kansai">
+<figcaption>Don't do it, we can get through this.</figure>
+</figure>
+
 ## Historically impractical
 
 Vertically centering with CSS has always required gross hacks. From negative margins to JavaScript, old-hat devs have brought out the dirtiest of tricks to accomplish this simple and oft needed layout technique.
 
-Things aren't perfect yet, but there are two, no-nonsense techniques that will help you get the job done without making you cringe or [off yourself with a rusty spoon].
+Things aren't perfect yet, but there are two, no-nonsense techniques that will help you get the job done without making you cringe or want to [off yourself with a rusty spoon].
 
 ## The problem
 
@@ -221,7 +226,13 @@ Flexbox aside, every CSS vertical centering technique is a hack. Your best bet i
 
 However, if you are in a position to do so, drop support for old browsers. The best way to drag netizens and their governing groups into the future is to level sanctions against them: you can't use my fancy site until you upgrade your browser.
 
+<hr>
 
+<em class="grayText">Credit for the title photo goes to Florian of [Abandoned Kansai]. It's a photo from the kitchen of an abandoned middle school in Pripyat he visited and documented in his article [Zone Of Alienation - Pripyat: Middle School #3].</em>
+
+
+[Zone Of Alienation - Pripyat: Middle School #3]: http://abandonedkansai.com/2011/02/03/zone-of-alienation-pripyat-middle-school-no-3/
+[Abandoned Kansai]: http://abandonedkansai.com/
 [off yourself with a rusty spoon]: http://www.reddit.com/r/programming/comments/1yypr8/refreshing_satirical_article_backend_css/cfp2whv
 [Using flexbox]: http://css-tricks.com/using-flexbox/
 [Absolute Horizontal and Vertical centering in CSS]: http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/
