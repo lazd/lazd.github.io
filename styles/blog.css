@@ -122,7 +122,9 @@ nav.topNav a:before{color:#fff;text-shadow:0 -1px rgba(0,0,0,0.25)}
 .post,.postPreview{text-shadow:0 1px rgba(255,255,255,0.8)}
 .headingImage img{max-width:100%}
 .headingImage + a h2{margin-top:1em}
-.fullMast{width:100%;height:100%;-webkit-background-size:auto 100%;-moz-background-size:auto 100%;background-size:auto 100%}
+.fullMast,.fullMastWide,.fullMastCenter{width:100%;height:100%;-webkit-background-size:auto 100%;-moz-background-size:auto 100%;background-size:auto 100%}
+.fullMastWide{-webkit-background-size:100% auto;-moz-background-size:100% auto;background-size:100% auto}
+.fullMastCenter{background-position:center center}
 .titleImage.left{margin:0 1rem 1rem 0}
 .titleImage.right{margin:0 0 1rem 1rem}
 .postPreviews{list-style:none;width:54rem;margin:0 auto;padding:1em 0;overflow:hidden}
