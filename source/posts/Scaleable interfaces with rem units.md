@@ -6,7 +6,7 @@
         'css3',
         'mobile'
     ],
-    image: '<div style="width: 100%; height: 100%; background-size: 100% auto; background-image: url(images/scales.jpg);" class="vCenter"><div id="resize">\
+    image: '<div class="vCenter fullMastWide" style="background-image: url(images/scales.jpg);"><div id="resize">\
     <button class="button red large" id="decrease">-</button>\
     <div id="pagePixelSize">16px</div>\
     <button class="button red large" id="increase">+</button>\
