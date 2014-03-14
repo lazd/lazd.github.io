@@ -1,5 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Thu, 27 Feb 2014 00:53:02 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Thu, 27 Feb 2014 00:53:02 GMT</pubDate><copyright><![CDATA[2014 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[No-nonsense vertical centering]]></title><description><![CDATA[<style>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 14 Mar 2014 19:14:17 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Fri, 14 Mar 2014 19:14:17 GMT</pubDate><copyright><![CDATA[2014 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[DOMly - The fast template system that clones]]></title><description><![CDATA[<a name="flashback:-the-state-of--innerhtml--performance-in-2008" class="anchor" href="#flashback:-the-state-of--innerhtml--performance-in-2008"><h2>Flashback: The state of <code>innerHTML</code> performance in 2008</h2>
+</a><blockquote>
+<p>&quot;The most obvious conclusion of these tests is that innerHTML is faster than &quot;real&quot; W3C DOM methods in all browsers.&quot;</p>
+<p>&#8212; <a href="http://www.quirksmode.org/dom/innerhtml.html">Quirksmode, circa 2008</a></p>
+</blockquote>
+<a name="newsflash:--innerhtml--is-slow." class="anchor" href="#newsflash:--innerhtml--is-slow."><h2>Newsflash: <code>innerHTML</code> is slow.</h2>
+</a><p>The time-honored best-practice is no longer best-practice. While you weren&#39;t looking, JavaScript engines have <a href="http://blog.chromium.org/2010/12/new-crankshaft-for-v8.html">doubled in performance</a> multiple times, numerous <a href="https://bugs.webkit.org/show_bug.cgi?id=82201">optimizations have been made</a>, and it&#39;s <a href="http://jsperf.com/clonenode-vs-createelement-performance/32">no longer the case</a> that <code>innerHTML</code> is the fastest way to get elements into the DOM.</p>
+<figure>
+    <a href="http://jsperf.com/clonenode-vs-createelement-performance/32" title="Benchmarks on jsPerf"><img src="images/bench-createElement-cloneNode-innerHTML.png" alt="Benchmark results: cloneNode vs createElement vs innerHTML" target="_blank"></a>
+    <figcaption><code>innerHTML</code> is an order of magnitude slower than DOM methods on mobile</figcaption>
+</figure>
+
+<!-- Results for cloneNode vs createElement vs innerHTML -->
+<!-- <script src="http://www.browserscope.org/user/tests/table/agt1YS1wcm9maWxlcnIRCxIEVGVzdBiAgIDUzbCvCww?o=js"></script> -->
+
+<a name="so-why-are-we-still-using--innerhtml--based-templates-" class="anchor" href="#so-why-are-we-still-using--innerhtml--based-templates-"><h2>So why are we still using <code>innerHTML</code> based templates?</h2>
+</a><p>Because the tooling doesn&#39;t exist.</p>
+<p>We haven&#39;t seen a major release of a full-featured, production ready template system that compiles to DOM nodes. <a href="http://leonidas.github.io/transparency/">transparency</a> and <a href="https://github.com/medikoo/domjs">domjs</a> aren&#39;t really template systems, <a href="http://beebole.com/pure/">pure</a> is magical to the point of confusion, <a href="https://github.com/blakeembrey/dombars">DOMBars</a> does more than just templates, and <a href="https://github.com/tildeio/htmlbars">HTMLBars</a> is still in the works.</p>
+<a name="enter-domly" class="anchor" href="#enter-domly"><h2>Enter DOMly</h2>
+</a><p><img src="images/DOMly_logo_small.png" class="right titleImage" alt="DOMly logo"></p>
+<p>DOMly, named after <a href="http://en.wikipedia.org/wiki/Dolly_(sheep)">Dolly, the first mammal to be cloned</a>, is a template system that takes advantage <code>createElement</code> and <code>cloneNode</code>.</p>
+<p>DOMly goal is to be approachable, fast, and lightweight.</p>
+<a name="fast.-very-fast." class="anchor" href="#fast.-very-fast."><h3>Fast. Very fast.</h3>
+</a><p>7x the performance of doT and Handlebars and 2x the perforamnce of HTMLBars.</p>
+<p>Precompile your templates on the server, and when you render them in the browser, you&#39;ll have a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">Node</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment">DocumentFragment</a> ready for insertion into the DOM and references to elements you&#39;ll need to mutate in the future.</p>
+<a name="pretty-syntax" class="anchor" href="#pretty-syntax"><h3>Pretty syntax</h3>
+</a><p>The syntax is a combination of HTML for markup and control flow, dot notation for property references, <code>()</code> for invocation, and Mustache-style <code>{{blocks}}</code> for safe variable substitution:</p>
+<pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span>{{data.header}}<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;if</span> <span class="na">data</span><span class="err">.</span><span class="na">items</span><span class="err">.</span><span class="na">length</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;foreach</span> <span class="na">data</span><span class="err">.</span><span class="na">items</span><span class="err">,</span><span class="na">index</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li</span> <span class="na">if-data</span><span class="err">.</span><span class="na">current=</span><span class="s">&#39;class=&quot;current&quot;&#39;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;if</span> <span class="na">data</span><span class="err">.</span><span class="na">url</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{data.url}}&quot;</span><span class="nt">&gt;</span>{{index}}. {{data.name}}<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;else&gt;</span>
+          {{index}}. {{data.name}}
+        <span class="nt">&lt;/if&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/foreach&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;else&gt;</span>
+  <span class="nt">&lt;p&gt;</span>There are no items yet.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/if&gt;</span>
+</pre></div>
+</code></pre>
+<figcaption class="center">A basic DOMly template</figcaption>
+
+
+<a name="powerful--enough-" class="anchor" href="#powerful--enough-"><h3>Powerful (enough)</h3>
+</a><p>DOMly supports conditionals, loops, helpers, partials, and even raw JavaScript.</p>
+<a name="partials" class="anchor" href="#partials"><h4>Partials</h4>
+</a><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;partial</span> <span class="na">MyApp</span><span class="err">.</span><span class="na">Templates</span><span class="err">.</span><span class="na">myPartial</span><span class="err">(</span><span class="na">data</span><span class="err">)</span><span class="nt">&gt;&lt;/partial&gt;</span>
+</pre></div>
+</code></pre>
+<a name="block-helpers" class="anchor" href="#block-helpers"><h4>Block helpers</h4>
+</a><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;helper</span> <span class="na">MyApp</span><span class="err">.</span><span class="na">Helpers</span><span class="err">.</span><span class="na">myHelper</span><span class="err">(</span><span class="na">data</span><span class="err">)</span><span class="nt">&gt;</span>
+  This string is evaluated {{data.forSubstitutions}} and passed as the last argument.
+<span class="nt">&lt;/helper&gt;</span>
+</pre></div>
+</code></pre>
+<a name="class-methods-and-data" class="anchor" href="#class-methods-and-data"><h4>Class methods and data</h4>
+</a><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;if</span> <span class="na">this</span><span class="err">.</span><span class="na">isFeatured</span><span class="err">(</span><span class="na">data</span><span class="err">.</span><span class="na">id</span><span class="err">,</span><span class="na">this</span><span class="err">.</span><span class="na">featured</span><span class="err">)</span><span class="nt">&gt;</span>
+  This item is featured!
+<span class="nt">&lt;/if&gt;</span>
+</pre></div>
+</code></pre>
+<a name="object-iteration-with-named-iterator" class="anchor" href="#object-iteration-with-named-iterator"><h4>Object iteration with named iterator</h4>
+</a><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;forin</span> <span class="na">data</span><span class="err">.</span><span class="na">object</span><span class="err">,</span><span class="na">prop</span><span class="nt">&gt;</span>
+    {{prop}}: {{data}}
+<span class="nt">&lt;/forin&gt;</span>
+</pre></div>
+</code></pre>
+<a name="raw-javascript" class="anchor" href="#raw-javascript"><h4>Raw JavaScript</h4>
+</a><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;js&gt;</span>
+    data.count += 1;
+<span class="nt">&lt;/js&gt;</span>
+</pre></div>
+</code></pre>
+<a name="helpers---sub-expressions" class="anchor" href="#helpers---sub-expressions"><h4>Helpers &amp; sub-expressions</h4>
+</a><pre><code class="lang-html"><div class="highlight"><pre>{{captalize(reverse(data.name))}}
+</pre></div>
+</code></pre>
+<a name="limitations" class="anchor" href="#limitations"><h3>Limitations</h3>
+</a><a name="no-room-to-grow-syntactically" class="anchor" href="#no-room-to-grow-syntactically"><h4>No room to grow syntactically</h4>
+</a><p>Because DOMly templates are parsable HTML, you can&#39;t use <code>/</code>, <code>=</code>, or spaces in statements.</p>
+<a name="must-be-be-compiled-on-the-server" class="anchor" href="#must-be-be-compiled-on-the-server"><h4>Must be be compiled on the server</h4>
+</a><p>Although it would be possible to compile on the client, you shouldn&#39;t be doing that anyway.</p>
+<a name="doesn-t-support-arbitrary-expressions" class="anchor" href="#doesn-t-support-arbitrary-expressions"><h4>Doesn&#39;t support arbitrary expressions</h4>
+</a><p>You won&#39;t be able to write <code>{{data.count+1}}</code> anywhere.</p>
+<a name="beta-quality" class="anchor" href="#beta-quality"><h4>Beta quality</h4>
+</a><p>DOMly is the newest language on the block. Althought it&#39;s unit tested and benchmarks, it&#39;s not battle-tested and can&#39;t be guarenteed to be bug-free. </p>
+<p>However, in 2014, we&#39;ll see a number of template languages switch to pure DOM methods for a performance boost, and DOMly will be there to challenge them to be the best and fastest that they can be.</p>
+<a name="that-s-great--but-why-not-base-it-off-an-existing-template-system-" class="anchor" href="#that-s-great--but-why-not-base-it-off-an-existing-template-system-"><h2>That&#39;s great, but why not base it off an existing template system?</h2>
+</a><a name="-.-it-s-an-experiment" class="anchor" href="#-.-it-s-an-experiment"><h3>1. It&#39;s an experiment</h3>
+</a><p>DOMly didn&#39;t set out to be replace heavy hitters like Handlebars. DOMly started as an experiment to establish the performance gains of using DOM methods for templating, the feasibility of maintaining a set of these templates, and the actual amount of code required to do this from scratch.</p>
+<p>The goal was to validate the hypothesis:</p>
+<blockquote>
+<p>It&#39;s both possible and simple to build a template language that takes advantage of the performance gains of native DOM methods.</p>
+</blockquote>
+<a name="-.-simplicity" class="anchor" href="#-.-simplicity"><h3>2. Simplicity</h3>
+</a><p>Existing template systems are quite complex. From advanced <a href="https://github.com/wycats/handlebars.js/blob/master/src/handlebars.l#L31-L50">Jison parser tricks</a> to dozens of <a href="https://github.com/olado/doT/blob/master/doT.js#L15">regular expressions so complex that they&#39;ve taken on a life of their own</a>, to <a href="http://jlongster.github.io/nunjucks/templating.html">complex feature sets</a>, these projects aren&#39;t very approachable. To re-tool an existing language would be a massive time sink just to validate a hypothesis.</p>
+<p>Many existing template systems require runtimes that handle helpers and partials. This results in an additional call on the stack for method invocation which can affect performance. They&#39;re tiny, but the size doesn&#39;t help either gzipped, Handlebar&#39;s runtime is 4k, Underscore is 5k.</p>
+<a name="-.-syntax" class="anchor" href="#-.-syntax"><h3>3. Syntax</h3>
+</a><p>After years of staring at PHP and JSPs, I think we could do better than this:</p>
+<pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span><span class="err">&lt;</span>%- obj.header %&gt;<span class="nt">&lt;/h1&gt;</span>
+<span class="err">&lt;</span>% if(obj.hasItems) { %&gt;
+  <span class="nt">&lt;ul&gt;</span>
+  <span class="err">&lt;</span>% _.each(obj.items, function(item) { %&gt;
+    <span class="err">&lt;</span>% if(item.current) { %&gt;
+      <span class="nt">&lt;li&gt;&lt;strong&gt;</span><span class="err">&lt;</span>%- item.name %&gt;<span class="nt">&lt;/strong&gt;&lt;/li&gt;</span>
+    <span class="err">&lt;</span>% } else { %&gt;
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&lt;%- item.url %&gt;&quot;</span><span class="nt">&gt;</span><span class="err">&lt;</span>%- item.name %&gt;<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="err">&lt;</span>% } %&gt;
+  <span class="err">&lt;</span>% }); %&gt;
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="err">&lt;</span>% } else { %&gt;
+  <span class="nt">&lt;p&gt;</span>The list is empty.<span class="nt">&lt;/p&gt;</span>
+<span class="err">&lt;</span>% } %&gt;
+</pre></div>
+</code></pre>
+<figcaption class="center">A basic Underscore template</figcaption>
+
+
+
+<a name="your-turn.-how-does-this-make-you-feel-" class="anchor" href="#your-turn.-how-does-this-make-you-feel-"><h3>Your turn. How does this make you feel?</h3>
+</a><p>Does the mix of markup and template code bug you, or is the best thing since sliced bread?</p>
+<p>See <a href="https://github.com/lazd/DOMly">the source on Github</a> and the <a href="http://jsperf.com/domly-vs-the-world">benchmarks on jsPerf</a>. </p>
+]]></description><link>http://lazd.github.io/domly-the-fast-template-system-that-clones.html</link><guid isPermaLink="true">http://lazd.github.io/domly-the-fast-template-system-that-clones.html</guid><category><![CDATA[javascript]]></category><category><![CDATA[browsers]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Thu, 27 Feb 2014 08:00:00 GMT</pubDate></item><item><title><![CDATA[No-nonsense vertical centering]]></title><description><![CDATA[<style>
     .navbar {
         margin: 1rem;
     }
