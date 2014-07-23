@@ -31,7 +31,7 @@ The time-honored best-practice is no longer best-practice. While you weren't loo
 
 Because the tooling doesn't exist.
 
-We haven't seen a major release of a full-featured, production ready template system that compiles to DOM nodes. [transparency] and [domjs] aren't really template systems, [pure] is magical to the point of confusion, [DOMBars] does more than just templates, and [HTMLBars] is still in the works.
+We haven't seen a major release of a full-featured, production ready template system that compiles to DOM nodes. [transparency] and [domjs] aren't really template systems, [pure] is magical to the point of confusion, [DOMBars] is deprecated, and [HTMLBars] is still in the works.
 
 
 ## Enter DOMly
@@ -39,14 +39,21 @@ We haven't seen a major release of a full-featured, production ready template sy
 
 DOMly, named after [Dolly, the first mammal to be cloned], is a template system that takes advantage `createElement` and `cloneNode`.
 
-DOMly goal is to be approachable, fast, and lightweight.
+DOMly's goal is to be approachable, fast, and lightweight.
 
 
 ### Fast. Very fast.
 
-7x the performance of doT and Handlebars and 2x the perforamnce of HTMLBars.
+With 7x the performance of doT and Handlebars and 2x the performance of HTMLBars, **DOMly is arguably the fastest client-side templating system in existence**. Check out [the benchmarks][benchmarks on jsPerf].
 
-Precompile your templates on the server, and when you render them in the browser, you'll have a [Node] or [DocumentFragment] ready for insertion into the DOM and references to elements you'll need to mutate in the future.
+Furthermore, if you use the [`handle="someName"` feature][handles feature], you'll end up with references to elements you'll need to mutate in the future -- no `querySelector` required.
+
+
+### Zero client-side dependencies
+
+DOMly has no runtime library and no dependencies. Compiled templates are simply JavaScript functions that create DOM objects with native methods.
+
+Pre-compile your templates as part of your build process, and when you render them in the browser, you'll get a [Node] or [DocumentFragment] that you can `appendChild()` anywhere in the DOM.
 
 
 ### Pretty syntax
@@ -130,9 +137,9 @@ Although it would be possible to compile on the client, you shouldn't be doing t
 
 You won't be able to write `{{data.count+1}}` anywhere.
 
-#### Beta quality
+#### DOMly isn't yet battle tested
 
-DOMly is the newest language on the block. Althought it's unit tested and benchmarks, it's not battle-tested and can't be guarenteed to be bug-free. 
+DOMly is the newest language on the block. Although it's unit tested and benchmarks, it's not battle-tested and can't be guaranteed to be bug-free. 
 
 However, in 2014, we'll see a number of template languages switch to pure DOM methods for a performance boost, and DOMly will be there to challenge them to be the best and fastest that they can be.
 
@@ -141,7 +148,7 @@ However, in 2014, we'll see a number of template languages switch to pure DOM me
 
 ### 1. It's an experiment
 
-DOMly didn't set out to be replace heavy hitters like Handlebars. DOMly started as an experiment to establish the performance gains of using DOM methods for templating, the feasibility of maintaining a set of these templates, and the actual amount of code required to do this from scratch.
+DOMly didn't set out to replace heavy hitters like Handlebars. DOMly started as an experiment to establish the performance gains of using DOM methods for templating, the feasibility of maintaining a set of these templates, and the actual amount of code required to do this from scratch.
 
 The goal was to validate the hypothesis:
 
@@ -151,7 +158,7 @@ The goal was to validate the hypothesis:
 
 Existing template systems are quite complex. From advanced [Jison parser tricks] to dozens of [regular expressions so complex that they've taken on a life of their own], to [complex feature sets], these projects aren't very approachable. To re-tool an existing language would be a massive time sink just to validate a hypothesis.
 
-Many existing template systems require runtimes that handle helpers and partials. This results in an additional call on the stack for method invocation which can affect performance. They're tiny, but the size doesn't help either gzipped, Handlebar's runtime is 4k, Underscore is 5k.
+Many existing template systems require runtimes that handle helpers and partials. This results in an additional call on the stack for method invocation which can affect performance. They're tiny, but the size doesn't help either gzipped, Handlebar's runtime is 4kB, Underscore is 5kB.
 
 ### 3. Syntax
 
@@ -176,12 +183,12 @@ After years of staring at PHP and JSPs, I think we could do better than this:
 <figcaption class="center">A basic Underscore template</figcaption>
 
 
-
 ### Your turn. How does this make you feel?
 
 Does the mix of markup and template code bug you, or is the best thing since sliced bread?
 
 See [the source on Github] and the [benchmarks on jsPerf]. 
+
 
 
 [Dolly, the first mammal to be cloned]: http://en.wikipedia.org/wiki/Dolly_(sheep)
@@ -196,6 +203,7 @@ See [the source on Github] and the [benchmarks on jsPerf].
 [DOMBars]: https://github.com/blakeembrey/dombars
 [HTMLBars]: https://github.com/tildeio/htmlbars
 [the source on Github]: https://github.com/lazd/DOMly
+[handles feature]: https://github.com/lazd/DOMly#handlehandlename
 [quirksmode: innerHTML]: http://www.quirksmode.org/dom/innerhtml.html
 [V8 crankshaft]: http://blog.chromium.org/2010/12/new-crankshaft-for-v8.html
 [webkit patch for 82201]: https://bugs.webkit.org/show_bug.cgi?id=82201
