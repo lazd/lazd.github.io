@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 14 Mar 2014 19:33:18 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Fri, 14 Mar 2014 19:33:18 GMT</pubDate><copyright><![CDATA[2014 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[DOMly - The fast template system that clones]]></title><description><![CDATA[<a name="flashback:-the-state-of--innerhtml--performance-in-2008" class="anchor" href="#flashback:-the-state-of--innerhtml--performance-in-2008"><h2>Flashback: The state of <code>innerHTML</code> performance in 2008</h2>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 23 Jul 2014 16:27:48 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Wed, 23 Jul 2014 16:27:48 GMT</pubDate><copyright><![CDATA[2014 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[DOMly - The fast template system that clones]]></title><description><![CDATA[<a name="flashback:-the-state-of--innerhtml--performance-in-2008" class="anchor" href="#flashback:-the-state-of--innerhtml--performance-in-2008"><h2>Flashback: The state of <code>innerHTML</code> performance in 2008</h2>
 </a><blockquote>
 <p>&quot;The most obvious conclusion of these tests is that innerHTML is faster than &quot;real&quot; W3C DOM methods in all browsers.&quot;</p>
 <p>&#8212; <a href="http://www.quirksmode.org/dom/innerhtml.html">Quirksmode, circa 2008</a></p>
@@ -16,14 +16,17 @@
 
 <a name="so-why-are-we-still-using--innerhtml--based-templates-" class="anchor" href="#so-why-are-we-still-using--innerhtml--based-templates-"><h2>So why are we still using <code>innerHTML</code> based templates?</h2>
 </a><p>Because the tooling doesn&#39;t exist.</p>
-<p>We haven&#39;t seen a major release of a full-featured, production ready template system that compiles to DOM nodes. <a href="http://leonidas.github.io/transparency/">transparency</a> and <a href="https://github.com/medikoo/domjs">domjs</a> aren&#39;t really template systems, <a href="http://beebole.com/pure/">pure</a> is magical to the point of confusion, <a href="https://github.com/blakeembrey/dombars">DOMBars</a> does more than just templates, and <a href="https://github.com/tildeio/htmlbars">HTMLBars</a> is still in the works.</p>
+<p>We haven&#39;t seen a major release of a full-featured, production ready template system that compiles to DOM nodes. <a href="http://leonidas.github.io/transparency/">transparency</a> and <a href="https://github.com/medikoo/domjs">domjs</a> aren&#39;t really template systems, <a href="http://beebole.com/pure/">pure</a> is magical to the point of confusion, <a href="https://github.com/blakeembrey/dombars">DOMBars</a> is deprecated, and <a href="https://github.com/tildeio/htmlbars">HTMLBars</a> is still in the works.</p>
 <a name="enter-domly" class="anchor" href="#enter-domly"><h2>Enter DOMly</h2>
 </a><p><img src="images/DOMly_logo_small.png" class="right titleImage" alt="DOMly logo"></p>
 <p>DOMly, named after <a href="http://en.wikipedia.org/wiki/Dolly_(sheep)">Dolly, the first mammal to be cloned</a>, is a template system that takes advantage <code>createElement</code> and <code>cloneNode</code>.</p>
-<p>DOMly goal is to be approachable, fast, and lightweight.</p>
+<p>DOMly&#39;s goal is to be approachable, fast, and lightweight.</p>
 <a name="fast.-very-fast." class="anchor" href="#fast.-very-fast."><h3>Fast. Very fast.</h3>
-</a><p>7x the performance of doT and Handlebars and 2x the perforamnce of HTMLBars.</p>
-<p>Precompile your templates on the server, and when you render them in the browser, you&#39;ll have a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">Node</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment">DocumentFragment</a> ready for insertion into the DOM and references to elements you&#39;ll need to mutate in the future.</p>
+</a><p>With 7x the performance of doT and Handlebars and 2x the performance of HTMLBars, <strong>DOMly is arguably the fastest client-side templating system in existence</strong>. Check out <a href="http://jsperf.com/domly-vs-the-world">the benchmarks</a>.</p>
+<p>Furthermore, if you use the <a href="https://github.com/lazd/DOMly#handlehandlename"><code>handle=&quot;someName&quot;</code> feature</a>, you&#39;ll end up with references to elements you&#39;ll need to mutate in the future -- no <code>querySelector</code> required.</p>
+<a name="zero-client-side-dependencies" class="anchor" href="#zero-client-side-dependencies"><h3>Zero client-side dependencies</h3>
+</a><p>DOMly has no runtime library and no dependencies. Compiled templates are simply JavaScript functions that create DOM objects with native methods.</p>
+<p>Pre-compile your templates as part of your build process, and when you render them in the browser, you&#39;ll get a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">Node</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment">DocumentFragment</a> that you can <code>appendChild()</code> anywhere in the DOM.</p>
 <a name="pretty-syntax" class="anchor" href="#pretty-syntax"><h3>Pretty syntax</h3>
 </a><p>The syntax is a combination of HTML for markup and control flow, dot notation for property references, <code>()</code> for invocation, and Mustache-style <code>{{blocks}}</code> for safe variable substitution:</p>
 <pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span>{{data.header}}<span class="nt">&lt;/h1&gt;</span>
@@ -88,19 +91,19 @@
 </a><p>Although it would be possible to compile on the client, you shouldn&#39;t be doing that anyway.</p>
 <a name="doesn-t-support-arbitrary-expressions" class="anchor" href="#doesn-t-support-arbitrary-expressions"><h4>Doesn&#39;t support arbitrary expressions</h4>
 </a><p>You won&#39;t be able to write <code>{{data.count+1}}</code> anywhere.</p>
-<a name="beta-quality" class="anchor" href="#beta-quality"><h4>Beta quality</h4>
-</a><p>DOMly is the newest language on the block. Althought it&#39;s unit tested and benchmarks, it&#39;s not battle-tested and can&#39;t be guarenteed to be bug-free. </p>
+<a name="domly-isn-t-yet-battle-tested" class="anchor" href="#domly-isn-t-yet-battle-tested"><h4>DOMly isn&#39;t yet battle tested</h4>
+</a><p>DOMly is the newest language on the block. Although it&#39;s unit tested and benchmarks, it&#39;s not battle-tested and can&#39;t be guaranteed to be bug-free. </p>
 <p>However, in 2014, we&#39;ll see a number of template languages switch to pure DOM methods for a performance boost, and DOMly will be there to challenge them to be the best and fastest that they can be.</p>
 <a name="that-s-great--but-why-not-base-it-off-an-existing-template-system-" class="anchor" href="#that-s-great--but-why-not-base-it-off-an-existing-template-system-"><h2>That&#39;s great, but why not base it off an existing template system?</h2>
 </a><a name="-.-it-s-an-experiment" class="anchor" href="#-.-it-s-an-experiment"><h3>1. It&#39;s an experiment</h3>
-</a><p>DOMly didn&#39;t set out to be replace heavy hitters like Handlebars. DOMly started as an experiment to establish the performance gains of using DOM methods for templating, the feasibility of maintaining a set of these templates, and the actual amount of code required to do this from scratch.</p>
+</a><p>DOMly didn&#39;t set out to replace heavy hitters like Handlebars. DOMly started as an experiment to establish the performance gains of using DOM methods for templating, the feasibility of maintaining a set of these templates, and the actual amount of code required to do this from scratch.</p>
 <p>The goal was to validate the hypothesis:</p>
 <blockquote>
 <p>It&#39;s both possible and simple to build a template language that takes advantage of the performance gains of native DOM methods.</p>
 </blockquote>
 <a name="-.-simplicity" class="anchor" href="#-.-simplicity"><h3>2. Simplicity</h3>
 </a><p>Existing template systems are quite complex. From advanced <a href="https://github.com/wycats/handlebars.js/blob/master/src/handlebars.l#L31-L50">Jison parser tricks</a> to dozens of <a href="https://github.com/olado/doT/blob/master/doT.js#L15">regular expressions so complex that they&#39;ve taken on a life of their own</a>, to <a href="http://jlongster.github.io/nunjucks/templating.html">complex feature sets</a>, these projects aren&#39;t very approachable. To re-tool an existing language would be a massive time sink just to validate a hypothesis.</p>
-<p>Many existing template systems require runtimes that handle helpers and partials. This results in an additional call on the stack for method invocation which can affect performance. They&#39;re tiny, but the size doesn&#39;t help either gzipped, Handlebar&#39;s runtime is 4k, Underscore is 5k.</p>
+<p>Many existing template systems require runtimes that handle helpers and partials. This results in an additional call on the stack for method invocation which can affect performance. They&#39;re tiny, but the size doesn&#39;t help either gzipped, Handlebar&#39;s runtime is 4kB, Underscore is 5kB.</p>
 <a name="-.-syntax" class="anchor" href="#-.-syntax"><h3>3. Syntax</h3>
 </a><p>After years of staring at PHP and JSPs, I think we could do better than this:</p>
 <pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span><span class="err">&lt;</span>%- obj.header %&gt;<span class="nt">&lt;/h1&gt;</span>
@@ -120,7 +123,6 @@
 </pre></div>
 </code></pre>
 <figcaption class="center">A basic Underscore template</figcaption>
-
 
 
 <a name="your-turn.-how-does-this-make-you-feel-" class="anchor" href="#your-turn.-how-does-this-make-you-feel-"><h3>Your turn. How does this make you feel?</h3>
