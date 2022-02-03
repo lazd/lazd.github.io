@@ -88,13 +88,13 @@ A white block blinked below. And so it began.
 
 Flip a switch and start coding. Using a computer meant writing code, and a casual user could become a hobbyist programmer in an afternoon with no additional equipment or materials.
 
-As computing became more common place, graphical user interfaces sustituted tthe commands we used to type with clickable icons. Computing became accessible to everyone as the workings of the machine were hidden by layer upon layer of abstraction. This transformation was amazing and beautiful, but it came at a cost: The machine transformed from a playground that encouraged tinkering to an appliance that forbade it.
+As computing became more common place, graphical user interfaces gave us clickable icons in place of the commands we used to type. Computing became accessible to everyone as the workings of the machine were hidden by layer upon layer of abstraction. This transformation was amazing and beautiful, but it came at a cost: The machine transformed from a playground that encouraged tinkering to an appliance that forbade it.
 
 Eventually, computers began to ship with no development environment and no casual path for a user to transition to a hobbyist.
 
 ## The renaissance
 
-JavaScript is everywhere. Nearly every device we own is capable of running human-readable JavaScript code. Hit command+option+i *right now* and you'll drop to the console. Type this and hit enter:
+JavaScript is everywhere. Nearly every device we own is capable of running human-readable JavaScript code. Hit Command + Option + i *right now* and you'll drop to the console. Type this and hit enter:
 
 ```javascript
 alert('Hello world!');
