@@ -1,97 +1,108 @@
 @font-face {
-	font-family: 'lazdblog';
-	src:url('fonts/lazdblog.eot?-ay9sqp');
-	src:url('fonts/lazdblog.eot?#iefix-ay9sqp') format('embedded-opentype'),
-		url('fonts/lazdblog.woff?-ay9sqp') format('woff'),
-		url('fonts/lazdblog.ttf?-ay9sqp') format('truetype'),
-		url('fonts/lazdblog.svg?-ay9sqp#lazdblog') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'lazdblog';
+  src:  url('fonts/lazdblog.eot?hqgleh');
+  src:  url('fonts/lazdblog.eot?hqgleh#iefix') format('embedded-opentype'),
+    url('fonts/lazdblog.ttf?hqgleh') format('truetype'),
+    url('fonts/lazdblog.woff?hqgleh') format('woff'),
+    url('fonts/lazdblog.svg?hqgleh#lazdblog') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
-	font-family: 'lazdblog';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'lazdblog' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-github:before {
-	content: "\e600";
+.icon-hardware:before {
+  content: "\e902";
 }
-.icon-twitter:before {
-	content: "\e601";
+.icon-gaming:before {
+  content: "\e903";
 }
-.icon-linkedin:before {
-	content: "\e602";
+.icon-retro-computing:before {
+  content: "\e900";
 }
-.icon-googleplus:before {
-	content: "\e603";
-}
-.icon-blog:before {
-	content: "\e604";
-}
-.icon-comments:before {
-	content: "\e605";
-}
-.icon-date:before {
-	content: "\e606";
-}
-.icon-tag:before {
-	content: "\e607";
-}
-.icon-tips:before {
-	content: "\e608";
-}
-.icon-html5:before {
-	content: "\e609";
-}
-.icon-css3:before {
-	content: "\e60a";
-}
-.icon-mobile:before {
-	content: "\e60b";
-}
-.icon-tools:before {
-	content: "\e60c";
-}
-.icon-workflow:before {
-	content: "\e60d";
-}
-.icon-programming:before {
-	content: "\e60e";
-}
-.icon-mapping:before {
-	content: "\e60f";
-}
-.icon-security:before {
-	content: "\e610";
-}
-.icon-quote:before {
-	content: "\e611";
-}
-.icon-cloud:before {
-	content: "\e612";
-}
-.icon-database:before {
-	content: "\e613";
-}
-.icon-browsers:before {
-	content: "\e614";
-}
-.icon-resources:before {
-	content: "\e615";
-}
-.icon-flamewar:before {
-	content: "\e616";
+.icon-computing:before {
+  content: "\e901";
 }
 .icon-javascript:before {
-	content: "\e617";
+  content: "\e617";
+}
+.icon-programming:before {
+  content: "\e60e";
+}
+.icon-mapping:before {
+  content: "\e60f";
+}
+.icon-database:before {
+  content: "\e613";
+}
+.icon-blog:before {
+  content: "\e604";
+}
+.icon-resources:before {
+  content: "\e615";
+}
+.icon-tag:before {
+  content: "\e607";
+}
+.icon-date:before {
+  content: "\e606";
+}
+.icon-mobile:before {
+  content: "\e60b";
+}
+.icon-comments:before {
+  content: "\e605";
+}
+.icon-quote:before {
+  content: "\e611";
+}
+.icon-security:before {
+  content: "\e610";
+}
+.icon-tools:before {
+  content: "\e60c";
+}
+.icon-flamewar:before {
+  content: "\e616";
+}
+.icon-cloud:before {
+  content: "\e612";
+}
+.icon-tips:before {
+  content: "\e608";
+}
+.icon-googleplus:before {
+  content: "\e603";
+}
+.icon-twitter:before {
+  content: "\e601";
+}
+.icon-github:before {
+  content: "\e600";
+}
+.icon-linkedin:before {
+  content: "\e602";
+}
+.icon-html5:before {
+  content: "\e609";
+}
+.icon-css3:before {
+  content: "\e60a";
+}
+.icon-browsers:before {
+  content: "\e614";
 }
