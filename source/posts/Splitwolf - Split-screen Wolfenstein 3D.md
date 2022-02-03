@@ -1,6 +1,6 @@
 {
   title: "Split-screen Wolfenstein 3D on RetroPi",
-  description: 'You can your friends can kill Nazis together with Splitwolf!',
+  description: "Splitwolf on RetroPie lets you kill Nazis with your friends!",
   date: "2019-1-24",
   tags: [
       'gaming',
