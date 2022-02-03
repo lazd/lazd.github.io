@@ -1,5 +1,5 @@
 {
-  title: "Split-screen Wolfenstein 3D on Raspberry Pi",
+  title: "Split-screen Wolfenstein 3D on RetroPi",
   description: 'You can your friends can kill Nazis together with Splitwolf!',
   date: "2019-1-24",
   tags: [

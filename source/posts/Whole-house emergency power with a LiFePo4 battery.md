@@ -1,6 +1,6 @@
 {
   title: "Keeping the lights on in the mountains",
-  description: 'Whole-house emergency power with a LiFePo4 battery"',
+  description: 'Whole-house emergency power with a LiFePo4 battery and a 5kW split-phase inverter',
   date: "2021-5-20",
   tags: [
       'hardware',
