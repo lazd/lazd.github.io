@@ -86,7 +86,7 @@ I have an old Apple mouse from the old days, just one button, rectangular and an
 
 But these won't work with the Pi, they don't have USB, but ADB (Apple Desktop Bus), Apple's proprietary serial connector.
 
-[TMK](https://github.com/tmk/tmk_keyboard) with [adb_usb](https://github.com/tmk/tmk_keyboard/tree/master/converter/adb_usb) on an old [Arduino Pro Micro clone](https://amzn.to/3rmDnJU) is the answer. I [download](http://www.tmk-kbd.com/tmk_keyboard/editor/unimap/?adb_usb_rev1) and [flash](https://deskthority.net/viewtopic.php?f=7&t=8448&start=) the firmware. I pull a 1kΩ resistor from my electronics box. 10 year old me categorized it wrong, or maybe it slipped under the dividers in the drawers, but I found it. An old s-video cable, which has the same 4 pin mini-DIN connector as ADB, is chopped up [and soldered in according to the schematic](https://geekhack.org/index.php?topic=14290.0). Everything works the first try, $5 later.
+[TMK](https://github.com/tmk/tmk_keyboard) with [adb_usb](https://github.com/tmk/tmk_keyboard/tree/master/converter/adb_usb) on an old [Arduino Pro Micro clone](https://amzn.to/3rmDnJU) is the answer. I [download](http://www.tmk-kbd.com/tmk_keyboard/editor/unimap/?adb_usb_rev1) and [flash](https://deskthority.net/viewtopic.php?f=7&t=8448&start=) the firmware. I pull a 1kΩ resistor from my electronics box. 10 year old me categorized it wrong, or maybe it slipped under the dividers in the drawers, but I found it. An old s-video cable, which has the same 4 pin mini-DIN connector as ADB, is chopped up [and wired in according to the schematic](https://geekhack.org/index.php?topic=14290.0). Everything works the first try, $5 later.
 
 ### Sound
 
