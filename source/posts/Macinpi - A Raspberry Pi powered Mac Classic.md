@@ -35,9 +35,9 @@ I've pulled out all my old Macintoshes, my old disks. The same disks I had in a 
 
 But I have my little escape. My little [Performa 200](https://everymac.com/systems/apple/mac_performa/specs/mac_performa_200.html) (aka Mac Classic II). A black and white, 9" display. A clicky mechanical keyboard. One mouse button.
 
-I plug it in. I power it on. Checkerboard background. A sign of damaged components.
+I plug it in. I power it on. Checkerboard background, a sign of damaged components.
 
-I clean the electrolytic capacitor juice off the components with isopropyl. I replace the PRAM battery [with a fresh 14250 cell](https://amzn.to/3rjI7QG). It was swollen, but not yet ruptured.
+I clean the electrolytic capacitor juice off the components with isopropyl. I replace the PRAM battery [with a fresh 14250 cell](https://amzn.to/3rjI7QG). It was old, but luckily hadn't ruptured.
 
 I power it on. A question mark blinks inside of a disk icon.
 
