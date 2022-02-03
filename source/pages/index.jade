@@ -3,7 +3,7 @@ block content
 	ul.postPreviews
 		each post in posts
 			li.postPreview
-				div(class="tag icon-#{post.tags[0]}") #{post.tags[0]}
+				div(class="tag icon-#{post.tags[0].replace(' ', '-')}") #{post.tags[0]}
 				a.postLink(href = "#{post.url}")
 					div.postPreview_image !{post.image}
 					h2 #{post.title}
@@ -17,7 +17,7 @@ block content
 	| 		(function () {
 	| 			var s = document.createElement('script'); s.async = true;
 	| 			s.type = 'text/javascript';
-	| 			s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+	| 			s.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/count.js';
 	| 			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 	| 		}());
 	|	}
