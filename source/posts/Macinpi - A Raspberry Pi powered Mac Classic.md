@@ -13,7 +13,7 @@
 
 <img class="prettyPicture" src="images/macinpi-side.jpg" alt="Macinpi in the garden">
 
-My first truly personal computer -- not the family computer, but _mine_ -- was a Macintosh SE. My Aunt Joanie gifted it to me after upgrading, and though it was already 10 years old, it was brand new to 10 year old me.
+My first truly personal computer -- not the family computer, but _mine_ -- was a Macintosh SE. My Aunt Joanie gifted it to me after upgrading to a PowerMac, and though it was already 10 years old, it was brand new to 10 year old me.
 
 Coming from DOS machines, the elegance and simplicity of the Macintosh completely enthralled me. There was no `autoexec.bat`, no `config.sys`, no SoundBlaster and no IRQs to set. You flip a switch and it _just worked_.
 
@@ -21,17 +21,17 @@ And the interface, wow. You were greeted by a friendly chime and the happiest li
 
 My little machine that could do tricks. I power it on. It smiles. I smile.
 
-I collected software, customized everything, arranged my icons, dragged and resized windows in the Finder so they opened just a couple pixels under one another, fixed it, broke it, and fixed it again. I played games on it, scanned pictures, used Graphic Converter and BBEdit, created MOD music. It was my escape from reality, where I could control everything and get lost in a world of creativity. Where I could design a house, then fly a paper airplane through it. A portal to another world.
+I collected software, arranged my icons, dragged and resized windows in the Finder so they opened just a couple pixels under one another, fixed it, broke it, and fixed it again. I played games on it, scanned pictures, used Graphic Converter and BBEdit, created MOD music. It was my escape from reality, where I could control everything and get lost in a world of creativity. Where I could design a house, then fly a paper airplane through it. A portal to another world.
 
-I loaded my first webpage on a Macintosh. I _wrote_ my first webpage on a Macintosh.
+I visited my first website on a Macintosh. I _wrote_ my first website on a Macintosh.
 
 <hr>
 
 Fast forward 25 years.
 
-I'm back home during the COVID-19 pandemic, and life is complicated, scary. America is divided. Friends are getting sick, and family members have passed away. War with Russia looms. Nostalgia for a simpler time is strong.
+I'm back home during the COVID-19 pandemic, and life is complicated, scary. America is divided. Friends are getting sick, and family members have passed away. Nostalgia for a simpler time is strong.
 
-I've pulled out all my old Macintoshes, my old disks. The same disks I had in a plastic disk folio in 6th grade when a bully pushed me over, causing them to spill on the steps of the portable classroom. Simpler times, maybe, but not perfect.
+I've pulled out all my old Macintoshes, my old disks. The same ones 12 year old me had in plastic disk folio when a bully pushed me over, causing them to spill on the steps of the portable classroom. Simpler times, maybe, but not perfect.
 
 But I have my little escape. My little [Performa 200](https://everymac.com/systems/apple/mac_performa/specs/mac_performa_200.html) (aka Mac Classic II). A black and white, 9" display. A clicky mechanical keyboard. One mouse button.
 
@@ -45,17 +45,17 @@ I remove the cover from the hard drive, exposing its platters. I flick the drive
 
 I power it on. It smiles. I smile. A long lost friend.
 
-I back up its hard drive using an external SCSI enclosure and a PowerBook 1400C with PCMCIA Ethernet card. I back up every single floppy disk from the plastic disk folio. Every byte of data I could read, I saved. All my old high scores. My collection of MOD music. My earliest essays and short stories.
+I back up its hard drive using an external SCSI enclosure and another, internet-connected Mac. I back up every single floppy disk from the plastic disk folio. Every byte of data I could read, I saved. All my old high scores. My collection of MOD music. My earliest essays and short stories.
 
-I relive the experience of it all. I relive the wonder. I'm taken back to a time when a black and white screen could show you all the color in the world, as long as you had your imagination.
+I relive the experience of it all. I relive the wonder. I'm taken back to a time when a black and white screen could show you all the color in the world, as long as you used your imagination.
 
-I never want to lose the ability to go back to that time when things were simpler. Not perfect, but simpler.
+As old hardware begins to fail and spare parts become scarce, pieces of the experience fall away. It's not the same to use old software on a sleek, new MacBook; the feeling just isn't there. 
 
-So I built Macinpi.
+I never want to lose the ability to go back to that time when things were simpler, to feel the wonder I felt when I was a kid, so I built Macinpi; a new computer with the charm of an old computer, and a few new tricks behind its screen.
 
 ## Hardware
 
-Some of the pieces were leftover bits from someone else's simpler time, some new. No working computers were gutted in the making of this machine.
+No working computers were gutted in the making of this machine. Some of the pieces were leftover bits from someone else's simpler time, some new.
 
 ### Case
 
@@ -99,11 +99,11 @@ Perfect.
 An [Apple Adjustable Mechanical Keyboard](https://en.wikipedia.org/wiki/Apple_Adjustable_Keyboard) popped up on Craigslist. It's missing the numeric keypad, but who needs that? I chat with the seller for over an hour. We talk about everything from space exploration, to forgotten anniversaries, to what it was like growing up in Compton as a black man in the 70s. We shake hands. $100.
 
 <figure>
-  <img src="images/macinpi-keyboard.jpg" alt="Apple Apple Adjustable Keyboard">
-  <figcaption>Apple Apple Adjustable Keyboard</figcaption>
+  <img src="images/macinpi-keyboard.jpg" alt="Apple Adjustable Keyboard">
+  <figcaption>Apple Adjustable Keyboard</figcaption>
 </figure>
 
-I have an old Apple mouse from the old days, just one button, rectangular and angular.
+I have an Apple mouse from the old days, just one button, rectangular and angular.
 
 But these won't work with the Pi, they don't have USB, but ADB (Apple Desktop Bus), Apple's proprietary serial connector.
 
@@ -146,7 +146,7 @@ A Raspberry Pi can't drive a speaker directly. It needs an amplifier. A [3-12V m
 
 But since the amplifier and fan are powered from 9V, they stay on when the Pi shuts down. We'll have to fix this.
 
-After a little lesson on basic electrical engineering from some new friends on Discord, a schematic is drawn up. A [100kΩ resistor](https://amzn.to/3HsvVTa) takes the Pi's 3.3v signal to a [2N3904 NPN transistor](https://amzn.to/3LgUGUW), [flyback diode](https://amzn.to/3oHrRYb), and a 470µF 35V filter capacitor that bring the fan to life when the Pi powers up.
+After a little lesson on basic electrical engineering from some new friends on Discord, a schematic is drawn up. A [100kΩ resistor](https://amzn.to/3HsvVTa) takes the Pi's 3.3V signal to a [2N3904 NPN transistor](https://amzn.to/3LgUGUW), [flyback diode](https://amzn.to/3oHrRYb), and a 470µF 35V filter capacitor that bring the fan to life when the Pi powers up.
 
 <figure>
   <img src="images/macinpi-fan-schematic.jpg" alt="Fan schematic">
@@ -180,7 +180,7 @@ The hardware is ready.
 
 I start with a GUI-free [Raspberry Pi OS Lite image](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-32-bit) on a [32GB SD card](https://amzn.to/3sdqrFB).
 
-The Pimoroni has a 1024ⅹ768 resolution, and its 10" display is larger than the hole in the front of the case. To correct this, I arrive at 928ⅹ672 with 48 left and right overscan, 32 top, and 64 bottom to get it fitting nicely. I edit these values into `/boot/config.txt`. The display is perfectly centered and has just the right amount of black border around the edges.
+The display has a 1024ⅹ768 resolution, and its 10" display is larger than the hole in the front of the case. To correct this, I arrive at 928ⅹ672 with 48 left and right overscan, 32 top, and 64 bottom to get it fitting nicely. I edit these values into `/boot/config.txt`. The display is perfectly centered and has just the right amount of black border around the edges.
 
 I [compile Basilisk II without X11](https://djdarien.github.io/macpi/). I set the resolution and upload a disk image with System 7.5.3 and my backed up files.
 
