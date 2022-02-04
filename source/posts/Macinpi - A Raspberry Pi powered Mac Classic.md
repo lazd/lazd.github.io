@@ -146,7 +146,7 @@ A Raspberry Pi can't drive a speaker directly. It needs an amplifier. A [3-12V m
 
 But since the amplifier and fan are powered from 9V, they stay on when the Pi shuts down. We'll have to fix this.
 
-After a little lesson on basic electrical engineering from some new friends on Discord, a schematic is drawn up. A [100kΩ resistor](https://amzn.to/3HsvVTa) takes the Pi's 3.3V signal to a [2N3904 NPN transistor](https://amzn.to/3LgUGUW), [flyback diode](https://amzn.to/3oHrRYb), and a 470µF 35V filter capacitor that bring the fan to life when the Pi powers up.
+After a little lesson on basic electrical engineering from some new friends on Discord, a schematic is drawn up. A [100kΩ resistor](https://amzn.to/3HsvVTa) takes the Pi's 3.3V signal to a [2N3904 NPN transistor](https://amzn.to/3LgUGUW), [1N4007 flyback diode](https://amzn.to/3oHrRYb), and a [470µF 35V filter capacitor](https://amzn.to/3AWPrVr) that bring the fan to life when the Pi powers up.
 
 <figure>
   <img src="images/macinpi-fan-schematic.jpg" alt="Fan schematic">
@@ -205,3 +205,26 @@ It smiles. I smile.
 
 <img class="prettyPicture" src="images/macinpi-in-the-garden.jpg" alt="Macinpi in the garden">
 
+<hr>
+
+## Parts list
+
+* System
+  * [Raspberry Pi 4 2GB](https://amzn.to/3om7gYV)
+  * [Pimoroni 10" display](https://shop.pimoroni.com/products/hdmi-10-lcd-screen-kit-1024x768)
+  * [Arduino Pro Micro clone for TMK adb_usb](https://amzn.to/3rmDnJU)
+* Panel connectors
+  * [USB-A 3.0](https://amzn.to/3unrLsb)
+  * [USB-C](https://amzn.to/3gnn5dH)
+  * [4 pin mini-DIN](https://www.ebay.com/itm/274516442073)
+* Control and power supply board
+  * [Prototype PCB](https://amzn.to/3rmmLSA)
+  * [LM316 Audio amplifier module](https://amzn.to/3Go6lxi)
+  * [1kΩ, 1.2kΩ, 100kΩ Resistors](https://amzn.to/3HsvVTa)
+  * [2N3904/2N3906 Transistors](https://amzn.to/3LgUGUW)
+  * [1N4007 Diode](https://amzn.to/3oHrRYb)
+  * [Capacitor](https://amzn.to/3AWPrVr)
+
+## Scripts and config files
+
+See [lazd/macinpi](https://github.com/lazd/macinpi) for the scripts and config files I used to build Basilisk and configure the system.
