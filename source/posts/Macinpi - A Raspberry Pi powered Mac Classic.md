@@ -66,11 +66,11 @@ It started with the case. Amidst a pile of computer parts -- buyer must take all
   <figcaption>Spotted! An empty Mac Classic case</figcaption>
 </figure>
 
-I asked about it. Why just the case? What happened to the rest? The owner explains an Amiga fell on the picture tube, crushing it. The motherboard was donated, the last missing piece to someone else's Classic. The power supply board was sold and shipped, bringing another Mac back to life. They can't find the screws or the cover for the monitor adjustments, but it's mine for $10 -- and a classic double from Arby's, if it's not too much trouble.
+I asked about it. Why just the case? What happened to the rest? The owner explains an Amiga fell on the picture tube, crushing it. The motherboard was donated, the last missing piece to someone else's Classic. The power supply board was sold and shipped, bringing another Mac back to life. They can't find the screws or the cover for the display adjustments, but it's mine for $10 -- and a classic double from Arby's, if it's not too much trouble.
 
 So I drop off the Arby's, send my $10, and pick up the case.
 
-It's very friend-shaped; it just needs something to fill the hole where its monitor used to be.
+It's very friend-shaped; it just needs something to fill the hole where its display used to be.
 
 ### Display
 
@@ -83,7 +83,7 @@ I choose the [Pimoroni 10" display](https://shop.pimoroni.com/products/hdmi-10-l
   <figcaption>Pimoroni 10" display</figcaption>
 </figure>
 
-### Computer
+### CPU
 
 There's a [Raspberry Pi 4 2GB](https://amzn.to/3om7gYV) lying around I had bought to build another RetroPie box with. $45, at at the time at least. It would plug right into the display, and with an emulator, could paint a smile on the screen and load all the my old Mac applications.
 
@@ -96,7 +96,7 @@ Perfect.
 
 ### Keyboard & Mouse
 
-An [Apple Adjustable Mechanical Keyboard](https://en.wikipedia.org/wiki/Apple_Adjustable_Keyboard) popped up on Craigslist. It's missing the numeric keypad, but who needs that? I chat with the seller for over an hour. We talk about everything from space exploration, to forgotten anniversaries, to what it was like growing up in Compton as a black man in the 70s. We shake hands. $100.
+An [Apple Adjustable Mechanical Keyboard](https://en.wikipedia.org/wiki/Apple_Adjustable_Keyboard) popped up on Craigslist. It's missing the numeric keypad, but who needs that? I chat with the seller for over an hour. We talk about everything from space exploration, to forgotten anniversaries, to what it was like for him growing up in Compton as a black man in the 70s. We shake hands. $100.
 
 <figure>
   <img src="images/macinpi-keyboard.jpg" alt="Apple Adjustable Keyboard">
@@ -197,13 +197,9 @@ Autologin takes me straight to a shell, and `.bashrc` takes it from there. `apla
 
 ## Macinpi lives
 
-It's a sunny winter afternoon. I plug in [a USB-C PD powerbank](https://amzn.to/34ipKmi) and take it outside. I sit at the table in the memorial garden I built for my mom.
+It's a sunny winter afternoon. I plug in [a USB-C PD powerbank](https://amzn.to/34ipKmi) and take it outside. I sit at the table in the memorial garden I built for my mom. I remember simpler times.
 
-I remember simpler times.
-
-I power it on.
-
-All my old files are there. My old games. My old high scores. The first short stories I ever wrote. My MOD music.
+I power it on. All my old files are there. My old games. My old high scores. The first short stories I ever wrote. My MOD music.
 
 It smiles. I smile.
 
