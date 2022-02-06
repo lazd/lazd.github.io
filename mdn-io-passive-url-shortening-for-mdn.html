@@ -13,7 +13,6 @@
     		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    	
     		ga('create', 'UA-43555016-1', 'lazd.github.io');
     		ga('send', 'pageview');
     </script>
@@ -24,30 +23,30 @@
       <nav class="topNav"><a href="https://github.com/lazd" target="_blank" class="icon-github">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505" target="_blank" class="icon-linkedin">LinkedIn</a><a href="https://twitter.com/lazdnet" target="_blank" class="icon-twitter">Twitter</a></nav>
     </header>
     <article class="post">
-      <h2 class="date">August 13th, 2013</h2>
-      <h1>mdn.io - Passive URL shortening for MDN</h1>
-      <div><p><img src="/images/mdn.png" class="left" alt="MDN" style="width: 128px">
-Whenever you need to look something up on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Mozilla Developer Network</a>, you usually end up typing something like <code>mdn defineproperty</code> into the search bar and clicking the first link.</p>
+      <h1 class="title">mdn.io - Passive URL shortening for MDN</h1>
+      <time datetime="2013-08-13 00:00:00" class="date">August 13th, 2013</time>
+      <section><p><img src="/images/mdn.png" class="left" alt="MDN" style="width: 128px">
+Whenever you need to look something up on the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Mozilla Developer Network</a>, you usually end up typing something like <code>mdn defineproperty</code> into the search bar and clicking the first link.</p>
 <p>We&#39;ve taken that already simple process and made it simpler with mdn.io, the &quot;I&#39;m feeling lucky&quot; URL shortener for MDN.</p>
 <div class="clear"></div>
 
 <a name="how-do-i-use-it-" class="anchor" href="#how-do-i-use-it-"><h2>How do I use it?</h2>
 </a><p>Simply type something like this in your address bar:</p>
 <blockquote>
-<p><a href="http://mdn.io/defineproperty" target="_blank">mdn.io/defineproperty</a></p>
+<p><a target="_blank" href="http://mdn.io/defineproperty" target="_blank">mdn.io/defineproperty</a></p>
 </blockquote>
 <p>You can even include spaces:</p>
 <blockquote>
-<p><a href="http://mdn.io/css%20transitions" target="_blank">mdn.io/css transitions</a></p>
+<p><a target="_blank" href="http://mdn.io/css%20transitions" target="_blank">mdn.io/css transitions</a></p>
 </blockquote>
 <p>Or hashes:</p>
 <blockquote>
-<p><a href="http://mdn.io/array#Methods_of_Array_instances" target="_blank">mdn.io/array#Methods_of_Array_instances</a></p>
+<p><a target="_blank" href="http://mdn.io/array#Methods_of_Array_instances" target="_blank">mdn.io/array#Methods_of_Array_instances</a></p>
 </blockquote>
 <a name="why-" class="anchor" href="#why-"><h2>Why?</h2>
 </a><p>MDN URLs are quite long:</p>
 <blockquote>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_of_Array_instances">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_of_Array_instances</a></p>
+<p><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_of_Array_instances">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_of_Array_instances</a></p>
 </blockquote>
 <p>We needed a way to keep them short so they could be directly included in places we would otherwise say &quot;search for <em>__</em>.&quot;</p>
 <a name="code-reviews" class="anchor" href="#code-reviews"><h3>Code reviews</h3>
@@ -72,24 +71,24 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
 </blockquote>
 <a name="what-is-this-sorcery-" class="anchor" href="#what-is-this-sorcery-"><h2>What is this sorcery?</h2>
 </a><p>mdn.io isn&#39;t <em>really</em> a URL shortener. There&#39;s no need to create an entry for each page you want to link to; mdn.io simply redirects to a Google &quot;I&#39;m feeling lucky&quot; search for your query + <code>site:developer.mozilla.org</code>, which in turn redirects you to the first result.</p>
-<p>Simple and hands off, like it should be. Check out <a href="https://github.com/lazd/mdn.io">the source on Github</a> for more details.</p>
+<p>Simple and hands off, like it should be. Check out <a target="_blank" href="https://github.com/lazd/mdn.io">the source on Github</a> for more details.</p>
 <a name="a-big-thanks" class="anchor" href="#a-big-thanks"><h2>A big thanks</h2>
-</a><p><a href="http://blakeembrey.me/">Blake Embrey</a> and I collaborated on this project and he continues to support it by hosting mdn.io. Thanks, Blake!<br></p>
-</div>
-      <hr> <div id="disqus_thread"></div>
-       <script>
-       	var disqus_shortname = 'lazdnet';
-      	if (window.location.hostname !== 'localhost') {
-       		(function() {
-       			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-       			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-       			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       		})();
-      	}
-       </script>
+</a><p><a target="_blank" href="http://blakeembrey.me/">Blake Embrey</a> and I collaborated on this project and he continues to support it by hosting mdn.io. Thanks, Blake!<br></p>
+</section>
+      <hr><footer id="disqus_thread"></footer>
+      <script>
+      	var disqus_shortname = 'lazdnet';
+      	  if (window.location.hostname !== 'localhost') {
+      		(function() {
+      			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      		})();
+      	  }
+      </script>
     </article>
     <footer class="footer">
-      <hr>&copy; 2015 Larry Davis
+      <hr>&copy; 2022 Larry Davis
     </footer>
   </body>
 </html>

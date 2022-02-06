@@ -13,7 +13,6 @@
     		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    	
     		ga('create', 'UA-43555016-1', 'lazd.github.io');
     		ga('send', 'pageview');
     </script>
@@ -24,9 +23,9 @@
       <nav class="topNav"><a href="https://github.com/lazd" target="_blank" class="icon-github">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505" target="_blank" class="icon-linkedin">LinkedIn</a><a href="https://twitter.com/lazdnet" target="_blank" class="icon-twitter">Twitter</a></nav>
     </header>
     <article class="post">
-      <h2 class="date">February 26th, 2014</h2>
-      <h1>No-nonsense vertical centering</h1>
-      <div><style>
+      <h1 class="title">No-nonsense vertical centering</h1>
+      <time datetime="2014-02-26 00:00:00" class="date">February 26th, 2014</time>
+      <section><style>
     .navbar {
         margin: 1rem;
     }
@@ -78,7 +77,7 @@
 
 <a name="historically-impractical" class="anchor" href="#historically-impractical"><h2>Historically impractical</h2>
 </a><p>Vertically centering with CSS has always required gross hacks. From negative margins to JavaScript, old-hat devs have brought out the dirtiest of tricks to accomplish this simple and oft needed layout technique.</p>
-<p>Things aren&#39;t perfect yet, but there are two, no-nonsense techniques that will help you get the job done without making you cringe or want to <a href="http://www.reddit.com/r/programming/comments/1yypr8/refreshing_satirical_article_backend_css/cfp2whv">off yourself with a rusty spoon</a>.</p>
+<p>Things aren&#39;t perfect yet, but there are two, no-nonsense techniques that will help you get the job done without making you cringe or want to <a target="_blank" href="http://www.reddit.com/r/programming/comments/1yypr8/refreshing_satirical_article_backend_css/cfp2whv">off yourself with a rusty spoon</a>.</p>
 <a name="the-problem" class="anchor" href="#the-problem"><h2>The problem</h2>
 </a><p>We need to build a horizontal nav bar with elements about 32px high with vertically centered text in each of the links.</p>
 <a name="the-solution-s-" class="anchor" href="#the-solution-s-"><h2>The solution(s)</h2>
@@ -113,10 +112,10 @@
 </code></pre>
 <a name="demo" class="anchor" href="#demo"><h3>Demo</h3>
 </a><nav class="navbar navbar-flex">
-    <a href="#">Item 1</a>
-    <a href="#">Item 2</a>
-    <a href="#">Item 3</a>
-    <a href="#">Item 4</a>
+    <a target="_blank" href="#">Item 1</a>
+    <a target="_blank" href="#">Item 2</a>
+    <a target="_blank" href="#">Item 3</a>
+    <a target="_blank" href="#">Item 4</a>
 </nav>
 
 <a name="pros:" class="anchor" href="#pros:"><h3>Pros:</h3>
@@ -128,7 +127,7 @@
 </a><ul>
 <li>Only works on the latest versions of modern browsers</li>
 <li>A bit tough to understand</li>
-<li><a href="http://css-tricks.com/using-flexbox/">Deprecated and prefixed properties</a> required for full support on older browsers</li>
+<li><a target="_blank" href="http://css-tricks.com/using-flexbox/">Deprecated and prefixed properties</a> required for full support on older browsers</li>
 </ul>
 <a name="browser-support" class="anchor" href="#browser-support"><h3>Browser support</h3>
 </a><ul>
@@ -138,7 +137,7 @@
 <li>Chrome</li>
 <li>Android</li>
 </ul>
-<p>See the <a href="http://caniuse.com/flexbox">support tables on caniuse</a> for details.</p>
+<p>See the <a target="_blank" href="http://caniuse.com/flexbox">support tables on caniuse</a> for details.</p>
 <a name="-.-fake-it-with-fake-tables" class="anchor" href="#-.-fake-it-with-fake-tables"><h2>2. Fake it with fake tables</h2>
 </a><p>Layouts done using the <code>&lt;table&gt;</code> tag are hated for the lack of semantics and clumsy syntax, and rightly so.</p>
 <p>However, you can have all the power and flexibility of tables without the <code>&lt;table&gt;</code> tag using <code>display: table</code>.</p>
@@ -161,10 +160,10 @@
 </code></pre>
 <a name="demo" class="anchor" href="#demo"><h3>Demo</h3>
 </a><nav class="navbar navbar-table">
-    <a href="#">Item 1</a>
-    <a href="#">Item 2</a>
-    <a href="#">Item 3</a>
-    <a href="#">Item 4</a>
+    <a target="_blank" href="#">Item 1</a>
+    <a target="_blank" href="#">Item 2</a>
+    <a target="_blank" href="#">Item 3</a>
+    <a target="_blank" href="#">Item 4</a>
 </nav>
 
 <a name="pros:" class="anchor" href="#pros:"><h3>Pros:</h3>
@@ -182,20 +181,20 @@
 <li>IE 8+</li>
 <li>Every other browser ever made</li>
 </ul>
-<p>See the <a href="http://caniuse.com/css-table">support tables on caniuse</a> for details.</p>
+<p>See the <a target="_blank" href="http://caniuse.com/css-table">support tables on caniuse</a> for details.</p>
 <a name="it-doesn-t-stop-at-nav-bars" class="anchor" href="#it-doesn-t-stop-at-nav-bars"><h2>It doesn&#39;t stop at nav bars</h2>
 </a><p>Both of these techniques can be used vertically center anything from images to modal dialogs. Use the above techniques to get full vertical centering satisfaction and avoid the odd hacks that fall apart when the weather changes.</p>
 <a name="the-other-techniques" class="anchor" href="#the-other-techniques"><h2>The other techniques</h2>
 </a><p>There several other ways to get this done in CSS. A few of the more popular methods are discussed below</p>
 <a name="use-css-transforms" class="anchor" href="#use-css-transforms"><h3>Use CSS transforms</h3>
-</a><p>As outlined by Brian Gonzalez in his article <a href="http://davidwalsh.name/css-vertical-center">CSS Vertical Centering</a>, it&#39;s possible to vertically center using CSS <code>transform</code> with a negative <code>translateY</code>.</p>
+</a><p>As outlined by Brian Gonzalez in his article <a target="_blank" href="http://davidwalsh.name/css-vertical-center">CSS Vertical Centering</a>, it&#39;s possible to vertically center using CSS <code>transform</code> with a negative <code>translateY</code>.</p>
 <p>It doesn&#39;t work if the parent doesn&#39;t have a height specified, and the browser support is less than desirable, with this hack working in IE 9+.</p>
 <a name="use-a-fixed-height-and-absolute-positioning" class="anchor" href="#use-a-fixed-height-and-absolute-positioning"><h3>Use a fixed height and absolute positioning</h3>
-</a><p>Stephen Shaw outlines a number of techniques in his article <a href="http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/">Absolute Horizontal and Vertical centering in CSS</a>, two of which there are a few techniques that involve absolute positioning.</p>
+</a><p>Stephen Shaw outlines a number of techniques in his article <a target="_blank" href="http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/">Absolute Horizontal and Vertical centering in CSS</a>, two of which there are a few techniques that involve absolute positioning.</p>
 <p>The first uses positioning against the sides of a parent element, but requires height to be declared. Browser support is decent, working in IE 8+, but not on Windows Phone.</p>
 <p>The next absolute positioning technique requires width and height to be declared and uses negative margins to offset the inner box by half of its width and height. This time-honored technique works everywhere, including IE 6 and 7.</p>
 <a name="use-a-ghost-element" class="anchor" href="#use-a-ghost-element"><h3>Use a ghost element</h3>
-</a><p>As outlined by Chris Coyer in his article <a href="http://css-tricks.com/centering-in-the-unknown/">Centering in the Unknown</a>, you can use <code>vertical-align</code> and <code>inline-block</code> to center things.</p>
+</a><p>As outlined by Chris Coyer in his article <a target="_blank" href="http://css-tricks.com/centering-in-the-unknown/">Centering in the Unknown</a>, you can use <code>vertical-align</code> and <code>inline-block</code> to center things.</p>
 <p>It requires a dirty negative margin hack to keep things aligned, but it works in IE 8+.</p>
 <a name="the--line-height--solution" class="anchor" href="#the--line-height--solution"><h3>The <code>line-height</code> solution</h3>
 </a><p>For single-line text, you can set the <code>line-height</code> equal to the <code>height</code> of the box, getting you alignment.</p>
@@ -207,22 +206,22 @@
 <p>However, if you are in a position to do so, drop support for old browsers. The best way to drag netizens and their governing groups into the future is to level sanctions against them: you can&#39;t use my fancy site until you upgrade your browser.</p>
 <hr>
 
-<p><em class="grayText">Credit for the title photo goes to Florian of <a href="http://abandonedkansai.com/">Abandoned Kansai</a>. It&#39;s a photo from the kitchen of an abandoned middle school in Pripyat he visited and documented in his article <a href="http://abandonedkansai.com/2011/02/03/zone-of-alienation-pripyat-middle-school-no-3/">Zone Of Alienation - Pripyat: Middle School #3</a>.</em></p>
-</div>
-      <hr> <div id="disqus_thread"></div>
-       <script>
-       	var disqus_shortname = 'lazdnet';
-      	if (window.location.hostname !== 'localhost') {
-       		(function() {
-       			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-       			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-       			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       		})();
-      	}
-       </script>
+<p><em class="grayText">Credit for the title photo goes to Florian of <a target="_blank" href="http://abandonedkansai.com/">Abandoned Kansai</a>. It&#39;s a photo from the kitchen of an abandoned middle school in Pripyat he visited and documented in his article <a target="_blank" href="http://abandonedkansai.com/2011/02/03/zone-of-alienation-pripyat-middle-school-no-3/">Zone Of Alienation - Pripyat: Middle School #3</a>.</em></p>
+</section>
+      <hr><footer id="disqus_thread"></footer>
+      <script>
+      	var disqus_shortname = 'lazdnet';
+      	  if (window.location.hostname !== 'localhost') {
+      		(function() {
+      			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      		})();
+      	  }
+      </script>
     </article>
     <footer class="footer">
-      <hr>&copy; 2015 Larry Davis
+      <hr>&copy; 2022 Larry Davis
     </footer>
   </body>
 </html>

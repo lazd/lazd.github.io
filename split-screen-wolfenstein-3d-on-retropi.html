@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=480">
+    <meta name="description" content="The blog of Larry Davis">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,600,300" rel="stylesheet">
+    <link href="/icons/style.css" rel="stylesheet">
+    <link href="/styles/blog.css" rel="stylesheet">
+    <link href="/styles/solarized-dark.syntax.css" rel="stylesheet">
+    <script src="/scripts/blog.js"></script><script>
+    		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    		ga('create', 'UA-43555016-1', 'lazd.github.io');
+    		ga('send', 'pageview');
+    </script>
+    <title>Split-screen Wolfenstein 3D on RetroPi - lazdBlog</title>
+  </head>
+  <body>
+    <header class="header"><a href="/" class="topLogo"><i class="icon-blog"></i>lazdBlog</a>
+      <nav class="topNav"><a href="https://github.com/lazd" target="_blank" class="icon-github">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505" target="_blank" class="icon-linkedin">LinkedIn</a><a href="https://twitter.com/lazdnet" target="_blank" class="icon-twitter">Twitter</a></nav>
+    </header>
+    <article class="post">
+      <h1 class="title">Split-screen Wolfenstein 3D on RetroPi</h1>
+      <time datetime="2019-01-24 00:00:00" class="date">January 24th, 2019</time>
+      <section><p>Wolfenstein was the first 3D game I ever played, and of course, the first FPS I ever played. I fondly remember going upstairs and booting up DOS on our old 386. I&#39;d type <code>wolf</code>, and after a few seconds and a couple memory checks, I&#39;d be greeted with that triumphant, patriotic, MIDI theme song.</p>
+<figure>
+  <img src="images/wolf3d-startscreen.png" alt="Wolf3D start screen" onmouseover="music.play()" onmouseout="music.pause()">
+  <figcaption>
+    Wolf3D start screen<br>
+    <audio id="music" style="width: 34rem;" controls src="images/wolf3d-horst-wessel-lied.ogg"></audio>
+  </figcaption>
+</figure>
+
+<p>I&#39;d press the any key to continue and select <code>Bring &#39;em, on</code>, then instantly be launched into an exciting 3D world unlike anything I&#39;d ever seen.</p>
+<p>I remember spending hours as a kid finding my way through the mazes of Castle Wolfenstein, pushing against walls to find secrets and trying to beat bosses. Sure, I was young and it was violent for the time, but you get to kill Hitler, and killing Nazis is an all-ages activity.</p>
+<figure>
+  <img src="images/wolf3d-hitler.jpg" alt="The only good Nazi is a dead Nazi">
+  <figcaption>The only good Nazi is a dead Nazi</figcaption>
+</figure>
+
+<p>But you couldn&#39;t play it with friends, like Super Mario Brothers and Sonic the Hedgehog. My friends and I would take turns, switching off after every level or death, cooperatively making our way through Castle Wolfenstein, hunting down Hitler and his goons. Though this was fun, and left plenty of time for snacking while the other person played, it was a &quot;multiplayer&quot; experience that could be improved upon.</p>
+<a name="the-retropie-renaissance" class="anchor" href="#the-retropie-renaissance"><h2>The RetroPie Renaissance</h2>
+</a><p>I&#39;ve often gone back and replayed old games, but when I found <a target="_blank" href="https://retropie.org.uk/">RetroPie</a>, it was like I was a kid all over again. I could play anything, all the games I fondly remembered, and some I never got to play. Everything from any platform, with any release date.</p>
+<p>Naturally I installed Wolfenstein, bought a <a target="_blank" href="https://store.steampowered.com/app/2270/Wolfenstein_3D/">copy of the game on Steam</a> to get the full game files, and loaded it up.</p>
+<p>Though the keyboard controls worked exactly how I remembered them, the gamepad controls left a lot to be desired. First, there was no way to bind strafe to an axis -- the control stick could only rotate you.</p>
+<p>Additionally, when moving with the stick, it was all or nothing. Wolfenstein was designed in an era when gamepads only had a D-pad, and that meant pushing the stick forward on a modern gamepad just moved you forward at full speed. There&#39;s no way to creep up behind Nazis real slow and stab them in the back, which of course, is a hard requirement.</p>
+<p>Next, there was no way to bind more than 4 buttons on the gamepad. Modern gamepads have tons of buttons, and using trigger to shoot and L1/R1 to cycle through weapons was a must. Again, because Wolfenstein was released when the Gravis Gamepad was the only option around, assumptions were made about the number of possible buttons.</p>
+<p>But Wolfenstein&#39;s source code has been released to the public, certainly I could fix all of this and have the awesome, Wolf3D experience with modern gamepad controls, right? I had found <a target="_blank" href="https://retropie.org.uk/forum/topic/8695/wolfenstein3d-wolf4sdl-remapping">a thread showing how to manually remap game controllers in Wolf4SDL</a>, so it must be possible!</p>
+<a name="let-s-fork-it-" class="anchor" href="#let-s-fork-it-"><h2>Let&#39;s fork it!</h2>
+</a><p>The <a target="_blank" href="https://github.com/11001011101001011/Wolf4SDL">Wolf4SDL</a> project uses the modern SDL library to draw to the screen, get user input, etc. This made it a great candidate to base my work off of. However, it used the older SDL1 library, which doesn&#39;t have great support for gamepads. I looked around a bit and saw ichera had moved things over to SDL2 <a target="_blank" href="https://bitbucket.org/ichera/wolf4sdl/src/sdl2/">in a branch on Bitbucket</a>, so I <a target="_blank" href="https://github.com/lazd/wolf4sdl/commits/sdl2remap">forked that and started in</a>.</p>
+<p>After a <a target="_blank" href="https://github.com/lazd/wolf4sdl/commit/82ee70f94679272784e6f5cd401d6ff0d817ded1">little cleanup</a> and instructing <a target="_blank" href="https://github.com/lazd/wolf4sdl/commit/5507123f21fce0666b3a36f74ff0e106cb0cdde6">the linker to use sdl2</a>, I had it launching.</p>
+<p>The next step was easy -- I simply <a target="_blank" href="https://github.com/lazd/wolf4sdl/commit/2ea4cd4f63aa628f3343d4aeed23025c34e87218">hardcoded the controls I wanted</a> into the game code, and I was off and away! Wolf3d with modern FPS controls, woohoo!</p>
+<p>But of course I couldn&#39;t stop there, it would feel incomplete to leave this hardcoded. I <a target="_blank" href="https://github.com/lazd/wolf4sdl/commit/2a245e784bd4470808b15734e9a8718eec6b2dd4">made it possible to remap all the buttons</a>, and also added <a target="_blank" href="https://github.com/lazd/wolf4sdl/commit/ffe416de74a5ccdf01682d0d0a0d6b7024cbf928">support for mapping pause, escape, previous weapon, and next weapon.</a></p>
+<figure>
+  <img src="images/wolf3d-gamepad-customization.png" alt="Gamepad mapping UI">
+  <figcaption>Gamepad mapping UI</figcaption>
+</figure>
+
+<p>Next, it was back to menu code to add support for <a target="_blank" href="https://github.com/lazd/wolf4sdl/commit/77207ebdc25d8216dc323d182f350b8a07af1283">customizing gamepad sensitivity</a>. Working on old video game codebases is a trip; there&#39;s no layout engine, so you&#39;re left to position controls, handle state, and even play menuing sounds all manually within your code. Coming from the world of web development where layout is a core and automatic aspect, this manual way of drawing controls is a bit tedious, but presents a fun challenge and makes building UI feel quite rewarding.</p>
+<figure>
+  <img src="images/wolf3d-gamepad-sensitivity.png" alt="Gamepad sensitivity UI">
+  <figcaption>Gamepad sensitivity UI</figcaption>
+</figure>
+
+<p>After a few fixes for things I broke along the way, I wondered -- could I add support for any gamepad, not just the XBox controller I was using? A quick google found <a target="_blank" href="https://github.com/gabomdq/SDL_GameControllerDB">SDL_GameControllerDB</a>, a community sourced database of game controller mappings. <a target="_blank" href="https://github.com/lazd/wolf4sdl/commit/0aa465768d4b53a2bbb30a1d0202bb78294eb216">Adding this in</a> made all the other gamepads I tried instantly work, except those with only one stick. A <a target="_blank" href="https://github.com/lazd/wolf4sdl/commit/090c8438a81aa6189ab9b34356ce00d5fb79ef09">quick fix</a> that checks how many axes the controller has and maps accordingly got things working nicely, even on my old NES USB controller, ironically the thing that most closely resembles the good old Gravis Gamepad.</p>
+<p>I added a menu option to <a target="_blank" href="https://github.com/lazd/wolf4sdl/commit/e54d9320bf41d81c9947e0e5bbda9728db90f2d6">disable moving with the mouse</a> and <a target="_blank" href="https://github.com/lazd/wolf4sdl/commit/2035f7c0dfe80ed5f3158561c90a018f72d40b38">the ability to bind strafe left/right and previous/next weapon on the keyboard</a> and called it done!</p>
+<figure>
+  <img src="images/wolf3d-keyboard-customization.png" alt="Keyboard mapping UI">
+  <figcaption>Keyboard mapping UI</figcaption>
+</figure>
+
+<p>But it doesn&#39;t stop there, didn&#39;t I mention Splitwolf?</p>
+<a name="making-it-multiplayer" class="anchor" href="#making-it-multiplayer"><h2>Making it multiplayer</h2>
+</a><p>While surfing the web and looking for others that had worked on Wolf4SDL on RetroPie, I found <a target="_blank" href="http://raycast.teamforum.ru/viewtopic.php?f=8&amp;t=952&amp;st=0&amp;sk=t&amp;sd=a&amp;hilit=lazd">this thread on the TeamRaycast development forum</a>, discussing how it&#39;s not possible to remap controllers to do things as simple as exit the game in Wolf4SDL. I <a target="_blank" href="http://raycast.teamforum.ru/viewtopic.php?p=32486#p32486">posted back</a> with a link to my code, showing how I got controller support working for Wolf4SDL, but then I saw another reply:</p>
+<blockquote>
+<p>linuxwolf wrote:</p>
+<p>It would be cool if SplitWolf worked with two separate controllers.</p>
+</blockquote>
+<p>What&#39;s Splitwolf?!</p>
+<a name="splitwolf" class="anchor" href="#splitwolf"><h2>Splitwolf</h2>
+</a><p>Splitwolf is a modification of the Wolf4SDL codebase that effectively makes Wolfenstein 3D a split-screen multiplayer co-op game. If you dig into how it was done, <a target="_blank" href="https://bitbucket.org/linuxwolf6/splitwolf/src/f6c00044cdef00a31c66307d8b7cb1fb4ddf8c67/wl_game.cpp#lines-1614:1617">it&#39;s absolutely magical</a>. The original structure of the code was kept intact, but <a target="_blank" href="https://bitbucket.org/linuxwolf6/splitwolf/src/scrubbed/id_lwmp.cpp">methods were added</a> that allow routines to be ran multiple times for each player, and code to stitch it all together was layered on top. Other features were added as well; the menu system was modified to allow customization of controls for multiple players, a map was added showing the location of the other players you&#39;re playing with, and of course the ability to draw the other player(s).</p>
+<figure>
+  <img src="images/splitwolf-map.png" alt="Splitwolf map">
+  <figcaption>Splitwolf map</figcaption>
+</figure>
+
+<p>But it doesn&#39;t stop there. Splitwolf adds several new gamemodes like Capture the Flag, Instagib, Defuse, and more, as well as respawn, new gore, and even TANKS. There&#39;s tons of new art to support all of this, and even new weapons.</p>
+<figure>
+  <img src="images/splitwolf-tank.png" alt="Splitwolf tank">
+  <figcaption>Splitwolf tank</figcaption>
+</figure>
+
+<p>After seeing everything Splitwolf had to offer, I posted back and asked for a link to the code, promising I could make this work with multiple controllers. linuxwolf replied with <a target="_blank" href="https://bitbucket.org/linuxwolf6/splitwolf/src/scrubbed/">the Bitbucket repository</a> and this message:</p>
+<blockquote>
+<p>linuxwolf wrote:</p>
+<p>You&#39;re about to make wolf3d history if you manage to pull this off.</p>
+</blockquote>
+<a name="bring-it-on-" class="anchor" href="#bring-it-on-"><h2>Bring it on!</h2>
+</a><p>DoomJedi is a master pixel artist from Israel, responsible for the art necessary to make Splitwolf work. Things like new player sprites so you can view BJ from the side, the gore, weapons, the vehicles, etc. linuxwolf is a clever and talented programmer from Australia, responsible for not only the magic that makes Splitwolf even work, but the code that layers on the new game modes, respawn, the HUD -- everything. </p>
+<p>Me? I&#39;m just here to kill Nazis on my couch with an XBox controller.</p>
+<p>So I got to work. After a bit of a struggle getting things to run and <a target="_blank" href="http://raycast.teamforum.ru/viewtopic.php?p=32496#p32496">a fight with gdb on macOS</a>, I got Splitwolf up and running. There were <a target="_blank" href="http://raycast.teamforum.ru/viewtopic.php?p=32497#p32497">a segfaults right off the bat</a> that luckily, all had to do with controls and were fixed by <a target="_blank" href="https://bitbucket.org/lazd/split_wolf4sdl_pr/commits/69b1fa65f098a9732515d282d23e258517720a1f">remapping things to use the right scan names for SDL</a>.</p>
+<p>Since I&#39;d already been in the code, it was pretty easy to get <a target="_blank" href="https://bitbucket.org/lazd/split_wolf4sdl_pr/commits/940bacf363a3b6106b01c953981779154b018a87">get things working on SDL2</a>, and I started pulling in changes from the other repository, making rapid progress.</p>
+<p>I fixed up a little menu code along the way, and got the basics up and running. We started to collaborate on discord, working out details and fixing issues as they came up. Internet magic made it possible for 3 people all thousands of miles away from each other to collaborate in real time. I learned things along the way, both by reading linuxwolf&#39;s code and asking questions, and DoomJedi was there every step of the way to test, give direction, and provide art as needed.</p>
+<p>Everything was working, and we even fixed a couple bugs along the way. The next step was to make it turnkey in RetroPie.</p>
+<figure>
+  <img src="images/splitwolf-deployable.png" alt="Dead Nazi and deployable machine gun">
+  <figcaption>O-o-o-overkill</figcaption>
+</figure>
+
+<a name="make-it-retropie-ready" class="anchor" href="#make-it-retropie-ready"><h2>Make it RetroPie-ready</h2>
+</a><p>RetroPie uses a collection of shell scripts to download, compile, and install games. This streamlines the usual step-by-step how tos into a one-click, turnkey operation that makes it accessible to anyone. RetroPie is the perfect platform for a game like Splitwolf to be distributed, so now we just had to write a little bash.</p>
+<p>Because there are so many versions of Wolfenstein, from different publishers to different missions, it&#39;s necessary to match on the MD5 sum of the game files, choosing the correct binary to launch based on which game is to be played. Luckily, this technique was already implemented in <a target="_blank" href="https://github.com/RetroPie/RetroPie-Setup/blob/master/scriptmodules/ports/wolf4sdl.sh">the Wolf4SDL port</a>, so it was easy enough to do the same thing.</p>
+<p>With <a target="_blank" href="https://github.com/RetroPie/RetroPie-Setup/blob/master/scriptmodules/ports/splitwolf.sh">the script ready</a>, I sent <a target="_blank" href="https://github.com/RetroPie/RetroPie-Setup/pull/2532">the pull request</a>.</p>
+<p>This was most definitely not the easy part. joolswills of RetroPie is a master of all things shell script, and my code was not up to snuff. We went back and forth for over a month, with joolswilis requesting several changes to <a target="_blank" href="https://github.com/RetroPie/RetroPie-Setup/pull/2532#issuecomment-440711782">share code with the Wolf4SDL script</a>, correct <a target="_blank" href="https://github.com/RetroPie/RetroPie-Setup/pull/2532#discussion_r235546122">issues with how I handled variables in bash</a>, and <a target="_blank" href="https://github.com/RetroPie/RetroPie-Setup/pull/2532#issuecomment-440873665">change the way we installed binaries</a>.</p>
+<p>In the process, I modified the Wolf4SDL port to download the Spear of Destiny demo files, and exposed a <code>add_ports_wolf4sdl</code> function so I could <a target="_blank" href="https://github.com/RetroPie/RetroPie-Setup/pull/2532#issuecomment-439535347">share code between the two ports</a>. Their data files should live in the same place, after all, so it was natural to share the install code.</p>
+<p>I had to go deep into bash, and joolswilis wanted everything to be done right. I learned quite a bit, and in mid-January, a full 2 months and 59 comments later, the script was finally merged and released in <a target="_blank" href="https://retropie.org.uk/docs/Changelogs/#version-45-july-3-2019">Version 4.5 on July 3rd, 2019</a>. </p>
+<figure>
+  <img src="images/splitwolf-doublebj.png" alt="The more BJs, the better">
+  <figcaption>The more BJs, the better</figcaption>
+</figure>
+
+<a name="ready-to-kill-nazis-with-your-friends-" class="anchor" href="#ready-to-kill-nazis-with-your-friends-"><h2>Ready to kill Nazis with your friends?</h2>
+</a><p>If you already own Wolf3D or Spear of Destiny, dump all the files directly into <code>roms/ports/wolf3d/</code> (no sub-folders), then:</p>
+<ol>
+<li>Run RetroPie Setup</li>
+<li>Select &quot;Update RetroPie-Setup Script&quot;</li>
+<li>Select &quot;Manage Packages&quot;</li>
+<li>Select &quot;Manage experimental Packages&quot;</li>
+<li>Select &quot;splitwolf&quot;</li>
+<li>Select &quot;Install from Binary&quot;</li>
+</ol>
+<p>Then get in there and waste some Nazi scum with your friends!</p>
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DOBheJbU9fk?start=46" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
+<p>See <a target="_blank" href="https://retropie.org.uk/forum/topic/20976/splitwolf-2-4-player-co-op-wolfenstein-3d-on-retropie/2">the thread on the RetroPie forum for more details</a>.</p>
+<a name="credits" class="anchor" href="#credits"><h2>Credits</h2>
+</a><p>None of this would be possible without the hard work of the following people:</p>
+<ul>
+<li><strong>Multiplayer framework, new game modes</strong>: LinuxWolf</li>
+<li><strong>Gamepad support, configuration UI, and RetroPie implementation</strong>: lazd</li>
+<li><strong>Additional art</strong>: DoomJedi, Untrustable, Atina, PSTrooper, ArmanAhmadi</li>
+<li><strong>Title Screen</strong>: Atina</li>
+<li><strong>Title Screen Font</strong>: Tormentor667</li>
+<li><strong>SDL Port</strong>: <a target="_blank" href="http://www.chaos-software.de.vu">Moritz &quot;Ripper&quot; Kroll</a></li>
+<li><strong>SDL2 Update</strong>: Ioan Chera</li>
+<li><strong>Original Wolfenstein 3D</strong>: id Software (<a target="_blank" href="http://www.idsoftware.com">http://www.idsoftware.com</a>)</li>
+<li><strong>RetroPie</strong>: Jools Wills (@BuZz) and the rest of the RetroPie contributors</li>
+</ul>
+</section>
+      <hr><footer id="disqus_thread"></footer>
+      <script>
+      	var disqus_shortname = 'lazdnet';
+      	  if (window.location.hostname !== 'localhost') {
+      		(function() {
+      			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      		})();
+      	  }
+      </script>
+    </article>
+    <footer class="footer">
+      <hr>&copy; 2022 Larry Davis
+    </footer>
+  </body>
+</html>

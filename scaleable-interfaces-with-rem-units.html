@@ -13,7 +13,6 @@
     		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    	
     		ga('create', 'UA-43555016-1', 'lazd.github.io');
     		ga('send', 'pageview');
     </script>
@@ -24,10 +23,10 @@
       <nav class="topNav"><a href="https://github.com/lazd" target="_blank" class="icon-github">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505" target="_blank" class="icon-linkedin">LinkedIn</a><a href="https://twitter.com/lazdnet" target="_blank" class="icon-twitter">Twitter</a></nav>
     </header>
     <article class="post">
-      <h2 class="date">August 10th, 2013</h2>
-      <h1>Scaleable interfaces with rem units</h1>
-      <div><a name="what-are-rem-units-" class="anchor" href="#what-are-rem-units-"><h2>What are rem units?</h2>
-</a><p>According to <a href="http://www.w3.org/TR/css3-values/#rem-unit">W3 candidate reccomendation</a>, one root elastic measurement (rem) unit is equal to the <code>font-size</code> of the <code>&lt;html&gt;</code> element.</p>
+      <h1 class="title">Scaleable interfaces with rem units</h1>
+      <time datetime="2013-08-10 00:00:00" class="date">August 10th, 2013</time>
+      <section><a name="what-are-rem-units-" class="anchor" href="#what-are-rem-units-"><h2>What are rem units?</h2>
+</a><p>According to <a target="_blank" href="http://www.w3.org/TR/css3-values/#rem-unit">W3 candidate reccomendation</a>, one root elastic measurement (rem) unit is equal to the <code>font-size</code> of the <code>&lt;html&gt;</code> element.</p>
 <a name="hello-rem" class="anchor" href="#hello-rem"><h2>Hello rem</h2>
 </a><p>Let&#39;s say you&#39;ve defined the <code>font-size</code> of the <code>&lt;html&gt;</code> element as 16 pixels, and you want a 48 pixel tall <code>&lt;header&gt;</code>. Basic math tells us that&#39;s 3 rem.</p>
 <pre><code><div class="highlight"><pre><span class="nx">html</span> <span class="p">{</span>
@@ -61,7 +60,7 @@
 </script>
 
 <a name="wait--how-is-that-different-from-em-" class="anchor" href="#wait--how-is-that-different-from-em-"><h2>Wait, how is that different from em?</h2>
-</a><p>Elastic measurement units cascade (<a href="http://www.w3.org/TR/css3-values/#em-unit">em spec</a>), whereas root elastic measurement units are always relative to the root element. </p>
+</a><p>Elastic measurement units cascade (<a target="_blank" href="http://www.w3.org/TR/css3-values/#em-unit">em spec</a>), whereas root elastic measurement units are always relative to the root element. </p>
 <p>With ems, the following situation becomes confusing:</p>
 <a name="css:" class="anchor" href="#css:"><h3>CSS:</h3>
 </a><pre><code class="lang-css"><div class="highlight"><pre><span class="nc">.container</span> <span class="p">{</span>
@@ -273,7 +272,7 @@
 <li>iOS 3</li>
 <li>Safari 4</li>
 </ul>
-<p>That said, all modern browsers support rem units. See the <a href="http://caniuse.com/#search=rem">caniuse tables</a> for details.</p>
+<p>That said, all modern browsers support rem units. See the <a target="_blank" href="http://caniuse.com/#search=rem">caniuse tables</a> for details.</p>
 <a name="fallbacks" class="anchor" href="#fallbacks"><h3>Fallbacks</h3>
 </a><p>You can specify units in pixels above if you&#39;d like support for older browsers (minus the scalability):</p>
 <pre><code class="lang-css"><div class="highlight"><pre><span class="nt">width</span><span class="o">:</span> <span class="nt">16px</span><span class="o">;</span>
@@ -281,22 +280,22 @@
 </pre></div>
 </code></pre>
 <a name="show-me-the-code" class="anchor" href="#show-me-the-code"><h2>Show me the code</h2>
-</a><p>Take a look at the source of <a href="https://github.com/lazd/iOCSS">iOCSS</a> and <a href="https://github.com/lazd/lazd.github.io/tree/build">this blog</a> for a few examples that combine rem units with media queries, ems, and CSS preprocessors.</p>
-</div>
-      <hr> <div id="disqus_thread"></div>
-       <script>
-       	var disqus_shortname = 'lazdnet';
-      	if (window.location.hostname !== 'localhost') {
-       		(function() {
-       			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-       			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-       			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       		})();
-      	}
-       </script>
+</a><p>Take a look at the source of <a target="_blank" href="https://github.com/lazd/iOCSS">iOCSS</a> and <a target="_blank" href="https://github.com/lazd/lazd.github.io/tree/build">this blog</a> for a few examples that combine rem units with media queries, ems, and CSS preprocessors.</p>
+</section>
+      <hr><footer id="disqus_thread"></footer>
+      <script>
+      	var disqus_shortname = 'lazdnet';
+      	  if (window.location.hostname !== 'localhost') {
+      		(function() {
+      			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      		})();
+      	  }
+      </script>
     </article>
     <footer class="footer">
-      <hr>&copy; 2015 Larry Davis
+      <hr>&copy; 2022 Larry Davis
     </footer>
   </body>
 </html>

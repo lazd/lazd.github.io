@@ -1,5 +1,402 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Thu, 05 Mar 2015 08:17:32 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Thu, 05 Mar 2015 08:17:32 GMT</pubDate><copyright><![CDATA[2015 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[DOMly - The fast template system that clones]]></title><description><![CDATA[<a name="flashback:-the-state-of--innerhtml--performance-in-2008" class="anchor" href="#flashback:-the-state-of--innerhtml--performance-in-2008"><h2>Flashback: The state of <code>innerHTML</code> performance in 2008</h2>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 06 Feb 2022 05:02:43 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Sun, 06 Feb 2022 05:02:43 GMT</pubDate><copyright><![CDATA[2022 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[Macinpi: A new old computer]]></title><description><![CDATA[<p><img class="prettyPicture" src="images/macinpi-side.jpg" alt="Macinpi in the garden"></p>
+<p>My first truly personal computer -- not the family computer, but <em>mine</em> -- was a Macintosh SE. My Aunt Joanie gifted it to me after upgrading to a PowerMac, and though it was already 10 years old, it was brand new to 10 year old me.</p>
+<p>Coming from DOS machines, the elegance and simplicity of the Macintosh completely enthralled me. There was no <code>autoexec.bat</code>, no <code>config.sys</code>, no SoundBlaster and no IRQs to set. You flip a switch and it <em>just worked</em>.</p>
+<p>And the interface, wow. You were greeted by a friendly chime and the happiest little face on the happiest little computer every time you turned it on. Everything was where you thought it should be. The dialog boxes were helpful, the icons friendly, and the applications simple, yet powerful. The Macintosh hooked me right away, and I used it <em>constantly</em>.</p>
+<p>My little machine that could do tricks. I power it on. It smiles. I smile.</p>
+<p>I collected software, arranged my icons, dragged and resized windows in the Finder so they opened just a couple pixels under one another, fixed it, broke it, and fixed it again. I played games on it, scanned pictures, used Graphic Converter and BBEdit, created MOD music. It was my escape from reality, where I could control everything and get lost in a world of creativity. Where I could design a house, then fly a paper airplane through it. A portal to another world.</p>
+<p>I visited my first website on a Macintosh. I <em>wrote</em> my first website on a Macintosh.</p>
+<hr>
+
+<p>Fast forward 25 years.</p>
+<p>I&#39;m back home during the COVID-19 pandemic, and life is complicated, scary. America is divided. Friends are getting sick, and family members have passed away. Nostalgia for a simpler time is strong.</p>
+<p>I&#39;ve pulled out all my old Macintoshes, my old disks. The same ones 12 year old me had in plastic disk folio when a bully pushed me over, causing them to spill on the steps of the portable classroom. Simpler times, maybe, but not perfect.</p>
+<p>But I have my little escape. My little <a href="https://everymac.com/systems/apple/mac_performa/specs/mac_performa_200.html">Performa 200</a> (aka Mac Classic II). A black and white, 9&quot; display. A clicky mechanical keyboard. One mouse button.</p>
+<p>I plug it in. I power it on. Checkerboard background, a sign of damaged components.</p>
+<p>I clean the electrolytic capacitor juice off the components with isopropyl. I replace the PRAM battery <a href="https://amzn.to/3rjI7QG">with a fresh 14250 cell</a>. It was old, but luckily hadn&#39;t ruptured.</p>
+<p>I power it on. A question mark blinks inside of a disk icon.</p>
+<p>I remove the cover from the hard drive, exposing its platters. I flick the drive&#39;s magnetic head to get it going again. It&#39;s old and not moving like it used to.</p>
+<p>I power it on. It smiles. I smile. A long lost friend.</p>
+<p>I back up its hard drive using an external SCSI enclosure and another, internet-connected Mac. I back up every single floppy disk from the plastic disk folio. Every byte of data I could read, I saved. All my old high scores. My collection of MOD music. My earliest essays and short stories.</p>
+<p>I relive the experience of it all. I relive the wonder. I&#39;m taken back to a time when a black and white screen could show you all the color in the world, as long as you used your imagination.</p>
+<p>As old hardware begins to fail and spare parts become scarce, pieces of the experience fall away. It&#39;s not the same to use old software on a sleek, new MacBook; the feeling just isn&#39;t there. </p>
+<p>I never want to lose the ability to go back to that time when things were simpler, to feel the wonder I felt when I was a kid, so I built Macinpi; a new computer with the charm of an old computer, and a few new tricks behind its screen.</p>
+<a name="hardware" class="anchor" href="#hardware"><h2>Hardware</h2>
+</a><p>No working computers were gutted in the making of this machine. Some of the pieces were leftover bits from someone else&#39;s simpler time, some new.</p>
+<a name="case" class="anchor" href="#case"><h3>Case</h3>
+</a><p>It started with the case. Amidst a pile of computer parts -- buyer must take all -- a Macintosh Classic case. It was in pretty decent condition with a working fan, and it had only a handful of scuffs and scars.</p>
+<figure>
+  <img src="images/macinpi-pile-of-computers.jpg" alt="An empty Mac Classic case admist a pile of computers">
+  <figcaption>Spotted! An empty Mac Classic case</figcaption>
+</figure>
+
+<p>I asked about it. Why just the case? What happened to the rest? The owner explains an Amiga fell on the picture tube, crushing it. The motherboard was donated, the last missing piece to someone else&#39;s Classic. The power supply board was sold and shipped, bringing another Mac back to life. They can&#39;t find the screws or the cover for the display adjustments, but it&#39;s mine for $10 -- and a classic double from Arby&#39;s, if it&#39;s not too much trouble.</p>
+<p>So I drop off the Arby&#39;s, send my $10, and pick up the case.</p>
+<p>It&#39;s very friend-shaped; it just needs something to fill the hole where its display used to be.</p>
+<a name="display" class="anchor" href="#display"><h3>Display</h3>
+</a><p>I think this little computer deserves a little color in its life. It&#39;s got a rainbow logo on the front of it after all, certainly black and white wouldn&#39;t suit it.</p>
+<p>I choose the <a href="https://shop.pimoroni.com/products/hdmi-10-lcd-screen-kit-1024x768">Pimoroni 10&quot; display</a> after seeing that it fit the front bezel perfectly <a href="https://forums.raspberrypi.com/viewtopic.php?t=306474">in PepPi&#39;s build</a>, and was wide enough that no ugly bezels would be visible. And the wiring is clean, I like that. $99 later, it starts to look like a computer again.</p>
+<figure>
+  <img src="images/macinpi-pimoroni-display.jpg" alt='Pimoroni 10" display'>
+  <figcaption>Pimoroni 10&quot; display</figcaption>
+</figure>
+
+<a name="cpu" class="anchor" href="#cpu"><h3>CPU</h3>
+</a><p>There&#39;s a <a href="https://amzn.to/3om7gYV">Raspberry Pi 4 2GB</a> lying around I had bought to build another RetroPie box with. $45, at at the time at least. It would plug right into the display, and with an emulator, could paint a smile on the screen and load all the my old Mac applications.</p>
+<p>Perfect.</p>
+<figure>
+  <img src="images/macinpi-raspberry-pi4.jpg" alt='Raspberry Pi 4'>
+  <figcaption>Raspberry Pi 4</figcaption>
+</figure>
+
+<a name="keyboard---mouse" class="anchor" href="#keyboard---mouse"><h3>Keyboard &amp; Mouse</h3>
+</a><p>An <a href="https://en.wikipedia.org/wiki/Apple_Adjustable_Keyboard">Apple Adjustable Mechanical Keyboard</a> popped up on Craigslist. It&#39;s missing the numeric keypad, but who needs that? I chat with the seller for over an hour. We talk about everything from space exploration, to forgotten anniversaries, to what it was like for him growing up in Compton as a black man in the 70s. We shake hands. $100.</p>
+<figure>
+  <img src="images/macinpi-keyboard.jpg" alt="Apple Adjustable Keyboard">
+  <figcaption>Apple Adjustable Keyboard</figcaption>
+</figure>
+
+<p>I have an Apple mouse from the old days, just one button, rectangular and angular.</p>
+<p>But these won&#39;t work with the Pi, they don&#39;t have USB, but ADB (Apple Desktop Bus), Apple&#39;s proprietary serial connector.</p>
+<p><a href="https://github.com/tmk/tmk_keyboard">TMK</a> with <a href="https://github.com/tmk/tmk_keyboard/tree/master/converter/adb_usb">adb_usb</a> on an old <a href="https://amzn.to/3rmDnJU">Arduino Pro Micro clone</a> is the answer. I <a href="http://www.tmk-kbd.com/tmk_keyboard/editor/unimap/?adb_usb_rev1">download</a> and <a href="https://deskthority.net/viewtopic.php?f=7&amp;t=8448&amp;start=">flash</a> the firmware. I pull a 1kΩ resistor from my electronics box. 10 year old me categorized it wrong, or maybe it slipped under the dividers in the drawers, but I found it. An old s-video cable, which has the same 4 pin mini-DIN connector as ADB, is chopped up <a href="https://geekhack.org/index.php?topic=14290.0">and wired in according to the schematic</a>. Everything works the first try, $5 later.</p>
+<figure>
+  <img src="images/macinpi-adb2usb.jpg" alt="ADB2USB using an Arduino Pro Micro Clone">
+  <figcaption>ADB2USB using an Arduino Pro Micro Clone</figcaption>
+</figure>
+
+<a name="connectivity" class="anchor" href="#connectivity"><h3>Connectivity</h3>
+</a><p>The vacant holes on the rear of the machine where the old ports used to be need to be put to good use. A friend of mine helps me weld a steel plate back there, I trace out holes crudely with a pencil, make a few markings, drill a few holes, and route out some ports with my Dremel.</p>
+<p>2x <a href="https://amzn.to/3unrLsb">panel mount USB-A 3.0</a>. 1x <a href="https://amzn.to/3gnn5dH">panel mount USB-C</a>. 1x <a href="https://www.ebay.com/itm/274516442073">panel mount 4 pin mini-DIN</a>. Some M2 and M3 screws.</p>
+<p>$30 or so.</p>
+<figure>
+  <img src="images/macinpi-ports.jpg" alt="Rear ports">
+  <figcaption>Rear ports</figcaption>
+</figure>
+
+<a name="supporting-electronics" class="anchor" href="#supporting-electronics"><h3>Supporting electronics</h3>
+</a><p>Though I can power the display directly from the Pi, adding any other peripherals means the voltage begins to drop and the Pi flashes its little yellow lightning bolt.</p>
+<p>A <a href="https://amzn.to/34uZAwm">USB-C PD trigger</a> lets me use any decent USB-C power supply, such as a MacBook charger, and get a solid 9V 3A out of it. 5 for $10, so $2. Now I can power that fan!</p>
+<p>But the Pi needs power too. <a href="https://amzn.to/3Hqcvys">Pololu 5V 5A regulator</a> to the rescue. It&#39;s not cheap, but it&#39;s quality and will provide plenty of clean power. $25.</p>
+<p>An old Quadra 610 case in the attic provides the speaker. I harvest its power button as well, maybe it&#39;ll come in handy. $0.</p>
+<figure>
+  <img src="images/macinpi-speaker.jpg" alt="The speaker, shoved into the air intake">
+  <figcaption>The speaker, shoved into the air intake</figcaption>
+</figure>
+
+<p>A Raspberry Pi can&#39;t drive a speaker directly. It needs an amplifier. A <a href="https://amzn.to/3Go6lxi">3-12V mono LM316 amplifier module</a>, two for $9, will do the trick nicely. $4.50.</p>
+<p>But since the amplifier and fan are powered from 9V, they stay on when the Pi shuts down. We&#39;ll have to fix this.</p>
+<p>After a little lesson on basic electrical engineering from some new friends on Discord, a schematic is drawn up. A <a href="https://amzn.to/3HsvVTa">100kΩ resistor</a> takes the Pi&#39;s 3.3V signal to a <a href="https://amzn.to/3LgUGUW">2N3904 NPN transistor</a>, <a href="https://amzn.to/3oHrRYb">1N4007 flyback diode</a>, and a <a href="https://amzn.to/3AWPrVr">470µF 35V filter capacitor</a> that bring the fan to life when the Pi powers up.</p>
+<figure>
+  <img src="images/macinpi-fan-schematic.jpg" alt="Fan schematic">
+  <figcaption>Fan schematic</figcaption>
+</figure>
+
+<p>Two 1.2kΩ resistors help me <a href="https://electronics.stackexchange.com/questions/549289/why-are-two-1-k%CE%A9-resistors-used-for-this-additive-stereo-to-mono-conversion-fo">combine the left and right stereo channels into a single mono signal</a>, and a 2N3904 NPN/2N3906 PNP transistor stack with a 1kΩ resistor between them switches the positive of the amplifier when the Pi comes on, because the Pi&#39;s headphone ground keeps the amp on if we try to switch the negative using a single NPN.</p>
+<figure>
+  <img src="images/macinpi-amp-schematic.jpg" alt="Amplifier schematic">
+  <figcaption>Amplifier schematic</figcaption>
+</figure>
+
+<p>All of this is placed on a <a href="https://amzn.to/3rmmLSA">prototype PCB</a>, with a mess of jumper wires underneath, acting as traces.</p>
+<figure>
+  <img src="images/macinpi-pcb.jpg" alt="Complete Macinpi board">
+  <figcaption>Complete Macinpi board</figcaption>
+</figure>
+
+<p>A momentary switch is wired between the Pi&#39;s <code>GLOBAL_EN</code> and <code>J2</code> pins to <a href="https://forums.raspberrypi.com/viewtopic.php?f=29&amp;t=24682&amp;p=1491661&amp;hilit=GLOBAL_EN#p1491661">reset the Pi from a halted state</a>.</p>
+<p>The hardware is ready.</p>
+<figure>
+  <img src="images/macinpi-inside.jpg" alt="Macinpi internals">
+  <figcaption>Macinpi internals</figcaption>
+</figure>
+
+<a name="software" class="anchor" href="#software"><h2>Software</h2>
+</a><p>I start with a GUI-free <a href="https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-32-bit">Raspberry Pi OS Lite image</a> on a <a href="https://amzn.to/3sdqrFB">32GB SD card</a>.</p>
+<p>The display has a 1024ⅹ768 resolution, and its 10&quot; display is larger than the hole in the front of the case. To correct this, I arrive at 928ⅹ672 with 48 left and right overscan, 32 top, and 64 bottom to get it fitting nicely. I edit these values into <code>/boot/config.txt</code>. The display is perfectly centered and has just the right amount of black border around the edges.</p>
+<p>I <a href="https://djdarien.github.io/macpi/">compile Basilisk II without X11</a>. I set the resolution and upload a disk image with System 7.5.3 and my backed up files.</p>
+<p>I add <a href="https://forums.raspberrypi.com/viewtopic.php?t=276545"><code>initiramfs-splash</code></a> to show a <a href="images/macsplash.png">happy Mac start up screen</a> the second the machine powers up. I <code>touch .hushlogin</code> and <code>sudo truncate -s 0 /etc/motd</code> to quiet things down.</p>
+<figure>
+  <img src="images/macinpi-smiles.jpg" alt="It smiles">
+  <figcaption>It smiles</figcaption>
+</figure>
+
+<p>I make sure to <a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#updating-the-eeprom-configuration">set <code>POWER_OFF_ON_HALT=1</code> in the EEPROM configuration</a> so it shuts down completely when its off, instead of entering a low-power mode.</p>
+<p>Autologin takes me straight to a shell, and <code>.bashrc</code> takes it from there. <code>aplay</code> plays a familiar chime, and <code>BasiliskII</code> launches.</p>
+<a name="macinpi-lives" class="anchor" href="#macinpi-lives"><h2>Macinpi lives</h2>
+</a><p>It&#39;s a sunny winter afternoon. I plug in <a href="https://amzn.to/34ipKmi">a USB-C PD powerbank</a> and take it outside. I sit at the table in the memorial garden I built for my mom. I remember simpler times.</p>
+<p>I power it on. All my old files are there. My old games. My old high scores. The first short stories I ever wrote. My MOD music.</p>
+<p>It smiles. I smile.</p>
+<p><img class="prettyPicture" src="images/macinpi-in-the-garden.jpg" alt="Macinpi in the garden"></p>
+<hr>
+
+<a name="parts-list" class="anchor" href="#parts-list"><h2>Parts list</h2>
+</a><ul>
+<li>System<ul>
+<li><a href="https://amzn.to/3om7gYV">Raspberry Pi 4 2GB</a></li>
+<li><a href="https://shop.pimoroni.com/products/hdmi-10-lcd-screen-kit-1024x768">Pimoroni 10&quot; display</a></li>
+<li><a href="https://amzn.to/3rmDnJU">Arduino Pro Micro clone for TMK adb_usb</a></li>
+</ul>
+</li>
+<li>Panel connectors<ul>
+<li><a href="https://amzn.to/3unrLsb">USB-A 3.0</a></li>
+<li><a href="https://amzn.to/3gnn5dH">USB-C</a></li>
+<li><a href="https://www.ebay.com/itm/274516442073">4 pin mini-DIN</a></li>
+</ul>
+</li>
+<li>Control and power supply board<ul>
+<li><a href="https://amzn.to/3rmmLSA">Prototype PCB</a></li>
+<li><a href="https://amzn.to/3Go6lxi">LM316 Audio amplifier module</a></li>
+<li><a href="https://amzn.to/3HsvVTa">1kΩ, 1.2kΩ, 100kΩ Resistors</a></li>
+<li><a href="https://amzn.to/3LgUGUW">2N3904/2N3906 Transistors</a></li>
+<li><a href="https://amzn.to/3oHrRYb">1N4007 Diode</a></li>
+<li><a href="https://amzn.to/3AWPrVr">Capacitor</a></li>
+</ul>
+</li>
+</ul>
+<a name="scripts-and-config-files" class="anchor" href="#scripts-and-config-files"><h2>Scripts and config files</h2>
+</a><p>See <a href="https://github.com/lazd/macinpi">lazd/macinpi</a> for the scripts and config files I used to build Basilisk and configure the system.</p>
+]]></description><link>http://lazd.github.io/macinpi-a-new-old-computer.html</link><guid isPermaLink="true">http://lazd.github.io/macinpi-a-new-old-computer.html</guid><category><![CDATA[retro computing]]></category><category><![CDATA[hardware]]></category><category><![CDATA[raspberry pi]]></category><category><![CDATA[macintosh]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Tue, 01 Feb 2022 08:00:00 GMT</pubDate></item><item><title><![CDATA[Gamepad enhancements in yquake2]]></title><description><![CDATA[<p>A recent obsession with retro gaming on Raspberry Pi using <a href="https://retropie.org.uk/">RetroPie</a> led me to play through a few old favorites, starting of course with Wolfenstein 3D (and my subsequent work on <a href="./splitwolf-split-screen-wolfenstien-3d-on-raspberry-pi.html">Splitwolf</a>).</p>
+<p>After making my way through history with Doom and Quake I, it was only natural that I load up Quake II...</p>
+<a name="a-bug-right-out-of-the-gate" class="anchor" href="#a-bug-right-out-of-the-gate"><h2>A bug right out of the gate</h2>
+</a><p>RetroPie ships with support for the yquake2 engine, so it was easy to get up and running. However, I found moving the sticks made my head spin uncontrollably in circles! After a little poking around, I realized yquake2 was interpreting gamepad input as both joystick and mouse events. I found that setting the <code>sensitivity</code> cvar to <code>0</code> fixed it, but realized there was no way to set it to <code>0</code> using the UI.</p>
+<p>Time to fork and clone! A <a href="https://github.com/yquake2/yquake2/pull/632/commits/693803c7640708c7a2da27d9119c44f48c593d38">one line fix</a> made it possible to use the sliders in the UI to set <code>sensitivity</code> to <code>0</code>.</p>
+<a name="stick-feel-is-everything" class="anchor" href="#stick-feel-is-everything"><h2>Stick feel is everything</h2>
+</a><p>Once I got the controls working, I found that gamepad aiming didn&#39;t have a precise feel like I was used to in modern shooters. From my experience with FPV drones, I knew that a little &quot;expo&quot; can go a long way.</p>
+<p>&quot;Expo&quot; makes gamepad stick input non-linear, such that small movements on the stick are less pronounced. This enables both precise and fast movements, even at higher sensitivity levels, and is part of the reason why gamepad controls in modern shooters feel more precise. It&#39;s called expo because it simply raises the gamepad input value to the specified power, or exponent.</p>
+<p>The value of a joystick axis is a floating point number between <code>0</code> and <code>1</code>. Linear joystick input with no expo results in a graph that looks like this:</p>
+<figure>
+  <img src="images/yquake2-graph-linear.jpg" alt='Linear gamepad input'>
+  <figcaption>Linear gamepad input</figcaption>
+</figure>
+
+<p>However, if we apply some expo, say <code>2</code>, we get a graph that looks more like this:</p>
+<figure>
+  <img src="images/yquake2-graph-exponential.jpg" alt='Exponential gamepad input'>
+  <figcaption>Exponential gamepad input</figcaption>
+</figure>
+
+<p>This means small joystick inputs result in <em>very</em> small movements, but slamming the stick all the way still results in the same movement as without any expo at all. Just by looking at the graphs, you can tell how this will help make aiming on a gamepad way more precise.</p>
+<p>With this in mind, I set about adding a new cvar, <code>joy_expo</code>, with a default value of <code>2</code>. With the new cvar, it was simple to <a href="https://github.com/yquake2/yquake2/pull/632/commits/aafc2eb4f92693aee0fe0e14fd33c6f28f160c33">apply <code>joy_expo</code> to gamepad input</a>.</p>
+<a name="ui-is...-also-everything" class="anchor" href="#ui-is...-also-everything"><h2>UI is... also everything</h2>
+</a><p>Expo made aiming feel quite a bit better, but I needed to tweak a few more settings to get it dialed in. I realized the gamepad controls in yquake2 could only be customized by manually setting cvars in the console, which means quick changes aren&#39;t quick and easy.</p>
+<p>I set about adding a new menu in the yquake2 UI to enable customizing yaw, pitch, forward, side, and up sensitivity -- and of course, expo. I also took the opportunity to move the haptic controls to the same submenu, bringing everything together in one place.</p>
+<p>In old game engines, this usually involves manually calculating the position of controls -- there&#39;s no layout system, so you increment a variable like <code>y</code> to store where the next control in the UI is drawn. It&#39;s no flexbox, but it gets the job done, and after a little tinkering, I got a nice menu system in place:</p>
+<figure>
+  <img src="images/yquake2-menu.jpg" alt='yquake2 "customize joystick" menu'>
+  <figcaption>yquake2 &quot;customize joystick&quot; menu</figcaption>
+</figure>
+
+<a name="fork-it--push-it--quick-pr-it" class="anchor" href="#fork-it--push-it--quick-pr-it"><h2>Fork it, push it, quick PR it</h2>
+</a><p>With all these changes in place on my local branch, the next step was to <a href="https://github.com/yquake2/yquake2/pull/632">send a pull request</a>. After a little insight from a fellow contributor, everything was buttoned up and ready to ship.</p>
+<p>In the next release of yquake2, I was happy to find my changes released, and I hope others have found that it enhanced their retro Quake II experience just as much as it did for me.</p>
+]]></description><link>http://lazd.github.io/gamepad-enhancements-in-yquake2.html</link><guid isPermaLink="true">http://lazd.github.io/gamepad-enhancements-in-yquake2.html</guid><category><![CDATA[gaming]]></category><category><![CDATA[programming]]></category><category><![CDATA[retro computing]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Sat, 12 Dec 2020 00:00:00 GMT</pubDate></item><item><title><![CDATA[Writing a macOS touchscreen driver]]></title><description><![CDATA[<a name="the-hunt-for-the-tiniest-laptop" class="anchor" href="#the-hunt-for-the-tiniest-laptop"><h2>The hunt for the tiniest laptop</h2>
+</a><p><img src="images/minibook.png" class="titleImage left" style="width: 256px" alt='Chuwi Minibook promotional shot'></p>
+<p>I got excited about tiny laptops. I don&#39;t mean netbooks, I mean damn near palmtop laptops, the kind that would just barely fit in an oversized pocket... Something so small it seems impractical. Why? Beyond the needing a field laptop to tune and update FPV drones, I felt like having a tiny computer would make using it more fun. Everything from coding to web browsing, I imagined, would be more entertaining.</p>
+<p>I found the Chuwi Minibook, an 8&quot; touchscreen &quot;yogabook&quot; that runs Windows 10, and it seemed to fit the bill -- decent design, both USB-C and USB-A, a card reader, a fast CPU, and of course, a multi-touch touchscreen...</p>
+<p>But there&#39;s was a caveat: I run macOS. I rely heavily on the ecosystem, from notes, to iMessage, to the UNIX subsystem, to the elegant user interface, it&#39;s everything I need in an operating system. Running Windows or Linux was simply not an option, and the smallest thing Apple makes is nowhere near small enough.</p>
+<p>So can it run macOS?</p>
+<a name="hackintoshing-is-hard" class="anchor" href="#hackintoshing-is-hard"><h2>Hackintoshing is hard</h2>
+</a><p>It just so happened that <a href="https://github.com/THEDEVIOUS1">THEDEVIOUS1</a> had worked <a href="https://github.com/THEDEVIOUS1/CHUWI-MINIBOOK-HACKINTOSH">some wicked voodoo magic</a> and managed to get Catalina running on the Minibook!</p>
+<p>I was stoked! They had somehow got almost everything working, everything except the card reader, fingerprint scanner, internal storage, the accelerometer, and of course the touchscreen -- but who needs those? The dream seemed within reach; could this be the pocket-sized MacBook I&#39;ve been daydreaming about?</p>
+<a name="but-what-about-the-touchscreen-" class="anchor" href="#but-what-about-the-touchscreen-"><h2>But what about the touchscreen?</h2>
+</a><p><img src="images/minibook-on-macbook.jpg" class="right titleImage" style="width: 256px" alt='Chuwi Minibook sitting on MacBook 13"'></p>
+<p>Fast-forward to having a hackintosh&#39;d Minibook, booting Catalina... Naturally I want to try the touchscreen, but how?</p>
+<p>It turns out there&#39;s a Linux driver for the Goodix touchscreen, and of course there&#39;s VoodooI2C, which takes I2C devices and makes them work with macOS.</p>
+<p>Could I port the Linux driver to macOS, and somehow enable multi-touch gestures, scrolling, and right clicking? What would it take?</p>
+<p>Spoiler alert: the answer is a weekend and a lot of coffee.</p>
+<a name="hello-touchscreen" class="anchor" href="#hello-touchscreen"><h2>Hello touchscreen</h2>
+</a><p>As I was unfamiliar with VoodooI2C, I started by cloning an existing driver, <a href="https://github.com/coolstar/VoodooI2CAtmelMXT">VoodooI2CAtmelMXT</a>. This gave me some boilerplate I could try to work on top of. I then stripped the code down to the basics -- methods like <code>start</code>, <code>stop</code>, <code>probe</code>, <code>init</code> as stubs with nothing more than error handling, just so I had the basic structure in place.</p>
+<p>The next step was to try to get communication with the touchscreen working. I modeled a method, <code>goodix_read_reg</code>, after the method in the Linux driver, but there was a hurdle -- despite a correctly configured KEXT that should match on the <code>GDX1001</code> device ID, the touchscreen didn&#39;t seem to power on and indicate it was ready for communication, so I couldn&#39;t test my method yet.</p>
+<a name="waking-up-a-sleepy-touchscreen" class="anchor" href="#waking-up-a-sleepy-touchscreen"><h2>Waking up a sleepy touchscreen</h2>
+</a><p>According to the <a href="https://www.distec.de/fileadmin/pdf/produkte/Touchcontroller/DDGroup/GT911_Datasheet.pdf">datasheet for the GT911 touchscreen</a>, a reset sequence needs to be sent over I2C. We weren&#39;t doing this yet, which explained why the touchscreen didn&#39;t respond to command.</p>
+<p>But I had a hunch -- if the touchscreen works in Windows, which would have to send this reset sequence to wake the touchscreen up, perhaps I could warm reboot from Windows, and the touchscreen would stay on? I tried it, <a href="https://github.com/THEDEVIOUS1/CHUWI-MINIBOOK-HACKINTOSH/issues/6#issuecomment-570747112">and it worked</a> -- after rebooting, it was clear the touchscreen was awake and listening, but all of my attempts to communicate with it were failing. I was getting junk data back and transaction errors:</p>
+<pre><code><div class="highlight"><pre><span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Starting</span>
+<span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Reading</span> <span class="nx">version</span><span class="p">...</span>
+<span class="p">(</span><span class="nx">kernel</span><span class="p">)</span> <span class="nx">VoodooI2CControllerDriver</span><span class="o">::</span><span class="nx">pci8086</span><span class="p">,</span><span class="mi">9</span><span class="nx">d62</span> <span class="nx">I2C</span> <span class="nx">Transaction</span> <span class="nx">error</span> <span class="nx">details</span>
+<span class="p">(</span><span class="nx">kernel</span><span class="p">)</span> <span class="nx">VoodooI2CControllerDriver</span><span class="o">::</span><span class="nx">pci8086</span><span class="p">,</span><span class="mi">9</span><span class="nx">d62</span> <span class="nx">lost</span> <span class="nx">arbitration</span>
+<span class="p">(</span><span class="nx">kernel</span><span class="p">)</span> <span class="nx">VoodooI2CControllerDriver</span><span class="o">::</span><span class="nx">pci8086</span><span class="p">,</span><span class="mi">9</span><span class="nx">d62</span> <span class="nx">I2C</span> <span class="nx">Transaction</span> <span class="nx">error</span><span class="o">:</span> <span class="mh">0x07001000</span> <span class="o">-</span> <span class="nx">aborting</span>
+<span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Read</span> <span class="nx">version</span> <span class="nx">failed</span><span class="o">:</span> <span class="o">-</span><span class="mi">536870212</span>
+<span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Failed</span> <span class="nx">to</span> <span class="nx">init</span> <span class="nx">device</span>
+<span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Freeing</span>
+</pre></div>
+</code></pre>
+<p>Meanwhile, back at the secret mountain lab from which THEDEVIOUS1 probably works from, he&#39;d figured out how to modify the custom DSDT to send the reset sequence on initialization. We chatted on <a href="https://gitter.im/lazd/VoodooI2CGoodix">Gitter</a> and worked out the pin addresses by consulting the datasheet and throwing a lot of trial an error at the problem. After some fiddling, we were able to get it to work from a cold boot, no Windows required! There were plenty of issues not worth getting into because they&#39;re beyond my understanding, but it involved setting up the pins correctly and coding the reset sequence into the <code>_PS0</code> method. Finally, I could go back to C code land where I was more comfortable and try to make some more progress.</p>
+<a name="endianness-is-important" class="anchor" href="#endianness-is-important"><h2>Endianness is important</h2>
+</a><p>It seems the touchscreen and I weren&#39;t speaking the same language...</p>
+<p>Puzzled, I continued to read the specifications for the touchscreen driver, and I realized the touchscreen expects the register address in big endian, and the CPU, of course, is little endian! I used the <code>OSSwapHostToBigInt16</code> method to swap the register address to big endian, and to my surprise, I got data back from the touchscreen!</p>
+<pre><code><div class="highlight"><pre><span class="nx">kernel</span><span class="o">:</span> <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Probing</span>
+<span class="nx">kernel</span><span class="o">:</span> <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Starting</span>
+<span class="nx">kernel</span><span class="o">:</span> <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Reading</span> <span class="nx">version</span><span class="p">...</span>
+<span class="nx">kernel</span><span class="o">:</span> <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">ID</span> <span class="mi">9111</span><span class="p">,</span> <span class="nx">version</span><span class="o">:</span> <span class="mi">2020</span>
+<span class="nx">kernel</span><span class="o">:</span> <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Device</span> <span class="nx">initialized</span>
+</pre></div>
+</code></pre>
+<p>This was the breakthrough I needed! I had a working kernel extension that matched on the ID, I was able to communicate over I2C (albeit, only a basic &quot;hello touchscreen&quot;), and now I just needed to... actually implement the entire driver.</p>
+<a name="conversations-with-a-touchscreen" class="anchor" href="#conversations-with-a-touchscreen"><h2>Conversations with a touchscreen</h2>
+</a><p>After <a href="https://github.com/lazd/VoodooI2CGoodix/commit/6d8270f6fcac56dec165d7203bbf15e57fba4d9a">shoehorning some code from the Linux driver in</a>, I was able to read back configuration data from the touchscreen:</p>
+<pre><code><div class="highlight"><pre><span class="nx">kernel</span><span class="o">:</span> <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Config</span> <span class="nx">read</span> <span class="nx">successfully</span>
+<span class="nx">kernel</span><span class="o">:</span> <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">ts</span><span class="o">-&gt;</span><span class="nx">abs_x_max</span> <span class="o">=</span> <span class="mi">1920</span>
+<span class="nx">kernel</span><span class="o">:</span> <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">ts</span><span class="o">-&gt;</span><span class="nx">abs_y_max</span> <span class="o">=</span> <span class="mi">1080</span>
+<span class="nx">kernel</span><span class="o">:</span> <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">ts</span><span class="o">-&gt;</span><span class="nx">int_trigger_type</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nx">kernel</span><span class="o">:</span> <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">ts</span><span class="o">-&gt;</span><span class="nx">max_touch_num</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</code></pre>
+<p>Using the <a href="https://github.com/lazd/VoodooI2CGoodix/commit/85341d12c861db9ec39880050c7a31064ef25b4e">Atmel driver&#39;s technique for responding to interrupts</a>, I was able to get some information back from the touchscreen, but the coordinates were wrong.</p>
+<p>It seems I once again forgot about endianness, but this time when <em>writing</em> data to the touchscreen. After <a href="https://github.com/lazd/VoodooI2CGoodix/commit/678ac99d0804bcc4a76b77a894f32a4ecf47b553">correcting that</a>, I got actual, correct data out of the touchscreen:</p>
+<pre><code><div class="highlight"><pre><span class="nx">kernel</span><span class="o">:</span> <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Touch</span> <span class="mi">0</span> <span class="nx">at</span> <span class="mi">1889</span><span class="p">,</span> <span class="mi">19</span> <span class="kd">with</span> <span class="nx">width</span> <span class="mi">80</span>
+</pre></div>
+</code></pre>
+<p>Armed with real data, it was time to do something useful with it.</p>
+<a name="now-let-s-make-it-actually-do-something" class="anchor" href="#now-let-s-make-it-actually-do-something"><h2>Now let&#39;s make it actually do something</h2>
+</a><p>The next step was to take this data and turn it into interaction events. macOS exposes methods that let you set up multitouch interfaces, publish events to them, and, in turn, actually control the cursor and interactions in the OS.</p>
+<p>Being completely new to this, I started simple and just made the touchscreen act like a gigantic trackpad. This involves <a href="https://github.com/lazd/VoodooI2CGoodix/commit/06dcecfa73348b6b0c75c44f944c7d342a13af86">using a <code>VoodooI2CDigitiserTransducer</code> and updating coordinates as I get them</a>.</p>
+<p>Because the MiniBook can be flipped into a tablet mode, the touchscreen could be configured to be rotated or flipped, so I had to add some <a href="https://github.com/lazd/VoodooI2CGoodix/commit/ca1194df9a7d15fa8f8ebb07152a2bfa6657b8e7">basic support for dealing with those values</a>, which was fun because casting, floating point math, and applying inversions and axis swaps in the right order. Most of this was literally poking at the screen and looking at output, as we often do with any code.</p>
+<p>The next step was to <a href="https://github.com/lazd/VoodooI2CGoodix/commit/baf81bfc1962138f1bbc46bbabe36ed68d623733">refactor the code to use an EventDriver</a> and <a href="https://github.com/lazd/VoodooI2CGoodix/commit/8a80cab12742943149f4910370f2904e9b0a9c1a">move the code out of actual TouchDriver into the EventDriver</a>. This decoupled the code that reports touch events, sets up and tears down multitouch interfaces, and handles sleep/wake events from the code that communicates with the touch screen. This separation of concerns makes it easier to reason about operations that are going on at the hardware and OS-level. Along the way, I created a <a href="https://github.com/lazd/VoodooI2CGoodix/commit/8a80cab12742943149f4910370f2904e9b0a9c1a#diff-1d0b5e5ff794d7c86133c9a70c115d199e5a23a40960b20e44ca5b47b91dba7aR30-R35"><code>Touch</code> struct</a> to store information about the current touches, and used this to pass information from the TouchDriver to the EventDriver for reporting.</p>
+<p>Finally, with the correct structure in place and <a href="https://gitter.im/alexandred/VoodooI2CDev?at=5e1242f5a769bf30fd4266ca">some help from alexandred from VoodooI2C</a>, and some fooling around with fixes for crashes on unload and properly releasing the event driver, I was able to implement support for <a href="https://github.com/lazd/VoodooI2CGoodix/commit/94aea073029d2b5f74b284e7b0f7ac8369b0364f">a touchscreen that moved the mouse to follow your finger</a>! Except it was clicking the entire time...</p>
+<p>The problem was that it was unclear when a touch finally ended. Given that touches come from an interrupt that triggers continuously while the user&#39;s fingers are contacting the display, I couldn&#39;t just assume the finger was lifted after an interrupt was complete. In order to get proper dragging and tapping, I had to assume the finger was down until an amount of time had elapsed, at which point I could dispatch an event that tells the OS the finger has been lifted. This was implemented <a href="https://github.com/lazd/VoodooI2CGoodix/commit/72238143825361b7d5e3a7d4446d1694d6948af7">using an <code>IOTimerEventSource</code></a>.</p>
+<a name="fine-tuning-touch-behaviors" class="anchor" href="#fine-tuning-touch-behaviors"><h2>Fine-tuning touch behaviors</h2>
+</a><p>With basic touchscreen interactions implemented, there were still some behaviors that needed fine-tuning. Right click and tapping are non-trivial interactions that we take for granted, and <a href="https://github.com/lazd/VoodooI2CGoodix/commit/380b7de266741212e8cbfe65f35bcfd316bcfb74">a complicated system of timers</a> was necessary to determine whether an interaction was a tap, or a tap and hold to indicate a right click.</p>
+<a name="and-then-there-were-bugs" class="anchor" href="#and-then-there-were-bugs"><h2>And then there were bugs</h2>
+</a><p>Putting together a driver like this using APIs I&#39;d never seen meant tons of opportunities to do things wrong. Luckily, I had help from THEDEVIOUS1, balopez83, hatran0884, and kostaskas to test and find the bugs.</p>
+<p>Occasional <a href="https://github.com/lazd/VoodooI2CGoodix/commit/9451dbecbb94e15b85aa24dfcf0a3fc4aff76a9f">kernel panics and hangs on shutdown</a>, <a href="https://github.com/lazd/VoodooI2CGoodix/commit/65b90e06b69eb9590316570c4ae88103e65fee66">phantom touches</a>, <a href="https://github.com/lazd/VoodooI2CGoodix/commit/fe852e1f689bd2a11839671de6ae352ff3293f1c">timing issues that result in reading data from the touchscreen when it&#39;s asleep</a>, <a href="https://github.com/lazd/VoodooI2CGoodix/commit/50b24ba9bb2fc0bcce3273efb30931f360d0946d">proper handling of portrait mode</a>, and of course, that bug where it used <a href="https://github.com/lazd/VoodooI2CGoodix/commit/5eb45487aa292924cdf8578c84c57cadd3369d81">100% of the CPU due to spurious interrupts</a>.</p>
+<a name="stylus-support" class="anchor" href="#stylus-support"><h2>Stylus support</h2>
+</a><p>So we&#39;ve got a touchscreen, but what about a stylus? The Minibook supports <a href="https://store.chuwi.com/products/chuwi-hipen-h3">Chuwi&#39;s HiPen H3 active stylus</a>, so naturally I had to acquire one and test it.</p>
+<p>Curiously, the stylus worked, but would click the screen even before you touched it to the display. A little logging revealed that the touchscreen reported a touch with a width of <code>0</code> when the stylus was hovering. Armed with this knowledge, I was able to <a href="https://github.com/lazd/VoodooI2CGoodix/commit/59f1c3871bc3f99b271fee417d6a5ac0b9278ffa">make the stylus move the mouse around</a>.</p>
+<p>Some additional reading of the datasheet revealed how the stylus reported button clicks, and with <a href="https://github.com/lazd/VoodooI2CGoodix/commit/58a280a1f90f66f2de1aa5b1d47c42177d396a9b">a little work</a>, I was able to get clicking and right clicking working on the stylus. I then <a href="https://github.com/lazd/VoodooI2CGoodix/commit/97f9dcb32e2e322e70ef5f1e66812f6fb6decab9">refactored the stylus to use a separate transducer</a> to avoid confusion with touch events and called it done!</p>
+<a name="demo" class="anchor" href="#demo"><h2>Demo</h2>
+</a><iframe width="560" height="315" src="https://www.youtube.com/embed/Qv6TizEgyfA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<a name="learnings" class="anchor" href="#learnings"><h2>Learnings</h2>
+</a><p>This project took me completely out of my comfort zone and had me bridging the gap between hardware and software, all the way to the OS-level. I had to consider things like endianness, deal with interrupts and work around quirky hardware that required a little convincing to function right, and work with macOS APIs that weren&#39;t quite documented that well.</p>
+<p>The biggest thing, however, was not working in a vacuum. Using Github and Gitter, I was able to communicate with people across the world to help test, give feedback, fix issues, and suggest approaches to problems. Without this kind of instant, global pair programming and collaboration, I&#39;d probably still be scratching my head.</p>
+<p>The process of creating open source software is often thankless, painful, and confusing but, despite all that, beautiful. The way the internet can connect strangers from across the globe is magical, even if we often lose sight of it amid a sea of scams and misinformation. Look for the good in the world, find something fun to hack, and have fun solving problems with internet friends who you&#39;ll never meet and will only ever know by their GitHub username.</p>
+]]></description><link>http://lazd.github.io/writing-a-macos-touchscreen-driver.html</link><guid isPermaLink="true">http://lazd.github.io/writing-a-macos-touchscreen-driver.html</guid><category><![CDATA[hardware]]></category><category><![CDATA[programming]]></category><category><![CDATA[hackintosh]]></category><category><![CDATA[drivers]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Thu, 23 Jan 2020 08:00:00 GMT</pubDate></item><item><title><![CDATA[Split-screen Wolfenstein 3D on RetroPi]]></title><description><![CDATA[<p>Wolfenstein was the first 3D game I ever played, and of course, the first FPS I ever played. I fondly remember going upstairs and booting up DOS on our old 386. I&#39;d type <code>wolf</code>, and after a few seconds and a couple memory checks, I&#39;d be greeted with that triumphant, patriotic, MIDI theme song.</p>
+<figure>
+  <img src="images/wolf3d-startscreen.png" alt="Wolf3D start screen" onmouseover="music.play()" onmouseout="music.pause()">
+  <figcaption>
+    Wolf3D start screen<br>
+    <audio id="music" style="width: 34rem;" controls src="images/wolf3d-horst-wessel-lied.ogg"></audio>
+  </figcaption>
+</figure>
+
+<p>I&#39;d press the any key to continue and select <code>Bring &#39;em, on</code>, then instantly be launched into an exciting 3D world unlike anything I&#39;d ever seen.</p>
+<p>I remember spending hours as a kid finding my way through the mazes of Castle Wolfenstein, pushing against walls to find secrets and trying to beat bosses. Sure, I was young and it was violent for the time, but you get to kill Hitler, and killing Nazis is an all-ages activity.</p>
+<figure>
+  <img src="images/wolf3d-hitler.jpg" alt="The only good Nazi is a dead Nazi">
+  <figcaption>The only good Nazi is a dead Nazi</figcaption>
+</figure>
+
+<p>But you couldn&#39;t play it with friends, like Super Mario Brothers and Sonic the Hedgehog. My friends and I would take turns, switching off after every level or death, cooperatively making our way through Castle Wolfenstein, hunting down Hitler and his goons. Though this was fun, and left plenty of time for snacking while the other person played, it was a &quot;multiplayer&quot; experience that could be improved upon.</p>
+<a name="the-retropie-renaissance" class="anchor" href="#the-retropie-renaissance"><h2>The RetroPie Renaissance</h2>
+</a><p>I&#39;ve often gone back and replayed old games, but when I found <a href="https://retropie.org.uk/">RetroPie</a>, it was like I was a kid all over again. I could play anything, all the games I fondly remembered, and some I never got to play. Everything from any platform, with any release date.</p>
+<p>Naturally I installed Wolfenstein, bought a <a href="https://store.steampowered.com/app/2270/Wolfenstein_3D/">copy of the game on Steam</a> to get the full game files, and loaded it up.</p>
+<p>Though the keyboard controls worked exactly how I remembered them, the gamepad controls left a lot to be desired. First, there was no way to bind strafe to an axis -- the control stick could only rotate you.</p>
+<p>Additionally, when moving with the stick, it was all or nothing. Wolfenstein was designed in an era when gamepads only had a D-pad, and that meant pushing the stick forward on a modern gamepad just moved you forward at full speed. There&#39;s no way to creep up behind Nazis real slow and stab them in the back, which of course, is a hard requirement.</p>
+<p>Next, there was no way to bind more than 4 buttons on the gamepad. Modern gamepads have tons of buttons, and using trigger to shoot and L1/R1 to cycle through weapons was a must. Again, because Wolfenstein was released when the Gravis Gamepad was the only option around, assumptions were made about the number of possible buttons.</p>
+<p>But Wolfenstein&#39;s source code has been released to the public, certainly I could fix all of this and have the awesome, Wolf3D experience with modern gamepad controls, right? I had found <a href="https://retropie.org.uk/forum/topic/8695/wolfenstein3d-wolf4sdl-remapping">a thread showing how to manually remap game controllers in Wolf4SDL</a>, so it must be possible!</p>
+<a name="let-s-fork-it-" class="anchor" href="#let-s-fork-it-"><h2>Let&#39;s fork it!</h2>
+</a><p>The <a href="https://github.com/11001011101001011/Wolf4SDL">Wolf4SDL</a> project uses the modern SDL library to draw to the screen, get user input, etc. This made it a great candidate to base my work off of. However, it used the older SDL1 library, which doesn&#39;t have great support for gamepads. I looked around a bit and saw ichera had moved things over to SDL2 <a href="https://bitbucket.org/ichera/wolf4sdl/src/sdl2/">in a branch on Bitbucket</a>, so I <a href="https://github.com/lazd/wolf4sdl/commits/sdl2remap">forked that and started in</a>.</p>
+<p>After a <a href="https://github.com/lazd/wolf4sdl/commit/82ee70f94679272784e6f5cd401d6ff0d817ded1">little cleanup</a> and instructing <a href="https://github.com/lazd/wolf4sdl/commit/5507123f21fce0666b3a36f74ff0e106cb0cdde6">the linker to use sdl2</a>, I had it launching.</p>
+<p>The next step was easy -- I simply <a href="https://github.com/lazd/wolf4sdl/commit/2ea4cd4f63aa628f3343d4aeed23025c34e87218">hardcoded the controls I wanted</a> into the game code, and I was off and away! Wolf3d with modern FPS controls, woohoo!</p>
+<p>But of course I couldn&#39;t stop there, it would feel incomplete to leave this hardcoded. I <a href="https://github.com/lazd/wolf4sdl/commit/2a245e784bd4470808b15734e9a8718eec6b2dd4">made it possible to remap all the buttons</a>, and also added <a href="https://github.com/lazd/wolf4sdl/commit/ffe416de74a5ccdf01682d0d0a0d6b7024cbf928">support for mapping pause, escape, previous weapon, and next weapon.</a></p>
+<figure>
+  <img src="images/wolf3d-gamepad-customization.png" alt="Gamepad mapping UI">
+  <figcaption>Gamepad mapping UI</figcaption>
+</figure>
+
+<p>Next, it was back to menu code to add support for <a href="https://github.com/lazd/wolf4sdl/commit/77207ebdc25d8216dc323d182f350b8a07af1283">customizing gamepad sensitivity</a>. Working on old video game codebases is a trip; there&#39;s no layout engine, so you&#39;re left to position controls, handle state, and even play menuing sounds all manually within your code. Coming from the world of web development where layout is a core and automatic aspect, this manual way of drawing controls is a bit tedious, but presents a fun challenge and makes building UI feel quite rewarding.</p>
+<figure>
+  <img src="images/wolf3d-gamepad-sensitivity.png" alt="Gamepad sensitivity UI">
+  <figcaption>Gamepad sensitivity UI</figcaption>
+</figure>
+
+<p>After a few fixes for things I broke along the way, I wondered -- could I add support for any gamepad, not just the XBox controller I was using? A quick google found <a href="https://github.com/gabomdq/SDL_GameControllerDB">SDL_GameControllerDB</a>, a community sourced database of game controller mappings. <a href="https://github.com/lazd/wolf4sdl/commit/0aa465768d4b53a2bbb30a1d0202bb78294eb216">Adding this in</a> made all the other gamepads I tried instantly work, except those with only one stick. A <a href="https://github.com/lazd/wolf4sdl/commit/090c8438a81aa6189ab9b34356ce00d5fb79ef09">quick fix</a> that checks how many axes the controller has and maps accordingly got things working nicely, even on my old NES USB controller, ironically the thing that most closely resembles the good old Gravis Gamepad.</p>
+<p>I added a menu option to <a href="https://github.com/lazd/wolf4sdl/commit/e54d9320bf41d81c9947e0e5bbda9728db90f2d6">disable moving with the mouse</a> and <a href="https://github.com/lazd/wolf4sdl/commit/2035f7c0dfe80ed5f3158561c90a018f72d40b38">the ability to bind strafe left/right and previous/next weapon on the keyboard</a> and called it done!</p>
+<figure>
+  <img src="images/wolf3d-keyboard-customization.png" alt="Keyboard mapping UI">
+  <figcaption>Keyboard mapping UI</figcaption>
+</figure>
+
+<p>But it doesn&#39;t stop there, didn&#39;t I mention Splitwolf?</p>
+<a name="making-it-multiplayer" class="anchor" href="#making-it-multiplayer"><h2>Making it multiplayer</h2>
+</a><p>While surfing the web and looking for others that had worked on Wolf4SDL on RetroPie, I found <a href="http://raycast.teamforum.ru/viewtopic.php?f=8&amp;t=952&amp;st=0&amp;sk=t&amp;sd=a&amp;hilit=lazd">this thread on the TeamRaycast development forum</a>, discussing how it&#39;s not possible to remap controllers to do things as simple as exit the game in Wolf4SDL. I <a href="http://raycast.teamforum.ru/viewtopic.php?p=32486#p32486">posted back</a> with a link to my code, showing how I got controller support working for Wolf4SDL, but then I saw another reply:</p>
+<blockquote>
+<p>linuxwolf wrote:</p>
+<p>It would be cool if SplitWolf worked with two separate controllers.</p>
+</blockquote>
+<p>What&#39;s Splitwolf?!</p>
+<a name="splitwolf" class="anchor" href="#splitwolf"><h2>Splitwolf</h2>
+</a><p>Splitwolf is a modification of the Wolf4SDL codebase that effectively makes Wolfenstein 3D a split-screen multiplayer co-op game. If you dig into how it was done, <a href="https://bitbucket.org/linuxwolf6/splitwolf/src/f6c00044cdef00a31c66307d8b7cb1fb4ddf8c67/wl_game.cpp#lines-1614:1617">it&#39;s absolutely magical</a>. The original structure of the code was kept intact, but <a href="https://bitbucket.org/linuxwolf6/splitwolf/src/scrubbed/id_lwmp.cpp">methods were added</a> that allow routines to be ran multiple times for each player, and code to stitch it all together was layered on top. Other features were added as well; the menu system was modified to allow customization of controls for multiple players, a map was added showing the location of the other players you&#39;re playing with, and of course the ability to draw the other player(s).</p>
+<figure>
+  <img src="images/splitwolf-map.png" alt="Splitwolf map">
+  <figcaption>Splitwolf map</figcaption>
+</figure>
+
+<p>But it doesn&#39;t stop there. Splitwolf adds several new gamemodes like Capture the Flag, Instagib, Defuse, and more, as well as respawn, new gore, and even TANKS. There&#39;s tons of new art to support all of this, and even new weapons.</p>
+<figure>
+  <img src="images/splitwolf-tank.png" alt="Splitwolf tank">
+  <figcaption>Splitwolf tank</figcaption>
+</figure>
+
+<p>After seeing everything Splitwolf had to offer, I posted back and asked for a link to the code, promising I could make this work with multiple controllers. linuxwolf replied with <a href="https://bitbucket.org/linuxwolf6/splitwolf/src/scrubbed/">the Bitbucket repository</a> and this message:</p>
+<blockquote>
+<p>linuxwolf wrote:</p>
+<p>You&#39;re about to make wolf3d history if you manage to pull this off.</p>
+</blockquote>
+<a name="bring-it-on-" class="anchor" href="#bring-it-on-"><h2>Bring it on!</h2>
+</a><p>DoomJedi is a master pixel artist from Israel, responsible for the art necessary to make Splitwolf work. Things like new player sprites so you can view BJ from the side, the gore, weapons, the vehicles, etc. linuxwolf is a clever and talented programmer from Australia, responsible for not only the magic that makes Splitwolf even work, but the code that layers on the new game modes, respawn, the HUD -- everything. </p>
+<p>Me? I&#39;m just here to kill Nazis on my couch with an XBox controller.</p>
+<p>So I got to work. After a bit of a struggle getting things to run and <a href="http://raycast.teamforum.ru/viewtopic.php?p=32496#p32496">a fight with gdb on macOS</a>, I got Splitwolf up and running. There were <a href="http://raycast.teamforum.ru/viewtopic.php?p=32497#p32497">a segfaults right off the bat</a> that luckily, all had to do with controls and were fixed by <a href="https://bitbucket.org/lazd/split_wolf4sdl_pr/commits/69b1fa65f098a9732515d282d23e258517720a1f">remapping things to use the right scan names for SDL</a>.</p>
+<p>Since I&#39;d already been in the code, it was pretty easy to get <a href="https://bitbucket.org/lazd/split_wolf4sdl_pr/commits/940bacf363a3b6106b01c953981779154b018a87">get things working on SDL2</a>, and I started pulling in changes from the other repository, making rapid progress.</p>
+<p>I fixed up a little menu code along the way, and got the basics up and running. We started to collaborate on discord, working out details and fixing issues as they came up. Internet magic made it possible for 3 people all thousands of miles away from each other to collaborate in real time. I learned things along the way, both by reading linuxwolf&#39;s code and asking questions, and DoomJedi was there every step of the way to test, give direction, and provide art as needed.</p>
+<p>Everything was working, and we even fixed a couple bugs along the way. The next step was to make it turnkey in RetroPie.</p>
+<figure>
+  <img src="images/splitwolf-deployable.png" alt="Dead Nazi and deployable machine gun">
+  <figcaption>O-o-o-overkill</figcaption>
+</figure>
+
+<a name="make-it-retropie-ready" class="anchor" href="#make-it-retropie-ready"><h2>Make it RetroPie-ready</h2>
+</a><p>RetroPie uses a collection of shell scripts to download, compile, and install games. This streamlines the usual step-by-step how tos into a one-click, turnkey operation that makes it accessible to anyone. RetroPie is the perfect platform for a game like Splitwolf to be distributed, so now we just had to write a little bash.</p>
+<p>Because there are so many versions of Wolfenstein, from different publishers to different missions, it&#39;s necessary to match on the MD5 sum of the game files, choosing the correct binary to launch based on which game is to be played. Luckily, this technique was already implemented in <a href="https://github.com/RetroPie/RetroPie-Setup/blob/master/scriptmodules/ports/wolf4sdl.sh">the Wolf4SDL port</a>, so it was easy enough to do the same thing.</p>
+<p>With <a href="https://github.com/RetroPie/RetroPie-Setup/blob/master/scriptmodules/ports/splitwolf.sh">the script ready</a>, I sent <a href="https://github.com/RetroPie/RetroPie-Setup/pull/2532">the pull request</a>.</p>
+<p>This was most definitely not the easy part. joolswills of RetroPie is a master of all things shell script, and my code was not up to snuff. We went back and forth for over a month, with joolswilis requesting several changes to <a href="https://github.com/RetroPie/RetroPie-Setup/pull/2532#issuecomment-440711782">share code with the Wolf4SDL script</a>, correct <a href="https://github.com/RetroPie/RetroPie-Setup/pull/2532#discussion_r235546122">issues with how I handled variables in bash</a>, and <a href="https://github.com/RetroPie/RetroPie-Setup/pull/2532#issuecomment-440873665">change the way we installed binaries</a>.</p>
+<p>In the process, I modified the Wolf4SDL port to download the Spear of Destiny demo files, and exposed a <code>add_ports_wolf4sdl</code> function so I could <a href="https://github.com/RetroPie/RetroPie-Setup/pull/2532#issuecomment-439535347">share code between the two ports</a>. Their data files should live in the same place, after all, so it was natural to share the install code.</p>
+<p>I had to go deep into bash, and joolswilis wanted everything to be done right. I learned quite a bit, and in mid-January, a full 2 months and 59 comments later, the script was finally merged and released in <a href="https://retropie.org.uk/docs/Changelogs/#version-45-july-3-2019">Version 4.5 on July 3rd, 2019</a>. </p>
+<figure>
+  <img src="images/splitwolf-doublebj.png" alt="The more BJs, the better">
+  <figcaption>The more BJs, the better</figcaption>
+</figure>
+
+<a name="ready-to-kill-nazis-with-your-friends-" class="anchor" href="#ready-to-kill-nazis-with-your-friends-"><h2>Ready to kill Nazis with your friends?</h2>
+</a><p>If you already own Wolf3D or Spear of Destiny, dump all the files directly into <code>roms/ports/wolf3d/</code> (no sub-folders), then:</p>
+<ol>
+<li>Run RetroPie Setup</li>
+<li>Select &quot;Update RetroPie-Setup Script&quot;</li>
+<li>Select &quot;Manage Packages&quot;</li>
+<li>Select &quot;Manage experimental Packages&quot;</li>
+<li>Select &quot;splitwolf&quot;</li>
+<li>Select &quot;Install from Binary&quot;</li>
+</ol>
+<p>Then get in there and waste some Nazi scum with your friends!</p>
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DOBheJbU9fk?start=46" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
+<p>See <a href="https://retropie.org.uk/forum/topic/20976/splitwolf-2-4-player-co-op-wolfenstein-3d-on-retropie/2">the thread on the RetroPie forum for more details</a>.</p>
+<a name="credits" class="anchor" href="#credits"><h2>Credits</h2>
+</a><p>None of this would be possible without the hard work of the following people:</p>
+<ul>
+<li><strong>Multiplayer framework, new game modes</strong>: LinuxWolf</li>
+<li><strong>Gamepad support, configuration UI, and RetroPie implementation</strong>: lazd</li>
+<li><strong>Additional art</strong>: DoomJedi, Untrustable, Atina, PSTrooper, ArmanAhmadi</li>
+<li><strong>Title Screen</strong>: Atina</li>
+<li><strong>Title Screen Font</strong>: Tormentor667</li>
+<li><strong>SDL Port</strong>: <a href="http://www.chaos-software.de.vu">Moritz &quot;Ripper&quot; Kroll</a></li>
+<li><strong>SDL2 Update</strong>: Ioan Chera</li>
+<li><strong>Original Wolfenstein 3D</strong>: id Software (<a href="http://www.idsoftware.com">http://www.idsoftware.com</a>)</li>
+<li><strong>RetroPie</strong>: Jools Wills (@BuZz) and the rest of the RetroPie contributors</li>
+</ul>
+]]></description><link>http://lazd.github.io/split-screen-wolfenstein-3d-on-retropi.html</link><guid isPermaLink="true">http://lazd.github.io/split-screen-wolfenstein-3d-on-retropi.html</guid><category><![CDATA[gaming]]></category><category><![CDATA[raspberry pi]]></category><category><![CDATA[programming]]></category><category><![CDATA[retro computing]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Thu, 24 Jan 2019 08:00:00 GMT</pubDate></item><item><title><![CDATA[DOMly - The fast template system that clones]]></title><description><![CDATA[<a name="flashback:-the-state-of--innerhtml--performance-in-2008" class="anchor" href="#flashback:-the-state-of--innerhtml--performance-in-2008"><h2>Flashback: The state of <code>innerHTML</code> performance in 2008</h2>
 </a><blockquote>
 <p>&quot;The most obvious conclusion of these tests is that innerHTML is faster than &quot;real&quot; W3C DOM methods in all browsers.&quot;</p>
 <p>&#8212; <a href="http://www.quirksmode.org/dom/innerhtml.html">Quirksmode, circa 2008</a></p>
@@ -662,7 +1059,7 @@ LARRY
 <span class="c64_flash">LARRY</span>
 </pre>
 
-<p>All I had really done was instruct the computer to print <code>LARRY</code> in an infinite loop, but I felt empowered. It was as if I could instruct this little machine to work miracles and it would instantly oblige; in capital letters, of course.</p>
+<p>All I had really done was instruct the computer to print <code>LARRY</code> in an infinite loop, but I felt empowered. It was as if I could instruct this little machine to work miracles and it would instantly oblige, in capital letters, of course.</p>
 <p>That book had opened the door to a new world. I pressed the <code>RUN/STOP</code> key.</p>
 <pre class="code c64 c64_width animate">
 BREAK IN 10
@@ -673,11 +1070,11 @@ READY.
 <p>A white block blinked below. And so it began.</p>
 <hr>
 
-<p>Using a computer used to mean writing code, and a casual user could become a hobbyist programmer in an afternoon with no additional equipment or materials.</p>
-<p>As computing became more common place, the commands we used to type were replaced with clickable icons. Computing was now accessible to everyone, but the workings of the machine were hidden by layer upon layer of abstraction. This transformation was amazing and beautiful, but it came at a cost: The machine was transformed from a playground that encouraged tinkering to an appliance that forbade it.</p>
+<p>Flip a switch and start coding. Using a computer meant writing code, and a casual user could become a hobbyist programmer in an afternoon with no additional equipment or materials.</p>
+<p>As computing became more common place, graphical user interfaces gave us clickable icons in place of the commands we used to type. Computing became accessible to everyone as the workings of the machine were hidden by layer upon layer of abstraction. This transformation was amazing and beautiful, but it came at a cost: The machine transformed from a playground that encouraged tinkering to an appliance that forbade it.</p>
 <p>Eventually, computers began to ship with no development environment and no casual path for a user to transition to a hobbyist.</p>
 <a name="the-renaissance" class="anchor" href="#the-renaissance"><h2>The renaissance</h2>
-</a><p>JavaScript is everywhere. Nearly every device we own is capable of running human-readable JavaScript code. Hit command+option+i <em>right now</em> and you&#39;ll drop to the console. Type this and hit enter:</p>
+</a><p>JavaScript is everywhere. Nearly every device we own is capable of running human-readable JavaScript code. Hit Command + Option + i <em>right now</em> and you&#39;ll drop to the console. Type this and hit enter:</p>
 <pre><code class="lang-javascript"><div class="highlight"><pre><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">);</span>
 </pre></div>
 </code></pre>

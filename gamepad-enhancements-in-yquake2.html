@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=480">
+    <meta name="description" content="The blog of Larry Davis">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,600,300" rel="stylesheet">
+    <link href="/icons/style.css" rel="stylesheet">
+    <link href="/styles/blog.css" rel="stylesheet">
+    <link href="/styles/solarized-dark.syntax.css" rel="stylesheet">
+    <script src="/scripts/blog.js"></script><script>
+    		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    		ga('create', 'UA-43555016-1', 'lazd.github.io');
+    		ga('send', 'pageview');
+    </script>
+    <title>Gamepad enhancements in yquake2 - lazdBlog</title>
+  </head>
+  <body>
+    <header class="header"><a href="/" class="topLogo"><i class="icon-blog"></i>lazdBlog</a>
+      <nav class="topNav"><a href="https://github.com/lazd" target="_blank" class="icon-github">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505" target="_blank" class="icon-linkedin">LinkedIn</a><a href="https://twitter.com/lazdnet" target="_blank" class="icon-twitter">Twitter</a></nav>
+    </header>
+    <article class="post">
+      <h1 class="title">Gamepad enhancements in yquake2</h1>
+      <time datetime="2020-12-11 00:00:00" class="date">December 11th, 2020</time>
+      <section><p>A recent obsession with retro gaming on Raspberry Pi using <a target="_blank" href="https://retropie.org.uk/">RetroPie</a> led me to play through a few old favorites, starting of course with Wolfenstein 3D (and my subsequent work on <a target="_blank" href="./splitwolf-split-screen-wolfenstien-3d-on-raspberry-pi.html">Splitwolf</a>).</p>
+<p>After making my way through history with Doom and Quake I, it was only natural that I load up Quake II...</p>
+<a name="a-bug-right-out-of-the-gate" class="anchor" href="#a-bug-right-out-of-the-gate"><h2>A bug right out of the gate</h2>
+</a><p>RetroPie ships with support for the yquake2 engine, so it was easy to get up and running. However, I found moving the sticks made my head spin uncontrollably in circles! After a little poking around, I realized yquake2 was interpreting gamepad input as both joystick and mouse events. I found that setting the <code>sensitivity</code> cvar to <code>0</code> fixed it, but realized there was no way to set it to <code>0</code> using the UI.</p>
+<p>Time to fork and clone! A <a target="_blank" href="https://github.com/yquake2/yquake2/pull/632/commits/693803c7640708c7a2da27d9119c44f48c593d38">one line fix</a> made it possible to use the sliders in the UI to set <code>sensitivity</code> to <code>0</code>.</p>
+<a name="stick-feel-is-everything" class="anchor" href="#stick-feel-is-everything"><h2>Stick feel is everything</h2>
+</a><p>Once I got the controls working, I found that gamepad aiming didn&#39;t have a precise feel like I was used to in modern shooters. From my experience with FPV drones, I knew that a little &quot;expo&quot; can go a long way.</p>
+<p>&quot;Expo&quot; makes gamepad stick input non-linear, such that small movements on the stick are less pronounced. This enables both precise and fast movements, even at higher sensitivity levels, and is part of the reason why gamepad controls in modern shooters feel more precise. It&#39;s called expo because it simply raises the gamepad input value to the specified power, or exponent.</p>
+<p>The value of a joystick axis is a floating point number between <code>0</code> and <code>1</code>. Linear joystick input with no expo results in a graph that looks like this:</p>
+<figure>
+  <img src="images/yquake2-graph-linear.jpg" alt='Linear gamepad input'>
+  <figcaption>Linear gamepad input</figcaption>
+</figure>
+
+<p>However, if we apply some expo, say <code>2</code>, we get a graph that looks more like this:</p>
+<figure>
+  <img src="images/yquake2-graph-exponential.jpg" alt='Exponential gamepad input'>
+  <figcaption>Exponential gamepad input</figcaption>
+</figure>
+
+<p>This means small joystick inputs result in <em>very</em> small movements, but slamming the stick all the way still results in the same movement as without any expo at all. Just by looking at the graphs, you can tell how this will help make aiming on a gamepad way more precise.</p>
+<p>With this in mind, I set about adding a new cvar, <code>joy_expo</code>, with a default value of <code>2</code>. With the new cvar, it was simple to <a target="_blank" href="https://github.com/yquake2/yquake2/pull/632/commits/aafc2eb4f92693aee0fe0e14fd33c6f28f160c33">apply <code>joy_expo</code> to gamepad input</a>.</p>
+<a name="ui-is...-also-everything" class="anchor" href="#ui-is...-also-everything"><h2>UI is... also everything</h2>
+</a><p>Expo made aiming feel quite a bit better, but I needed to tweak a few more settings to get it dialed in. I realized the gamepad controls in yquake2 could only be customized by manually setting cvars in the console, which means quick changes aren&#39;t quick and easy.</p>
+<p>I set about adding a new menu in the yquake2 UI to enable customizing yaw, pitch, forward, side, and up sensitivity -- and of course, expo. I also took the opportunity to move the haptic controls to the same submenu, bringing everything together in one place.</p>
+<p>In old game engines, this usually involves manually calculating the position of controls -- there&#39;s no layout system, so you increment a variable like <code>y</code> to store where the next control in the UI is drawn. It&#39;s no flexbox, but it gets the job done, and after a little tinkering, I got a nice menu system in place:</p>
+<figure>
+  <img src="images/yquake2-menu.jpg" alt='yquake2 "customize joystick" menu'>
+  <figcaption>yquake2 &quot;customize joystick&quot; menu</figcaption>
+</figure>
+
+<a name="fork-it--push-it--quick-pr-it" class="anchor" href="#fork-it--push-it--quick-pr-it"><h2>Fork it, push it, quick PR it</h2>
+</a><p>With all these changes in place on my local branch, the next step was to <a target="_blank" href="https://github.com/yquake2/yquake2/pull/632">send a pull request</a>. After a little insight from a fellow contributor, everything was buttoned up and ready to ship.</p>
+<p>In the next release of yquake2, I was happy to find my changes released, and I hope others have found that it enhanced their retro Quake II experience just as much as it did for me.</p>
+</section>
+      <hr><footer id="disqus_thread"></footer>
+      <script>
+      	var disqus_shortname = 'lazdnet';
+      	  if (window.location.hostname !== 'localhost') {
+      		(function() {
+      			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      		})();
+      	  }
+      </script>
+    </article>
+    <footer class="footer">
+      <hr>&copy; 2022 Larry Davis
+    </footer>
+  </body>
+</html>
