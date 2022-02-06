@@ -86,7 +86,7 @@ pre.c64.fade .c64_cursor{-webkit-animation:fadeIn 4.5s,c64_blink 1s infinite;-mo
 pre.code:hover .c64_cursor,pre.code.animate .c64_cursor{-webkit-animation:fadeIn 4s,c64_blink 1s infinite;-moz-animation:fadeIn 4s,c64_blink 1s infinite;-o-animation:fadeIn 4s,c64_blink 1s infinite;-ms-animation:fadeIn 4s,c64_blink 1s infinite;animation:fadeIn 4s,c64_blink 1s infinite}
 pre.code:hover .c64_flash,pre.code.animate .c64_flash{-webkit-animation:blink .05s infinite;-moz-animation:blink .05s infinite;-o-animation:blink .05s infinite;-ms-animation:blink .05s infinite;animation:blink .05s infinite}
 pre > code{white-space:normal}
-.highlight{text-shadow:none;}
+.highlight{text-shadow:none;overflow:auto;}
 .highlight pre{margin:0;padding:1rem}
 html{height:100%;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #212d37), color-stop(1, #333537));background:-webkit-linear-gradient(top, #212d37 0, #333537 100%);background:-moz-linear-gradient(top, #212d37 0, #333537 100%);background:-o-linear-gradient(top, #212d37 0, #333537 100%);background:-ms-linear-gradient(top, #212d37 0, #333537 100%);background:linear-gradient(top, #212d37 0, #333537 100%);background-repeat:no-repeat;background-attachment:fixed;font-size:16px;font-family:'Open Sans',sans-serif;font-weight:400}
 body{position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;max-width:59.25rem;min-height:100%;margin:0 auto;padding-bottom:3rem;background:#f0f0f0;-webkit-box-shadow:0 0 1rem rgba(0,0,0,0.25);box-shadow:0 0 1rem rgba(0,0,0,0.25)}
@@ -144,6 +144,7 @@ nav.topNav a:before{color:#fff;text-shadow:0 -1px rgba(0,0,0,0.25)}
 .postPreview .tag{position:absolute;top:-.75rem;right:0;display:-webkit-box;display:-moz-box;display:-ms-box;display:-webkit-flex;display:box;display:flex;-webkit-box-align:center;-moz-box-align:center;-o-box-align:center;-ms-box-align:center;-webkit-align-items:center;align-items:center;padding:.25rem .5rem;background:rgba(128,128,128,0.9);color:#323232;font-size:.8125rem;text-transform:uppercase;text-shadow:0 1px rgba(255,255,255,0.25);-webkit-box-shadow:0 0 .25rem rgba(0,0,0,0.25);box-shadow:0 0 .25rem rgba(0,0,0,0.25)}
 [class^="icon-"]:before,[class*=" icon-"]:before{margin-right:.325rem}
 .prettyPicture{display:block;max-width:90%;margin:2rem auto;-webkit-box-shadow:0 0 1rem rgba(0,0,0,0.5);box-shadow:0 0 1rem rgba(0,0,0,0.5)}
+iframe{max-width:100%}
 @media all and (max-width: 55.26rem){.postPreviews{width:25rem;margin:auto}
 .postPreview{margin-left:0;margin-right:0}
 }
