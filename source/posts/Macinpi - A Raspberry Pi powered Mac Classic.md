@@ -15,13 +15,13 @@
 
 <img class="prettyPicture" src="images/macinpi-side.jpg" alt="Macinpi in the garden">
 
-My first truly personal computer -- not the family computer, but _mine_ -- was a Macintosh SE. My Aunt Joanie gifted it to me after upgrading to a PowerMac, and though it was already 10 years old, it was brand new to 10 year old me.
+My first truly personal computer -- not the family computer, but _mine_ -- was a Macintosh SE. My Aunt Joan gifted it to me after upgrading to a PowerMac, and though it was already 10 years old, it was brand new to 10-year-old me.
 
-Coming from DOS machines, the elegance and simplicity of the Macintosh completely enthralled me. There was no `autoexec.bat`, no `config.sys`, no SoundBlaster and no IRQs to set. You flip a switch and it _just worked_.
+Coming from DOS machines, the elegance and simplicity of the Macintosh completely enthralled me. There was no `autoexec.bat`, no `config.sys`, no SoundBlaster, and no IRQs to set. You flip a switch and it _just worked_.
 
-And the interface, wow. You were greeted by a friendly chime and the happiest little face on the happiest little computer every time you turned it on. Everything was where you thought it should be. The dialog boxes were helpful, the icons friendly, and the applications simple, yet powerful. The Macintosh hooked me right away, and I used it _constantly_.
+And the interface, wow. You were greeted by a friendly chime and the happiest little face on the happiest little computer every time you turned it on. Everything was where you expected it should be. The dialog boxes were helpful, the icons friendly, and the applications simple, yet powerful. The Macintosh hooked me right away, and I used it _constantly_.
 
-My little machine that could do tricks. I power it on. It smiles. I smile.
+My little machine could do tricks. I power it on. It smiles. I smile.
 
 I collected software, arranged my icons, dragged and resized windows in the Finder so they opened just a couple pixels under one another, fixed it, broke it, and fixed it again. I played games on it, scanned pictures, used Graphic Converter and BBEdit, created MOD music. It was my escape from reality, where I could control everything and get lost in a world of creativity. Where I could design a house, then fly a paper airplane through it. A portal to another world.
 
@@ -33,9 +33,9 @@ Fast forward 25 years.
 
 I'm back home during the COVID-19 pandemic, and life is complicated, scary. America is divided. Friends are getting sick, and family members have passed away. Nostalgia for a simpler time is strong.
 
-I've pulled out all my old Macintoshes, my old disks. The same ones 12 year old me had in plastic disk folio when a bully pushed me over, causing them to spill on the steps of the portable classroom. Simpler times, maybe, but not perfect.
+I've pulled out all my old Macintoshes, my old disks. The same ones 12 year old me had in plastic disk case when a bully pushed me over, causing them to spill on the steps of the portable classroom. Simpler times, maybe, but not perfect.
 
-But I have my little escape. My little [Performa 200](https://everymac.com/systems/apple/mac_performa/specs/mac_performa_200.html) (aka Mac Classic II). A black and white, 9" display. A clicky mechanical keyboard. One mouse button.
+But I have my little escape. My little [Performa 200](https://everymac.com/systems/apple/mac_performa/specs/mac_performa_200.html) (aka Mac Classic II). A black and white, 9" display. A clicky mechanical keyboard and a one button mouse.
 
 I plug it in. I power it on. Checkerboard background, a sign of damaged components.
 
@@ -47,13 +47,13 @@ I remove the cover from the hard drive, exposing its platters. I flick the drive
 
 I power it on. It smiles. I smile. A long lost friend.
 
-I back up its hard drive using an external SCSI enclosure and another, internet-connected Mac. I back up every single floppy disk from the plastic disk folio. Every byte of data I could read, I saved. All my old high scores. My collection of MOD music. My earliest essays and short stories.
+I back up its hard drive using an external SCSI enclosure and another, internet-connected Mac. I back up every single floppy disk from the plastic disk case. Every byte of data I could read, I saved. All my old high scores. My collection of MOD music. My earliest essays and short stories.
 
 I relive the experience of it all. I relive the wonder. I'm taken back to a time when a black and white screen could show you all the color in the world, as long as you used your imagination.
 
-As old hardware begins to fail and spare parts become scarce, pieces of the experience fall away. It's not the same to use old software on a sleek, new MacBook; the feeling just isn't there. 
+As old hardware begins to fail and spare parts become scarce, pieces of the experience fall away. Even after recapping the main board with [fresh tantalum capacitors](https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=8d6ec8772d), there's no guarantee it will continue to function indefinitely, and it's not the same to use old software on a sleek, new MacBook; the feeling just isn't there.
 
-I never want to lose the ability to go back to that time when things were simpler, to feel the wonder I felt when I was a kid, so I built Macinpi; a new computer with the charm of an old computer, and a few new tricks behind its screen.
+I never want to lose the ability to go back to that time when things were simpler, to feel the wonder I felt when I was a kid, so I built Macinpi; a new computer with the charm of an old computer.
 
 ## Hardware
 
@@ -78,7 +78,7 @@ It's very friend-shaped; it just needs something to fill the hole where its disp
 
 I think this little computer deserves a little color in its life. It's got a rainbow logo on the front of it after all, certainly black and white wouldn't suit it.
 
-I choose the [Pimoroni 10" display](https://shop.pimoroni.com/products/hdmi-10-lcd-screen-kit-1024x768) after seeing that it fit the front bezel perfectly [in PepPi's build](https://forums.raspberrypi.com/viewtopic.php?t=306474), and was wide enough that no ugly bezels would be visible. And the wiring is clean, I like that. $99 later, it starts to look like a computer again.
+I choose the [Pimoroni 10" display](https://shop.pimoroni.com/products/hdmi-10-lcd-screen-kit-1024x768) after seeing that it fit the case perfectly [in PepPi's build](https://forums.raspberrypi.com/viewtopic.php?t=306474), and was wide enough that no ugly bezels would be visible. And the wiring is clean, I like that. $99 later, it starts to look like a computer again.
 
 <figure>
   <img src="images/macinpi-pimoroni-display.jpg" alt='Pimoroni 10" display'>
@@ -87,7 +87,7 @@ I choose the [Pimoroni 10" display](https://shop.pimoroni.com/products/hdmi-10-l
 
 ### CPU
 
-There's a [Raspberry Pi 4 2GB](https://amzn.to/3om7gYV) lying around I had bought to build another RetroPie box with. $45, at at the time at least. It would plug right into the display, and with an emulator, could paint a smile on the screen and load all the my old Mac applications.
+There's a [Raspberry Pi 4 2GB](https://amzn.to/3om7gYV) lying around I had bought to build another RetroPie box with. $45, at at the time at least. It would plug right into the display, and with an emulator like [Basilisk II](https://basilisk.cebix.net/), could paint a smile on the screen and load all my old Mac applications.
 
 Perfect.
 
@@ -105,11 +105,11 @@ An [Apple Adjustable Mechanical Keyboard](https://en.wikipedia.org/wiki/Apple_Ad
   <figcaption>Apple Adjustable Keyboard</figcaption>
 </figure>
 
-I have an Apple mouse from the old days, just one button, rectangular and angular.
+I have an Apple mouse from the old days, rectangular and angular, with just one button.
 
-But these won't work with the Pi, they don't have USB, but ADB (Apple Desktop Bus), Apple's proprietary serial connector.
+But these won't work with the Pi. They don't have USB, but ADB (Apple Desktop Bus), Apple's proprietary serial connector.
 
-[TMK](https://github.com/tmk/tmk_keyboard) with [adb_usb](https://github.com/tmk/tmk_keyboard/tree/master/converter/adb_usb) on an old [Arduino Pro Micro clone](https://amzn.to/3rmDnJU) is the answer. I [download](http://www.tmk-kbd.com/tmk_keyboard/editor/unimap/?adb_usb_rev1) and [flash](https://deskthority.net/viewtopic.php?f=7&t=8448&start=) the firmware. I pull a 1kΩ resistor from my electronics box. 10 year old me categorized it wrong, or maybe it slipped under the dividers in the drawers, but I found it. An old s-video cable, which has the same 4 pin mini-DIN connector as ADB, is chopped up [and wired in according to the schematic](https://geekhack.org/index.php?topic=14290.0). Everything works the first try, $5 later.
+[TMK](https://github.com/tmk/tmk_keyboard) with [adb_usb](https://github.com/tmk/tmk_keyboard/tree/master/converter/adb_usb) on an old [Arduino Pro Micro clone](https://amzn.to/3rmDnJU) is the answer. I [download](http://www.tmk-kbd.com/tmk_keyboard/editor/unimap/?adb_usb_rev1) and [flash](https://deskthority.net/viewtopic.php?f=7&t=8448&start=) the firmware. I pull a 1kΩ resistor from my old electronics organizer. 10 year old me categorized it wrong, or maybe it slipped under the dividers in the drawers, but I found it. An old s-video cable, which has the same 4 pin mini-DIN connector as ADB, is chopped up [and wired in according to the schematic](https://geekhack.org/index.php?topic=14290.0). Everything works the first try, $5 later.
 
 <figure>
   <img src="images/macinpi-adb2usb.jpg" alt="ADB2USB using an Arduino Pro Micro Clone">
@@ -129,33 +129,33 @@ $30 or so.
   <figcaption>Rear ports</figcaption>
 </figure>
 
-A little bit of trimming, and it fit nicely in the case. The Performa's power button happened to be exactly the same size as the headphone port, so I slid it over the switch and glued it into place.
+It fits nicely in the case after a little trimming. I harvested a power button from an old Quadra 610 case I had in the attic, and it happens to be exactly the same size as the headphone port where I placed the reset switch. I add a little hot glue and slide it onto the switch.
 
 <figure>
-  <img src="images/macinpi-rear.jpg" alt="Rear ports">
+  <img src="images/macinpi-rear.jpg" alt="Rear ports with case on">
   <figcaption>Connectivity, right where it used to be</figcaption>
 </figure>
 
 ### Supporting electronics
 
-Though I can power the display directly from the Pi, adding any other peripherals means the voltage begins to drop and the Pi flashes its little yellow lightning bolt.
+Though I can power the display directly from the Pi, adding any other peripherals means the voltage begins to drop and the Pi flashes its [little yellow lightning bolt](https://www.raspberrypi.com/documentation/computers/config_txt.html#monitoring-voltage).
 
-A [USB-C PD trigger](https://amzn.to/34uZAwm) lets me use any decent USB-C power supply, such as a MacBook charger, and get a solid 9V 3A out of it. 5 for $10, so $2. Now I can power that fan!
+A [USB-C PD trigger](https://amzn.to/34gMTG2) lets me use any decent USB-C power supply, such as a MacBook charger, and get a solid 9V 3A out of it. 5 for $10, so $2. Now I can power that fan, undervolting it a little bit to keep it quiet.
 
-But the Pi needs power too. [Pololu 5V 5A regulator](https://amzn.to/3Hqcvys) to the rescue. It's not cheap, but it's quality and will provide plenty of clean power. $25.
+But the Pi needs power too. [Pololu 5V 5A regulator](https://amzn.to/3Hqcvys) should do the trick. It's not cheap, but it's quality and will provide plenty of clean power. $25.
 
-An old Quadra 610 case in the attic provides the speaker. I harvest its power button as well, maybe it'll come in handy. $0.
+The old Quadra 610 case provides the speaker. It's old and sounds tinny, but that's part of the charm. $0.
 
 <figure>
   <img src="images/macinpi-speaker.jpg" alt="The speaker, shoved into the air intake">
   <figcaption>The speaker, shoved into the air intake</figcaption>
 </figure>
 
-A Raspberry Pi can't drive a speaker directly. It needs an amplifier. A [3-12V mono LM316 amplifier module](https://amzn.to/3Go6lxi), two for $9, will do the trick nicely. $4.50.
+The Raspberry Pi can't drive a speaker directly; it needs an amplifier. A [3-12V mono LM316 amplifier module](https://amzn.to/3Go6lxi), two for about $9, will do the trick nicely. $4.50.
 
-But since the amplifier and fan are powered from 9V, they stay on when the Pi shuts down. We'll have to fix this.
+But since the amplifier and fan are powered directly from the USB-C trigger's 9V supply, they stay on when the Pi shuts down. We'll have to fix this.
 
-After a little lesson on basic electrical engineering from some new friends on Discord, a schematic is drawn up. A [100kΩ resistor](https://amzn.to/3HsvVTa) takes the Pi's 3.3V signal to a [2N3904 NPN transistor](https://amzn.to/3LgUGUW), [1N4007 flyback diode](https://amzn.to/3oHrRYb), and a [470µF 35V filter capacitor](https://amzn.to/3AWPrVr) that bring the fan to life when the Pi powers up.
+After a little lesson on basic electrical engineering from some new friends on Discord, a schematic is drawn up. A [100kΩ resistor](https://amzn.to/3HsvVTa) takes the Pi's 3.3V signal from pin 8 (GPIO14) to a [2N3904 NPN transistor](https://amzn.to/3LgUGUW), [1N4007 flyback diode](https://amzn.to/3oHrRYb), and a [470µF 35V filter capacitor](https://amzn.to/3AWPrVr) that bring the fan to life when the Pi powers up. As long as you have [serial communication enabled](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-5-using-a-console-cable/enabling-serial-console), GPIO14 will provide 3.3V while the Pi is on.
 
 <figure>
   <img src="images/macinpi-fan-schematic.jpg" alt="Fan schematic">
