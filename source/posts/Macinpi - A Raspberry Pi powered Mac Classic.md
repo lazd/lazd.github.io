@@ -81,8 +81,8 @@ I think this little computer deserves a little color in its life. It's got a rai
 I choose the [Pimoroni 10" display](https://shop.pimoroni.com/products/hdmi-10-lcd-screen-kit-1024x768) after seeing that it fit the case perfectly [in PepPi's build](https://forums.raspberrypi.com/viewtopic.php?t=306474), and was wide enough that no ugly bezels would be visible. And the wiring is clean, I like that. $99 later, it starts to look like a computer again.
 
 <figure>
-  <img src="images/macinpi-pimoroni-display.jpg" alt='Pimoroni 10" display'>
-  <figcaption>Pimoroni 10" display</figcaption>
+  <img src="images/macinpi-display.jpg" alt='Display mounted to the case'>
+  <figcaption>Display mounted to the case</figcaption>
 </figure>
 
 ### CPU
@@ -92,8 +92,8 @@ There's a [Raspberry Pi 4 2GB](https://amzn.to/3om7gYV) lying around I had bough
 Perfect.
 
 <figure>
-  <img src="images/macinpi-raspberry-pi4.jpg" alt='Raspberry Pi 4'>
-  <figcaption>Raspberry Pi 4</figcaption>
+  <img src="images/macinpi-sneakypi.jpg" alt='Raspberry Pi 4 in Macinpi case'>
+  <figcaption>Raspberry Pi 4 hiding in the Macinpi case</figcaption>
 </figure>
 
 ### Keyboard & Mouse
