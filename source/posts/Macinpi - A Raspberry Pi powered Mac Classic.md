@@ -1,14 +1,15 @@
 {
   title: "Macinpi: A new old computer",
-    description: 'A friend-shaped, portable "Mac Classic" built with love and spare parts.',
-    date: "2022-2-1",
-    tags: [
-        'retro computing',
-        'hardware',
-        'raspberry pi',
-        'macintosh'
-    ],
-    image: "<div class='fullMastWide' style='background-image: url(images/macinpi.png);'></div>"
+  description: 'A friend-shaped, portable "Mac Classic" built with love and spare parts.',
+  date: "2022-2-1",
+  tags: [
+      'retro computing',
+      'hardware',
+      'raspberry pi',
+      'macintosh'
+  ],
+  imageURL: 'images/macinpi.png',
+  image: "<div class='fullMastWide' style='background-image: url(images/macinpi.png);'></div>"
 }
 
 <img class="prettyPicture" src="images/macinpi-side.jpg" alt="Macinpi in the garden">

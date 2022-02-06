@@ -1,12 +1,13 @@
 {
-    title: "DOMly - The fast template system that clones",
-    description: "Make your app fly with maintainable templates the compile to createElement and cloneNode",
-    date: "2014-2-27",
-    tags: [
-        'javascript',
-        'browsers'
-    ],
-    image: '<div class="fullMast" style="background-image: url(images/DOMly_logo_small.png);"></div>'
+  title: "DOMly - The fast template system that clones",
+  description: "Make your app fly with maintainable templates the compile to createElement and cloneNode",
+  date: "2014-2-27",
+  tags: [
+    'javascript',
+    'browsers'
+  ],
+  imageURL: 'images/DOMly_logo_small.png',
+  image: '<div class="fullMast" style="background-image: url(images/DOMly_logo_small.png);"></div>'
 }
 
 ## Flashback: The state of `innerHTML` performance in 2008

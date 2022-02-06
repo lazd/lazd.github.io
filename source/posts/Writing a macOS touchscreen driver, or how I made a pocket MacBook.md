@@ -8,6 +8,7 @@
       'hackintosh',
       'drivers'
   ],
+  imageURL: 'images/minibook.png',
   image: "<div class='fullMastCenter fullMastNoRepeat' style='background-image: url(images/minibook.png);'></div>"
 }
 

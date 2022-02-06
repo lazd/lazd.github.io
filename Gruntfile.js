@@ -2,7 +2,7 @@ var moment = require('moment');
 
 /*global module:false*/
 module.exports = function(grunt) {
-	// Tempalte data
+	// Template data
 	var data = grunt.file.readJSON('source/layouts/variables.json');
 	data.moment = moment;
 
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 				src: 'source/posts',
 				dest: 'build',
 				layout: 'source/layouts/post.jade',
-				url: ':title' 
+				url: ':title'
 			}
 		},
 

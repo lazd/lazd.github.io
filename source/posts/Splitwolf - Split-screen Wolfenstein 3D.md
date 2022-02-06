@@ -8,6 +8,7 @@
       'programming',
       'retro computing'
   ],
+  imageURL: 'images/splitwolf.png',
   image: "<div class='fullMast' style='background-image: url(images/splitwolf.png);'></div>"
 }
 

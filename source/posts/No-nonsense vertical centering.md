@@ -5,6 +5,7 @@
     tags: [
         'css3'
     ],
+    imageURL: 'images/rusty-spoon-and-recipe-book.jpg',
     image: "<div class='vCenter fullMast whiteText bigShadow' style='background-image: url(images/rusty-spoon-and-recipe-book.jpg);'>Don't off yourself with a rusty spoon just yet, <br>cringe-free CSS vertical centering is possible.</div>"
 }
 

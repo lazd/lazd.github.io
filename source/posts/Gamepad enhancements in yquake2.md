@@ -1,13 +1,14 @@
 {
   title: "Gamepad enhancements in yquake2",
-    description: 'Getting better control with a little math and a little UI',
-    date: "2020-12-12",
-    tags: [
-        'gaming',
-        'programming',
-        'retro computing'
-    ],
-    image: "<div class='fullMast' style='background-image: url(images/yquake2.png);'></div>"
+  description: 'Getting better control with a little math and a little UI',
+  date: "2020-12-12",
+  tags: [
+      'gaming',
+      'programming',
+      'retro computing'
+  ],
+  imageURL: 'images/yquake2.png',
+  image: "<div class='fullMast' style='background-image: url(images/yquake2.png);'></div>"
 }
 
 A recent obsession with retro gaming on Raspberry Pi using [RetroPie](https://retropie.org.uk/) led me to play through a few old favorites, starting of course with Wolfenstein 3D (and my subsequent work on [Splitwolf](./splitwolf-split-screen-wolfenstien-3d-on-raspberry-pi.html)).

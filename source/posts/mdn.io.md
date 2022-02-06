@@ -7,6 +7,7 @@
         'javascript',
         'node.js'
     ],
+    imageURL: 'images/mdn_promo.png',
     image: '<div class="fullMast" style="background-image: url(images/mdn_promo.png); padding-top: 0.625rem"><button class="button red">I\'m feeling MDNy</button></div>'
 }
 

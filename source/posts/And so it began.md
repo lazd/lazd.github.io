@@ -8,6 +8,7 @@
         'c64',
         'basic'
     ],
+    imageURL: 'images/commodore.png',
     image: '<pre class="code c64 c64_width animate noMargin small">\
 <div class="center">\
 **** COMMODORE 64 BASIC V2 ****\n\
