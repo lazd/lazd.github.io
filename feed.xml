@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 06 Feb 2022 17:19:45 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Sun, 06 Feb 2022 17:19:45 GMT</pubDate><copyright><![CDATA[2022 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[Macinpi: A new old computer]]></title><description><![CDATA[<p><img class="prettyPicture" src="images/macinpi-side.jpg" alt="Macinpi in the garden"></p>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 06 Feb 2022 17:59:28 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Sun, 06 Feb 2022 17:59:28 GMT</pubDate><copyright><![CDATA[2022 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[Macinpi: A new old computer]]></title><description><![CDATA[<p><img class="prettyPicture" src="images/macinpi-side.jpg" alt="Macinpi in the garden"></p>
 <p>My first truly personal computer -- not the family computer, but <em>mine</em> -- was a Macintosh SE. My Aunt Joan gifted it to me after upgrading to a PowerMac, and though it was already 10 years old, it was brand new to 10-year-old me.</p>
 <p>Coming from DOS machines, the elegance and simplicity of the Macintosh completely enthralled me. There was no <code>autoexec.bat</code>, no <code>config.sys</code>, no SoundBlaster, and no IRQs to set. You flip a switch and it <em>just worked</em>.</p>
 <p>And the interface, wow. You were greeted by a friendly chime and the happiest little face on the happiest little computer every time you turned it on. Everything was where you expected it should be. The dialog boxes were helpful, the icons friendly, and the applications simple, yet powerful. The Macintosh hooked me right away, and I used it <em>constantly</em>.</p>
@@ -37,16 +37,16 @@
 </a><p>I think this little computer deserves a little color in its life. It&#39;s got a rainbow logo on the front of it after all, certainly black and white wouldn&#39;t suit it.</p>
 <p>I choose the <a href="https://shop.pimoroni.com/products/hdmi-10-lcd-screen-kit-1024x768">Pimoroni 10&quot; display</a> after seeing that it fit the case perfectly <a href="https://forums.raspberrypi.com/viewtopic.php?t=306474">in PepPi&#39;s build</a>, and was wide enough that no ugly bezels would be visible. And the wiring is clean, I like that. $99 later, it starts to look like a computer again.</p>
 <figure>
-  <img src="images/macinpi-pimoroni-display.jpg" alt='Pimoroni 10" display'>
-  <figcaption>Pimoroni 10&quot; display</figcaption>
+  <img src="images/macinpi-display.jpg" alt='Display mounted to the case'>
+  <figcaption>Display mounted to the case</figcaption>
 </figure>
 
 <a name="cpu" class="anchor" href="#cpu"><h3>CPU</h3>
 </a><p>There&#39;s a <a href="https://amzn.to/3om7gYV">Raspberry Pi 4 2GB</a> lying around I had bought to build another RetroPie box with. $45, at at the time at least. It would plug right into the display, and with an emulator like <a href="https://basilisk.cebix.net/">Basilisk II</a>, could paint a smile on the screen and load all my old Mac applications.</p>
 <p>Perfect.</p>
 <figure>
-  <img src="images/macinpi-raspberry-pi4.jpg" alt='Raspberry Pi 4'>
-  <figcaption>Raspberry Pi 4</figcaption>
+  <img src="images/macinpi-sneakypi.jpg" alt='Raspberry Pi 4 in Macinpi case'>
+  <figcaption>Raspberry Pi 4 hiding in the Macinpi case</figcaption>
 </figure>
 
 <a name="keyboard---mouse" class="anchor" href="#keyboard---mouse"><h3>Keyboard &amp; Mouse</h3>
