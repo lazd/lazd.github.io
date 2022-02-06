@@ -127,6 +127,13 @@ $30 or so.
   <figcaption>Rear ports</figcaption>
 </figure>
 
+A little bit of trimming, and it fit nicely in the case. The Performa's power button happened to be exactly the same size as the headphone port, so I slid it over the switch and glued it into place.
+
+<figure>
+  <img src="images/macinpi-rear.jpg" alt="Rear ports">
+  <figcaption>Connectivity, right where it used to be</figcaption>
+</figure>
+
 ### Supporting electronics
 
 Though I can power the display directly from the Pi, adding any other peripherals means the voltage begins to drop and the Pi flashes its little yellow lightning bolt.
