@@ -9,6 +9,7 @@
       'drivers'
   ],
   imageURL: 'images/minibook.png',
+  imageAlt: 'A Chuwi Minibook, 8" touchscreen computer, seen from above',
   image: "<div class='fullMastCenter fullMastNoRepeat' style='background-image: url(images/minibook.png);'></div>"
 }
 

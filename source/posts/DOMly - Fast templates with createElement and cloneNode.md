@@ -7,6 +7,7 @@
     'browsers'
   ],
   imageURL: 'images/DOMly_logo_small.png',
+  imageAlt: 'An angry looking red sheep, the DOMly logo',
   image: '<div class="fullMast" style="background-image: url(images/DOMly_logo_small.png);"></div>'
 }
 

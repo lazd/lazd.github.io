@@ -9,6 +9,7 @@
         'basic'
     ],
     imageURL: 'images/commodore.png',
+    imageAlt: 'A BASIC program written on a Commodore 64',
     image: '<pre class="code c64 c64_width animate noMargin small">\
 <div class="center">\
 **** COMMODORE 64 BASIC V2 ****\n\

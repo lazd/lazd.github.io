@@ -8,6 +8,7 @@
       'retro computing'
   ],
   imageURL: 'images/yquake2.png',
+  imageAlt: 'A screenshot from the video game, Quake 2 where an enemy is being shot by a railgun and damaged by an explosion',
   image: "<div class='fullMast' style='background-image: url(images/yquake2.png);'></div>"
 }
 

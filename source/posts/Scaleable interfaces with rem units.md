@@ -7,6 +7,7 @@
         'mobile'
     ],
     imageURL: 'images/scales.png',
+    imageAlt: 'Orange and black scales of a snake',
     image: '<div class="vCenter fullMastWide" style="background-image: url(images/scales.jpg);"><div id="resize">\
     <button class="button red large" id="decrease">-</button>\
     <div id="pagePixelSize">16px</div>\

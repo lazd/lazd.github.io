@@ -9,6 +9,7 @@
       'macintosh'
   ],
   imageURL: 'images/macinpi.png',
+  imageAlt: 'A Macintosh Classic on a table in a garden',
   image: "<div class='fullMastWide' style='background-image: url(images/macinpi.png);'></div>"
 }
 

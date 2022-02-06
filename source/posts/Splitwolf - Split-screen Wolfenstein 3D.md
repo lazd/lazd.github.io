@@ -9,6 +9,7 @@
       'retro computing'
   ],
   imageURL: 'images/splitwolf.png',
+  imageAlt: 'The Splitwolf title screen. Two Americans kill Nazis with machine guns',
   image: "<div class='fullMast' style='background-image: url(images/splitwolf.png);'></div>"
 }
 
