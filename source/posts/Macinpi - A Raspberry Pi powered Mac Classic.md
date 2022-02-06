@@ -35,7 +35,7 @@ I'm back home during the COVID-19 pandemic, and life is complicated, scary. Amer
 
 I've pulled out all my old Macintoshes, my old disks. The same ones 12 year old me had in plastic disk case when a bully pushed me over, causing them to spill on the steps of the portable classroom. Simpler times, maybe, but not perfect.
 
-But I have my little escape. My little [Performa 200](https://everymac.com/systems/apple/mac_performa/specs/mac_performa_200.html) (aka Mac Classic II). A black and white, 9" display. A clicky mechanical keyboard and a one button mouse.
+But I have my little escape; my [Performa 200](https://everymac.com/systems/apple/mac_performa/specs/mac_performa_200.html) (aka Mac Classic II). A black and white, 9" display. A clicky mechanical keyboard and a one button mouse.
 
 I plug it in. I power it on. Checkerboard background, a sign of damaged components.
 
@@ -51,7 +51,7 @@ I back up its hard drive using an external SCSI enclosure and another, internet-
 
 I relive the experience of it all. I relive the wonder. I'm taken back to a time when a black and white screen could show you all the color in the world, as long as you used your imagination.
 
-As old hardware begins to fail and spare parts become scarce, pieces of the experience fall away. Even after recapping the main board with [fresh tantalum capacitors](https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=8d6ec8772d), there's no guarantee it will continue to function indefinitely, and it's not the same to use old software on a sleek, new MacBook; the feeling just isn't there.
+As old hardware begins to fail and spare parts become scarce, pieces of the experience fall away. Even after recapping the motherboard with [fresh tantalum capacitors](https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=8d6ec8772d), there's no guarantee it will continue to function indefinitely, and it's not the same to use old software on a sleek, new MacBook; the feeling just isn't there.
 
 I never want to lose the ability to go back to that time when things were simpler, to feel the wonder I felt when I was a kid, so I built Macinpi; a new computer with the charm of an old computer.
 
@@ -118,7 +118,7 @@ But these won't work with the Pi. They don't have USB, but ADB (Apple Desktop Bu
 
 ### Connectivity
 
-The vacant holes on the rear of the machine where the old ports used to be need to be put to good use. A friend of mine helps me weld a steel plate back there, I trace out holes crudely with a pencil, make a few markings, drill a few holes, and route out some ports with my Dremel.
+The vacant holes on the rear of the machine where the old ports were need to be put to good use. My friend Kim helps me weld a steel plate back there. I trace out holes crudely with a pencil, make a few markings, drill a few holes, and route out some ports with my Dremel.
 
 2x [panel mount USB-A 3.0](https://amzn.to/3unrLsb). 1x [panel mount USB-C](https://amzn.to/3gnn5dH). 1x [panel mount 4 pin mini-DIN](https://www.ebay.com/itm/274516442073). Some M2 and M3 screws.
 
@@ -144,14 +144,14 @@ A [USB-C PD trigger](https://amzn.to/34gMTG2) lets me use any decent USB-C power
 
 But the Pi needs power too. [Pololu 5V 5A regulator](https://amzn.to/3Hqcvys) should do the trick. It's not cheap, but it's quality and will provide plenty of clean power. $25.
 
-The old Quadra 610 case provides the speaker. It's old and sounds tinny, but that's part of the charm. $0.
+The old Quadra 610 case donates its speaker. It's old and sounds tinny, but that's part of the charm. $0.
 
 <figure>
   <img src="images/macinpi-speaker.jpg" alt="The speaker, shoved into the air intake">
   <figcaption>The speaker, shoved into the air intake</figcaption>
 </figure>
 
-The Raspberry Pi can't drive a speaker directly; it needs an amplifier. A [3-12V mono LM316 amplifier module](https://amzn.to/3Go6lxi), two for about $9, will do the trick nicely. $4.50.
+The Raspberry Pi can't drive a speaker directly; it needs an amplifier. A [3-12V mono LM316 amplifier module](https://amzn.to/3Go6lxi), two for about $9, will do the trick nicely.
 
 But since the amplifier and fan are powered directly from the USB-C trigger's 9V supply, they stay on when the Pi shuts down. We'll have to fix this.
 
