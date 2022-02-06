@@ -178,11 +178,16 @@ All of this is placed on a [prototype PCB](https://amzn.to/3rmmLSA), with a mess
 
 A momentary switch is wired between the Pi's `GLOBAL_EN` and `J2` pins to [reset the Pi from a halted state](https://forums.raspberrypi.com/viewtopic.php?f=29&t=24682&p=1491661&hilit=GLOBAL_EN#p1491661).
 
-The hardware is ready.
-
 <figure>
   <img src="images/macinpi-inside.jpg" alt="Macinpi internals">
   <figcaption>Macinpi internals</figcaption>
+</figure>
+
+The hardware is ready.
+
+<figure>
+  <img src="images/macinpi-complete.jpg" alt="Complete hardware">
+  <figcaption>Complete hardware</figcaption>
 </figure>
 
 ## Software
@@ -216,24 +221,34 @@ It smiles. I smile.
 
 <hr>
 
-## Parts list
+## Boot and shutdown sequence
 
-* System
-  * [Raspberry Pi 4 2GB](https://amzn.to/3om7gYV)
-  * [Pimoroni 10" display](https://shop.pimoroni.com/products/hdmi-10-lcd-screen-kit-1024x768)
-  * [Arduino Pro Micro clone for TMK adb_usb](https://amzn.to/3rmDnJU)
-* Panel connectors
-  * [USB-A 3.0](https://amzn.to/3unrLsb)
-  * [USB-C](https://amzn.to/3gnn5dH)
-  * [4 pin mini-DIN](https://www.ebay.com/itm/274516442073)
-* Control and power supply board
-  * [Prototype PCB](https://amzn.to/3rmmLSA)
-  * [LM316 Audio amplifier module](https://amzn.to/3Go6lxi)
-  * [1kΩ, 1.2kΩ, 100kΩ Resistors](https://amzn.to/3HsvVTa)
-  * [2N3904/2N3906 Transistors](https://amzn.to/3LgUGUW)
-  * [1N4007 Diode](https://amzn.to/3oHrRYb)
-  * [Capacitor](https://amzn.to/3AWPrVr)
+Macinpi boots with the press of a button, and shuts off completely after selecting **Special** -> **Shutdown** in Mac OS.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pnRwGpe4Zdg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Scripts and config files
 
-See [lazd/macinpi](https://github.com/lazd/macinpi) for the scripts and config files I used to build Basilisk and configure the system.
+See [lazd/macinpi](https://github.com/lazd/macinpi) for the scripts and config files I used to build Basilisk II and configure the system.
+
+## Parts list
+
+Want to build your own Macinpi? Here are the parts I used.
+
+### System
+* [Raspberry Pi 4 2GB](https://amzn.to/3om7gYV)
+* [Pimoroni 10" display](https://shop.pimoroni.com/products/hdmi-10-lcd-screen-kit-1024x768)
+* [Arduino Pro Micro clone for TMK adb_usb](https://amzn.to/3rmDnJU)
+
+### Panel connectors
+* [USB-A 3.0](https://amzn.to/3unrLsb)
+* [USB-C](https://amzn.to/3gnn5dH)
+* [4 pin mini-DIN](https://www.ebay.com/itm/274516442073)
+
+### Control and power supply board
+* [Prototype PCB](https://amzn.to/3rmmLSA)
+* [LM316 Audio amplifier module](https://amzn.to/3Go6lxi)
+* [1kΩ, 1.2kΩ, 100kΩ Resistors](https://amzn.to/3HsvVTa)
+* [2N3904/2N3906 Transistors](https://amzn.to/3LgUGUW)
+* [1N4007 Diode](https://amzn.to/3oHrRYb)
+* [Capacitor](https://amzn.to/3AWPrVr)
