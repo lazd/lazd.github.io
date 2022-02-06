@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 06 Feb 2022 17:59:28 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Sun, 06 Feb 2022 17:59:28 GMT</pubDate><copyright><![CDATA[2022 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[Macinpi: A new old computer]]></title><description><![CDATA[<p><img class="prettyPicture" src="images/macinpi-side.jpg" alt="Macinpi in the garden"></p>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 06 Feb 2022 18:36:36 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Sun, 06 Feb 2022 18:36:36 GMT</pubDate><copyright><![CDATA[2022 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[Macinpi: A new old computer]]></title><description><![CDATA[<p><img class="prettyPicture" src="images/macinpi-side.jpg" alt="Macinpi in the garden"></p>
 <p>My first truly personal computer -- not the family computer, but <em>mine</em> -- was a Macintosh SE. My Aunt Joan gifted it to me after upgrading to a PowerMac, and though it was already 10 years old, it was brand new to 10-year-old me.</p>
 <p>Coming from DOS machines, the elegance and simplicity of the Macintosh completely enthralled me. There was no <code>autoexec.bat</code>, no <code>config.sys</code>, no SoundBlaster, and no IRQs to set. You flip a switch and it <em>just worked</em>.</p>
 <p>And the interface, wow. You were greeted by a friendly chime and the happiest little face on the happiest little computer every time you turned it on. Everything was where you expected it should be. The dialog boxes were helpful, the icons friendly, and the applications simple, yet powerful. The Macintosh hooked me right away, and I used it <em>constantly</em>.</p>
@@ -11,7 +11,7 @@
 <p>Fast forward 25 years.</p>
 <p>I&#39;m back home during the COVID-19 pandemic, and life is complicated, scary. America is divided. Friends are getting sick, and family members have passed away. Nostalgia for a simpler time is strong.</p>
 <p>I&#39;ve pulled out all my old Macintoshes, my old disks. The same ones 12 year old me had in plastic disk case when a bully pushed me over, causing them to spill on the steps of the portable classroom. Simpler times, maybe, but not perfect.</p>
-<p>But I have my little escape. My little <a href="https://everymac.com/systems/apple/mac_performa/specs/mac_performa_200.html">Performa 200</a> (aka Mac Classic II). A black and white, 9&quot; display. A clicky mechanical keyboard and a one button mouse.</p>
+<p>But I have my little escape; my <a href="https://everymac.com/systems/apple/mac_performa/specs/mac_performa_200.html">Performa 200</a> (aka Mac Classic II). A black and white, 9&quot; display. A clicky mechanical keyboard and a one button mouse.</p>
 <p>I plug it in. I power it on. Checkerboard background, a sign of damaged components.</p>
 <p>I clean the electrolytic capacitor juice off the components with isopropyl. I replace the PRAM battery <a href="https://amzn.to/3rjI7QG">with a fresh 14250 cell</a>. It was old, but luckily hadn&#39;t ruptured.</p>
 <p>I power it on. A question mark blinks inside of a disk icon.</p>
@@ -19,7 +19,7 @@
 <p>I power it on. It smiles. I smile. A long lost friend.</p>
 <p>I back up its hard drive using an external SCSI enclosure and another, internet-connected Mac. I back up every single floppy disk from the plastic disk case. Every byte of data I could read, I saved. All my old high scores. My collection of MOD music. My earliest essays and short stories.</p>
 <p>I relive the experience of it all. I relive the wonder. I&#39;m taken back to a time when a black and white screen could show you all the color in the world, as long as you used your imagination.</p>
-<p>As old hardware begins to fail and spare parts become scarce, pieces of the experience fall away. Even after recapping the main board with <a href="https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=8d6ec8772d">fresh tantalum capacitors</a>, there&#39;s no guarantee it will continue to function indefinitely, and it&#39;s not the same to use old software on a sleek, new MacBook; the feeling just isn&#39;t there.</p>
+<p>As old hardware begins to fail and spare parts become scarce, pieces of the experience fall away. Even after recapping the motherboard with <a href="https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=8d6ec8772d">fresh tantalum capacitors</a>, there&#39;s no guarantee it will continue to function indefinitely, and it&#39;s not the same to use old software on a sleek, new MacBook; the feeling just isn&#39;t there.</p>
 <p>I never want to lose the ability to go back to that time when things were simpler, to feel the wonder I felt when I was a kid, so I built Macinpi; a new computer with the charm of an old computer.</p>
 <a name="hardware" class="anchor" href="#hardware"><h2>Hardware</h2>
 </a><p>No working computers were gutted in the making of this machine. Some of the pieces were leftover bits from someone else&#39;s simpler time, some new.</p>
@@ -65,7 +65,7 @@
 </figure>
 
 <a name="connectivity" class="anchor" href="#connectivity"><h3>Connectivity</h3>
-</a><p>The vacant holes on the rear of the machine where the old ports used to be need to be put to good use. A friend of mine helps me weld a steel plate back there, I trace out holes crudely with a pencil, make a few markings, drill a few holes, and route out some ports with my Dremel.</p>
+</a><p>The vacant holes on the rear of the machine where the old ports were need to be put to good use. My friend Kim helps me weld a steel plate back there. I trace out holes crudely with a pencil, make a few markings, drill a few holes, and route out some ports with my Dremel.</p>
 <p>2x <a href="https://amzn.to/3unrLsb">panel mount USB-A 3.0</a>. 1x <a href="https://amzn.to/3gnn5dH">panel mount USB-C</a>. 1x <a href="https://www.ebay.com/itm/274516442073">panel mount 4 pin mini-DIN</a>. Some M2 and M3 screws.</p>
 <p>$30 or so.</p>
 <figure>
@@ -83,13 +83,13 @@
 </a><p>Though I can power the display directly from the Pi, adding any other peripherals means the voltage begins to drop and the Pi flashes its <a href="https://www.raspberrypi.com/documentation/computers/config_txt.html#monitoring-voltage">little yellow lightning bolt</a>.</p>
 <p>A <a href="https://amzn.to/34gMTG2">USB-C PD trigger</a> lets me use any decent USB-C power supply, such as a MacBook charger, and get a solid 9V 3A out of it. 5 for $10, so $2. Now I can power that fan, undervolting it a little bit to keep it quiet.</p>
 <p>But the Pi needs power too. <a href="https://amzn.to/3Hqcvys">Pololu 5V 5A regulator</a> should do the trick. It&#39;s not cheap, but it&#39;s quality and will provide plenty of clean power. $25.</p>
-<p>The old Quadra 610 case provides the speaker. It&#39;s old and sounds tinny, but that&#39;s part of the charm. $0.</p>
+<p>The old Quadra 610 case donates its speaker. It&#39;s old and sounds tinny, but that&#39;s part of the charm. $0.</p>
 <figure>
   <img src="images/macinpi-speaker.jpg" alt="The speaker, shoved into the air intake">
   <figcaption>The speaker, shoved into the air intake</figcaption>
 </figure>
 
-<p>The Raspberry Pi can&#39;t drive a speaker directly; it needs an amplifier. A <a href="https://amzn.to/3Go6lxi">3-12V mono LM316 amplifier module</a>, two for about $9, will do the trick nicely. $4.50.</p>
+<p>The Raspberry Pi can&#39;t drive a speaker directly; it needs an amplifier. A <a href="https://amzn.to/3Go6lxi">3-12V mono LM316 amplifier module</a>, two for about $9, will do the trick nicely.</p>
 <p>But since the amplifier and fan are powered directly from the USB-C trigger&#39;s 9V supply, they stay on when the Pi shuts down. We&#39;ll have to fix this.</p>
 <p>After a little lesson on basic electrical engineering from some new friends on Discord, a schematic is drawn up. A <a href="https://amzn.to/3HsvVTa">100kΩ resistor</a> takes the Pi&#39;s 3.3V signal from pin 8 (GPIO14) to a <a href="https://amzn.to/3LgUGUW">2N3904 NPN transistor</a>, <a href="https://amzn.to/3oHrRYb">1N4007 flyback diode</a>, and a <a href="https://amzn.to/3AWPrVr">470µF 35V filter capacitor</a> that bring the fan to life when the Pi powers up. As long as you have <a href="https://learn.adafruit.com/adafruits-raspberry-pi-lesson-5-using-a-console-cable/enabling-serial-console">serial communication enabled</a>, GPIO14 will provide 3.3V while the Pi is on.</p>
 <figure>
@@ -110,10 +110,15 @@
 </figure>
 
 <p>A momentary switch is wired between the Pi&#39;s <code>GLOBAL_EN</code> and <code>J2</code> pins to <a href="https://forums.raspberrypi.com/viewtopic.php?f=29&amp;t=24682&amp;p=1491661&amp;hilit=GLOBAL_EN#p1491661">reset the Pi from a halted state</a>.</p>
-<p>The hardware is ready.</p>
 <figure>
   <img src="images/macinpi-inside.jpg" alt="Macinpi internals">
   <figcaption>Macinpi internals</figcaption>
+</figure>
+
+<p>The hardware is ready.</p>
+<figure>
+  <img src="images/macinpi-complete.jpg" alt="Complete hardware">
+  <figcaption>Complete hardware</figcaption>
 </figure>
 
 <a name="software" class="anchor" href="#software"><h2>Software</h2>
@@ -135,21 +140,28 @@
 <p><img class="prettyPicture" src="images/macinpi-in-the-garden.jpg" alt="Macinpi in the garden"></p>
 <hr>
 
+<a name="boot-and-shutdown-sequence" class="anchor" href="#boot-and-shutdown-sequence"><h2>Boot and shutdown sequence</h2>
+</a><p>Macinpi boots with the press of a button, and shuts off completely after selecting <strong>Special</strong> -&gt; <strong>Shutdown</strong> in Mac OS.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pnRwGpe4Zdg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<a name="scripts-and-config-files" class="anchor" href="#scripts-and-config-files"><h2>Scripts and config files</h2>
+</a><p>See <a href="https://github.com/lazd/macinpi">lazd/macinpi</a> for the scripts and config files I used to build Basilisk II and configure the system.</p>
 <a name="parts-list" class="anchor" href="#parts-list"><h2>Parts list</h2>
+</a><p>Want to build your own Macinpi? Here are the parts I used.</p>
+<a name="system" class="anchor" href="#system"><h3>System</h3>
 </a><ul>
-<li>System<ul>
 <li><a href="https://amzn.to/3om7gYV">Raspberry Pi 4 2GB</a></li>
 <li><a href="https://shop.pimoroni.com/products/hdmi-10-lcd-screen-kit-1024x768">Pimoroni 10&quot; display</a></li>
 <li><a href="https://amzn.to/3rmDnJU">Arduino Pro Micro clone for TMK adb_usb</a></li>
 </ul>
-</li>
-<li>Panel connectors<ul>
+<a name="panel-connectors" class="anchor" href="#panel-connectors"><h3>Panel connectors</h3>
+</a><ul>
 <li><a href="https://amzn.to/3unrLsb">USB-A 3.0</a></li>
 <li><a href="https://amzn.to/3gnn5dH">USB-C</a></li>
 <li><a href="https://www.ebay.com/itm/274516442073">4 pin mini-DIN</a></li>
 </ul>
-</li>
-<li>Control and power supply board<ul>
+<a name="control-and-power-supply-board" class="anchor" href="#control-and-power-supply-board"><h3>Control and power supply board</h3>
+</a><ul>
 <li><a href="https://amzn.to/3rmmLSA">Prototype PCB</a></li>
 <li><a href="https://amzn.to/3Go6lxi">LM316 Audio amplifier module</a></li>
 <li><a href="https://amzn.to/3HsvVTa">1kΩ, 1.2kΩ, 100kΩ Resistors</a></li>
@@ -157,10 +169,6 @@
 <li><a href="https://amzn.to/3oHrRYb">1N4007 Diode</a></li>
 <li><a href="https://amzn.to/3AWPrVr">Capacitor</a></li>
 </ul>
-</li>
-</ul>
-<a name="scripts-and-config-files" class="anchor" href="#scripts-and-config-files"><h2>Scripts and config files</h2>
-</a><p>See <a href="https://github.com/lazd/macinpi">lazd/macinpi</a> for the scripts and config files I used to build Basilisk and configure the system.</p>
 ]]></description><link>http://lazd.github.io/macinpi-a-new-old-computer.html</link><guid isPermaLink="true">http://lazd.github.io/macinpi-a-new-old-computer.html</guid><category><![CDATA[retro computing]]></category><category><![CDATA[hardware]]></category><category><![CDATA[raspberry pi]]></category><category><![CDATA[macintosh]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Tue, 01 Feb 2022 08:00:00 GMT</pubDate></item><item><title><![CDATA[Gamepad enhancements in yquake2]]></title><description><![CDATA[<p>A recent obsession with retro gaming on Raspberry Pi using <a href="https://retropie.org.uk/">RetroPie</a> led me to play through a few old favorites, starting of course with Wolfenstein 3D (and my subsequent work on <a href="./splitwolf-split-screen-wolfenstien-3d-on-raspberry-pi.html">Splitwolf</a>).</p>
 <p>After making my way through history with Doom and Quake I, it was only natural that I load up Quake II...</p>
 <a name="a-bug-right-out-of-the-gate" class="anchor" href="#a-bug-right-out-of-the-gate"><h2>A bug right out of the gate</h2>
