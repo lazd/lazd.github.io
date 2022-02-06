@@ -52,7 +52,7 @@ The [Wolf4SDL](https://github.com/11001011101001011/Wolf4SDL) project uses the m
 
 After a [little cleanup](https://github.com/lazd/wolf4sdl/commit/82ee70f94679272784e6f5cd401d6ff0d817ded1) and instructing [the linker to use sdl2](https://github.com/lazd/wolf4sdl/commit/5507123f21fce0666b3a36f74ff0e106cb0cdde6), I had it launching.
 
-The next step was easy -- I simply [hardcoded the controls I wanted](https://github.com/lazd/wolf4sdl/commit/2ea4cd4f63aa628f3343d4aeed23025c34e87218) into the game code, and I was off and away! Wolf3d with modern FPS controls, woohoo!
+The next step was easy -- I simply [hardcoded the controls I wanted](https://github.com/lazd/wolf4sdl/commit/2ea4cd4f63aa628f3343d4aeed23025c34e87218) into the game code, [included the stick position when calculating thurst](https://github.com/lazd/wolf4sdl/commit/2ea4cd4f63aa628f3343d4aeed23025c34e87218#diff-bb23b3a252cd43706632cd7f4a329adcb84d66fdf8c8d1f68cfa401fa941c9baR186-R200), and I was off and away! Wolf3d with modern FPS controls, woohoo!
 
 But of course I couldn't stop there, it would feel incomplete to leave this hardcoded. I [made it possible to remap all the buttons](https://github.com/lazd/wolf4sdl/commit/2a245e784bd4470808b15734e9a8718eec6b2dd4), and also added [support for mapping pause, escape, previous weapon, and next weapon.](https://github.com/lazd/wolf4sdl/commit/ffe416de74a5ccdf01682d0d0a0d6b7024cbf928)
 
@@ -68,7 +68,7 @@ Next, it was back to menu code to add support for [customizing gamepad sensitivi
   <figcaption>Gamepad sensitivity UI</figcaption>
 </figure>
 
-After a few fixes for things I broke along the way, I wondered -- could I add support for any gamepad, not just the XBox controller I was using? A quick google found [SDL_GameControllerDB](https://github.com/gabomdq/SDL_GameControllerDB), a community sourced database of game controller mappings. [Adding this in](https://github.com/lazd/wolf4sdl/commit/0aa465768d4b53a2bbb30a1d0202bb78294eb216) made all the other gamepads I tried instantly work, except those with only one stick. A [quick fix](https://github.com/lazd/wolf4sdl/commit/090c8438a81aa6189ab9b34356ce00d5fb79ef09) that checks how many axes the controller has and maps accordingly got things working nicely, even on my old NES USB controller, ironically the thing that most closely resembles the good old Gravis Gamepad.
+After a few fixes for things I broke along the way, I wondered -- could I add support for any gamepad, not just the XBox controller I was using? A quick google found [SDL_GameControllerDB](https://github.com/gabomdq/SDL_GameControllerDB), a community-sourced database of game controller mappings. [Adding this in](https://github.com/lazd/wolf4sdl/commit/0aa465768d4b53a2bbb30a1d0202bb78294eb216) made all the other gamepads I tried instantly work, except those with only one stick. A [quick fix](https://github.com/lazd/wolf4sdl/commit/090c8438a81aa6189ab9b34356ce00d5fb79ef09) that checks how many axes the controller has and maps accordingly got things working nicely, even on my old NES USB controller, ironically the thing that most closely resembles the good old Gravis Gamepad.
 
 I added a menu option to [disable moving with the mouse](https://github.com/lazd/wolf4sdl/commit/e54d9320bf41d81c9947e0e5bbda9728db90f2d6) and [the ability to bind strafe left/right and previous/next weapon on the keyboard](https://github.com/lazd/wolf4sdl/commit/2035f7c0dfe80ed5f3158561c90a018f72d40b38) and called it done!
 
@@ -142,7 +142,7 @@ This was most definitely not the easy part. joolswills of RetroPie is a master o
 
 In the process, I modified the Wolf4SDL port to download the Spear of Destiny demo files, and exposed a `add_ports_wolf4sdl` function so I could [share code between the two ports](https://github.com/RetroPie/RetroPie-Setup/pull/2532#issuecomment-439535347). Their data files should live in the same place, after all, so it was natural to share the install code.
 
-I had to go deep into bash, and joolswilis wanted everything to be done right. I learned quite a bit, and in mid-January, a full 2 months and 59 comments later, the script was finally merged and released in [Version 4.5 on July 3rd, 2019](https://retropie.org.uk/docs/Changelogs/#version-45-july-3-2019). 
+I had to go deep into bash, and joolswilis wanted everything to be done right. I learned quite a bit, and in mid-January, a full 2 months and 59 comments later, the script was finally merged and released in [RetroPie 4.5 on July 3rd, 2019](https://retropie.org.uk/docs/Changelogs/#version-45-july-3-2019). 
 
 <figure>
   <img src="images/splitwolf-doublebj.png" alt="The more BJs, the better">
@@ -162,9 +162,7 @@ If you already own Wolf3D or Spear of Destiny, dump all the files directly into 
 
 Then get in there and waste some Nazi scum with your friends!
 
-<center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DOBheJbU9fk?start=46" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
 
 See [the thread on the RetroPie forum for more details](https://retropie.org.uk/forum/topic/20976/splitwolf-2-4-player-co-op-wolfenstein-3d-on-retropie/2).
 
