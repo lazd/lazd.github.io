@@ -56,9 +56,9 @@ But I had a hunch -- if the touchscreen works in Windows, which would have to se
 ```
 (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::Starting
 (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::Reading version...
-(kernel) VoodooI2CControllerDriver::pci8086,9d62 I2C Transaction error details
-(kernel) VoodooI2CControllerDriver::pci8086,9d62 lost arbitration
-(kernel) VoodooI2CControllerDriver::pci8086,9d62 I2C Transaction error: 0x07001000 - aborting
+VoodooI2CControllerDriver::pci8086,9d62 I2C Transaction error details
+VoodooI2CControllerDriver::pci8086,9d62 lost arbitration
+VoodooI2CControllerDriver::pci8086,9d62 I2C Transaction error: 0x07001000 - aborting
 (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::Read version failed: -536870212
 (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::Failed to init device
 (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::Freeing
@@ -73,11 +73,11 @@ It seems the touchscreen and I weren't speaking the same language...
 Puzzled, I continued to read the specifications for the touchscreen driver, and I realized the touchscreen expects the register address in big endian, and the CPU, of course, is little endian! I used the `OSSwapHostToBigInt16` method to swap the register address to big endian, and to my surprise, I got data back from the touchscreen!
 
 ```
-kernel: (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::Probing
-kernel: (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::Starting
-kernel: (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::Reading version...
-kernel: (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::ID 9111, version: 2020
-kernel: (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::Device initialized
+VoodooI2CGoodixTouchDriver::Probing
+VoodooI2CGoodixTouchDriver::Starting
+VoodooI2CGoodixTouchDriver::Reading version...
+VoodooI2CGoodixTouchDriver::ID 9111, version: 2020
+VoodooI2CGoodixTouchDriver::Device initialized
 ```
 
 This was the breakthrough I needed! I had a working kernel extension that matched on the ID, I was able to communicate over I2C (albeit, only a basic "hello touchscreen"), and now I just needed to... actually implement the entire driver.
@@ -87,11 +87,11 @@ This was the breakthrough I needed! I had a working kernel extension that matche
 After [shoehorning some code from the Linux driver in](https://github.com/lazd/VoodooI2CGoodix/commit/6d8270f6fcac56dec165d7203bbf15e57fba4d9a), I was able to read back configuration data from the touchscreen:
 
 ```
-kernel: (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::Config read successfully
-kernel: (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::ts->abs_x_max = 1920
-kernel: (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::ts->abs_y_max = 1080
-kernel: (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::ts->int_trigger_type = 1
-kernel: (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::ts->max_touch_num = 10
+VoodooI2CGoodixTouchDriver::Config read successfully
+VoodooI2CGoodixTouchDriver::ts->abs_x_max = 1920
+VoodooI2CGoodixTouchDriver::ts->abs_y_max = 1080
+VoodooI2CGoodixTouchDriver::ts->int_trigger_type = 1
+VoodooI2CGoodixTouchDriver::ts->max_touch_num = 10
 ```
 
 Using the [Atmel driver's technique for responding to interrupts](https://github.com/lazd/VoodooI2CGoodix/commit/85341d12c861db9ec39880050c7a31064ef25b4e), I was able to get some information back from the touchscreen, but the coordinates were wrong.
@@ -99,7 +99,7 @@ Using the [Atmel driver's technique for responding to interrupts](https://github
 It seems I once again forgot about endianness, but this time when _writing_ data to the touchscreen. After [correcting that](https://github.com/lazd/VoodooI2CGoodix/commit/678ac99d0804bcc4a76b77a894f32a4ecf47b553), I got actual, correct data out of the touchscreen:
 
 ```
-kernel: (VoodooI2CGoodix) VoodooI2CGoodixTouchDriver::Touch 0 at 1889, 19 with width 80
+VoodooI2CGoodixTouchDriver::Touch 0 at 1889, 19 with width 80
 ```
 
 Armed with real data, it was time to do something useful with it.
