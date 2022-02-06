@@ -15,11 +15,11 @@
 
 <img src="images/minibook.png" class="titleImage left" style="width: 256px" alt='Chuwi Minibook promotional shot'>
 
-I got excited about tiny laptops. I don't mean netbooks, I mean damn near palmtop laptops, the kind that would just barely fit in an oversized pocket... Why? Beyond the obvious need for a field laptop to tune and update FPV drones, I just wanted a tiny friend-shaped computer. I don't need a valid reason, ok?!
+I got excited about tiny laptops. I don't mean netbooks, I mean damn near palmtop laptops, the kind that would just barely fit in an oversized pocket... Something so small it seems impractical. Why? Beyond the needing a field laptop to tune and update FPV drones, I felt like having a tiny computer would make using it more fun. Everything from coding to web browsing, I imagined, would be more entertaining.
 
-I found the Chuwi Minibook, an 8" touchscreen "yogabook" that runs Windows 10. It seemed to fit the bill -- decent design, both USB-C and USB-A, a card reader, a fast CPU, and of course, a multi-touch touchscreen...
+I found the Chuwi Minibook, an 8" touchscreen "yogabook" that runs Windows 10, and it seemed to fit the bill -- decent design, both USB-C and USB-A, a card reader, a fast CPU, and of course, a multi-touch touchscreen...
 
-But there's was a caveat: I run macOS. I rely heavily on the ecosystem, from notes, to iMessage, to the UNIX subsystem, to the elegant user interface and dialog boxes that look like an English major lost sleep over, it's everything I need in an operating system, and I'm not interesting in changing that. Running Windows or Linux was simply not an option, and the smallest thing Apple makes is nowhere near small enough.
+But there's was a caveat: I run macOS. I rely heavily on the ecosystem, from notes, to iMessage, to the UNIX subsystem, to the elegant user interface, it's everything I need in an operating system. Running Windows or Linux was simply not an option, and the smallest thing Apple makes is nowhere near small enough.
 
 So can it run macOS?
 
