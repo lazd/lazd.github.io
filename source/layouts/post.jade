@@ -11,6 +11,21 @@ block metadata
 	meta(property="twitter:site",content="@lazdnet")
 block title
 	title #{post.title} - #{data.title}
+block schema
+	script(type="application/ld+json")
+		|{
+		|	"@context" : "http://schema.org",
+		|	"@type" : "Article",
+		|	"name" : "#{post.title}",
+		| "description": "#{post.description}",
+		|	"author" : {
+		|		"@type" : "Person",
+		|		"name" : "Larry Davis",
+		|		"url": "https://twitter.com/lazdnet"
+		|	},
+		|	"datePublished" : "#{data.moment(post.date).format("YYYY-MM-DD")}",
+		|	"image" : "#{'https://blog.lazd.net/' + post.imageURL}"
+		|}
 block content
 	article.post
 		h1.title= post.title
