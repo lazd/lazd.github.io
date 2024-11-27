@@ -71,6 +71,12 @@ module.exports = function(grunt) {
 				src: '**',
 				dest: 'build/images/'
 			},
+			resources: {
+				expand: true,
+				cwd: 'source/resources/',
+				src: '**',
+				dest: 'build/resources/'
+			},
 			scripts: {
 				expand: true,
 				cwd: 'source/scripts/',
