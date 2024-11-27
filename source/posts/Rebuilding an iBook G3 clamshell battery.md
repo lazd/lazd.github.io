@@ -1,6 +1,6 @@
 {
   title: "Rebuilding an iBook G3 clamshell battery",
-  description: "Get that candy colored nostalgia machine back online",
+  description: "Get that candy-colored nostalgia machine powered up and unplugged",
   date: "2024-11-26",
   tags: [
       'retro computing',
@@ -12,9 +12,9 @@
   image: "<div class='fullMastWide' style='background-image: url(images/hungry-ibooks.jpg);'></div>"
 }
 
-The iBook G3 clamshell is, without a doubt, one of the most beautiful computers ever made. The translucent plastic, the bright candy colors, the _handle_ that's built into it. The keyboard is clicky and responsive, it has WiFi, it can run Mac OS X 10.4 Tiger as well as Mac OS 9, and it gets pretty dang good battery life -- _if_ you have a good battery.
+The iBook G3 clamshell is, without a doubt, one of the most beautiful computers ever made. The translucent plastic, the bright candy colors, the _handle_ that's built into it. The keyboard is clicky and responsive, it has WiFi, it can run Mac OS X 10.4 Tiger as well as Mac OS 9, and it gets pretty dang good battery life -- _if you have a good battery_.
 
-In the interest of seeing more of these beautiful laptops in use, I put together an iBook battery guide to necromancing. Follow along and let's get you computing in style!
+In the interest of seeing more of these beautiful laptops in use, I put together a guide to necromancing iBook batteries, the right way. Follow along and let's get you computing in style!
 
 <figure>
   <img src="images/ibook-battery-rebuilb-aftermath.jpg" alt="A workbench with a partially-completed battery, iBook, thumb drive, and spot welder">
@@ -26,20 +26,25 @@ In the interest of seeing more of these beautiful laptops in use, I put together
 
 This is sort of hard to do. You need about $165 worth of tools and parts, 1-3 hours of time to build it, and 15+ hours to train it.
 
-💣 There can be sparks, red hot glowing metal, fires, and cute little explosions if you do it wrong. [David Green's battery rebuild resulted in red hot metal](https://davidigreen.com/blog/ibook-battery-rebuild) while snapping the case together, [Hrutkay Mods had sparks and a badly mangled battery pack that barely fit](https://www.youtube.com/watch?v=8xiy1rxQ1o8), and [others have failed to train their batteries correctly or damaged them by soldering directly on the cells](https://www.youtube.com/watch?v=VrDnTXqoqjM). 
+💣 There can be sparks, red hot glowing metal, fires, and cute little explosions if you do it wrong. [David Green's battery rebuild resulted in red hot metal](https://davidigreen.com/blog/ibook-battery-rebuild) while snapping the case together, [Hrutkay Mods said it took over 4 hours and he had sparks and a badly mangled battery pack that barely fit](https://www.youtube.com/watch?v=8xiy1rxQ1o8), and [others struggled to train their batteries correctly and possibly damaged them by soldering directly on the cells](https://www.youtube.com/watch?v=VrDnTXqoqjM). These folks are generally pretty good at what they do, and they still struggled.
 
+<figure>
+  <img src="images/hungry-ibooks.jpg" alt="A gaggle of hungry iBooks surrounds a fertile field full of freshly rebuilt batteries">
+  <figcaption>Oh hey, I sell these</figcaption>
+</figure>
 
-If that sounds like a bad time, then just buy a rebuilt battery from me for $250 + $50 core charge that will be refunded when you send in your **Apple OEM** iBook battery (BTI or other aftermarket batteries are not accepted as a core).
+If that sounds like a bad time, then just buy a rebuilt battery from me for $250 + $50 core charge that will be refunded when you send in your **Apple OEM** iBook battery (BTI or other aftermarket batteries are not accepted as a core). Click the button below and I'll run to the shop and build you a freshie.
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display: flex; align-items: center; justify-content: center;">
   <input type="hidden" name="cmd" value="_s-xclick" />
   <input type="hidden" name="hosted_button_id" value="2KJELEV7DA93L" />
   <input type="hidden" name="currency_code" value="USD" />
-  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" style="height: 2.5rem;" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
 </form>
 
 If $250 is too steep or you're one of those chaps that lives and dies by DIY, roll up those cuffs and let's continue!
 
+<sarcasm>But hey, I believe in you. I know you can take it slow, follow this guide to the letter, build a fresh iBook battery, and not blow yourself up.</sarcasm>
 
 ## Parts
 
@@ -339,7 +344,7 @@ You're finally done! You can now let your iBook battery charge up and should get
 
 Be sure to discharge your battery to about 60% and remove it battery from your iBook if you plan on storing it for a long time. iBooks don't have PRAM battery, so it will slowly sip your batteries precious bodily fluids until it's beyond empty if you leave it installed during long term storage, which we all know isn't healthy.
 
-## Word to the wise
+## Again, I sell these
 
 If all of this sounds like too much, just buy one of the battery packs I have for sale!
 
