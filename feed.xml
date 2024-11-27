@@ -1,5 +1,240 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Mon, 07 Feb 2022 15:53:28 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Mon, 07 Feb 2022 15:53:28 GMT</pubDate><copyright><![CDATA[2022 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[Macinpi: A new old computer]]></title><description><![CDATA[<p><img class="prettyPicture" src="images/macinpi-side.jpg" alt="Macinpi in the garden"></p>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 27 Nov 2024 02:47:35 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Wed, 27 Nov 2024 02:47:35 GMT</pubDate><copyright><![CDATA[2024 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[Rebuilding an iBook G3 clamshell battery]]></title><description><![CDATA[<p>The iBook G3 clamshell is, without a doubt, one of the most beautiful computers ever made. The translucent plastic, the bright candy colors, the <em>handle</em> that&#39;s built into it. The keyboard is clicky and responsive, it has WiFi, it can run Mac OS X 10.4 Tiger as well as Mac OS 9, and it gets pretty dang good battery life -- _if_ you have a good battery.</p>
+<p>In the interest of seeing more of these beautiful laptops in use, I put together an iBook battery guide to necromancing. Follow along and let&#39;s get you computing in style!</p>
+<figure>
+  <img src="images/ibook-battery-rebuilb-aftermath.jpg" alt="A workbench with a partially-completed battery, iBook, thumb drive, and spot welder">
+  <figcaption>Let&#39;s get this party started</figcaption>
+</figure>
+
+
+<h2><a name="feeling-lazy-i-sell-these.html" class="anchor" href="#feeling-lazy-i-sell-these.html"><span class="header-link"></span></a>Feeling lazy? I sell these</h2><p>This is sort of hard to do. You need about $165 worth of tools and parts, 1-3 hours of time to build it, and 15+ hours to train it.</p>
+<p>💣 There can be sparks, red hot glowing metal, fires, and cute little explosions if you do it wrong. <a href="https://davidigreen.com/blog/ibook-battery-rebuild">David Green&#39;s battery rebuild resulted in red hot metal</a> while snapping the case together, <a href="https://www.youtube.com/watch?v=8xiy1rxQ1o8">Hrutkay Mods had sparks and a badly mangled battery pack that barely fit</a>, and <a href="https://www.youtube.com/watch?v=VrDnTXqoqjM">others have failed to train their batteries correctly or damaged them by soldering directly on the cells</a>. </p>
+<p>If that sounds like a bad time, then just buy a rebuilt battery from me for $250 + $50 core charge that will be refunded when you send in your <strong>Apple OEM</strong> iBook battery (BTI or other aftermarket batteries are not accepted as a core).</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <input type="hidden" name="hosted_button_id" value="2KJELEV7DA93L" />
+  <input type="hidden" name="currency_code" value="USD" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+</form>
+
+<p>If $250 is too steep or you&#39;re one of those chaps that lives and dies by DIY, roll up those cuffs and let&#39;s continue!</p>
+<h2><a name="parts.html" class="anchor" href="#parts.html"><span class="header-link"></span></a>Parts</h2><p>First, you&#39;re going to need some <strong>flat top</strong>, unprotected 18650 cells. These cells need to be <strong>~65.2mm in length</strong>, and <strong>18.5mm in diameter</strong>, so check <a href="resources/Samsung_32E_Data_Sheet.pdf">the datasheet of the cells</a> before purchasing.</p>
+<ol>
+<li>A dead, Apple OEM iBook battery (BTI or other aftermarket batteries won&#39;t work, the cases crack when opened)</li>
+<li>18650 cells such as <a href="https://amzn.to/4eNq8aD">Samsung 30Q</a> or Samsung 32E</li>
+<li>Nickel strips with a minimum length of 75mm, such as <a href="https://amzn.to/3Ow4Y68">these individual strips</a></li>
+<li>Solder, I prefer <a href="https://amzn.to/4eNmVYP">63/37 rosin core solder</a> for its lower melting temperature</li>
+<li>Some tape, any will do, <a href="https://amzn.to/3VcAD0h">Scotch Vinyl 700 electrical tape</a> is cheap and leaves no residue</li>
+</ol>
+<figure>
+  <img src="images/ibook-battery.jpg" alt="Dead iBook battery">
+  <figcaption>A dead iBook battery</figcaption>
+</figure>
+
+<h2><a name="tools.html" class="anchor" href="#tools.html"><span class="header-link"></span></a>Tools</h2><p>The most important tool you&#39;ll need is a spot welder. Personally, I have <a href="https://amzn.to/4g4S3Ei">a cheap Kerpu model from Amazon</a>. It&#39;s battery powered and comes with some of the nickel strips you&#39;ll need, and you can get these <a href="https://amzn.to/3Ow4Y68">pre-cut nickel strips</a> when you run out.</p>
+<ol>
+<li>Spot welder, such as the <a href="https://amzn.to/4g4S3Ei">Kerpu Mini Spot Welder</a></li>
+<li>Soldering iron, such as the <a href="https://amzn.to/3OsZHww">awesome, USB-C powered TS-101</a></li>
+<li>Tweezers, such as the <a href="https://amzn.to/4eWQEyI">Hakko CHP 00D-SA Fine-Tip Tweezers</a></li>
+<li>Medium sized flathead screwdriver, or even <a href="https://amzn.to/4103QPT">a couple of of them</a></li>
+<li>Multimeter, such as the <a href="https://amzn.to/3Vc0dme">Fluke 101</a></li>
+<li><a href="https://www.ebay.com/sch/177/i.html?_from=R40&amp;_nkw=iBook+g3+clamshell">An iBook</a>, of course to train and test your new battery</li>
+</ol>
+<h2><a name="preparation.html" class="anchor" href="#preparation.html"><span class="header-link"></span></a>Preparation</h2><p>First, put your existing dead battery into your iBook. Run the following comment:</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>system_profiler SPPowerDataType
+</pre></div>
+
+</code></pre>
+<p>You should see the capacity values for your battery:</p>
+<pre><code><div class="highlight"><pre><span class="nx">Battery</span> <span class="nx">Information</span><span class="o">:</span>
+
+  <span class="nx">Battery</span> <span class="nx">Installed</span><span class="o">:</span> <span class="nx">Yes</span>
+  <span class="nx">First</span> <span class="nx">low</span> <span class="nx">Level</span> <span class="nx">warning</span><span class="o">:</span> <span class="nx">No</span>
+  <span class="nx">Full</span> <span class="nx">Charge</span> <span class="nx">Capacity</span> <span class="p">(</span><span class="nx">mAh</span><span class="p">)</span><span class="o">:</span> <span class="mi">509</span>
+  <span class="nx">Remaining</span> <span class="nx">Capacity</span> <span class="p">(</span><span class="nx">mAh</span><span class="p">)</span><span class="o">:</span> <span class="mi">10</span>
+  <span class="nx">Amperage</span> <span class="p">(</span><span class="nx">mA</span><span class="p">)</span><span class="o">:</span> <span class="mi">253</span>
+  <span class="nx">Voltage</span> <span class="p">(</span><span class="nx">mV</span><span class="p">)</span><span class="o">:</span> <span class="mi">14558</span>
+  <span class="nx">Cycle</span> <span class="nx">Count</span><span class="o">:</span> <span class="mi">151</span>
+</pre></div>
+
+</code></pre><p>You can also use <a href="resources/coconutBattery_2.6.6.zip">coconutBattery 2.6.6</a> from <a href="https://coconut-flavour.com/coconutbattery/">coconut-flavor</a> to read this information.</p>
+<figure>
+  <img src="images/coconutbattery.jpg" alt="coconutBattery UI">
+  <figcaption>coconutBattery</figcaption>
+</figure>
+
+<p>✅ If you see a Full Charge Capacity value of any positive number, your controller board is good and you&#39;re ready to rebuild.</p>
+<p>❌ If you see negative numbers, wild numbers like 42124 cycles, or a 10000mAh full charge capacity, or an original capacity of a negative number or insanely high number like 33293mAh, <a href="https://forums.macrumors.com/threads/rebuilt-a-clamshell-ibook-g3-battery-battery-only-charges-for-12-minutes.2274217/post-32761616">your controller board is bad</a> and you should source a different battery to rebuild</p>
+<h2><a name="testing-your-batteries.html" class="anchor" href="#testing-your-batteries.html"><span class="header-link"></span></a>Testing your batteries</h2><p>First, get out your multimeter and ensure that each one of your cells has the same voltage. The charge state of the cells doesn&#39;t matter, they just all have to be really close in voltage; 3.84V and 3.85V is fine, but 3.75V and 3.85V is not.</p>
+<p>If your cells are different voltages, you can charge them with <a href="https://amzn.to/3VepbRR">any old 18650 battery charger</a>.</p>
+<h2><a name="opening-the-pack.html" class="anchor" href="#opening-the-pack.html"><span class="header-link"></span></a>Opening the pack</h2><p>The most important part of this step is to avoid damaging the delicate ribbon cable that runs between the black battery connector and the cells on the thin side of the battery. Under no circumstance should you insert your screwdriver on the side with the connector! The goal here is to break the adhesive on the top of the case free from the batteries so you can remove the top case.</p>
+<ol>
+<li>Start with the black connector of the battery facing <strong>upwards and away from you</strong> (&quot;iBook Lithium Ion Rechargeable Battery&quot; upside down and facing upwards).</li>
+<li>Insert your flathead screwdriver near where the little clear plastic tab is and twist it. Work an inch or so on either side of the tab to get it started</li>
+<li>Slide your flathead between the batteries and the top case and start working you way to the ends of the battery, <strong>only on the side opposite of the black connector</strong></li>
+<li>Work your way around the pack, and when you get to the edges, you can switch to using your hands and finger nails to pull the case apart</li>
+<li>Once you have the top case off, you can insert your screwdriver under the batteries and pop them gently out of the bottom case</li>
+<li>Gently removes the batteries, black connector, and battery board as one piece</li>
+<li>Heat up your soldering iron and desolder the 5 nickel strips from the ribbon cable and PCB. As you remove the cells <strong>be sure to keep them in the same orientation</strong> so you can use them as a guide when you create your new packs.</li>
+</ol>
+<p>Take a deep breath and stretch, that was stressful!</p>
+<h2><a name="rebuilding.html" class="anchor" href="#rebuilding.html"><span class="header-link"></span></a>Rebuilding</h2><p>Before you begin, be sure to note the orientation of the batteries, it&#39;s best to take a photo you can refer to.</p>
+<h3><a name="cut-nickel-strips.html" class="anchor" href="#cut-nickel-strips.html"><span class="header-link"></span></a>Cut nickel strips</h3><p>Straighten out each of the 5 nickel strips on the old packs and cut new nickel strips to to length, leaving 5mm+ of extra length you can trim later. Don&#39;t cut them to be thinner yet, you&#39;ll do that after spot welding. You should end up with:</p>
+<ul>
+<li>1x ~48mm - this connects the outermost positive side of the pack to the PCB</li>
+<li>3x ~35mm - these connect the middle sides of the packs and the outermost negative side to the ribbon cable</li>
+<li>2x ~75mm - these join packs of 2 together and connect to the PCB and ribbon cable</li>
+</ul>
+<h3><a name="assemble-your-first-pair-leftmost.html" class="anchor" href="#assemble-your-first-pair-leftmost.html"><span class="header-link"></span></a>Assemble your first pair (leftmost)</h3><p>We&#39;re going to do this from left to right with black connector facing up and away from you.</p>
+<ol>
+<li>Start by removing the small white plastic piece from between the first pair of batteries, you&#39;ll want to cut or remove the nickel strip to free the plastic piece.</li>
+<li>Take two new cells, face them the same direction, insert the plastic piece between them, and lash them together with some tape.</li>
+<li>With the positive side up, take the <strong>2nd longest nickel strip</strong> (48mm) and place it on top of cells</li>
+<li>💣 At this point, it is <strong>critical</strong> that you double check that both batteries are facing the same direction</li>
+<li>Center the nickel strip across the cells and use a small piece of tape across the strip and one of the batteries to hold it in place</li>
+<li>Turn your spot welder on, and without touching the metal tips of the spot welder or the nickel strips with your fingers, and without touching the tips together, place both of the tips on the nickel strip in the center, 2-3mm apart until the spot welder sparks, then remove the tips</li>
+<li>Make 1-2 more welds on either side in a ⠶ or ⠿ pattern, making sure you&#39;re still above the button on the top of the battery</li>
+<li>Remove the tape and weld the nickel strip to the other battery</li>
+<li>Flip the pair over so the negative side is facing up, take the <strong>longest nickel strip</strong> (75mm) and place it across the the battery, with the long end facing away from the long end on the positive side. If that sounds confusing, just refer to the configuration of the old cells.</li>
+<li>💣 At this point, it is <strong>critical</strong> that you double check that both batteries are facing the same direction. If they&#39;re facing opposite directions right now, you will be making an IED, not a battery.</li>
+<li>Again, center the nickel strip and use a small piece of tape to hold the strip to one of the batteries</li>
+<li>Do the spot welding thing again</li>
+<li>Remove the tape, do the spot welding thing again</li>
+</ol>
+<p>You should now have a nice pair of cells with nickel strips that match the configuration of the leftmost pair in the original pack. Phew!</p>
+<h3><a name="assemble-your-second-pair.html" class="anchor" href="#assemble-your-second-pair.html"><span class="header-link"></span></a>Assemble your second pair</h3><p>This is a lot like the first pair, except you&#39;re going to use the shortest nickel strip on the negative side of the battery, and this pair of batteries doesn&#39;t use a plastic piece as it needs to leave room for the thermistor.</p>
+<ol>
+<li>Take two new cells, face them the same direction, and lash them together with some tape</li>
+<li>With the negative side up, take the <strong>shortest nickel strip</strong> (35mm) and place it on top of cells</li>
+<li>At this point, it is <strong>critical</strong> that you double check that both batteries are facing the same direction</li>
+<li>Center the nickel strip across the cells and use a small piece of tape across the strip and one of the batteries to hold it in place</li>
+<li>Do the spot welding thing</li>
+<li>Remove the tape, do the spot welding thing again</li>
+</ol>
+<p>You should now have a pair of cells that are only connected on the negative side.</p>
+<h3><a name="assemble-your-first-set-leftmost.html" class="anchor" href="#assemble-your-first-set-leftmost.html"><span class="header-link"></span></a>Assemble your first set (leftmost)</h3><p>Now we&#39;re going to turn two pairs into a veritable foursome of 18650s.</p>
+<ol>
+<li>Take the pair of cells with no plastic piece and the shortest nickel strip and place it <strong>positive side up</strong> with the nickel strip facing off to the right.</li>
+<li>Take the pair of cells with the plastic piece, the longest nickel strip, and the 2nd longest nickel strip, and place it <strong>positive side down</strong> with the longest nickel strip facing to the right, hovering over the positive side of the other pair of cells</li>
+<li>You should have 4 batteries side-by-side, standing on end.<ul>
+<li>The left 2 batteries should be negative side up and have a long nickel strip going off to the left.</li>
+<li>The right 2 batteries should be positive side up and have a short nickel strip going off to the right.</li>
+</ul>
+</li>
+<li>Use a piece of tape to hold the nickel strip to the rightmost battery in the rightmost pair.</li>
+<li>Do the spot welding thing again</li>
+<li>Remove the tape, do the spot welding thing again</li>
+<li>Bend the longest nickel strip holding 2 pairs of cells together so they&#39;re positive to negative</li>
+</ol>
+<p>If you did this right, nothing is on fire and you have a battery pack with 2 pairs of 2 cells, the leftmost pair should have a plastic piece and a long nickel strip facing away from you, and the rightmost pair should have no plastic piece, 1 medium nickel strip tab in the middle facing away from you, and one nickel strip tab on the right facing away from you.</p>
+<figure>
+  <img src="images/ibook-battery-left-pair.jpg" alt="Four 18650 batteries joined in a 2S2P configuration">
+  <figcaption>Completed left set of batteries</figcaption>
+</figure>
+
+<h3><a name="assemble-your-third-pair.html" class="anchor" href="#assemble-your-third-pair.html"><span class="header-link"></span></a>Assemble your third pair</h3><p>Follow the same process as above, except your thirs pair will use the <strong>shortest nickel strip</strong> (35mm) to connect the positive sides of the pair.</p>
+<h3><a name="assemble-your-fourth-pair-rightmost.html" class="anchor" href="#assemble-your-fourth-pair-rightmost.html"><span class="header-link"></span></a>Assemble your fourth pair (rightmost)</h3><p>Follow the same process as above, except your fourth pair will use have a plastic piece as well.</p>
+<h3><a name="assemble-your-second-set-rightmost.html" class="anchor" href="#assemble-your-second-set-rightmost.html"><span class="header-link"></span></a>Assemble your second set (rightmost)</h3><p>Follow the same process as above and make it look like this. If you&#39;re ever lost, compare it to your original battery pack (you kept it in the right orientation, right?).</p>
+<figure>
+  <img src="images/ibook-battery-right-pair.jpg" alt="Four 18650 batteries joined in a 2S2P configuration">
+  <figcaption>Completed right set of batteries</figcaption>
+</figure>
+
+<h3><a name="trim-the-nickel-strips.html" class="anchor" href="#trim-the-nickel-strips.html"><span class="header-link"></span></a>Trim the nickel strips</h3><p>Look at your original battery pack -- the nickel strips are thinner where they connect to the ribbon cable and battery board. Trim your nickel strips to match both width and length.</p>
+<p>Now you&#39;re ready to solder it up!</p>
+<h2><a name="solder-both-sets-to-the-ribbon-cable.html" class="anchor" href="#solder-both-sets-to-the-ribbon-cable.html"><span class="header-link"></span></a>Solder both sets to the ribbon cable</h2><p>Now it&#39;s time to bend the nickel strip into place and solder them to the PCB! Start by tinning both sides of each nickel strip tabs with solder, then tin the pads on the ribbon cable and PCB, then slip the ribbon cable/connector/battery board assembly into place and bend the tabs so they line up.</p>
+<p>This is where the tweezers come in -- I like to use them to hold the tabs in in place while I apply heat. I find the tweezers don&#39;t smolder and burn like fingers, and there&#39;s no awful smell or searing pain either. Line up the tabs, heat them up real good, hold them in place, then wait a few seconds before removing your tweezers.</p>
+<p>Ensure you&#39;ve made a positive connection, then rejoice -- you&#39;re (almost) almost done!</p>
+<p>💣 It is imperative that you take care to not touch your soldering iron to the battery while doing this. Your soldering iron will instantly melt the insulation on the battery, and if you&#39;re soldering a positive terminal, will short the battery out, causing a big, scary spark.</p>
+<h2><a name="pre-assembly-testing.html" class="anchor" href="#pre-assembly-testing.html"><span class="header-link"></span></a>Pre-assembly testing</h2><p>First, get out your multimeter measure the voltage between the leftmost nickel strip (connected to the battery board) and the rightmost nickel strip (connected to the ribbon cable).</p>
+<p>You should get a voltage reading corresponding to the individual cell voltage multiplied by 4. For instance, if each of your cells measured 3.85V before you build the pack (you made sure they were all the same voltage, right?), your pack should read 15.4V.</p>
+<p>Next, double check all solder joints are solid, there are no shorts, no dangly bits, nothing that appears sharp or dangerous.</p>
+<h2><a name="assembly.html" class="anchor" href="#assembly.html"><span class="header-link"></span></a>Assembly</h2><p>Drop the completed pack into the bottom battery case, taking care to ensure that the ribbon cable is not pinched by the edge of the case. Align each of the plastic inserts to the tabs that slot into them, then press the batteries in so they&#39;re snug.</p>
+<p>We&#39;re not going to put the top case on yet, first we need to test your pack.</p>
+<figure>
+  <img src="images/ibook-battery-half-assembled.jpg" alt="An iBook battery without the top case">
+  <figcaption>A half-assembled iBook battery</figcaption>
+</figure>
+
+
+<h2><a name="post-assembly-testing.html" class="anchor" href="#post-assembly-testing.html"><span class="header-link"></span></a>Post-assembly testing</h2><p>Insert your partially assembled pack into your iBook and fire it up. Run the following command:</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>system_profiler SPPowerDataType
+</pre></div>
+
+</code></pre>
+<p>The <code>Full Charge Capacity</code> will not have changed, but you should see the same voltage you measure during Pre-assembly testing listed after <code>Voltage</code>.</p>
+<p>If your battery is recognized and the voltage is correct, it&#39;s time to button things up.</p>
+<h2><a name="final-assembly.html" class="anchor" href="#final-assembly.html"><span class="header-link"></span></a>Final assembly</h2><p>Now that we&#39;ve confirmed your pack works, it&#39;s time to install the top case. Line up the grooves in bottom case with the insert on the edges of the top case and work it into place. Squeeze the case and the edges of the case so it slots into place. The adhesive present on the cases will hold the pack together, there&#39;s no need to glue anything.</p>
+<p>💣 Be careful while you&#39;re doing this -- if something is going to short out and explode, it&#39;s probably going to happen now. Be ready to throw your battery our the window.</p>
+<p>Smoosh the edges of the battery one more time to get it as svelte as possible, then insert your freshly rebuilt battery into your iBook. Be careful when putting on the bottom battery cover -- make sure the battery is as far to the edge of the iBook as possible and be gentle when putting the cover on. Rebuilt batteries can be a little thicker than the originals, and if you&#39;re not careful, you&#39;ll crack a tab off your battery cover.</p>
+<p>Fire it up, and take a deep breath! You&#39;re only 15 hours away from being done!</p>
+<h2><a name="retraining.html" class="anchor" href="#retraining.html"><span class="header-link"></span></a>Retraining</h2><p>I <a href="https://forums.macrumors.com/threads/rebuilt-a-clamshell-ibook-g3-battery-battery-only-charges-for-12-minutes.2274217/post-32624445">discovered</a> that retraining the battery involves simply following this little stanza from the <em>Gas gauge operation</em> section of the <a href="resources/bq2040.pdf">bq2040 datasheet</a>:</p>
+<blockquote>
+<p><strong>FullChargeCapacity or learned-battery capacity</strong></p>
+<p>FCC is the last measured discharge capacity of the battery. On initialization (application of VCC or reset), FCC is set to the value stored in the EEPROM. During subsequent discharges, FCC is updated with the latest measured capacity in the Discharge Count Register, representing a discharge from full to below EDV1. A qualified discharge is necessary for a capacity transfer from the DCR to the FCC register. Once updated, the bq2945 writes the new FCC to the EEPROM. The FCC also serves as the 100% reference threshold used by the relative state-of-charge calculation and display.</p>
+</blockquote>
+<p>So you just drop in, slap the EEPROM value into the FCC <em>wha-pop</em>, drop down to EDV1 <em>wha-paaa</em>, and then after that, you just drop the DCR into the FCC, ride the barrel, put the FCC into EEPROM, then <a href="https://www.youtube.com/watch?v=hJdF8DJ70Dc">get pitted, so pitted</a>.</p>
+<p>Put simply, charge the battery all the way, then drain the battery all the way.</p>
+<h3><a name="initial-charge.html" class="anchor" href="#initial-charge.html"><span class="header-link"></span></a>Initial charge</h3><p>Let your iBook charge the battery all the way. By all the way, I don&#39;t mean 100%, I mean to about 16.8V (4.2V multiplied by 4). You&#39;ll want to leave it plugged in for several hours, and you&#39;ll want to be in the same room and relatively lucid during this time in case something happens during charging and you need to throw your flaming iBook out the window.</p>
+<p>Run the following command to monitor battery voltage:</p>
+<pre><code class="lang-sh"><div class="highlight"><pre><span class="k">while</span> <span class="o">[</span> True <span class="o">]</span>
+<span class="k">do</span>
+<span class="k">  </span>system_profiler SPPowerDataType <span class="p">|</span> grep Voltage
+  sleep 10
+<span class="k">done</span>
+</pre></div>
+
+</code></pre>
+<p>Once you see it level out at around 16.8V (or 16,800mV), you&#39;re ready for the next step.</p>
+<h3><a name="initial-drain.html" class="anchor" href="#initial-drain.html"><span class="header-link"></span></a>Initial drain</h3><p>If you simply unplug the power adapter and let your iBook drain the battery, it will never hit EDV1 (12.0V) -- it will sleep long before that. This means the FCC value will never be written to the EEPROM, and your iBook will sleep long before your battery is drained.</p>
+<p>You have two options:</p>
+<ol>
+<li>Boot into OpenFirmware (hold Command + Option + O + F after pressing the power button) or the Boot Picker (hold Option after pressing the power button)</li>
+<li>Boot into the Mac OS X installer (you can <a href="https://forums.macrumors.com/threads/guide-new-method-booting-from-usb-on-powerpc-macs.2403368/">do this from a thumbdrive too</a>)</li>
+</ol>
+<p>Once you&#39;ve booted, unplug the power cord and wait about 9 hours. Once the battery voltage hits 12.0V, the machine will power off.</p>
+<p>I prefer to boot the Mac OS X installer and run the loop command from above to monitor battery voltage while it dies. You may wish to unmount your hard disk after booting into the installer so it&#39;s unmounted cleanly, because, at the end of this process, the machine powers off.</p>
+<h3><a name="the-moment-you-39-ve-been-waiting-for.html" class="anchor" href="#the-moment-you-39-ve-been-waiting-for.html"><span class="header-link"></span></a>The moment you&#39;ve been waiting for</h3><p>After about 9 hours, and once your iBook has powered itself off, we&#39;re ready for the moment of truth.</p>
+<p>Plug your power adapter in, boot your iBook, open the Terminal, take a few deep breaths, and run the following command (or pop open coconutBattery):</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>system_profiler SPPowerDataType
+</pre></div>
+
+</code></pre>
+<p>You should see something like this -- a new value for <code>Full Charge Capacity</code> (somewhere around 5,000mAh), and one more cycle added to the <code>Cycle Count</code>:</p>
+<pre><code><div class="highlight"><pre><span class="nx">Battery</span> <span class="nx">Information</span><span class="o">:</span>
+
+  <span class="nx">Battery</span> <span class="nx">Installed</span><span class="o">:</span> <span class="nx">Yes</span>
+  <span class="nx">First</span> <span class="nx">low</span> <span class="nx">level</span> <span class="nx">warning</span><span class="o">:</span> <span class="nx">No</span>
+  <span class="nx">Full</span> <span class="nx">Charge</span> <span class="nx">Capacity</span> <span class="p">(</span><span class="nx">mAh</span><span class="p">)</span><span class="o">:</span> <span class="mi">5138</span>
+  <span class="nx">Remaining</span> <span class="nx">Capacity</span> <span class="p">(</span><span class="nx">mAh</span><span class="p">)</span><span class="o">:</span> <span class="mi">36</span>
+  <span class="nx">Amperage</span> <span class="p">(</span><span class="nx">mA</span><span class="p">)</span><span class="o">:</span> <span class="mi">1405</span>
+  <span class="nx">Voltage</span> <span class="p">(</span><span class="nx">mV</span><span class="p">)</span><span class="o">:</span> <span class="mi">12787</span>
+  <span class="nx">Cycle</span> <span class="nx">Count</span><span class="o">:</span> <span class="mi">152</span>
+</pre></div>
+
+</code></pre><p>If <code>Full Charge Capacity</code> didn&#39;t update, don&#39;t panic -- just wait a second and run the command again. It can take a minute for it to update sometimes!</p>
+<h2><a name="conclusion.html" class="anchor" href="#conclusion.html"><span class="header-link"></span></a>Conclusion</h2><p>You&#39;re finally done! You can now let your iBook battery charge up and should get <strong>5+ hours of runtime</strong>!</p>
+<figure>
+  <img src="images/ibook-battery-runtime.jpg" alt="Photo of an iBook screen showing coconutBattery and the estimated runtime of 4 hours and 56 minutes">
+  <figcaption>5 hours of runtime!</figcaption>
+</figure>
+
+<p>Be sure to discharge your battery to about 60% and remove it battery from your iBook if you plan on storing it for a long time. iBooks don&#39;t have PRAM battery, so it will slowly sip your batteries precious bodily fluids until it&#39;s beyond empty if you leave it installed during long term storage, which we all know isn&#39;t healthy.</p>
+<h2><a name="word-to-the-wise.html" class="anchor" href="#word-to-the-wise.html"><span class="header-link"></span></a>Word to the wise</h2><p>If all of this sounds like too much, just buy one of the battery packs I have for sale!</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <input type="hidden" name="hosted_button_id" value="2KJELEV7DA93L" />
+  <input type="hidden" name="currency_code" value="USD" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+</form>
+
+
+<h2><a name="credits.html" class="anchor" href="#credits.html"><span class="header-link"></span></a>Credits</h2><p>None of this would be possible without the following resources:</p>
+<ul>
+<li><a href="https://forums.macrumors.com/threads/rebuilt-a-clamshell-ibook-g3-battery-battery-only-charges-for-12-minutes.2274217/"><strong>This MacRumors thread discussing battery rebuilds and retraining</strong></a></li>
+<li><a href="resources/bq2040.pdf"><strong>The datasheet for the magical bq2040</strong></a></li>
+</ul>
+]]></description><link>http://lazd.github.io/rebuilding-an-ibook-g3-clamshell-battery.html</link><guid isPermaLink="true">http://lazd.github.io/rebuilding-an-ibook-g3-clamshell-battery.html</guid><category><![CDATA[retro computing]]></category><category><![CDATA[electronics]]></category><category><![CDATA[hardware]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Tue, 26 Nov 2024 00:00:00 GMT</pubDate></item><item><title><![CDATA[Macinpi: A new old computer]]></title><description><![CDATA[<p><img class="prettyPicture" src="images/macinpi-side.jpg" alt="Macinpi in the garden"></p>
 <p>My first truly personal computer -- not the family computer, but <em>mine</em> -- was a Macintosh SE. My Aunt Joan gifted it to me after upgrading to a PowerMac, and though it was already 10 years old, it was brand new to 10-year-old me.</p>
 <p>Coming from DOS machines, the elegance and simplicity of the Macintosh completely enthralled me. There was no <code>autoexec.bat</code>, no <code>config.sys</code>, no SoundBlaster, and no IRQs to set. You flip a switch and it <em>just worked</em>.</p>
 <p>And the interface, wow. You were greeted by a friendly chime and the happiest little face on the happiest little computer every time you turned it on. Everything was where you expected it should be. The dialog boxes were helpful, the icons friendly, and the applications simple, yet powerful. The Macintosh hooked me right away, and I used it <em>constantly</em>.</p>
@@ -21,10 +256,8 @@
 <p>I relive the experience of it all. I relive the wonder. I&#39;m taken back to a time when a black and white screen could show you all the color in the world, as long as you used your imagination.</p>
 <p>As old hardware begins to fail and spare parts become scarce, pieces of the experience fall away. Even after recapping the motherboard with <a href="https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=8d6ec8772d">fresh tantalum capacitors</a>, there&#39;s no guarantee it will continue to function indefinitely, and it&#39;s not the same to use old software on a sleek, new MacBook; the feeling just isn&#39;t there.</p>
 <p>I never want to lose the ability to go back to that time when things were simpler, to feel the wonder I felt when I was a kid, so I built Macinpi; a new computer with the charm of an old computer.</p>
-<a name="hardware" class="anchor" href="#hardware"><h2>Hardware</h2>
-</a><p>No working computers were gutted in the making of this machine. Some of the pieces were leftover bits from someone else&#39;s simpler time, some new.</p>
-<a name="case" class="anchor" href="#case"><h3>Case</h3>
-</a><p>It started with the case. Amidst a pile of computer parts -- buyer must take all -- a Macintosh Classic case. It was in pretty decent condition with a working fan, and it had only a handful of scuffs and scars.</p>
+<h2><a name="hardware.html" class="anchor" href="#hardware.html"><span class="header-link"></span></a>Hardware</h2><p>No working computers were gutted in the making of this machine. Some of the pieces were leftover bits from someone else&#39;s simpler time, some new.</p>
+<h3><a name="case.html" class="anchor" href="#case.html"><span class="header-link"></span></a>Case</h3><p>It started with the case. Amidst a pile of computer parts -- buyer must take all -- a Macintosh Classic case. It was in pretty decent condition with a working fan, and it had only a handful of scuffs and scars.</p>
 <figure>
   <img src="images/macinpi-pile-of-computers.jpg" alt="An empty Mac Classic case admist a pile of computers">
   <figcaption>Spotted! An empty Mac Classic case</figcaption>
@@ -33,24 +266,21 @@
 <p>I asked about it. Why just the case? What happened to the rest? The owner explains an Amiga fell on the picture tube, crushing it. The motherboard was donated, the last missing piece to someone else&#39;s Classic. The power supply board was sold and shipped, bringing another Mac back to life. They can&#39;t find the screws or the cover for the display adjustments, but it&#39;s mine for $10 -- and a classic double from Arby&#39;s, if it&#39;s not too much trouble.</p>
 <p>So I drop off the Arby&#39;s, send my $10, and pick up the case.</p>
 <p>It&#39;s very friend-shaped; it just needs something to fill the hole where its display used to be.</p>
-<a name="display" class="anchor" href="#display"><h3>Display</h3>
-</a><p>I think this little computer deserves a little color in its life. It&#39;s got a rainbow logo on the front of it after all, certainly black and white wouldn&#39;t suit it.</p>
+<h3><a name="display.html" class="anchor" href="#display.html"><span class="header-link"></span></a>Display</h3><p>I think this little computer deserves a little color in its life. It&#39;s got a rainbow logo on the front of it after all, certainly black and white wouldn&#39;t suit it.</p>
 <p>I choose the <a href="https://shop.pimoroni.com/products/hdmi-10-lcd-screen-kit-1024x768">Pimoroni 10&quot; display</a> after seeing that it fit the case perfectly <a href="https://forums.raspberrypi.com/viewtopic.php?t=306474">in PepPi&#39;s build</a>, and was wide enough that no ugly bezels would be visible. And the wiring is clean, I like that. $99 later, it starts to look like a computer again.</p>
 <figure>
   <img src="images/macinpi-display.jpg" alt='Display mounted to the case'>
   <figcaption>Display mounted to the case</figcaption>
 </figure>
 
-<a name="cpu" class="anchor" href="#cpu"><h3>CPU</h3>
-</a><p>There&#39;s a <a href="https://amzn.to/3om7gYV">Raspberry Pi 4 2GB</a> lying around I had bought to build another RetroPie box with. $45, at at the time at least. It would plug right into the display, and with an emulator like <a href="https://basilisk.cebix.net/">Basilisk II</a>, could paint a smile on the screen and load all my old Mac applications.</p>
+<h3><a name="cpu.html" class="anchor" href="#cpu.html"><span class="header-link"></span></a>CPU</h3><p>There&#39;s a <a href="https://amzn.to/3om7gYV">Raspberry Pi 4 2GB</a> lying around I had bought to build another RetroPie box with. $45, at at the time at least. It would plug right into the display, and with an emulator like <a href="https://basilisk.cebix.net/">Basilisk II</a>, could paint a smile on the screen and load all my old Mac applications.</p>
 <p>Perfect.</p>
 <figure>
   <img src="images/macinpi-sneakypi.jpg" alt='Raspberry Pi 4 in Macinpi case'>
   <figcaption>Raspberry Pi 4 hiding in the Macinpi case</figcaption>
 </figure>
 
-<a name="keyboard---mouse" class="anchor" href="#keyboard---mouse"><h3>Keyboard &amp; Mouse</h3>
-</a><p>An <a href="https://en.wikipedia.org/wiki/Apple_Adjustable_Keyboard">Apple Adjustable Mechanical Keyboard</a> popped up on Craigslist. It&#39;s missing the numeric keypad, but who needs that? I chat with the seller for over an hour. We talk about everything from space exploration, to forgotten anniversaries, to what it was like for him growing up in Compton as a black man in the 70s. We shake hands. $100.</p>
+<h3><a name="keyboard-amp-mouse.html" class="anchor" href="#keyboard-amp-mouse.html"><span class="header-link"></span></a>Keyboard &amp; Mouse</h3><p>An <a href="https://en.wikipedia.org/wiki/Apple_Adjustable_Keyboard">Apple Adjustable Mechanical Keyboard</a> popped up on Craigslist. It&#39;s missing the numeric keypad, but who needs that? I chat with the seller for over an hour. We talk about everything from space exploration, to forgotten anniversaries, to what it was like for him growing up in Compton as a black man in the 70s. We shake hands. $100.</p>
 <figure>
   <img src="images/macinpi-keyboard.jpg" alt="Apple Adjustable Keyboard">
   <figcaption>Apple Adjustable Keyboard</figcaption>
@@ -64,8 +294,7 @@
   <figcaption>ADB2USB using an Arduino Pro Micro Clone</figcaption>
 </figure>
 
-<a name="connectivity" class="anchor" href="#connectivity"><h3>Connectivity</h3>
-</a><p>The vacant holes on the rear of the machine where the old ports were need to be put to good use. My friend Kim helps me weld a steel plate back there. I trace out holes crudely with a pencil, make a few markings, drill a few holes, and route out some ports with my Dremel.</p>
+<h3><a name="connectivity.html" class="anchor" href="#connectivity.html"><span class="header-link"></span></a>Connectivity</h3><p>The vacant holes on the rear of the machine where the old ports were need to be put to good use. My friend Kim helps me weld a steel plate back there. I trace out holes crudely with a pencil, make a few markings, drill a few holes, and route out some ports with my Dremel.</p>
 <p>2x <a href="https://amzn.to/3unrLsb">panel mount USB-A 3.0</a>. 1x <a href="https://amzn.to/3gnn5dH">panel mount USB-C</a>. 1x <a href="https://www.ebay.com/itm/274516442073">panel mount 4 pin mini-DIN</a>. Some M2 and M3 screws.</p>
 <p>$30 or so.</p>
 <figure>
@@ -79,8 +308,7 @@
   <figcaption>Connectivity, right where it used to be</figcaption>
 </figure>
 
-<a name="supporting-electronics" class="anchor" href="#supporting-electronics"><h3>Supporting electronics</h3>
-</a><p>Though I can power the display directly from the Pi, adding any other peripherals means the voltage begins to drop and the Pi flashes its <a href="https://www.raspberrypi.com/documentation/computers/config_txt.html#monitoring-voltage">little yellow lightning bolt</a>.</p>
+<h3><a name="supporting-electronics.html" class="anchor" href="#supporting-electronics.html"><span class="header-link"></span></a>Supporting electronics</h3><p>Though I can power the display directly from the Pi, adding any other peripherals means the voltage begins to drop and the Pi flashes its <a href="https://www.raspberrypi.com/documentation/computers/config_txt.html#monitoring-voltage">little yellow lightning bolt</a>.</p>
 <p>A <a href="https://amzn.to/34gMTG2">USB-C PD trigger</a> lets me use any decent USB-C power supply, such as a MacBook charger, and get a solid 9V 3A out of it. 5 for $10, so $2. Now I can power that fan, undervolting it a little bit to keep it quiet.</p>
 <p>But the Pi needs power too. <a href="https://amzn.to/3Hqcvys">Pololu 5V 5A regulator</a> should do the trick. It&#39;s not cheap, but it&#39;s quality and will provide plenty of clean power. $25.</p>
 <p>The old Quadra 610 case donates its speaker. It&#39;s old and sounds tinny, but that&#39;s part of the charm. $0.</p>
@@ -121,8 +349,7 @@
   <figcaption>Complete hardware</figcaption>
 </figure>
 
-<a name="software" class="anchor" href="#software"><h2>Software</h2>
-</a><p>I start with a GUI-free <a href="https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-32-bit">Raspberry Pi OS Lite image</a> on a <a href="https://amzn.to/3sdqrFB">32GB SD card</a>.</p>
+<h2><a name="software.html" class="anchor" href="#software.html"><span class="header-link"></span></a>Software</h2><p>I start with a GUI-free <a href="https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-32-bit">Raspberry Pi OS Lite image</a> on a <a href="https://amzn.to/3sdqrFB">32GB SD card</a>.</p>
 <p>The display has a 1024ⅹ768 resolution, and its 10&quot; display is larger than the hole in the front of the case. To correct this, I arrive at 928ⅹ672 with 48 left and right overscan, 32 top, and 64 bottom to get it fitting nicely. I edit these values into <code>/boot/config.txt</code>. The display is perfectly centered and has just the right amount of black border around the edges.</p>
 <p>I <a href="https://djdarien.github.io/macpi/">compile Basilisk II without X11</a>. I set the resolution and upload a disk image with System 7.5.3 and my backed up files.</p>
 <p>I add <a href="https://forums.raspberrypi.com/viewtopic.php?t=276545"><code>initiramfs-splash</code></a> to show a <a href="images/macsplash.png">happy Mac start up screen</a> the second the machine powers up. I <code>touch .hushlogin</code> and <code>sudo truncate -s 0 /etc/motd</code> to quiet things down.</p>
@@ -133,35 +360,28 @@
 
 <p>I make sure to <a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#updating-the-eeprom-configuration">set <code>POWER_OFF_ON_HALT=1</code> in the EEPROM configuration</a> so it shuts down completely when its off, instead of entering a low-power mode.</p>
 <p>Autologin takes me straight to a shell, and <code>.bashrc</code> takes it from there. <code>aplay</code> plays a familiar chime, and <code>BasiliskII</code> launches.</p>
-<a name="macinpi-lives" class="anchor" href="#macinpi-lives"><h2>Macinpi lives</h2>
-</a><p>It&#39;s a sunny winter afternoon. I plug in <a href="https://amzn.to/34ipKmi">a USB-C PD powerbank</a> and take it outside. I sit at the table in the memorial garden I built for my mom. I remember simpler times.</p>
+<h2><a name="macinpi-lives.html" class="anchor" href="#macinpi-lives.html"><span class="header-link"></span></a>Macinpi lives</h2><p>It&#39;s a sunny winter afternoon. I plug in <a href="https://amzn.to/34ipKmi">a USB-C PD powerbank</a> and take it outside. I sit at the table in the memorial garden I built for my mom. I remember simpler times.</p>
 <p>I power it on. All my old files are there. My old games. My old high scores. The first short stories I ever wrote. My MOD music.</p>
 <p>It smiles. I smile.</p>
 <p><img class="prettyPicture" src="images/macinpi-in-the-garden.jpg" alt="Macinpi in the garden"></p>
 <hr>
 
-<a name="boot-and-shutdown-sequence" class="anchor" href="#boot-and-shutdown-sequence"><h2>Boot and shutdown sequence</h2>
-</a><p>Macinpi boots with the press of a button, and shuts off completely after selecting <strong>Special</strong> -&gt; <strong>Shutdown</strong> in Mac OS.</p>
+<h2><a name="boot-and-shutdown-sequence.html" class="anchor" href="#boot-and-shutdown-sequence.html"><span class="header-link"></span></a>Boot and shutdown sequence</h2><p>Macinpi boots with the press of a button, and shuts off completely after selecting <strong>Special</strong> -&gt; <strong>Shutdown</strong> in Mac OS.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pnRwGpe4Zdg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<a name="scripts-and-config-files" class="anchor" href="#scripts-and-config-files"><h2>Scripts and config files</h2>
-</a><p>See <a href="https://github.com/lazd/macinpi">lazd/macinpi</a> for the scripts and config files I used to build Basilisk II and configure the system.</p>
-<a name="parts-list" class="anchor" href="#parts-list"><h2>Parts list</h2>
-</a><p>Want to build your own Macinpi? Here are the parts I used.</p>
-<a name="system" class="anchor" href="#system"><h3>System</h3>
-</a><ul>
+<h2><a name="scripts-and-config-files.html" class="anchor" href="#scripts-and-config-files.html"><span class="header-link"></span></a>Scripts and config files</h2><p>See <a href="https://github.com/lazd/macinpi">lazd/macinpi</a> for the scripts and config files I used to build Basilisk II and configure the system.</p>
+<h2><a name="parts-list.html" class="anchor" href="#parts-list.html"><span class="header-link"></span></a>Parts list</h2><p>Want to build your own Macinpi? Here are the parts I used.</p>
+<h3><a name="system.html" class="anchor" href="#system.html"><span class="header-link"></span></a>System</h3><ul>
 <li><a href="https://amzn.to/3om7gYV">Raspberry Pi 4 2GB</a></li>
 <li><a href="https://shop.pimoroni.com/products/hdmi-10-lcd-screen-kit-1024x768">Pimoroni 10&quot; display</a></li>
 <li><a href="https://amzn.to/3rmDnJU">Arduino Pro Micro clone for TMK adb_usb</a></li>
 </ul>
-<a name="panel-connectors" class="anchor" href="#panel-connectors"><h3>Panel connectors</h3>
-</a><ul>
+<h3><a name="panel-connectors.html" class="anchor" href="#panel-connectors.html"><span class="header-link"></span></a>Panel connectors</h3><ul>
 <li><a href="https://amzn.to/3unrLsb">USB-A 3.0</a></li>
 <li><a href="https://amzn.to/3gnn5dH">USB-C</a></li>
 <li><a href="https://www.ebay.com/itm/274516442073">4 pin mini-DIN</a></li>
 </ul>
-<a name="control-and-power-supply-board" class="anchor" href="#control-and-power-supply-board"><h3>Control and power supply board</h3>
-</a><ul>
+<h3><a name="control-and-power-supply-board.html" class="anchor" href="#control-and-power-supply-board.html"><span class="header-link"></span></a>Control and power supply board</h3><ul>
 <li><a href="https://amzn.to/3rmmLSA">Prototype PCB</a></li>
 <li><a href="https://amzn.to/3Go6lxi">LM316 Audio amplifier module</a></li>
 <li><a href="https://amzn.to/3HsvVTa">1kΩ, 1.2kΩ, 100kΩ Resistors</a></li>
@@ -171,11 +391,9 @@
 </ul>
 ]]></description><link>http://lazd.github.io/macinpi-a-new-old-computer.html</link><guid isPermaLink="true">http://lazd.github.io/macinpi-a-new-old-computer.html</guid><category><![CDATA[retro computing]]></category><category><![CDATA[hardware]]></category><category><![CDATA[raspberry pi]]></category><category><![CDATA[macintosh]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Tue, 01 Feb 2022 08:00:00 GMT</pubDate></item><item><title><![CDATA[Gamepad enhancements in yquake2]]></title><description><![CDATA[<p>A recent obsession with retro gaming on Raspberry Pi using <a href="https://retropie.org.uk/">RetroPie</a> led me to play through a few old favorites, starting of course with Wolfenstein 3D (and my subsequent work on <a href="./splitwolf-split-screen-wolfenstien-3d-on-raspberry-pi.html">Splitwolf</a>).</p>
 <p>After making my way through history with Doom and Quake I, it was only natural that I load up Quake II...</p>
-<a name="a-bug-right-out-of-the-gate" class="anchor" href="#a-bug-right-out-of-the-gate"><h2>A bug right out of the gate</h2>
-</a><p>RetroPie ships with support for the yquake2 engine, so it was easy to get up and running. However, I found moving the sticks made my head spin uncontrollably in circles! After a little poking around, I realized yquake2 was interpreting gamepad input as both joystick and mouse events. I found that setting the <code>sensitivity</code> cvar to <code>0</code> fixed it, but realized there was no way to set it to <code>0</code> using the UI.</p>
+<h2><a name="a-bug-right-out-of-the-gate.html" class="anchor" href="#a-bug-right-out-of-the-gate.html"><span class="header-link"></span></a>A bug right out of the gate</h2><p>RetroPie ships with support for the yquake2 engine, so it was easy to get up and running. However, I found moving the sticks made my head spin uncontrollably in circles! After a little poking around, I realized yquake2 was interpreting gamepad input as both joystick and mouse events. I found that setting the <code>sensitivity</code> cvar to <code>0</code> fixed it, but realized there was no way to set it to <code>0</code> using the UI.</p>
 <p>Time to fork and clone! A <a href="https://github.com/yquake2/yquake2/pull/632/commits/693803c7640708c7a2da27d9119c44f48c593d38">one line fix</a> made it possible to use the sliders in the UI to set <code>sensitivity</code> to <code>0</code>.</p>
-<a name="stick-feel-is-everything" class="anchor" href="#stick-feel-is-everything"><h2>Stick feel is everything</h2>
-</a><p>Once I got the controls working, I found that gamepad aiming didn&#39;t have a precise feel like I was used to in modern shooters. From my experience with FPV drones, I knew that a little &quot;expo&quot; can go a long way.</p>
+<h2><a name="stick-feel-is-everything.html" class="anchor" href="#stick-feel-is-everything.html"><span class="header-link"></span></a>Stick feel is everything</h2><p>Once I got the controls working, I found that gamepad aiming didn&#39;t have a precise feel like I was used to in modern shooters. From my experience with FPV drones, I knew that a little &quot;expo&quot; can go a long way.</p>
 <p>&quot;Expo&quot; makes gamepad stick input non-linear, such that small movements on the stick are less pronounced. This enables both precise and fast movements, even at higher sensitivity levels, and is part of the reason why gamepad controls in modern shooters feel more precise. It&#39;s called expo because it simply raises the gamepad input value to the specified power, or exponent.</p>
 <p>The value of a joystick axis is a floating point number between <code>0</code> and <code>1</code>. Linear joystick input with no expo results in a graph that looks like this:</p>
 <figure>
@@ -191,8 +409,7 @@
 
 <p>This means small joystick inputs result in <em>very</em> small movements, but slamming the stick all the way still results in the same movement as without any expo at all. Just by looking at the graphs, you can tell how this will help make aiming on a gamepad way more precise.</p>
 <p>With this in mind, I set about adding a new cvar, <code>joy_expo</code>, with a default value of <code>2</code>. With the new cvar, it was simple to <a href="https://github.com/yquake2/yquake2/pull/632/commits/aafc2eb4f92693aee0fe0e14fd33c6f28f160c33">apply <code>joy_expo</code> to gamepad input</a>.</p>
-<a name="ui-is...-also-everything" class="anchor" href="#ui-is...-also-everything"><h2>UI is... also everything</h2>
-</a><p>Expo made aiming feel quite a bit better, but I needed to tweak a few more settings to get it dialed in. I realized the gamepad controls in yquake2 could only be customized by manually setting cvars in the console, which means quick changes aren&#39;t quick and easy.</p>
+<h2><a name="ui-is-also-everything.html" class="anchor" href="#ui-is-also-everything.html"><span class="header-link"></span></a>UI is... also everything</h2><p>Expo made aiming feel quite a bit better, but I needed to tweak a few more settings to get it dialed in. I realized the gamepad controls in yquake2 could only be customized by manually setting cvars in the console, which means quick changes aren&#39;t quick and easy.</p>
 <p>I set about adding a new menu in the yquake2 UI to enable customizing yaw, pitch, forward, side, and up sensitivity -- and of course, expo. I also took the opportunity to move the haptic controls to the same submenu, bringing everything together in one place.</p>
 <p>In old game engines, this usually involves manually calculating the position of controls -- there&#39;s no layout system, so you increment a variable like <code>y</code> to store where the next control in the UI is drawn. It&#39;s no flexbox, but it gets the job done, and after a little tinkering, I got a nice menu system in place:</p>
 <figure>
@@ -200,29 +417,23 @@
   <figcaption>yquake2 &quot;customize joystick&quot; menu</figcaption>
 </figure>
 
-<a name="fork-it--push-it--quick-pr-it" class="anchor" href="#fork-it--push-it--quick-pr-it"><h2>Fork it, push it, quick PR it</h2>
-</a><p>With all these changes in place on my local branch, the next step was to <a href="https://github.com/yquake2/yquake2/pull/632">send a pull request</a>. After a little insight from a fellow contributor, everything was buttoned up and ready to ship.</p>
+<h2><a name="fork-it-push-it-quick-pr-it.html" class="anchor" href="#fork-it-push-it-quick-pr-it.html"><span class="header-link"></span></a>Fork it, push it, quick PR it</h2><p>With all these changes in place on my local branch, the next step was to <a href="https://github.com/yquake2/yquake2/pull/632">send a pull request</a>. After a little insight from a fellow contributor, everything was buttoned up and ready to ship.</p>
 <p>In the next release of yquake2, I was happy to find my changes released, and I hope others have found that it enhanced their retro Quake II experience just as much as it did for me.</p>
-]]></description><link>http://lazd.github.io/gamepad-enhancements-in-yquake2.html</link><guid isPermaLink="true">http://lazd.github.io/gamepad-enhancements-in-yquake2.html</guid><category><![CDATA[gaming]]></category><category><![CDATA[programming]]></category><category><![CDATA[retro computing]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Sat, 12 Dec 2020 00:00:00 GMT</pubDate></item><item><title><![CDATA[Writing a macOS touchscreen driver]]></title><description><![CDATA[<a name="the-hunt-for-the-tiniest-laptop" class="anchor" href="#the-hunt-for-the-tiniest-laptop"><h2>The hunt for the tiniest laptop</h2>
-</a><p><img src="images/minibook.png" class="titleImage left" style="width: 256px" alt='Chuwi Minibook promotional shot'></p>
+]]></description><link>http://lazd.github.io/gamepad-enhancements-in-yquake2.html</link><guid isPermaLink="true">http://lazd.github.io/gamepad-enhancements-in-yquake2.html</guid><category><![CDATA[gaming]]></category><category><![CDATA[programming]]></category><category><![CDATA[retro computing]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Sat, 12 Dec 2020 00:00:00 GMT</pubDate></item><item><title><![CDATA[Writing a macOS touchscreen driver]]></title><description><![CDATA[<h2><a name="the-hunt-for-the-tiniest-laptop.html" class="anchor" href="#the-hunt-for-the-tiniest-laptop.html"><span class="header-link"></span></a>The hunt for the tiniest laptop</h2><p><img src="images/minibook.png" class="titleImage left" style="width: 256px" alt='Chuwi Minibook promotional shot'></p>
 <p>I got excited about tiny laptops. I don&#39;t mean netbooks, I mean damn near palmtop laptops, the kind that would just barely fit in an oversized pocket... Something so small it seems impractical. Why? Beyond the needing a field laptop to tune and update FPV drones, I felt like having a tiny computer would make using it more fun. Everything from coding to web browsing, I imagined, would be more entertaining.</p>
 <p>I found the Chuwi Minibook, an 8&quot; touchscreen &quot;yogabook&quot; that runs Windows 10, and it seemed to fit the bill -- decent design, both USB-C and USB-A, a card reader, a fast CPU, and of course, a multi-touch touchscreen...</p>
 <p>But there&#39;s was a caveat: I run macOS. I rely heavily on the ecosystem, from notes, to iMessage, to the UNIX subsystem, to the elegant user interface, it&#39;s everything I need in an operating system. Running Windows or Linux was simply not an option, and the smallest thing Apple makes is nowhere near small enough.</p>
 <p>So can it run macOS?</p>
-<a name="hackintoshing-is-hard" class="anchor" href="#hackintoshing-is-hard"><h2>Hackintoshing is hard</h2>
-</a><p>It just so happened that <a href="https://github.com/THEDEVIOUS1">THEDEVIOUS1</a> had worked <a href="https://github.com/THEDEVIOUS1/CHUWI-MINIBOOK-HACKINTOSH">some wicked voodoo magic</a> and managed to get Catalina running on the Minibook!</p>
+<h2><a name="hackintoshing-is-hard.html" class="anchor" href="#hackintoshing-is-hard.html"><span class="header-link"></span></a>Hackintoshing is hard</h2><p>It just so happened that <a href="https://github.com/THEDEVIOUS1">THEDEVIOUS1</a> had worked <a href="https://github.com/THEDEVIOUS1/CHUWI-MINIBOOK-HACKINTOSH">some wicked voodoo magic</a> and managed to get Catalina running on the Minibook!</p>
 <p>I was stoked! They had somehow got almost everything working, everything except the card reader, fingerprint scanner, internal storage, the accelerometer, and of course the touchscreen -- but who needs those? The dream seemed within reach; could this be the pocket-sized MacBook I&#39;ve been daydreaming about?</p>
-<a name="but-what-about-the-touchscreen-" class="anchor" href="#but-what-about-the-touchscreen-"><h2>But what about the touchscreen?</h2>
-</a><p><img src="images/minibook-on-macbook.jpg" class="right titleImage" style="width: 256px" alt='Chuwi Minibook sitting on MacBook 13"'></p>
+<h2><a name="but-what-about-the-touchscreen.html" class="anchor" href="#but-what-about-the-touchscreen.html"><span class="header-link"></span></a>But what about the touchscreen?</h2><p><img src="images/minibook-on-macbook.jpg" class="right titleImage" style="width: 256px" alt='Chuwi Minibook sitting on MacBook 13"'></p>
 <p>Fast-forward to having a hackintosh&#39;d Minibook, booting Catalina... Naturally I want to try the touchscreen, but how?</p>
 <p>It turns out there&#39;s a Linux driver for the Goodix touchscreen, and of course there&#39;s VoodooI2C, which takes I2C devices and makes them work with macOS.</p>
 <p>Could I port the Linux driver to macOS, and somehow enable multi-touch gestures, scrolling, and right clicking? What would it take?</p>
 <p>Spoiler alert: the answer is a weekend and a lot of coffee.</p>
-<a name="hello-touchscreen" class="anchor" href="#hello-touchscreen"><h2>Hello touchscreen</h2>
-</a><p>As I was unfamiliar with VoodooI2C, I started by cloning an existing driver, <a href="https://github.com/coolstar/VoodooI2CAtmelMXT">VoodooI2CAtmelMXT</a>. This gave me some boilerplate I could try to work on top of. I then stripped the code down to the basics -- methods like <code>start</code>, <code>stop</code>, <code>probe</code>, <code>init</code> as stubs with nothing more than error handling, just so I had the basic structure in place.</p>
+<h2><a name="hello-touchscreen.html" class="anchor" href="#hello-touchscreen.html"><span class="header-link"></span></a>Hello touchscreen</h2><p>As I was unfamiliar with VoodooI2C, I started by cloning an existing driver, <a href="https://github.com/coolstar/VoodooI2CAtmelMXT">VoodooI2CAtmelMXT</a>. This gave me some boilerplate I could try to work on top of. I then stripped the code down to the basics -- methods like <code>start</code>, <code>stop</code>, <code>probe</code>, <code>init</code> as stubs with nothing more than error handling, just so I had the basic structure in place.</p>
 <p>The next step was to try to get communication with the touchscreen working. I modeled a method, <code>goodix_read_reg</code>, after the method in the Linux driver, but there was a hurdle -- despite a correctly configured KEXT that should match on the <code>GDX1001</code> device ID, the touchscreen didn&#39;t seem to power on and indicate it was ready for communication, so I couldn&#39;t test my method yet.</p>
-<a name="waking-up-a-sleepy-touchscreen" class="anchor" href="#waking-up-a-sleepy-touchscreen"><h2>Waking up a sleepy touchscreen</h2>
-</a><p>According to the <a href="https://www.distec.de/fileadmin/pdf/produkte/Touchcontroller/DDGroup/GT911_Datasheet.pdf">datasheet for the GT911 touchscreen</a>, a reset sequence needs to be sent over I2C. We weren&#39;t doing this yet, which explained why the touchscreen didn&#39;t respond to command.</p>
+<h2><a name="waking-up-a-sleepy-touchscreen.html" class="anchor" href="#waking-up-a-sleepy-touchscreen.html"><span class="header-link"></span></a>Waking up a sleepy touchscreen</h2><p>According to the <a href="https://www.distec.de/fileadmin/pdf/produkte/Touchcontroller/DDGroup/GT911_Datasheet.pdf">datasheet for the GT911 touchscreen</a>, a reset sequence needs to be sent over I2C. We weren&#39;t doing this yet, which explained why the touchscreen didn&#39;t respond to command.</p>
 <p>But I had a hunch -- if the touchscreen works in Windows, which would have to send this reset sequence to wake the touchscreen up, perhaps I could warm reboot from Windows, and the touchscreen would stay on? I tried it, <a href="https://github.com/THEDEVIOUS1/CHUWI-MINIBOOK-HACKINTOSH/issues/6#issuecomment-570747112">and it worked</a> -- after rebooting, it was clear the touchscreen was awake and listening, but all of my attempts to communicate with it were failing. I was getting junk data back and transaction errors:</p>
 <pre><code><div class="highlight"><pre><span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Starting</span>
 <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Reading</span> <span class="nx">version</span><span class="p">...</span>
@@ -233,10 +444,9 @@
 <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Failed</span> <span class="nx">to</span> <span class="nx">init</span> <span class="nx">device</span>
 <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Freeing</span>
 </pre></div>
-</code></pre>
-<p>Meanwhile, back at the secret mountain lab from which THEDEVIOUS1 probably works from, he&#39;d figured out how to modify the custom DSDT to send the reset sequence on initialization. We chatted on <a href="https://gitter.im/lazd/VoodooI2CGoodix">Gitter</a> and worked out the pin addresses by consulting the datasheet and throwing a lot of trial an error at the problem. After some fiddling, we were able to get it to work from a cold boot, no Windows required! There were plenty of issues not worth getting into because they&#39;re beyond my understanding, but it involved setting up the pins correctly and coding the reset sequence into the <code>_PS0</code> method. Finally, I could go back to C code land where I was more comfortable and try to make some more progress.</p>
-<a name="endianness-is-important" class="anchor" href="#endianness-is-important"><h2>Endianness is important</h2>
-</a><p>It seems the touchscreen and I weren&#39;t speaking the same language...</p>
+
+</code></pre><p>Meanwhile, back at the secret mountain lab from which THEDEVIOUS1 probably works from, he&#39;d figured out how to modify the custom DSDT to send the reset sequence on initialization. We chatted on <a href="https://gitter.im/lazd/VoodooI2CGoodix">Gitter</a> and worked out the pin addresses by consulting the datasheet and throwing a lot of trial an error at the problem. After some fiddling, we were able to get it to work from a cold boot, no Windows required! There were plenty of issues not worth getting into because they&#39;re beyond my understanding, but it involved setting up the pins correctly and coding the reset sequence into the <code>_PS0</code> method. Finally, I could go back to C code land where I was more comfortable and try to make some more progress.</p>
+<h2><a name="endianness-is-important.html" class="anchor" href="#endianness-is-important.html"><span class="header-link"></span></a>Endianness is important</h2><p>It seems the touchscreen and I weren&#39;t speaking the same language...</p>
 <p>Puzzled, I continued to read the specifications for the touchscreen driver, and I realized the touchscreen expects the register address in big endian, and the CPU, of course, is little endian! I used the <code>OSSwapHostToBigInt16</code> method to swap the register address to big endian, and to my surprise, I got data back from the touchscreen!</p>
 <pre><code><div class="highlight"><pre><span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Probing</span>
 <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Starting</span>
@@ -244,44 +454,37 @@
 <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">ID</span> <span class="mi">9111</span><span class="p">,</span> <span class="nx">version</span><span class="o">:</span> <span class="mi">2020</span>
 <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Device</span> <span class="nx">initialized</span>
 </pre></div>
-</code></pre>
-<p>This was the breakthrough I needed! I had a working kernel extension that matched on the ID, I was able to communicate over I2C (albeit, only a basic &quot;hello touchscreen&quot;), and now I just needed to... actually implement the entire driver.</p>
-<a name="conversations-with-a-touchscreen" class="anchor" href="#conversations-with-a-touchscreen"><h2>Conversations with a touchscreen</h2>
-</a><p>After <a href="https://github.com/lazd/VoodooI2CGoodix/commit/6d8270f6fcac56dec165d7203bbf15e57fba4d9a">shoehorning some code from the Linux driver in</a>, I was able to read back configuration data from the touchscreen:</p>
+
+</code></pre><p>This was the breakthrough I needed! I had a working kernel extension that matched on the ID, I was able to communicate over I2C (albeit, only a basic &quot;hello touchscreen&quot;), and now I just needed to... actually implement the entire driver.</p>
+<h2><a name="conversations-with-a-touchscreen.html" class="anchor" href="#conversations-with-a-touchscreen.html"><span class="header-link"></span></a>Conversations with a touchscreen</h2><p>After <a href="https://github.com/lazd/VoodooI2CGoodix/commit/6d8270f6fcac56dec165d7203bbf15e57fba4d9a">shoehorning some code from the Linux driver in</a>, I was able to read back configuration data from the touchscreen:</p>
 <pre><code><div class="highlight"><pre><span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Config</span> <span class="nx">read</span> <span class="nx">successfully</span>
 <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">ts</span><span class="o">-&gt;</span><span class="nx">abs_x_max</span> <span class="o">=</span> <span class="mi">1920</span>
 <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">ts</span><span class="o">-&gt;</span><span class="nx">abs_y_max</span> <span class="o">=</span> <span class="mi">1080</span>
 <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">ts</span><span class="o">-&gt;</span><span class="nx">int_trigger_type</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">ts</span><span class="o">-&gt;</span><span class="nx">max_touch_num</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
-</code></pre>
-<p>Using the <a href="https://github.com/lazd/VoodooI2CGoodix/commit/85341d12c861db9ec39880050c7a31064ef25b4e">Atmel driver&#39;s technique for responding to interrupts</a>, I was able to get some information back from the touchscreen, but the coordinates were wrong.</p>
+
+</code></pre><p>Using the <a href="https://github.com/lazd/VoodooI2CGoodix/commit/85341d12c861db9ec39880050c7a31064ef25b4e">Atmel driver&#39;s technique for responding to interrupts</a>, I was able to get some information back from the touchscreen, but the coordinates were wrong.</p>
 <p>It seems I once again forgot about endianness, but this time when <em>writing</em> data to the touchscreen. After <a href="https://github.com/lazd/VoodooI2CGoodix/commit/678ac99d0804bcc4a76b77a894f32a4ecf47b553">correcting that</a>, I got actual, correct data out of the touchscreen:</p>
 <pre><code><div class="highlight"><pre><span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Touch</span> <span class="mi">0</span> <span class="nx">at</span> <span class="mi">1889</span><span class="p">,</span> <span class="mi">19</span> <span class="kd">with</span> <span class="nx">width</span> <span class="mi">80</span>
 </pre></div>
-</code></pre>
-<p>Armed with real data, it was time to do something useful with it.</p>
-<a name="now-let-s-make-it-actually-do-something" class="anchor" href="#now-let-s-make-it-actually-do-something"><h2>Now let&#39;s make it actually do something</h2>
-</a><p>The next step was to take this data and turn it into interaction events. macOS exposes methods that let you set up multitouch interfaces, publish events to them, and, in turn, actually control the cursor and interactions in the OS.</p>
+
+</code></pre><p>Armed with real data, it was time to do something useful with it.</p>
+<h2><a name="now-let-39-s-make-it-actually-do-something.html" class="anchor" href="#now-let-39-s-make-it-actually-do-something.html"><span class="header-link"></span></a>Now let&#39;s make it actually do something</h2><p>The next step was to take this data and turn it into interaction events. macOS exposes methods that let you set up multitouch interfaces, publish events to them, and, in turn, actually control the cursor and interactions in the OS.</p>
 <p>Being completely new to this, I started simple and just made the touchscreen act like a gigantic trackpad. This involves <a href="https://github.com/lazd/VoodooI2CGoodix/commit/06dcecfa73348b6b0c75c44f944c7d342a13af86">using a <code>VoodooI2CDigitiserTransducer</code> and updating coordinates as I get them</a>.</p>
 <p>Because the MiniBook can be flipped into a tablet mode, the touchscreen could be configured to be rotated or flipped, so I had to add some <a href="https://github.com/lazd/VoodooI2CGoodix/commit/ca1194df9a7d15fa8f8ebb07152a2bfa6657b8e7">basic support for dealing with those values</a>, which was fun because casting, floating point math, and applying inversions and axis swaps in the right order. Most of this was literally poking at the screen and looking at output, as we often do with any code.</p>
 <p>The next step was to <a href="https://github.com/lazd/VoodooI2CGoodix/commit/baf81bfc1962138f1bbc46bbabe36ed68d623733">refactor the code to use an EventDriver</a> and <a href="https://github.com/lazd/VoodooI2CGoodix/commit/8a80cab12742943149f4910370f2904e9b0a9c1a">move the code out of actual TouchDriver into the EventDriver</a>. This decoupled the code that reports touch events, sets up and tears down multitouch interfaces, and handles sleep/wake events from the code that communicates with the touch screen. This separation of concerns makes it easier to reason about operations that are going on at the hardware and OS-level. Along the way, I created a <a href="https://github.com/lazd/VoodooI2CGoodix/commit/8a80cab12742943149f4910370f2904e9b0a9c1a#diff-1d0b5e5ff794d7c86133c9a70c115d199e5a23a40960b20e44ca5b47b91dba7aR30-R35"><code>Touch</code> struct</a> to store information about the current touches, and used this to pass information from the TouchDriver to the EventDriver for reporting.</p>
 <p>Finally, with the correct structure in place and <a href="https://gitter.im/alexandred/VoodooI2CDev?at=5e1242f5a769bf30fd4266ca">some help from alexandred from VoodooI2C</a>, and some fooling around with fixes for crashes on unload and properly releasing the event driver, I was able to implement support for <a href="https://github.com/lazd/VoodooI2CGoodix/commit/94aea073029d2b5f74b284e7b0f7ac8369b0364f">a touchscreen that moved the mouse to follow your finger</a>! Except it was clicking the entire time...</p>
 <p>The problem was that it was unclear when a touch finally ended. Given that touches come from an interrupt that triggers continuously while the user&#39;s fingers are contacting the display, I couldn&#39;t just assume the finger was lifted after an interrupt was complete. In order to get proper dragging and tapping, I had to assume the finger was down until an amount of time had elapsed, at which point I could dispatch an event that tells the OS the finger has been lifted. This was implemented <a href="https://github.com/lazd/VoodooI2CGoodix/commit/72238143825361b7d5e3a7d4446d1694d6948af7">using an <code>IOTimerEventSource</code></a>.</p>
-<a name="fine-tuning-touch-behaviors" class="anchor" href="#fine-tuning-touch-behaviors"><h2>Fine-tuning touch behaviors</h2>
-</a><p>With basic touchscreen interactions implemented, there were still some behaviors that needed fine-tuning. Right click and tapping are non-trivial interactions that we take for granted, and <a href="https://github.com/lazd/VoodooI2CGoodix/commit/380b7de266741212e8cbfe65f35bcfd316bcfb74">a complicated system of timers</a> was necessary to determine whether an interaction was a tap, or a tap and hold to indicate a right click.</p>
-<a name="and-then-there-were-bugs" class="anchor" href="#and-then-there-were-bugs"><h2>And then there were bugs</h2>
-</a><p>Putting together a driver like this using APIs I&#39;d never seen meant tons of opportunities to do things wrong. Luckily, I had help from THEDEVIOUS1, balopez83, hatran0884, and kostaskas to test and find the bugs.</p>
+<h2><a name="fine-tuning-touch-behaviors.html" class="anchor" href="#fine-tuning-touch-behaviors.html"><span class="header-link"></span></a>Fine-tuning touch behaviors</h2><p>With basic touchscreen interactions implemented, there were still some behaviors that needed fine-tuning. Right click and tapping are non-trivial interactions that we take for granted, and <a href="https://github.com/lazd/VoodooI2CGoodix/commit/380b7de266741212e8cbfe65f35bcfd316bcfb74">a complicated system of timers</a> was necessary to determine whether an interaction was a tap, or a tap and hold to indicate a right click.</p>
+<h2><a name="and-then-there-were-bugs.html" class="anchor" href="#and-then-there-were-bugs.html"><span class="header-link"></span></a>And then there were bugs</h2><p>Putting together a driver like this using APIs I&#39;d never seen meant tons of opportunities to do things wrong. Luckily, I had help from THEDEVIOUS1, balopez83, hatran0884, and kostaskas to test and find the bugs.</p>
 <p>Occasional <a href="https://github.com/lazd/VoodooI2CGoodix/commit/9451dbecbb94e15b85aa24dfcf0a3fc4aff76a9f">kernel panics and hangs on shutdown</a>, <a href="https://github.com/lazd/VoodooI2CGoodix/commit/65b90e06b69eb9590316570c4ae88103e65fee66">phantom touches</a>, <a href="https://github.com/lazd/VoodooI2CGoodix/commit/fe852e1f689bd2a11839671de6ae352ff3293f1c">timing issues that result in reading data from the touchscreen when it&#39;s asleep</a>, <a href="https://github.com/lazd/VoodooI2CGoodix/commit/50b24ba9bb2fc0bcce3273efb30931f360d0946d">proper handling of portrait mode</a>, and of course, that bug where it used <a href="https://github.com/lazd/VoodooI2CGoodix/commit/5eb45487aa292924cdf8578c84c57cadd3369d81">100% of the CPU due to spurious interrupts</a>.</p>
-<a name="stylus-support" class="anchor" href="#stylus-support"><h2>Stylus support</h2>
-</a><p>So we&#39;ve got a touchscreen, but what about a stylus? The Minibook supports <a href="https://store.chuwi.com/products/chuwi-hipen-h3">Chuwi&#39;s HiPen H3 active stylus</a>, so naturally I had to acquire one and test it.</p>
+<h2><a name="stylus-support.html" class="anchor" href="#stylus-support.html"><span class="header-link"></span></a>Stylus support</h2><p>So we&#39;ve got a touchscreen, but what about a stylus? The Minibook supports <a href="https://store.chuwi.com/products/chuwi-hipen-h3">Chuwi&#39;s HiPen H3 active stylus</a>, so naturally I had to acquire one and test it.</p>
 <p>Curiously, the stylus worked, but would click the screen even before you touched it to the display. A little logging revealed that the touchscreen reported a touch with a width of <code>0</code> when the stylus was hovering. Armed with this knowledge, I was able to <a href="https://github.com/lazd/VoodooI2CGoodix/commit/59f1c3871bc3f99b271fee417d6a5ac0b9278ffa">make the stylus move the mouse around</a>.</p>
 <p>Some additional reading of the datasheet revealed how the stylus reported button clicks, and with <a href="https://github.com/lazd/VoodooI2CGoodix/commit/58a280a1f90f66f2de1aa5b1d47c42177d396a9b">a little work</a>, I was able to get clicking and right clicking working on the stylus. I then <a href="https://github.com/lazd/VoodooI2CGoodix/commit/97f9dcb32e2e322e70ef5f1e66812f6fb6decab9">refactored the stylus to use a separate transducer</a> to avoid confusion with touch events and called it done!</p>
-<a name="demo" class="anchor" href="#demo"><h2>Demo</h2>
-</a><iframe width="560" height="315" src="https://www.youtube.com/embed/Qv6TizEgyfA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2><a name="demo.html" class="anchor" href="#demo.html"><span class="header-link"></span></a>Demo</h2><iframe width="560" height="315" src="https://www.youtube.com/embed/Qv6TizEgyfA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<a name="learnings" class="anchor" href="#learnings"><h2>Learnings</h2>
-</a><p>This project took me completely out of my comfort zone and had me bridging the gap between hardware and software, all the way to the OS-level. I had to consider things like endianness, deal with interrupts and work around quirky hardware that required a little convincing to function right, and work with macOS APIs that weren&#39;t quite documented that well.</p>
+<h2><a name="learnings.html" class="anchor" href="#learnings.html"><span class="header-link"></span></a>Learnings</h2><p>This project took me completely out of my comfort zone and had me bridging the gap between hardware and software, all the way to the OS-level. I had to consider things like endianness, deal with interrupts and work around quirky hardware that required a little convincing to function right, and work with macOS APIs that weren&#39;t quite documented that well.</p>
 <p>The biggest thing, however, was not working in a vacuum. Using Github and Gitter, I was able to communicate with people across the world to help test, give feedback, fix issues, and suggest approaches to problems. Without this kind of instant, global pair programming and collaboration, I&#39;d probably still be scratching my head.</p>
 <p>The process of creating open source software is often thankless, painful, and confusing but, despite all that, beautiful. The way the internet can connect strangers from across the globe is magical, even if we often lose sight of it amid a sea of scams and misinformation. Look for the good in the world, find something fun to hack, and have fun solving problems with internet friends who you&#39;ll never meet and will only ever know by their GitHub username.</p>
 ]]></description><link>http://lazd.github.io/writing-a-macos-touchscreen-driver.html</link><guid isPermaLink="true">http://lazd.github.io/writing-a-macos-touchscreen-driver.html</guid><category><![CDATA[hardware]]></category><category><![CDATA[programming]]></category><category><![CDATA[hackintosh]]></category><category><![CDATA[drivers]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Thu, 23 Jan 2020 08:00:00 GMT</pubDate></item><item><title><![CDATA[Split-screen Wolfenstein 3D on RetroPi]]></title><description><![CDATA[<p>Wolfenstein was the first 3D game I ever played, and of course, the first FPS I ever played. I fondly remember going upstairs and booting up DOS on our old 386. I&#39;d type <code>wolf</code>, and after a few seconds and a couple memory checks, I&#39;d be greeted with that triumphant, patriotic, MIDI theme song.</p>
@@ -301,15 +504,13 @@
 </figure>
 
 <p>But you couldn&#39;t play it with friends, like Super Mario Brothers and Sonic the Hedgehog. My friends and I would take turns, switching off after every level or death, cooperatively making our way through Castle Wolfenstein, hunting down Hitler and his goons. Though this was fun, and left plenty of time for snacking while the other person played, it was a &quot;multiplayer&quot; experience that could be improved upon.</p>
-<a name="the-retropie-renaissance" class="anchor" href="#the-retropie-renaissance"><h2>The RetroPie Renaissance</h2>
-</a><p>I&#39;ve often gone back and replayed old games, but when I found <a href="https://retropie.org.uk/">RetroPie</a>, it was like I was a kid all over again. I could play anything, all the games I fondly remembered, and some I never got to play. Everything from any platform, with any release date.</p>
+<h2><a name="the-retropie-renaissance.html" class="anchor" href="#the-retropie-renaissance.html"><span class="header-link"></span></a>The RetroPie Renaissance</h2><p>I&#39;ve often gone back and replayed old games, but when I found <a href="https://retropie.org.uk/">RetroPie</a>, it was like I was a kid all over again. I could play anything, all the games I fondly remembered, and some I never got to play. Everything from any platform, with any release date.</p>
 <p>Naturally I installed Wolfenstein, bought a <a href="https://store.steampowered.com/app/2270/Wolfenstein_3D/">copy of the game on Steam</a> to get the full game files, and loaded it up.</p>
 <p>Though the keyboard controls worked exactly how I remembered them, the gamepad controls left a lot to be desired. First, there was no way to bind strafe to an axis -- the control stick could only rotate you.</p>
 <p>Additionally, when moving with the stick, it was all or nothing. Wolfenstein was designed in an era when gamepads only had a D-pad, and that meant pushing the stick forward on a modern gamepad just moved you forward at full speed. There&#39;s no way to creep up behind Nazis real slow and stab them in the back, which of course, is a hard requirement.</p>
 <p>Next, there was no way to bind more than 4 buttons on the gamepad. Modern gamepads have tons of buttons, and using trigger to shoot and L1/R1 to cycle through weapons was a must. Again, because Wolfenstein was released when the Gravis Gamepad was the only option around, assumptions were made about the number of possible buttons.</p>
 <p>But Wolfenstein&#39;s source code has been released to the public, certainly I could fix all of this and have the awesome, Wolf3D experience with modern gamepad controls, right? I had found <a href="https://retropie.org.uk/forum/topic/8695/wolfenstein3d-wolf4sdl-remapping">a thread showing how to manually remap game controllers in Wolf4SDL</a>, so it must be possible!</p>
-<a name="let-s-fork-it-" class="anchor" href="#let-s-fork-it-"><h2>Let&#39;s fork it!</h2>
-</a><p>The <a href="https://github.com/11001011101001011/Wolf4SDL">Wolf4SDL</a> project uses the modern SDL library to draw to the screen, get user input, etc. This made it a great candidate to base my work off of. However, it used the older SDL1 library, which doesn&#39;t have great support for gamepads. I looked around a bit and saw ichera had moved things over to SDL2 <a href="https://bitbucket.org/ichera/wolf4sdl/src/sdl2/">in a branch on Bitbucket</a>, so I <a href="https://github.com/lazd/wolf4sdl/commits/sdl2remap">forked that and started in</a>.</p>
+<h2><a name="let-39-s-fork-it.html" class="anchor" href="#let-39-s-fork-it.html"><span class="header-link"></span></a>Let&#39;s fork it!</h2><p>The <a href="https://github.com/11001011101001011/Wolf4SDL">Wolf4SDL</a> project uses the modern SDL library to draw to the screen, get user input, etc. This made it a great candidate to base my work off of. However, it used the older SDL1 library, which doesn&#39;t have great support for gamepads. I looked around a bit and saw ichera had moved things over to SDL2 <a href="https://bitbucket.org/ichera/wolf4sdl/src/sdl2/">in a branch on Bitbucket</a>, so I <a href="https://github.com/lazd/wolf4sdl/commits/sdl2remap">forked that and started in</a>.</p>
 <p>After a <a href="https://github.com/lazd/wolf4sdl/commit/82ee70f94679272784e6f5cd401d6ff0d817ded1">little cleanup</a> and instructing <a href="https://github.com/lazd/wolf4sdl/commit/5507123f21fce0666b3a36f74ff0e106cb0cdde6">the linker to use sdl2</a>, I had it launching.</p>
 <p>The next step was easy -- I simply <a href="https://github.com/lazd/wolf4sdl/commit/2ea4cd4f63aa628f3343d4aeed23025c34e87218">hardcoded the controls I wanted</a> into the game code, <a href="https://github.com/lazd/wolf4sdl/commit/2ea4cd4f63aa628f3343d4aeed23025c34e87218#diff-bb23b3a252cd43706632cd7f4a329adcb84d66fdf8c8d1f68cfa401fa941c9baR186-R200">included the stick position when calculating thurst</a>, and I was off and away! Wolf3d with modern FPS controls, woohoo!</p>
 <p>But of course I couldn&#39;t stop there, it would feel incomplete to leave this hardcoded. I <a href="https://github.com/lazd/wolf4sdl/commit/2a245e784bd4470808b15734e9a8718eec6b2dd4">made it possible to remap all the buttons</a>, and also added <a href="https://github.com/lazd/wolf4sdl/commit/ffe416de74a5ccdf01682d0d0a0d6b7024cbf928">support for mapping pause, escape, previous weapon, and next weapon.</a></p>
@@ -332,15 +533,13 @@
 </figure>
 
 <p>But it doesn&#39;t stop there, didn&#39;t I mention Splitwolf?</p>
-<a name="making-it-multiplayer" class="anchor" href="#making-it-multiplayer"><h2>Making it multiplayer</h2>
-</a><p>While surfing the web and looking for others that had worked on Wolf4SDL on RetroPie, I found <a href="http://raycast.teamforum.ru/viewtopic.php?f=8&amp;t=952&amp;st=0&amp;sk=t&amp;sd=a&amp;hilit=lazd">this thread on the TeamRaycast development forum</a>, discussing how it&#39;s not possible to remap controllers to do things as simple as exit the game in Wolf4SDL. I <a href="http://raycast.teamforum.ru/viewtopic.php?p=32486#p32486">posted back</a> with a link to my code, showing how I got controller support working for Wolf4SDL, but then I saw another reply:</p>
+<h2><a name="making-it-multiplayer.html" class="anchor" href="#making-it-multiplayer.html"><span class="header-link"></span></a>Making it multiplayer</h2><p>While surfing the web and looking for others that had worked on Wolf4SDL on RetroPie, I found <a href="http://raycast.teamforum.ru/viewtopic.php?f=8&amp;t=952&amp;st=0&amp;sk=t&amp;sd=a&amp;hilit=lazd">this thread on the TeamRaycast development forum</a>, discussing how it&#39;s not possible to remap controllers to do things as simple as exit the game in Wolf4SDL. I <a href="http://raycast.teamforum.ru/viewtopic.php?p=32486#p32486">posted back</a> with a link to my code, showing how I got controller support working for Wolf4SDL, but then I saw another reply:</p>
 <blockquote>
 <p>linuxwolf wrote:</p>
 <p>It would be cool if SplitWolf worked with two separate controllers.</p>
 </blockquote>
 <p>What&#39;s Splitwolf?!</p>
-<a name="splitwolf" class="anchor" href="#splitwolf"><h2>Splitwolf</h2>
-</a><p>Splitwolf is a modification of the Wolf4SDL codebase that effectively makes Wolfenstein 3D a split-screen multiplayer co-op game. If you dig into how it was done, <a href="https://bitbucket.org/linuxwolf6/splitwolf/src/f6c00044cdef00a31c66307d8b7cb1fb4ddf8c67/wl_game.cpp#lines-1614:1617">it&#39;s absolutely magical</a>. The original structure of the code was kept intact, but <a href="https://bitbucket.org/linuxwolf6/splitwolf/src/scrubbed/id_lwmp.cpp">methods were added</a> that allow routines to be ran multiple times for each player, and code to stitch it all together was layered on top. Other features were added as well; the menu system was modified to allow customization of controls for multiple players, a map was added showing the location of the other players you&#39;re playing with, and of course the ability to draw the other player(s).</p>
+<h2><a name="splitwolf.html" class="anchor" href="#splitwolf.html"><span class="header-link"></span></a>Splitwolf</h2><p>Splitwolf is a modification of the Wolf4SDL codebase that effectively makes Wolfenstein 3D a split-screen multiplayer co-op game. If you dig into how it was done, <a href="https://bitbucket.org/linuxwolf6/splitwolf/src/f6c00044cdef00a31c66307d8b7cb1fb4ddf8c67/wl_game.cpp#lines-1614:1617">it&#39;s absolutely magical</a>. The original structure of the code was kept intact, but <a href="https://bitbucket.org/linuxwolf6/splitwolf/src/scrubbed/id_lwmp.cpp">methods were added</a> that allow routines to be ran multiple times for each player, and code to stitch it all together was layered on top. Other features were added as well; the menu system was modified to allow customization of controls for multiple players, a map was added showing the location of the other players you&#39;re playing with, and of course the ability to draw the other player(s).</p>
 <figure>
   <img src="images/splitwolf-map.png" alt="Splitwolf map">
   <figcaption>Splitwolf map</figcaption>
@@ -357,8 +556,7 @@
 <p>linuxwolf wrote:</p>
 <p>You&#39;re about to make wolf3d history if you manage to pull this off.</p>
 </blockquote>
-<a name="bring-it-on-" class="anchor" href="#bring-it-on-"><h2>Bring it on!</h2>
-</a><p>DoomJedi is a master pixel artist from Israel, responsible for the art necessary to make Splitwolf work. Things like new player sprites so you can view BJ from the side, the gore, weapons, the vehicles, etc. linuxwolf is a clever and talented programmer from Australia, responsible for not only the magic that makes Splitwolf even work, but the code that layers on the new game modes, respawn, the HUD -- everything. </p>
+<h2><a name="bring-it-on.html" class="anchor" href="#bring-it-on.html"><span class="header-link"></span></a>Bring it on!</h2><p>DoomJedi is a master pixel artist from Israel, responsible for the art necessary to make Splitwolf work. Things like new player sprites so you can view BJ from the side, the gore, weapons, the vehicles, etc. linuxwolf is a clever and talented programmer from Australia, responsible for not only the magic that makes Splitwolf even work, but the code that layers on the new game modes, respawn, the HUD -- everything. </p>
 <p>Me? I&#39;m just here to kill Nazis on my couch with an XBox controller.</p>
 <p>So I got to work. After a bit of a struggle getting things to run and <a href="http://raycast.teamforum.ru/viewtopic.php?p=32496#p32496">a fight with gdb on macOS</a>, I got Splitwolf up and running. There were <a href="http://raycast.teamforum.ru/viewtopic.php?p=32497#p32497">a segfaults right off the bat</a> that luckily, all had to do with controls and were fixed by <a href="https://bitbucket.org/lazd/split_wolf4sdl_pr/commits/69b1fa65f098a9732515d282d23e258517720a1f">remapping things to use the right scan names for SDL</a>.</p>
 <p>Since I&#39;d already been in the code, it was pretty easy to get <a href="https://bitbucket.org/lazd/split_wolf4sdl_pr/commits/940bacf363a3b6106b01c953981779154b018a87">get things working on SDL2</a>, and I started pulling in changes from the other repository, making rapid progress.</p>
@@ -369,8 +567,7 @@
   <figcaption>O-o-o-overkill</figcaption>
 </figure>
 
-<a name="make-it-retropie-ready" class="anchor" href="#make-it-retropie-ready"><h2>Make it RetroPie-ready</h2>
-</a><p>RetroPie uses a collection of shell scripts to download, compile, and install games. This streamlines the usual step-by-step how tos into a one-click, turnkey operation that makes it accessible to anyone. RetroPie is the perfect platform for a game like Splitwolf to be distributed, so now we just had to write a little bash.</p>
+<h2><a name="make-it-retropie-ready.html" class="anchor" href="#make-it-retropie-ready.html"><span class="header-link"></span></a>Make it RetroPie-ready</h2><p>RetroPie uses a collection of shell scripts to download, compile, and install games. This streamlines the usual step-by-step how tos into a one-click, turnkey operation that makes it accessible to anyone. RetroPie is the perfect platform for a game like Splitwolf to be distributed, so now we just had to write a little bash.</p>
 <p>Because there are so many versions of Wolfenstein, from different publishers to different missions, it&#39;s necessary to match on the MD5 sum of the game files, choosing the correct binary to launch based on which game is to be played. Luckily, this technique was already implemented in <a href="https://github.com/RetroPie/RetroPie-Setup/blob/master/scriptmodules/ports/wolf4sdl.sh">the Wolf4SDL port</a>, so it was easy enough to do the same thing.</p>
 <p>With <a href="https://github.com/RetroPie/RetroPie-Setup/blob/master/scriptmodules/ports/splitwolf.sh">the script ready</a>, I sent <a href="https://github.com/RetroPie/RetroPie-Setup/pull/2532">the pull request</a>.</p>
 <p>This was most definitely not the easy part. joolswills of RetroPie is a master of all things shell script, and my code was not up to snuff. We went back and forth for over a month, with joolswilis requesting several changes to <a href="https://github.com/RetroPie/RetroPie-Setup/pull/2532#issuecomment-440711782">share code with the Wolf4SDL script</a>, correct <a href="https://github.com/RetroPie/RetroPie-Setup/pull/2532#discussion_r235546122">issues with how I handled variables in bash</a>, and <a href="https://github.com/RetroPie/RetroPie-Setup/pull/2532#issuecomment-440873665">change the way we installed binaries</a>.</p>
@@ -381,8 +578,7 @@
   <figcaption>The more BJs, the better</figcaption>
 </figure>
 
-<a name="ready-to-kill-nazis-with-your-friends-" class="anchor" href="#ready-to-kill-nazis-with-your-friends-"><h2>Ready to kill Nazis with your friends?</h2>
-</a><p>If you already own Wolf3D or Spear of Destiny, dump all the files directly into <code>roms/ports/wolf3d/</code> (no sub-folders), then:</p>
+<h2><a name="ready-to-kill-nazis-with-your-friends.html" class="anchor" href="#ready-to-kill-nazis-with-your-friends.html"><span class="header-link"></span></a>Ready to kill Nazis with your friends?</h2><p>If you already own Wolf3D or Spear of Destiny, dump all the files directly into <code>roms/ports/wolf3d/</code> (no sub-folders), then:</p>
 <ol>
 <li>Run RetroPie Setup</li>
 <li>Select &quot;Update RetroPie-Setup Script&quot;</li>
@@ -395,8 +591,7 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DOBheJbU9fk?start=46" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <p>See <a href="https://retropie.org.uk/forum/topic/20976/splitwolf-2-4-player-co-op-wolfenstein-3d-on-retropie/2">the thread on the RetroPie forum for more details</a>.</p>
-<a name="credits" class="anchor" href="#credits"><h2>Credits</h2>
-</a><p>None of this would be possible without the hard work of the following people:</p>
+<h2><a name="credits.html" class="anchor" href="#credits.html"><span class="header-link"></span></a>Credits</h2><p>None of this would be possible without the hard work of the following people:</p>
 <ul>
 <li><strong>Multiplayer framework, new game modes</strong>: LinuxWolf</li>
 <li><strong>Gamepad support, configuration UI, and RetroPie implementation</strong>: lazd</li>
@@ -408,13 +603,13 @@
 <li><strong>Original Wolfenstein 3D</strong>: id Software (<a href="http://www.idsoftware.com">http://www.idsoftware.com</a>)</li>
 <li><strong>RetroPie</strong>: Jools Wills (@BuZz) and the rest of the RetroPie contributors</li>
 </ul>
-]]></description><link>http://lazd.github.io/split-screen-wolfenstein-3d-on-retropi.html</link><guid isPermaLink="true">http://lazd.github.io/split-screen-wolfenstein-3d-on-retropi.html</guid><category><![CDATA[gaming]]></category><category><![CDATA[raspberry pi]]></category><category><![CDATA[programming]]></category><category><![CDATA[retro computing]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Thu, 24 Jan 2019 08:00:00 GMT</pubDate></item><item><title><![CDATA[DOMly - The fast template system that clones]]></title><description><![CDATA[<a name="flashback:-the-state-of--innerhtml--performance-in-2008" class="anchor" href="#flashback:-the-state-of--innerhtml--performance-in-2008"><h2>Flashback: The state of <code>innerHTML</code> performance in 2008</h2>
-</a><blockquote>
+]]></description><link>http://lazd.github.io/split-screen-wolfenstein-3d-on-retropi.html</link><guid isPermaLink="true">http://lazd.github.io/split-screen-wolfenstein-3d-on-retropi.html</guid><category><![CDATA[gaming]]></category><category><![CDATA[raspberry pi]]></category><category><![CDATA[programming]]></category><category><![CDATA[retro computing]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Thu, 24 Jan 2019 08:00:00 GMT</pubDate></item><item><title><![CDATA[DOMly - The fast template system that clones]]></title><description><![CDATA[<h2><a name="flashback-the-state-of-code-innerhtml-code-performance-in-2008.html" class="anchor" href="#flashback-the-state-of-code-innerhtml-code-performance-in-2008.html"><span class="header-link"></span></a>Flashback: The state of <code>innerHTML</code> performance in 2008</h2><blockquote>
 <p>&quot;The most obvious conclusion of these tests is that innerHTML is faster than &quot;real&quot; W3C DOM methods in all browsers.&quot;</p>
+</blockquote>
+<blockquote>
 <p>&#8212; <a href="http://www.quirksmode.org/dom/innerhtml.html">Quirksmode, circa 2008</a></p>
 </blockquote>
-<a name="newsflash:--innerhtml--is-slow." class="anchor" href="#newsflash:--innerhtml--is-slow."><h2>Newsflash: <code>innerHTML</code> is slow.</h2>
-</a><p>The time-honored best-practice is no longer best-practice. While you weren&#39;t looking, JavaScript engines have <a href="http://blog.chromium.org/2010/12/new-crankshaft-for-v8.html">doubled in performance</a> multiple times, numerous <a href="https://bugs.webkit.org/show_bug.cgi?id=82201">optimizations have been made</a>, and it&#39;s <a href="http://jsperf.com/clonenode-vs-createelement-performance/32">no longer the case</a> that <code>innerHTML</code> is the fastest way to get elements into the DOM.</p>
+<h2><a name="newsflash-code-innerhtml-code-is-slow.html" class="anchor" href="#newsflash-code-innerhtml-code-is-slow.html"><span class="header-link"></span></a>Newsflash: <code>innerHTML</code> is slow.</h2><p>The time-honored best-practice is no longer best-practice. While you weren&#39;t looking, JavaScript engines have <a href="http://blog.chromium.org/2010/12/new-crankshaft-for-v8.html">doubled in performance</a> multiple times, numerous <a href="https://bugs.webkit.org/show_bug.cgi?id=82201">optimizations have been made</a>, and it&#39;s <a href="http://jsperf.com/clonenode-vs-createelement-performance/32">no longer the case</a> that <code>innerHTML</code> is the fastest way to get elements into the DOM.</p>
 <figure>
     <a href="http://jsperf.com/clonenode-vs-createelement-performance/32" title="Benchmarks on jsPerf"><img src="images/bench-createElement-cloneNode-innerHTML.png" alt="Benchmark results: cloneNode vs createElement vs innerHTML" target="_blank"></a>
     <figcaption><code>innerHTML</code> is an order of magnitude slower than DOM methods on mobile</figcaption>
@@ -422,22 +617,16 @@
 
 <!-- Results for cloneNode vs createElement vs innerHTML -->
 <!-- <script src="http://www.browserscope.org/user/tests/table/agt1YS1wcm9maWxlcnIRCxIEVGVzdBiAgIDUzbCvCww?o=js"></script> -->
-
-<a name="so-why-are-we-still-using--innerhtml--based-templates-" class="anchor" href="#so-why-are-we-still-using--innerhtml--based-templates-"><h2>So why are we still using <code>innerHTML</code> based templates?</h2>
-</a><p>Because the tooling doesn&#39;t exist.</p>
+<h2><a name="so-why-are-we-still-using-code-innerhtml-code-based-templates.html" class="anchor" href="#so-why-are-we-still-using-code-innerhtml-code-based-templates.html"><span class="header-link"></span></a>So why are we still using <code>innerHTML</code> based templates?</h2><p>Because the tooling doesn&#39;t exist.</p>
 <p>We haven&#39;t seen a major release of a full-featured, production ready template system that compiles to DOM nodes. <a href="http://leonidas.github.io/transparency/">transparency</a> and <a href="https://github.com/medikoo/domjs">domjs</a> aren&#39;t really template systems, <a href="http://beebole.com/pure/">pure</a> is magical to the point of confusion, <a href="https://github.com/blakeembrey/dombars">DOMBars</a> is deprecated, and <a href="https://github.com/tildeio/htmlbars">HTMLBars</a> is still in the works.</p>
-<a name="enter-domly" class="anchor" href="#enter-domly"><h2>Enter DOMly</h2>
-</a><p><img src="images/DOMly_logo_small.png" class="right titleImage" alt="DOMly logo"></p>
+<h2><a name="enter-domly.html" class="anchor" href="#enter-domly.html"><span class="header-link"></span></a>Enter DOMly</h2><p><img src="images/DOMly_logo_small.png" class="right titleImage" alt="DOMly logo"></p>
 <p>DOMly, named after <a href="http://en.wikipedia.org/wiki/Dolly_(sheep)">Dolly, the first mammal to be cloned</a>, is a template system that takes advantage <code>createElement</code> and <code>cloneNode</code>.</p>
 <p>DOMly&#39;s goal is to be approachable, fast, and lightweight.</p>
-<a name="fast.-very-fast." class="anchor" href="#fast.-very-fast."><h3>Fast. Very fast.</h3>
-</a><p>With 7x the performance of doT and Handlebars and 2x the performance of HTMLBars, <strong>DOMly is arguably the fastest client-side templating system in existence</strong>. Check out <a href="http://jsperf.com/domly-vs-the-world">the benchmarks</a>.</p>
+<h3><a name="fast-very-fast.html" class="anchor" href="#fast-very-fast.html"><span class="header-link"></span></a>Fast. Very fast.</h3><p>With 7x the performance of doT and Handlebars and 2x the performance of HTMLBars, <strong>DOMly is arguably the fastest client-side templating system in existence</strong>. Check out <a href="http://jsperf.com/domly-vs-the-world">the benchmarks</a>.</p>
 <p>Furthermore, if you use the <a href="https://github.com/lazd/DOMly#handlehandlename"><code>handle=&quot;someName&quot;</code> feature</a>, you&#39;ll end up with references to elements you&#39;ll need to mutate in the future -- no <code>querySelector</code> required.</p>
-<a name="zero-client-side-dependencies" class="anchor" href="#zero-client-side-dependencies"><h3>Zero client-side dependencies</h3>
-</a><p>DOMly has no runtime library and no dependencies. Compiled templates are simply JavaScript functions that create DOM objects with native methods.</p>
+<h3><a name="zero-client-side-dependencies.html" class="anchor" href="#zero-client-side-dependencies.html"><span class="header-link"></span></a>Zero client-side dependencies</h3><p>DOMly has no runtime library and no dependencies. Compiled templates are simply JavaScript functions that create DOM objects with native methods.</p>
 <p>Pre-compile your templates as part of your build process, and when you render them in the browser, you&#39;ll get a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">Node</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment">DocumentFragment</a> that you can <code>appendChild()</code> anywhere in the DOM.</p>
-<a name="pretty-syntax" class="anchor" href="#pretty-syntax"><h3>Pretty syntax</h3>
-</a><p>The syntax is a combination of HTML for markup and control flow, dot notation for property references, <code>()</code> for invocation, and Mustache-style <code>{{blocks}}</code> for safe variable substitution:</p>
+<h3><a name="pretty-syntax.html" class="anchor" href="#pretty-syntax.html"><span class="header-link"></span></a>Pretty syntax</h3><p>The syntax is a combination of HTML for markup and control flow, dot notation for property references, <code>()</code> for invocation, and Mustache-style <code>{{blocks}}</code> for safe variable substitution:</p>
 <pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span>{{data.header}}<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;if</span> <span class="na">data</span><span class="err">.</span><span class="na">items</span><span class="err">.</span><span class="na">length</span><span class="nt">&gt;</span>
   <span class="nt">&lt;ul&gt;</span>
@@ -455,66 +644,57 @@
   <span class="nt">&lt;p&gt;</span>There are no items yet.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/if&gt;</span>
 </pre></div>
+
 </code></pre>
 <figcaption class="center">A basic DOMly template</figcaption>
 
 
-<a name="powerful--enough-" class="anchor" href="#powerful--enough-"><h3>Powerful (enough)</h3>
-</a><p>DOMly supports conditionals, loops, helpers, partials, and even raw JavaScript.</p>
-<a name="partials" class="anchor" href="#partials"><h4>Partials</h4>
-</a><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;partial</span> <span class="na">MyApp</span><span class="err">.</span><span class="na">Templates</span><span class="err">.</span><span class="na">myPartial</span><span class="err">(</span><span class="na">data</span><span class="err">)</span><span class="nt">&gt;&lt;/partial&gt;</span>
+<h3><a name="powerful-enough.html" class="anchor" href="#powerful-enough.html"><span class="header-link"></span></a>Powerful (enough)</h3><p>DOMly supports conditionals, loops, helpers, partials, and even raw JavaScript.</p>
+<h4><a name="partials.html" class="anchor" href="#partials.html"><span class="header-link"></span></a>Partials</h4><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;partial</span> <span class="na">MyApp</span><span class="err">.</span><span class="na">Templates</span><span class="err">.</span><span class="na">myPartial</span><span class="err">(</span><span class="na">data</span><span class="err">)</span><span class="nt">&gt;&lt;/partial&gt;</span>
 </pre></div>
+
 </code></pre>
-<a name="block-helpers" class="anchor" href="#block-helpers"><h4>Block helpers</h4>
-</a><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;helper</span> <span class="na">MyApp</span><span class="err">.</span><span class="na">Helpers</span><span class="err">.</span><span class="na">myHelper</span><span class="err">(</span><span class="na">data</span><span class="err">)</span><span class="nt">&gt;</span>
+<h4><a name="block-helpers.html" class="anchor" href="#block-helpers.html"><span class="header-link"></span></a>Block helpers</h4><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;helper</span> <span class="na">MyApp</span><span class="err">.</span><span class="na">Helpers</span><span class="err">.</span><span class="na">myHelper</span><span class="err">(</span><span class="na">data</span><span class="err">)</span><span class="nt">&gt;</span>
   This string is evaluated {{data.forSubstitutions}} and passed as the last argument.
 <span class="nt">&lt;/helper&gt;</span>
 </pre></div>
+
 </code></pre>
-<a name="class-methods-and-data" class="anchor" href="#class-methods-and-data"><h4>Class methods and data</h4>
-</a><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;if</span> <span class="na">this</span><span class="err">.</span><span class="na">isFeatured</span><span class="err">(</span><span class="na">data</span><span class="err">.</span><span class="na">id</span><span class="err">,</span><span class="na">this</span><span class="err">.</span><span class="na">featured</span><span class="err">)</span><span class="nt">&gt;</span>
+<h4><a name="class-methods-and-data.html" class="anchor" href="#class-methods-and-data.html"><span class="header-link"></span></a>Class methods and data</h4><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;if</span> <span class="na">this</span><span class="err">.</span><span class="na">isFeatured</span><span class="err">(</span><span class="na">data</span><span class="err">.</span><span class="na">id</span><span class="err">,</span><span class="na">this</span><span class="err">.</span><span class="na">featured</span><span class="err">)</span><span class="nt">&gt;</span>
   This item is featured!
 <span class="nt">&lt;/if&gt;</span>
 </pre></div>
+
 </code></pre>
-<a name="object-iteration-with-named-iterator" class="anchor" href="#object-iteration-with-named-iterator"><h4>Object iteration with named iterator</h4>
-</a><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;forin</span> <span class="na">data</span><span class="err">.</span><span class="na">object</span><span class="err">,</span><span class="na">prop</span><span class="nt">&gt;</span>
+<h4><a name="object-iteration-with-named-iterator.html" class="anchor" href="#object-iteration-with-named-iterator.html"><span class="header-link"></span></a>Object iteration with named iterator</h4><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;forin</span> <span class="na">data</span><span class="err">.</span><span class="na">object</span><span class="err">,</span><span class="na">prop</span><span class="nt">&gt;</span>
     {{prop}}: {{data}}
 <span class="nt">&lt;/forin&gt;</span>
 </pre></div>
+
 </code></pre>
-<a name="raw-javascript" class="anchor" href="#raw-javascript"><h4>Raw JavaScript</h4>
-</a><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;js&gt;</span>
+<h4><a name="raw-javascript.html" class="anchor" href="#raw-javascript.html"><span class="header-link"></span></a>Raw JavaScript</h4><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;js&gt;</span>
     data.count += 1;
 <span class="nt">&lt;/js&gt;</span>
 </pre></div>
+
 </code></pre>
-<a name="helpers---sub-expressions" class="anchor" href="#helpers---sub-expressions"><h4>Helpers &amp; sub-expressions</h4>
-</a><pre><code class="lang-html"><div class="highlight"><pre>{{captalize(reverse(data.name))}}
+<h4><a name="helpers-amp-sub-expressions.html" class="anchor" href="#helpers-amp-sub-expressions.html"><span class="header-link"></span></a>Helpers &amp; sub-expressions</h4><pre><code class="lang-html"><div class="highlight"><pre>{{captalize(reverse(data.name))}}
 </pre></div>
+
 </code></pre>
-<a name="limitations" class="anchor" href="#limitations"><h3>Limitations</h3>
-</a><a name="no-room-to-grow-syntactically" class="anchor" href="#no-room-to-grow-syntactically"><h4>No room to grow syntactically</h4>
-</a><p>Because DOMly templates are parsable HTML, you can&#39;t use <code>/</code>, <code>=</code>, or spaces in statements.</p>
-<a name="must-be-be-compiled-on-the-server" class="anchor" href="#must-be-be-compiled-on-the-server"><h4>Must be be compiled on the server</h4>
-</a><p>Although it would be possible to compile on the client, you shouldn&#39;t be doing that anyway.</p>
-<a name="doesn-t-support-arbitrary-expressions" class="anchor" href="#doesn-t-support-arbitrary-expressions"><h4>Doesn&#39;t support arbitrary expressions</h4>
-</a><p>You won&#39;t be able to write <code>{{data.count+1}}</code> anywhere.</p>
-<a name="domly-isn-t-yet-battle-tested" class="anchor" href="#domly-isn-t-yet-battle-tested"><h4>DOMly isn&#39;t yet battle tested</h4>
-</a><p>DOMly is the newest language on the block. Although it&#39;s unit tested and benchmarks, it&#39;s not battle-tested and can&#39;t be guaranteed to be bug-free. </p>
+<h3><a name="limitations.html" class="anchor" href="#limitations.html"><span class="header-link"></span></a>Limitations</h3><h4><a name="no-room-to-grow-syntactically.html" class="anchor" href="#no-room-to-grow-syntactically.html"><span class="header-link"></span></a>No room to grow syntactically</h4><p>Because DOMly templates are parsable HTML, you can&#39;t use <code>/</code>, <code>=</code>, or spaces in statements.</p>
+<h4><a name="must-be-be-compiled-on-the-server.html" class="anchor" href="#must-be-be-compiled-on-the-server.html"><span class="header-link"></span></a>Must be be compiled on the server</h4><p>Although it would be possible to compile on the client, you shouldn&#39;t be doing that anyway.</p>
+<h4><a name="doesn-39-t-support-arbitrary-expressions.html" class="anchor" href="#doesn-39-t-support-arbitrary-expressions.html"><span class="header-link"></span></a>Doesn&#39;t support arbitrary expressions</h4><p>You won&#39;t be able to write <code>{{data.count+1}}</code> anywhere.</p>
+<h4><a name="domly-isn-39-t-yet-battle-tested.html" class="anchor" href="#domly-isn-39-t-yet-battle-tested.html"><span class="header-link"></span></a>DOMly isn&#39;t yet battle tested</h4><p>DOMly is the newest language on the block. Although it&#39;s unit tested and benchmarks, it&#39;s not battle-tested and can&#39;t be guaranteed to be bug-free. </p>
 <p>However, in 2014, we&#39;ll see a number of template languages switch to pure DOM methods for a performance boost, and DOMly will be there to challenge them to be the best and fastest that they can be.</p>
-<a name="that-s-great--but-why-not-base-it-off-an-existing-template-system-" class="anchor" href="#that-s-great--but-why-not-base-it-off-an-existing-template-system-"><h2>That&#39;s great, but why not base it off an existing template system?</h2>
-</a><a name="-.-it-s-an-experiment" class="anchor" href="#-.-it-s-an-experiment"><h3>1. It&#39;s an experiment</h3>
-</a><p>DOMly didn&#39;t set out to replace heavy hitters like Handlebars. DOMly started as an experiment to establish the performance gains of using DOM methods for templating, the feasibility of maintaining a set of these templates, and the actual amount of code required to do this from scratch.</p>
+<h2><a name="that-39-s-great-but-why-not-base-it-off-an-existing-template-system.html" class="anchor" href="#that-39-s-great-but-why-not-base-it-off-an-existing-template-system.html"><span class="header-link"></span></a>That&#39;s great, but why not base it off an existing template system?</h2><h3><a name="1-it-39-s-an-experiment.html" class="anchor" href="#1-it-39-s-an-experiment.html"><span class="header-link"></span></a>1. It&#39;s an experiment</h3><p>DOMly didn&#39;t set out to replace heavy hitters like Handlebars. DOMly started as an experiment to establish the performance gains of using DOM methods for templating, the feasibility of maintaining a set of these templates, and the actual amount of code required to do this from scratch.</p>
 <p>The goal was to validate the hypothesis:</p>
 <blockquote>
 <p>It&#39;s both possible and simple to build a template language that takes advantage of the performance gains of native DOM methods.</p>
 </blockquote>
-<a name="-.-simplicity" class="anchor" href="#-.-simplicity"><h3>2. Simplicity</h3>
-</a><p>Existing template systems are quite complex. From advanced <a href="https://github.com/wycats/handlebars.js/blob/master/src/handlebars.l#L31-L50">Jison parser tricks</a> to dozens of <a href="https://github.com/olado/doT/blob/master/doT.js#L15">regular expressions so complex that they&#39;ve taken on a life of their own</a>, to <a href="http://jlongster.github.io/nunjucks/templating.html">complex feature sets</a>, these projects aren&#39;t very approachable. To re-tool an existing language would be a massive time sink just to validate a hypothesis.</p>
+<h3><a name="2-simplicity.html" class="anchor" href="#2-simplicity.html"><span class="header-link"></span></a>2. Simplicity</h3><p>Existing template systems are quite complex. From advanced <a href="https://github.com/wycats/handlebars.js/blob/master/src/handlebars.l#L31-L50">Jison parser tricks</a> to dozens of <a href="https://github.com/olado/doT/blob/master/doT.js#L15">regular expressions so complex that they&#39;ve taken on a life of their own</a>, to <a href="http://jlongster.github.io/nunjucks/templating.html">complex feature sets</a>, these projects aren&#39;t very approachable. To re-tool an existing language would be a massive time sink just to validate a hypothesis.</p>
 <p>Many existing template systems require runtimes that handle helpers and partials. This results in an additional call on the stack for method invocation which can affect performance. They&#39;re tiny, but the size doesn&#39;t help either gzipped, Handlebar&#39;s runtime is 4kB, Underscore is 5kB.</p>
-<a name="-.-syntax" class="anchor" href="#-.-syntax"><h3>3. Syntax</h3>
-</a><p>After years of staring at PHP and JSPs, I think we could do better than this:</p>
+<h3><a name="3-syntax.html" class="anchor" href="#3-syntax.html"><span class="header-link"></span></a>3. Syntax</h3><p>After years of staring at PHP and JSPs, I think we could do better than this:</p>
 <pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span><span class="err">&lt;</span>%- obj.header %&gt;<span class="nt">&lt;/h1&gt;</span>
 <span class="err">&lt;</span>% if(obj.hasItems) { %&gt;
   <span class="nt">&lt;ul&gt;</span>
@@ -530,12 +710,12 @@
   <span class="nt">&lt;p&gt;</span>The list is empty.<span class="nt">&lt;/p&gt;</span>
 <span class="err">&lt;</span>% } %&gt;
 </pre></div>
+
 </code></pre>
 <figcaption class="center">A basic Underscore template</figcaption>
 
 
-<a name="your-turn.-how-does-this-make-you-feel-" class="anchor" href="#your-turn.-how-does-this-make-you-feel-"><h3>Your turn. How does this make you feel?</h3>
-</a><p>Does the mix of markup and template code bug you, or is the best thing since sliced bread?</p>
+<h3><a name="your-turn-how-does-this-make-you-feel.html" class="anchor" href="#your-turn-how-does-this-make-you-feel.html"><span class="header-link"></span></a>Your turn. How does this make you feel?</h3><p>Does the mix of markup and template code bug you, or is the best thing since sliced bread?</p>
 <p>See <a href="https://github.com/lazd/DOMly">the source on Github</a> and the <a href="http://jsperf.com/domly-vs-the-world">benchmarks on jsPerf</a>. </p>
 ]]></description><link>http://lazd.github.io/domly-the-fast-template-system-that-clones.html</link><guid isPermaLink="true">http://lazd.github.io/domly-the-fast-template-system-that-clones.html</guid><category><![CDATA[javascript]]></category><category><![CDATA[browsers]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Thu, 27 Feb 2014 08:00:00 GMT</pubDate></item><item><title><![CDATA[No-nonsense vertical centering]]></title><description><![CDATA[<style>
     .navbar {
@@ -587,13 +767,10 @@
 <figcaption>Don&#39;t do it, we can get through this.</figure>
 </figure>
 
-<a name="historically-impractical" class="anchor" href="#historically-impractical"><h2>Historically impractical</h2>
-</a><p>Vertically centering with CSS has always required gross hacks. From negative margins to JavaScript, old-hat devs have brought out the dirtiest of tricks to accomplish this simple and oft needed layout technique.</p>
+<h2><a name="historically-impractical.html" class="anchor" href="#historically-impractical.html"><span class="header-link"></span></a>Historically impractical</h2><p>Vertically centering with CSS has always required gross hacks. From negative margins to JavaScript, old-hat devs have brought out the dirtiest of tricks to accomplish this simple and oft needed layout technique.</p>
 <p>Things aren&#39;t perfect yet, but there are two, no-nonsense techniques that will help you get the job done without making you cringe or want to <a href="http://www.reddit.com/r/programming/comments/1yypr8/refreshing_satirical_article_backend_css/cfp2whv">off yourself with a rusty spoon</a>.</p>
-<a name="the-problem" class="anchor" href="#the-problem"><h2>The problem</h2>
-</a><p>We need to build a horizontal nav bar with elements about 32px high with vertically centered text in each of the links.</p>
-<a name="the-solution-s-" class="anchor" href="#the-solution-s-"><h2>The solution(s)</h2>
-</a><p>Though there are a few other solutions, I&#39;m going to talk about two flexible and reliable approaches. The first gives the ultimate in flexibility, and the second works great for situations where old browser support is still on the table.</p>
+<h2><a name="the-problem.html" class="anchor" href="#the-problem.html"><span class="header-link"></span></a>The problem</h2><p>We need to build a horizontal nav bar with elements about 32px high with vertically centered text in each of the links.</p>
+<h2><a name="the-solution-s.html" class="anchor" href="#the-solution-s.html"><span class="header-link"></span></a>The solution(s)</h2><p>Though there are a few other solutions, I&#39;m going to talk about two flexible and reliable approaches. The first gives the ultimate in flexibility, and the second works great for situations where old browser support is still on the table.</p>
 <p>We&#39;ll use the same markup for both solutions:</p>
 <pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;navbar&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/a&gt;</span>
@@ -602,9 +779,9 @@
     <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Item 4<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/nav&gt;</span>
 </pre></div>
+
 </code></pre>
-<a name="-.-use-the-flexible-box-model" class="anchor" href="#-.-use-the-flexible-box-model"><h2>1. Use the flexible box model</h2>
-</a><p>Flexbox is the holy grail of web layouts. It gives web developers the tools they&#39;ve been clamoring for with a (relatively) simple and easy to understand set of attributes.</p>
+<h2><a name="1-use-the-flexible-box-model.html" class="anchor" href="#1-use-the-flexible-box-model.html"><span class="header-link"></span></a>1. Use the flexible box model</h2><p>Flexbox is the holy grail of web layouts. It gives web developers the tools they&#39;ve been clamoring for with a (relatively) simple and easy to understand set of attributes.</p>
 <p>The CSS properties for the latest spec are simple:</p>
 <pre><code class="lang-css"><div class="highlight"><pre><span class="nc">.navbar-flex</span> <span class="p">{</span>
     <span class="c">/* Behave like a flexible box */</span>
@@ -621,28 +798,25 @@
     <span class="n">align</span><span class="o">-</span><span class="n">items</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
+
 </code></pre>
-<a name="demo" class="anchor" href="#demo"><h3>Demo</h3>
-</a><nav class="navbar navbar-flex">
+<h3><a name="demo.html" class="anchor" href="#demo.html"><span class="header-link"></span></a>Demo</h3><nav class="navbar navbar-flex">
     <a href="#">Item 1</a>
     <a href="#">Item 2</a>
     <a href="#">Item 3</a>
     <a href="#">Item 4</a>
 </nav>
 
-<a name="pros:" class="anchor" href="#pros:"><h3>Pros:</h3>
-</a><ul>
+<h3><a name="pros.html" class="anchor" href="#pros.html"><span class="header-link"></span></a>Pros:</h3><ul>
 <li>Works with multi-line text and arbitrary elements</li>
 <li>Enables responsive layouts that can convert your horizontal menu to vertical with a single property</li>
 </ul>
-<a name="cons:" class="anchor" href="#cons:"><h3>Cons:</h3>
-</a><ul>
+<h3><a name="cons.html" class="anchor" href="#cons.html"><span class="header-link"></span></a>Cons:</h3><ul>
 <li>Only works on the latest versions of modern browsers</li>
 <li>A bit tough to understand</li>
 <li><a href="http://css-tricks.com/using-flexbox/">Deprecated and prefixed properties</a> required for full support on older browsers</li>
 </ul>
-<a name="browser-support" class="anchor" href="#browser-support"><h3>Browser support</h3>
-</a><ul>
+<h3><a name="browser-support.html" class="anchor" href="#browser-support.html"><span class="header-link"></span></a>Browser support</h3><ul>
 <li>IE 10+</li>
 <li>Safari on desktop and iOS</li>
 <li>Firefox</li>
@@ -650,8 +824,7 @@
 <li>Android</li>
 </ul>
 <p>See the <a href="http://caniuse.com/flexbox">support tables on caniuse</a> for details.</p>
-<a name="-.-fake-it-with-fake-tables" class="anchor" href="#-.-fake-it-with-fake-tables"><h2>2. Fake it with fake tables</h2>
-</a><p>Layouts done using the <code>&lt;table&gt;</code> tag are hated for the lack of semantics and clumsy syntax, and rightly so.</p>
+<h2><a name="2-fake-it-with-fake-tables.html" class="anchor" href="#2-fake-it-with-fake-tables.html"><span class="header-link"></span></a>2. Fake it with fake tables</h2><p>Layouts done using the <code>&lt;table&gt;</code> tag are hated for the lack of semantics and clumsy syntax, and rightly so.</p>
 <p>However, you can have all the power and flexibility of tables without the <code>&lt;table&gt;</code> tag using <code>display: table</code>.</p>
 <p>The CSS properties are simple:</p>
 <pre><code class="lang-css"><div class="highlight"><pre><span class="nc">.navbar-table</span> <span class="p">{</span>
@@ -669,52 +842,41 @@
     <span class="k">vertical-align</span><span class="o">:</span> <span class="k">middle</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
+
 </code></pre>
-<a name="demo" class="anchor" href="#demo"><h3>Demo</h3>
-</a><nav class="navbar navbar-table">
+<h3><a name="demo.html" class="anchor" href="#demo.html"><span class="header-link"></span></a>Demo</h3><nav class="navbar navbar-table">
     <a href="#">Item 1</a>
     <a href="#">Item 2</a>
     <a href="#">Item 3</a>
     <a href="#">Item 4</a>
 </nav>
 
-<a name="pros:" class="anchor" href="#pros:"><h3>Pros:</h3>
-</a><ul>
+<h3><a name="pros.html" class="anchor" href="#pros.html"><span class="header-link"></span></a>Pros:</h3><ul>
 <li>Works in very old browsers</li>
 <li>Works with multi-line text and arbitrary elements</li>
 </ul>
-<a name="cons:" class="anchor" href="#cons:"><h3>Cons:</h3>
-</a><ul>
+<h3><a name="cons.html" class="anchor" href="#cons.html"><span class="header-link"></span></a>Cons:</h3><ul>
 <li>No support for responsive design, so your menu is stuck horizontal</li>
 <li>Feels dirty</li>
 </ul>
-<a name="browser-support" class="anchor" href="#browser-support"><h3>Browser support</h3>
-</a><ul>
+<h3><a name="browser-support.html" class="anchor" href="#browser-support.html"><span class="header-link"></span></a>Browser support</h3><ul>
 <li>IE 8+</li>
 <li>Every other browser ever made</li>
 </ul>
 <p>See the <a href="http://caniuse.com/css-table">support tables on caniuse</a> for details.</p>
-<a name="it-doesn-t-stop-at-nav-bars" class="anchor" href="#it-doesn-t-stop-at-nav-bars"><h2>It doesn&#39;t stop at nav bars</h2>
-</a><p>Both of these techniques can be used vertically center anything from images to modal dialogs. Use the above techniques to get full vertical centering satisfaction and avoid the odd hacks that fall apart when the weather changes.</p>
-<a name="the-other-techniques" class="anchor" href="#the-other-techniques"><h2>The other techniques</h2>
-</a><p>There several other ways to get this done in CSS. A few of the more popular methods are discussed below</p>
-<a name="use-css-transforms" class="anchor" href="#use-css-transforms"><h3>Use CSS transforms</h3>
-</a><p>As outlined by Brian Gonzalez in his article <a href="http://davidwalsh.name/css-vertical-center">CSS Vertical Centering</a>, it&#39;s possible to vertically center using CSS <code>transform</code> with a negative <code>translateY</code>.</p>
+<h2><a name="it-doesn-39-t-stop-at-nav-bars.html" class="anchor" href="#it-doesn-39-t-stop-at-nav-bars.html"><span class="header-link"></span></a>It doesn&#39;t stop at nav bars</h2><p>Both of these techniques can be used vertically center anything from images to modal dialogs. Use the above techniques to get full vertical centering satisfaction and avoid the odd hacks that fall apart when the weather changes.</p>
+<h2><a name="the-other-techniques.html" class="anchor" href="#the-other-techniques.html"><span class="header-link"></span></a>The other techniques</h2><p>There several other ways to get this done in CSS. A few of the more popular methods are discussed below</p>
+<h3><a name="use-css-transforms.html" class="anchor" href="#use-css-transforms.html"><span class="header-link"></span></a>Use CSS transforms</h3><p>As outlined by Brian Gonzalez in his article <a href="http://davidwalsh.name/css-vertical-center">CSS Vertical Centering</a>, it&#39;s possible to vertically center using CSS <code>transform</code> with a negative <code>translateY</code>.</p>
 <p>It doesn&#39;t work if the parent doesn&#39;t have a height specified, and the browser support is less than desirable, with this hack working in IE 9+.</p>
-<a name="use-a-fixed-height-and-absolute-positioning" class="anchor" href="#use-a-fixed-height-and-absolute-positioning"><h3>Use a fixed height and absolute positioning</h3>
-</a><p>Stephen Shaw outlines a number of techniques in his article <a href="http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/">Absolute Horizontal and Vertical centering in CSS</a>, two of which there are a few techniques that involve absolute positioning.</p>
+<h3><a name="use-a-fixed-height-and-absolute-positioning.html" class="anchor" href="#use-a-fixed-height-and-absolute-positioning.html"><span class="header-link"></span></a>Use a fixed height and absolute positioning</h3><p>Stephen Shaw outlines a number of techniques in his article <a href="http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/">Absolute Horizontal and Vertical centering in CSS</a>, two of which there are a few techniques that involve absolute positioning.</p>
 <p>The first uses positioning against the sides of a parent element, but requires height to be declared. Browser support is decent, working in IE 8+, but not on Windows Phone.</p>
 <p>The next absolute positioning technique requires width and height to be declared and uses negative margins to offset the inner box by half of its width and height. This time-honored technique works everywhere, including IE 6 and 7.</p>
-<a name="use-a-ghost-element" class="anchor" href="#use-a-ghost-element"><h3>Use a ghost element</h3>
-</a><p>As outlined by Chris Coyer in his article <a href="http://css-tricks.com/centering-in-the-unknown/">Centering in the Unknown</a>, you can use <code>vertical-align</code> and <code>inline-block</code> to center things.</p>
+<h3><a name="use-a-ghost-element.html" class="anchor" href="#use-a-ghost-element.html"><span class="header-link"></span></a>Use a ghost element</h3><p>As outlined by Chris Coyer in his article <a href="http://css-tricks.com/centering-in-the-unknown/">Centering in the Unknown</a>, you can use <code>vertical-align</code> and <code>inline-block</code> to center things.</p>
 <p>It requires a dirty negative margin hack to keep things aligned, but it works in IE 8+.</p>
-<a name="the--line-height--solution" class="anchor" href="#the--line-height--solution"><h3>The <code>line-height</code> solution</h3>
-</a><p>For single-line text, you can set the <code>line-height</code> equal to the <code>height</code> of the box, getting you alignment.</p>
+<h3><a name="the-code-line-height-code-solution.html" class="anchor" href="#the-code-line-height-code-solution.html"><span class="header-link"></span></a>The <code>line-height</code> solution</h3><p>For single-line text, you can set the <code>line-height</code> equal to the <code>height</code> of the box, getting you alignment.</p>
 <p>If your text ends up wrapping, the second line falls out of the box. This works everywhere, but it&#39;s very brittle.</p>
-<a name="calculate-with-javascript" class="anchor" href="#calculate-with-javascript"><h3>Calculate with JavaScript</h3>
-</a><p>Finally, the oft used technique of measuring height using JavaScript and calculating the correct position on load and every time the window is resized. I&#39;m not even going to link to this, you should be doing your layouts with CSS.</p>
-<a name="the-bottom-line-and-a-word-on-moving-the-web-forward" class="anchor" href="#the-bottom-line-and-a-word-on-moving-the-web-forward"><h2>The bottom line and a word on moving the web forward</h2>
-</a><p>Flexbox aside, every CSS vertical centering technique is a hack. Your best bet is to suck it up until flexbox support is available everywhere and choose the hack that works best for your use case and target browser environment.</p>
+<h3><a name="calculate-with-javascript.html" class="anchor" href="#calculate-with-javascript.html"><span class="header-link"></span></a>Calculate with JavaScript</h3><p>Finally, the oft used technique of measuring height using JavaScript and calculating the correct position on load and every time the window is resized. I&#39;m not even going to link to this, you should be doing your layouts with CSS.</p>
+<h2><a name="the-bottom-line-and-a-word-on-moving-the-web-forward.html" class="anchor" href="#the-bottom-line-and-a-word-on-moving-the-web-forward.html"><span class="header-link"></span></a>The bottom line and a word on moving the web forward</h2><p>Flexbox aside, every CSS vertical centering technique is a hack. Your best bet is to suck it up until flexbox support is available everywhere and choose the hack that works best for your use case and target browser environment.</p>
 <p>However, if you are in a position to do so, drop support for old browsers. The best way to drag netizens and their governing groups into the future is to level sanctions against them: you can&#39;t use my fancy site until you upgrade your browser.</p>
 <hr>
 
@@ -724,8 +886,7 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
 <p>We&#39;ve taken that already simple process and made it simpler with mdn.io, the &quot;I&#39;m feeling lucky&quot; URL shortener for MDN.</p>
 <div class="clear"></div>
 
-<a name="how-do-i-use-it-" class="anchor" href="#how-do-i-use-it-"><h2>How do I use it?</h2>
-</a><p>Simply type something like this in your address bar:</p>
+<h2><a name="how-do-i-use-it.html" class="anchor" href="#how-do-i-use-it.html"><span class="header-link"></span></a>How do I use it?</h2><p>Simply type something like this in your address bar:</p>
 <blockquote>
 <p><a href="http://mdn.io/defineproperty" target="_blank">mdn.io/defineproperty</a></p>
 </blockquote>
@@ -737,41 +898,35 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
 <blockquote>
 <p><a href="http://mdn.io/array#Methods_of_Array_instances" target="_blank">mdn.io/array#Methods_of_Array_instances</a></p>
 </blockquote>
-<a name="why-" class="anchor" href="#why-"><h2>Why?</h2>
-</a><p>MDN URLs are quite long:</p>
+<h2><a name="why.html" class="anchor" href="#why.html"><span class="header-link"></span></a>Why?</h2><p>MDN URLs are quite long:</p>
 <blockquote>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_of_Array_instances">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_of_Array_instances</a></p>
 </blockquote>
-<p>We needed a way to keep them short so they could be directly included in places we would otherwise say &quot;search for <em>__</em>.&quot;</p>
-<a name="code-reviews" class="anchor" href="#code-reviews"><h3>Code reviews</h3>
-</a><p>Let&#39;s say you&#39;re doing a code review and you need to link a peer to the documentation for the Array object:</p>
+<p>We needed a way to keep them short so they could be directly included in places we would otherwise say &quot;search for ____.&quot;</p>
+<h3><a name="code-reviews.html" class="anchor" href="#code-reviews.html"><span class="header-link"></span></a>Code reviews</h3><p>Let&#39;s say you&#39;re doing a code review and you need to link a peer to the documentation for the Array object:</p>
 <pre><code><div class="highlight"><pre><span class="c1">// Array has an inbuilt forEach method, see mdn.io/array</span>
 </pre></div>
-</code></pre>
-<a name="comments" class="anchor" href="#comments"><h3>Comments</h3>
-</a><p>If you&#39;re writing JavaScript code that relies on some interesting in-built functionality others aren&#39;t familar with, it might be helpful to link to the documentation for it:</p>
+
+</code></pre><h3><a name="comments.html" class="anchor" href="#comments.html"><span class="header-link"></span></a>Comments</h3><p>If you&#39;re writing JavaScript code that relies on some interesting in-built functionality others aren&#39;t familar with, it might be helpful to link to the documentation for it:</p>
 <pre><code><div class="highlight"><pre><span class="c1">// See mdn.io/defineproperty</span>
 <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">writeable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
     <span class="nx">enumerable</span><span class="o">:</span> <span class="kc">true</span>
 <span class="p">})</span>
 </pre></div>
-</code></pre>
-<a name="common-questions" class="anchor" href="#common-questions"><h3>Common questions</h3>
-</a><p>Sometimes you just get asked the same question so many times you wish your chat client would auto-reply with the URL to the FM:</p>
+
+</code></pre><h3><a name="common-questions.html" class="anchor" href="#common-questions.html"><span class="header-link"></span></a>Common questions</h3><p>Sometimes you just get asked the same question so many times you wish your chat client would auto-reply with the URL to the FM:</p>
 <blockquote>
 <p><strong>friend:</strong> hey dude, is it call or apply that takes an array?</p>
+</blockquote>
+<blockquote>
 <p><strong>you:</strong> RTFM mdn.io/apply</p>
 </blockquote>
-<a name="what-is-this-sorcery-" class="anchor" href="#what-is-this-sorcery-"><h2>What is this sorcery?</h2>
-</a><p>mdn.io isn&#39;t <em>really</em> a URL shortener. There&#39;s no need to create an entry for each page you want to link to; mdn.io simply redirects to a Google &quot;I&#39;m feeling lucky&quot; search for your query + <code>site:developer.mozilla.org</code>, which in turn redirects you to the first result.</p>
+<h2><a name="what-is-this-sorcery.html" class="anchor" href="#what-is-this-sorcery.html"><span class="header-link"></span></a>What is this sorcery?</h2><p>mdn.io isn&#39;t <em>really</em> a URL shortener. There&#39;s no need to create an entry for each page you want to link to; mdn.io simply redirects to a Google &quot;I&#39;m feeling lucky&quot; search for your query + <code>site:developer.mozilla.org</code>, which in turn redirects you to the first result.</p>
 <p>Simple and hands off, like it should be. Check out <a href="https://github.com/lazd/mdn.io">the source on Github</a> for more details.</p>
-<a name="a-big-thanks" class="anchor" href="#a-big-thanks"><h2>A big thanks</h2>
-</a><p><a href="http://blakeembrey.me/">Blake Embrey</a> and I collaborated on this project and he continues to support it by hosting mdn.io. Thanks, Blake!<br></p>
-]]></description><link>http://lazd.github.io/mdn-io-passive-url-shortening-for-mdn.html</link><guid isPermaLink="true">http://lazd.github.io/mdn-io-passive-url-shortening-for-mdn.html</guid><category><![CDATA[resources]]></category><category><![CDATA[javascript]]></category><category><![CDATA[node.js]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Tue, 13 Aug 2013 07:00:00 GMT</pubDate></item><item><title><![CDATA[Scaleable interfaces with rem units]]></title><description><![CDATA[<a name="what-are-rem-units-" class="anchor" href="#what-are-rem-units-"><h2>What are rem units?</h2>
-</a><p>According to <a href="http://www.w3.org/TR/css3-values/#rem-unit">W3 candidate reccomendation</a>, one root elastic measurement (rem) unit is equal to the <code>font-size</code> of the <code>&lt;html&gt;</code> element.</p>
-<a name="hello-rem" class="anchor" href="#hello-rem"><h2>Hello rem</h2>
-</a><p>Let&#39;s say you&#39;ve defined the <code>font-size</code> of the <code>&lt;html&gt;</code> element as 16 pixels, and you want a 48 pixel tall <code>&lt;header&gt;</code>. Basic math tells us that&#39;s 3 rem.</p>
+<h2><a name="a-big-thanks.html" class="anchor" href="#a-big-thanks.html"><span class="header-link"></span></a>A big thanks</h2><p><a href="http://blakeembrey.me/">Blake Embrey</a> and I collaborated on this project and he continues to support it by hosting mdn.io. Thanks, Blake!<br></p>
+]]></description><link>http://lazd.github.io/mdn-io-passive-url-shortening-for-mdn.html</link><guid isPermaLink="true">http://lazd.github.io/mdn-io-passive-url-shortening-for-mdn.html</guid><category><![CDATA[resources]]></category><category><![CDATA[javascript]]></category><category><![CDATA[node.js]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Tue, 13 Aug 2013 07:00:00 GMT</pubDate></item><item><title><![CDATA[Scaleable interfaces with rem units]]></title><description><![CDATA[<h2><a name="what-are-rem-units.html" class="anchor" href="#what-are-rem-units.html"><span class="header-link"></span></a>What are rem units?</h2><p>According to <a href="http://www.w3.org/TR/css3-values/#rem-unit">W3 candidate reccomendation</a>, one root elastic measurement (rem) unit is equal to the <code>font-size</code> of the <code>&lt;html&gt;</code> element.</p>
+<h2><a name="hello-rem.html" class="anchor" href="#hello-rem.html"><span class="header-link"></span></a>Hello rem</h2><p>Let&#39;s say you&#39;ve defined the <code>font-size</code> of the <code>&lt;html&gt;</code> element as 16 pixels, and you want a 48 pixel tall <code>&lt;header&gt;</code>. Basic math tells us that&#39;s 3 rem.</p>
 <pre><code><div class="highlight"><pre><span class="nx">html</span> <span class="p">{</span>
     <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">16</span><span class="nx">px</span><span class="p">;</span>
 <span class="p">}</span>
@@ -779,9 +934,8 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
     <span class="nx">height</span><span class="o">:</span> <span class="mi">3</span><span class="nx">rem</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</code></pre>
-<a name="try-it" class="anchor" href="#try-it"><h2>Try it</h2>
-</a><p>This blog is built using rem units; click the buttons below to adjust the <code>font-size</code> of the <code>&lt;html&gt;</code> element, and in turn, the entire site.</p>
+
+</code></pre><h2><a name="try-it.html" class="anchor" href="#try-it.html"><span class="header-link"></span></a>Try it</h2><p>This blog is built using rem units; click the buttons below to adjust the <code>font-size</code> of the <code>&lt;html&gt;</code> element, and in turn, the entire site.</p>
 <div id="resize">
     <button class="button large" id="decrease">-</button>
     <div id="pagePixelSize">16px</div>
@@ -802,11 +956,9 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
     }, false);
 </script>
 
-<a name="wait--how-is-that-different-from-em-" class="anchor" href="#wait--how-is-that-different-from-em-"><h2>Wait, how is that different from em?</h2>
-</a><p>Elastic measurement units cascade (<a href="http://www.w3.org/TR/css3-values/#em-unit">em spec</a>), whereas root elastic measurement units are always relative to the root element. </p>
+<h2><a name="wait-how-is-that-different-from-em.html" class="anchor" href="#wait-how-is-that-different-from-em.html"><span class="header-link"></span></a>Wait, how is that different from em?</h2><p>Elastic measurement units cascade (<a href="http://www.w3.org/TR/css3-values/#em-unit">em spec</a>), whereas root elastic measurement units are always relative to the root element. </p>
 <p>With ems, the following situation becomes confusing:</p>
-<a name="css:" class="anchor" href="#css:"><h3>CSS:</h3>
-</a><pre><code class="lang-css"><div class="highlight"><pre><span class="nc">.container</span> <span class="p">{</span>
+<h3><a name="css.html" class="anchor" href="#css.html"><span class="header-link"></span></a>CSS:</h3><pre><code class="lang-css"><div class="highlight"><pre><span class="nc">.container</span> <span class="p">{</span>
     <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nc">.em1</span> <span class="p">{</span>
@@ -822,9 +974,9 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
     <span class="k">border-top</span><span class="o">:</span> <span class="m">1em</span> <span class="k">solid</span> <span class="nb">blue</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
+
 </code></pre>
-<a name="html:" class="anchor" href="#html:"><h3>HTML:</h3>
-</a><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
+<h3><a name="html.html" class="anchor" href="#html.html"><span class="header-link"></span></a>HTML:</h3><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;em1&quot;</span><span class="nt">&gt;</span>
         Text 1
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;em2&quot;</span><span class="nt">&gt;</span>
@@ -836,9 +988,9 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
+
 </code></pre>
-<a name="result:" class="anchor" href="#result:"><h3>Result:</h3>
-</a><p><style>
+<h3><a name="result.html" class="anchor" href="#result.html"><span class="header-link"></span></a>Result:</h3><p><style>
     .container {
         font-size: 16px;
         margin: 0 2rem;
@@ -875,13 +1027,11 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
 <blockquote>
 <p>16px &times; 1 &times; 2 &times; 1 = 32px.</p>
 </blockquote>
-<a name="the-same-example--but-with-rems" class="anchor" href="#the-same-example--but-with-rems"><h2>The same example, but with rems</h2>
-</a><p>If we use rem instead of em in the above example, since rems are always root-relative, the <code>font-size</code> of &quot;Text 3&quot; becomes:</p>
+<h2><a name="the-same-example-but-with-rems.html" class="anchor" href="#the-same-example-but-with-rems.html"><span class="header-link"></span></a>The same example, but with rems</h2><p>If we use rem instead of em in the above example, since rems are always root-relative, the <code>font-size</code> of &quot;Text 3&quot; becomes:</p>
 <blockquote>
 <p>16px &times; 1 = 16px.</p>
 </blockquote>
-<a name="css:" class="anchor" href="#css:"><h3>CSS:</h3>
-</a><pre><code class="lang-css"><div class="highlight"><pre><span class="nt">html</span> <span class="p">{</span>
+<h3><a name="css.html" class="anchor" href="#css.html"><span class="header-link"></span></a>CSS:</h3><pre><code class="lang-css"><div class="highlight"><pre><span class="nt">html</span> <span class="p">{</span>
     <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nc">.rem1</span> <span class="p">{</span>
@@ -897,9 +1047,9 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
     <span class="k">border-top</span><span class="o">:</span> <span class="m">1</span><span class="n">rem</span> <span class="k">solid</span> <span class="nb">blue</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
+
 </code></pre>
-<a name="html:" class="anchor" href="#html:"><h3>HTML:</h3>
-</a><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+<h3><a name="html.html" class="anchor" href="#html.html"><span class="header-link"></span></a>HTML:</h3><pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;rem1&quot;</span><span class="nt">&gt;</span>
         Text 1
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;rem2&quot;</span><span class="nt">&gt;</span>
@@ -911,9 +1061,9 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
+
 </code></pre>
-<a name="result:" class="anchor" href="#result:"><h3>Result:</h3>
-</a><p><style>
+<h3><a name="result.html" class="anchor" href="#result.html"><span class="header-link"></span></a>Result:</h3><p><style>
     .rem1 {
         font-size: 1rem;
         border-top: 1rem solid red;
@@ -940,15 +1090,13 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
 </div>
 
 
-<a name="why-should-we-do-this-again-" class="anchor" href="#why-should-we-do-this-again-"><h2>Why should we do this again?</h2>
-</a><p>If you have a need to dynamically scale your interface, in part or in whole, with absolute precision, rems can be useful.</p>
+<h2><a name="why-should-we-do-this-again.html" class="anchor" href="#why-should-we-do-this-again.html"><span class="header-link"></span></a>Why should we do this again?</h2><p>If you have a need to dynamically scale your interface, in part or in whole, with absolute precision, rems can be useful.</p>
 <ol>
 <li><strong>A mobile interface that targets iPad Mini</strong> - You may want a slightly larger interface for the oddly sized iPad Mini display</li>
 <li><strong>User preferences for the size of the site</strong> - You could provide a preference to increase the size of your site for a given user across all their devices</li>
 <li><strong>You just want things a tad bigger</strong> - If your designers say &quot;make everything 2 pixels bigger,&quot; you&#39;re gonna have a bad time, unlesss you&#39;re using rem units</li>
 </ol>
-<a name="execution" class="anchor" href="#execution"><h2>Execution</h2>
-</a><p>Simply use rems in place of pixels in your CSS:</p>
+<h2><a name="execution.html" class="anchor" href="#execution.html"><span class="header-link"></span></a>Execution</h2><p>Simply use rems in place of pixels in your CSS:</p>
 <pre><code><div class="highlight"><pre><span class="nx">html</span> <span class="p">{</span>
     <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">16</span><span class="nx">px</span><span class="p">;</span>
 <span class="p">}</span>
@@ -957,20 +1105,17 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
     <span class="nx">padding</span><span class="o">:</span> <span class="mf">0.5</span><span class="nx">rem</span><span class="p">;</span> <span class="cm">/* 8px */</span>
 <span class="p">}</span>
 </pre></div>
-</code></pre>
-<a name="but-fractions-are-hard--what-if-i-want-9-pixels-" class="anchor" href="#but-fractions-are-hard--what-if-i-want-9-pixels-"><h3>But fractions are hard, what if I want 9 pixels?</h3>
-</a><p>If you&#39;re using a CSS preprocessor, which you should be, it&#39;s easy to create a variable that represents a pixel:</p>
-<a name="stylus:" class="anchor" href="#stylus:"><h3>Stylus:</h3>
-</a><pre><code><div class="highlight"><pre><span class="c1">// The size of 1rem in pixels</span>
+
+</code></pre><h3><a name="but-fractions-are-hard-what-if-i-want-9-pixels.html" class="anchor" href="#but-fractions-are-hard-what-if-i-want-9-pixels.html"><span class="header-link"></span></a>But fractions are hard, what if I want 9 pixels?</h3><p>If you&#39;re using a CSS preprocessor, which you should be, it&#39;s easy to create a variable that represents a pixel:</p>
+<h3><a name="stylus.html" class="anchor" href="#stylus.html"><span class="header-link"></span></a>Stylus:</h3><pre><code><div class="highlight"><pre><span class="c1">// The size of 1rem in pixels</span>
 <span class="nx">$baseSize</span> <span class="o">=</span> <span class="mi">16</span>
 
 <span class="c1">// The size of a pixel in rems</span>
 <span class="nx">$px</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="nx">$baseSize</span> <span class="o">+</span> <span class="mi">0</span><span class="nx">rem</span>
 </pre></div>
-</code></pre>
-<p>Then, in your code, multiply the number of pixels you want by the variable:</p>
-<a name="stylus:" class="anchor" href="#stylus:"><h3>Stylus:</h3>
-</a><pre><code><div class="highlight"><pre><span class="nx">html</span>
+
+</code></pre><p>Then, in your code, multiply the number of pixels you want by the variable:</p>
+<h3><a name="stylus.html" class="anchor" href="#stylus.html"><span class="header-link"></span></a>Stylus:</h3><pre><code><div class="highlight"><pre><span class="nx">html</span>
     <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="nx">$baseSize</span>
 
 <span class="p">.</span><span class="nx">header</span>
@@ -978,9 +1123,8 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
     <span class="nx">border</span><span class="o">:</span> <span class="nx">$px</span> <span class="nx">solid</span> <span class="nx">black</span>
     <span class="nx">margin</span><span class="o">-</span><span class="nx">bottom</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="nx">$px</span>
 </pre></div>
-</code></pre>
-<a name="where-you-should-still-use-px" class="anchor" href="#where-you-should-still-use-px"><h2>Where you should still use px</h2>
-</a><p>You&#39;ll want to specify the <code>font-size</code> of the <code>&lt;html&gt;</code> element in pixels, but there are a few cases where you might want to use pixels elsewhere in your CSS.</p>
+
+</code></pre><h2><a name="where-you-should-still-use-px.html" class="anchor" href="#where-you-should-still-use-px.html"><span class="header-link"></span></a>Where you should still use px</h2><p>You&#39;ll want to specify the <code>font-size</code> of the <code>&lt;html&gt;</code> element in pixels, but there are a few cases where you might want to use pixels elsewhere in your CSS.</p>
 <ul>
 <li>As the distance for <code>text-shadow</code> when used for a beveled effect<ul>
 <li>Generally, this effect looks bad for &gt; 1px</li>
@@ -991,8 +1135,7 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
 </ul>
 </li>
 </ul>
-<a name="where-you-should-still-use-em" class="anchor" href="#where-you-should-still-use-em"><h2>Where you should still use em</h2>
-</a><p>If you want the flexibility of resizing a particular widget independently of the rest of the page, you should use a mix of em and rem:</p>
+<h2><a name="where-you-should-still-use-em.html" class="anchor" href="#where-you-should-still-use-em.html"><span class="header-link"></span></a>Where you should still use em</h2><p>If you want the flexibility of resizing a particular widget independently of the rest of the page, you should use a mix of em and rem:</p>
 <pre><code><div class="highlight"><pre><span class="nx">button</span> <span class="p">{</span>
     <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">1</span><span class="nx">rem</span><span class="p">;</span>
     <span class="nx">margin</span><span class="o">:</span> <span class="mf">0.5</span><span class="nx">em</span><span class="p">;</span>
@@ -1000,30 +1143,28 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
     <span class="nx">padding</span><span class="o">:</span> <span class="mf">0.25</span><span class="nx">em</span> <span class="mf">0.75</span><span class="nx">em</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</code></pre>
-<p>Then, to make a large button:</p>
+
+</code></pre><p>Then, to make a large button:</p>
 <pre><code><div class="highlight"><pre><span class="nx">button</span><span class="p">.</span><span class="nx">large</span> <span class="p">{</span>
     <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mf">1.5</span><span class="nx">rem</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</code></pre>
-<p>The rest of the properties, specified in em units, will scale to be 50% larger.</p>
-<a name="compatibility" class="anchor" href="#compatibility"><h2>Compatibility</h2>
-</a><p>Where rems don&#39;t work:</p>
+
+</code></pre><p>The rest of the properties, specified in em units, will scale to be 50% larger.</p>
+<h2><a name="compatibility.html" class="anchor" href="#compatibility.html"><span class="header-link"></span></a>Compatibility</h2><p>Where rems don&#39;t work:</p>
 <ul>
 <li>IE 8</li>
 <li>iOS 3</li>
 <li>Safari 4</li>
 </ul>
 <p>That said, all modern browsers support rem units. See the <a href="http://caniuse.com/#search=rem">caniuse tables</a> for details.</p>
-<a name="fallbacks" class="anchor" href="#fallbacks"><h3>Fallbacks</h3>
-</a><p>You can specify units in pixels above if you&#39;d like support for older browsers (minus the scalability):</p>
+<h3><a name="fallbacks.html" class="anchor" href="#fallbacks.html"><span class="header-link"></span></a>Fallbacks</h3><p>You can specify units in pixels above if you&#39;d like support for older browsers (minus the scalability):</p>
 <pre><code class="lang-css"><div class="highlight"><pre><span class="nt">width</span><span class="o">:</span> <span class="nt">16px</span><span class="o">;</span>
 <span class="nt">width</span><span class="o">:</span> <span class="nt">1rem</span><span class="o">;</span>
 </pre></div>
+
 </code></pre>
-<a name="show-me-the-code" class="anchor" href="#show-me-the-code"><h2>Show me the code</h2>
-</a><p>Take a look at the source of <a href="https://github.com/lazd/iOCSS">iOCSS</a> and <a href="https://github.com/lazd/lazd.github.io/tree/build">this blog</a> for a few examples that combine rem units with media queries, ems, and CSS preprocessors.</p>
+<h2><a name="show-me-the-code.html" class="anchor" href="#show-me-the-code.html"><span class="header-link"></span></a>Show me the code</h2><p>Take a look at the source of <a href="https://github.com/lazd/iOCSS">iOCSS</a> and <a href="https://github.com/lazd/lazd.github.io/tree/build">this blog</a> for a few examples that combine rem units with media queries, ems, and CSS preprocessors.</p>
 ]]></description><link>http://lazd.github.io/scaleable-interfaces-with-rem-units.html</link><guid isPermaLink="true">http://lazd.github.io/scaleable-interfaces-with-rem-units.html</guid><category><![CDATA[css3]]></category><category><![CDATA[mobile]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Sat, 10 Aug 2013 07:00:00 GMT</pubDate></item><item><title><![CDATA[And so it began]]></title><description><![CDATA[<p>I turned the knob to channel 4 and flicked the switch to <code>ON</code>. A  blue screen faded in as the old Zenith TV warmed up.</p>
 <pre class="code c64 c64_width fade animate">
 <div class="center">
@@ -1085,10 +1226,10 @@ READY.
 <p>Flip a switch and start coding. Using a computer meant writing code, and a casual user could become a hobbyist programmer in an afternoon with no additional equipment or materials.</p>
 <p>As computing became more common place, graphical user interfaces gave us clickable icons in place of the commands we used to type. Computing became accessible to everyone as the workings of the machine were hidden by layer upon layer of abstraction. This transformation was amazing and beautiful, but it came at a cost: The machine transformed from a playground that encouraged tinkering to an appliance that forbade it.</p>
 <p>Eventually, computers began to ship with no development environment and no casual path for a user to transition to a hobbyist.</p>
-<a name="the-renaissance" class="anchor" href="#the-renaissance"><h2>The renaissance</h2>
-</a><p>JavaScript is everywhere. Nearly every device we own is capable of running human-readable JavaScript code. Hit Command + Option + i <em>right now</em> and you&#39;ll drop to the console. Type this and hit enter:</p>
+<h2><a name="the-renaissance.html" class="anchor" href="#the-renaissance.html"><span class="header-link"></span></a>The renaissance</h2><p>JavaScript is everywhere. Nearly every device we own is capable of running human-readable JavaScript code. Hit Command + Option + i <em>right now</em> and you&#39;ll drop to the console. Type this and hit enter:</p>
 <pre><code class="lang-javascript"><div class="highlight"><pre><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">);</span>
 </pre></div>
+
 </code></pre>
 <p>You just wrote your first computer program.</p>
 <p>Things are different now. You won&#39;t have to leaf through the dusty pages of an old spiral bound user&#39;s guide. Thousands of tutorials and resources are available for free, and you have the most powerful knowledge search system mankind has ever created beneath your fingertips, ready to find them.</p>

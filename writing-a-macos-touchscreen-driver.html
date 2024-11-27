@@ -1,75 +1,38 @@
-<!DOCTYPE html>
-<html lang="NaN">
-  <head>
-    <meta charset="utf8">
-    <meta name="viewport" content="width=480">
-    <meta name="description" content="The blog of Larry Davis">
-    <meta property="og:title" content="Writing a macOS touchscreen driver">
-    <meta property="og:description" content="How I made an 8&quot; pocket-sized touchscreen HackBook Nano">
-    <meta property="og:image" content="https://blog.lazd.net/images/minibook.png">
-    <meta property="og:image:alt" content="A Chuwi Minibook, 8&quot; touchscreen computer, seen from above">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://blog.lazd.net/writing-a-macos-touchscreen-driver.html">
-    <meta property="og:site_name" content="lazd's blog">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:site" content="@lazdnet">
-    <link rel="preconnect" href="https://fonts.gstatic.com/">
-    <link href="http://fonts.googleapis.com/css2?family=Open+Sans:300italic,400italic,400,600,300&amp;display=swap" rel="stylesheet">
-    <link href="/icons/style.css" rel="stylesheet">
-    <link href="/styles/blog.css" rel="stylesheet">
-    <link href="/styles/solarized-dark.syntax.css" rel="stylesheet"><script>
-    		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    		ga('create', 'UA-43555016-1', 'lazd.github.io');
-    		ga('send', 'pageview');
-    </script>
-    <title>Writing a macOS touchscreen driver - lazdBlog</title>
-  </head>
-  <script type="application/ld+json">
-    {
-    	"@context" : "http://schema.org",
-    	"@type" : "Article",
-    	"name" : "Writing a macOS touchscreen driver",
-    	"headline" : "Writing a macOS touchscreen driver",
-    "description": "How I made an 8&quot; pocket-sized touchscreen HackBook Nano",
-    	"author" : {
-    		"@type" : "Person",
-    		"name" : "Larry Davis",
-    		"url": "https://twitter.com/lazdnet"
-    	},
-    	"datePublished" : "2020-01-23",
-    	"image" : "https://blog.lazd.net/images/minibook.png"
-    }
-  </script>
-  <body>
-    <header class="header"><a href="/" class="topLogo"><i class="icon-blog"></i>lazdBlog</a>
-      <nav class="topNav"><a href="https://github.com/lazd" target="_blank" rel="noopener" class="icon-github">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505" target="_blank" rel="noopener" class="icon-linkedin">LinkedIn</a><a href="https://twitter.com/lazdnet" target="_blank" rel="noopener" class="icon-twitter">Twitter</a></nav>
-    </header>
-    <article class="post">
-      <h1 class="title">Writing a macOS touchscreen driver</h1>
-      <time datetime="2020-01-23 00:00:00" class="date">January 23rd, 2020</time>
-      <section><a name="the-hunt-for-the-tiniest-laptop" class="anchor" href="#the-hunt-for-the-tiniest-laptop"><h2>The hunt for the tiniest laptop</h2>
-</a><p><img src="images/minibook.png" class="titleImage left" style="width: 256px" alt='Chuwi Minibook promotional shot'></p>
+<!DOCTYPE html><html lang="NaN"><head><meta charset="utf8"><meta name="viewport" content="width=480"><meta name="description" content="The blog of Larry Davis"><meta property="og:title" content="Writing a macOS touchscreen driver"><meta property="og:description" content="How I made an 8&quot; pocket-sized touchscreen HackBook Nano"><meta property="og:image" content="https://blog.lazd.net/images/minibook.png"><meta property="og:image:alt" content="A Chuwi Minibook, 8&quot; touchscreen computer, seen from above"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.lazd.net/writing-a-macos-touchscreen-driver.html"><meta property="og:site_name" content="lazd's blog"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@lazdnet"><link rel="preconnect" href="https://fonts.gstatic.com/"><link href="http://fonts.googleapis.com/css2?family=Open+Sans:300italic,400italic,400,600,300&amp;display=swap" rel="stylesheet"><link href="/icons/style.css" rel="stylesheet"><link href="/styles/blog.css" rel="stylesheet"><link href="/styles/solarized-dark.syntax.css" rel="stylesheet"><script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-43555016-1', 'lazd.github.io');
+		ga('send', 'pageview');
+</script><title>Writing a macOS touchscreen driver - lazdBlog</title></head><script type="application/ld+json">{
+	"@context" : "http://schema.org",
+	"@type" : "Article",
+	"name" : "Writing a macOS touchscreen driver",
+	"headline" : "Writing a macOS touchscreen driver",
+"description": "How I made an 8&quot; pocket-sized touchscreen HackBook Nano",
+	"author" : {
+		"@type" : "Person",
+		"name" : "Larry Davis",
+		"url": "https://twitter.com/lazdnet"
+	},
+	"datePublished" : "2020-01-23",
+	"image" : "https://blog.lazd.net/images/minibook.png"
+}</script><body><header class="header"><a href="/" class="topLogo"><i class="icon-blog"></i>lazdBlog</a><nav class="topNav"><a href="https://github.com/lazd" target="_blank" rel="noopener" class="icon-github">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505" target="_blank" rel="noopener" class="icon-linkedin">LinkedIn</a><a href="https://twitter.com/lazdnet" target="_blank" rel="noopener" class="icon-twitter">Twitter</a></nav></header><article class="post"><h1 class="title">Writing a macOS touchscreen driver</h1><time datetime="2020-01-23 00:00:00" class="date">January 23rd, 2020</time><section><h2><a name="the-hunt-for-the-tiniest-laptop.html" class="anchor" href="#the-hunt-for-the-tiniest-laptop.html"><span class="header-link"></span></a>The hunt for the tiniest laptop</h2><p><img src="images/minibook.png" class="titleImage left" style="width: 256px" alt='Chuwi Minibook promotional shot'></p>
 <p>I got excited about tiny laptops. I don&#39;t mean netbooks, I mean damn near palmtop laptops, the kind that would just barely fit in an oversized pocket... Something so small it seems impractical. Why? Beyond the needing a field laptop to tune and update FPV drones, I felt like having a tiny computer would make using it more fun. Everything from coding to web browsing, I imagined, would be more entertaining.</p>
 <p>I found the Chuwi Minibook, an 8&quot; touchscreen &quot;yogabook&quot; that runs Windows 10, and it seemed to fit the bill -- decent design, both USB-C and USB-A, a card reader, a fast CPU, and of course, a multi-touch touchscreen...</p>
 <p>But there&#39;s was a caveat: I run macOS. I rely heavily on the ecosystem, from notes, to iMessage, to the UNIX subsystem, to the elegant user interface, it&#39;s everything I need in an operating system. Running Windows or Linux was simply not an option, and the smallest thing Apple makes is nowhere near small enough.</p>
 <p>So can it run macOS?</p>
-<a name="hackintoshing-is-hard" class="anchor" href="#hackintoshing-is-hard"><h2>Hackintoshing is hard</h2>
-</a><p>It just so happened that <a target="_blank" href="https://github.com/THEDEVIOUS1">THEDEVIOUS1</a> had worked <a target="_blank" href="https://github.com/THEDEVIOUS1/CHUWI-MINIBOOK-HACKINTOSH">some wicked voodoo magic</a> and managed to get Catalina running on the Minibook!</p>
+<h2><a name="hackintoshing-is-hard.html" class="anchor" href="#hackintoshing-is-hard.html"><span class="header-link"></span></a>Hackintoshing is hard</h2><p>It just so happened that <a target="_blank" href="https://github.com/THEDEVIOUS1">THEDEVIOUS1</a> had worked <a target="_blank" href="https://github.com/THEDEVIOUS1/CHUWI-MINIBOOK-HACKINTOSH">some wicked voodoo magic</a> and managed to get Catalina running on the Minibook!</p>
 <p>I was stoked! They had somehow got almost everything working, everything except the card reader, fingerprint scanner, internal storage, the accelerometer, and of course the touchscreen -- but who needs those? The dream seemed within reach; could this be the pocket-sized MacBook I&#39;ve been daydreaming about?</p>
-<a name="but-what-about-the-touchscreen-" class="anchor" href="#but-what-about-the-touchscreen-"><h2>But what about the touchscreen?</h2>
-</a><p><img src="images/minibook-on-macbook.jpg" class="right titleImage" style="width: 256px" alt='Chuwi Minibook sitting on MacBook 13"'></p>
+<h2><a name="but-what-about-the-touchscreen.html" class="anchor" href="#but-what-about-the-touchscreen.html"><span class="header-link"></span></a>But what about the touchscreen?</h2><p><img src="images/minibook-on-macbook.jpg" class="right titleImage" style="width: 256px" alt='Chuwi Minibook sitting on MacBook 13"'></p>
 <p>Fast-forward to having a hackintosh&#39;d Minibook, booting Catalina... Naturally I want to try the touchscreen, but how?</p>
 <p>It turns out there&#39;s a Linux driver for the Goodix touchscreen, and of course there&#39;s VoodooI2C, which takes I2C devices and makes them work with macOS.</p>
 <p>Could I port the Linux driver to macOS, and somehow enable multi-touch gestures, scrolling, and right clicking? What would it take?</p>
 <p>Spoiler alert: the answer is a weekend and a lot of coffee.</p>
-<a name="hello-touchscreen" class="anchor" href="#hello-touchscreen"><h2>Hello touchscreen</h2>
-</a><p>As I was unfamiliar with VoodooI2C, I started by cloning an existing driver, <a target="_blank" href="https://github.com/coolstar/VoodooI2CAtmelMXT">VoodooI2CAtmelMXT</a>. This gave me some boilerplate I could try to work on top of. I then stripped the code down to the basics -- methods like <code>start</code>, <code>stop</code>, <code>probe</code>, <code>init</code> as stubs with nothing more than error handling, just so I had the basic structure in place.</p>
+<h2><a name="hello-touchscreen.html" class="anchor" href="#hello-touchscreen.html"><span class="header-link"></span></a>Hello touchscreen</h2><p>As I was unfamiliar with VoodooI2C, I started by cloning an existing driver, <a target="_blank" href="https://github.com/coolstar/VoodooI2CAtmelMXT">VoodooI2CAtmelMXT</a>. This gave me some boilerplate I could try to work on top of. I then stripped the code down to the basics -- methods like <code>start</code>, <code>stop</code>, <code>probe</code>, <code>init</code> as stubs with nothing more than error handling, just so I had the basic structure in place.</p>
 <p>The next step was to try to get communication with the touchscreen working. I modeled a method, <code>goodix_read_reg</code>, after the method in the Linux driver, but there was a hurdle -- despite a correctly configured KEXT that should match on the <code>GDX1001</code> device ID, the touchscreen didn&#39;t seem to power on and indicate it was ready for communication, so I couldn&#39;t test my method yet.</p>
-<a name="waking-up-a-sleepy-touchscreen" class="anchor" href="#waking-up-a-sleepy-touchscreen"><h2>Waking up a sleepy touchscreen</h2>
-</a><p>According to the <a target="_blank" href="https://www.distec.de/fileadmin/pdf/produkte/Touchcontroller/DDGroup/GT911_Datasheet.pdf">datasheet for the GT911 touchscreen</a>, a reset sequence needs to be sent over I2C. We weren&#39;t doing this yet, which explained why the touchscreen didn&#39;t respond to command.</p>
+<h2><a name="waking-up-a-sleepy-touchscreen.html" class="anchor" href="#waking-up-a-sleepy-touchscreen.html"><span class="header-link"></span></a>Waking up a sleepy touchscreen</h2><p>According to the <a target="_blank" href="https://www.distec.de/fileadmin/pdf/produkte/Touchcontroller/DDGroup/GT911_Datasheet.pdf">datasheet for the GT911 touchscreen</a>, a reset sequence needs to be sent over I2C. We weren&#39;t doing this yet, which explained why the touchscreen didn&#39;t respond to command.</p>
 <p>But I had a hunch -- if the touchscreen works in Windows, which would have to send this reset sequence to wake the touchscreen up, perhaps I could warm reboot from Windows, and the touchscreen would stay on? I tried it, <a target="_blank" href="https://github.com/THEDEVIOUS1/CHUWI-MINIBOOK-HACKINTOSH/issues/6#issuecomment-570747112">and it worked</a> -- after rebooting, it was clear the touchscreen was awake and listening, but all of my attempts to communicate with it were failing. I was getting junk data back and transaction errors:</p>
 <pre><code><div class="highlight"><pre><span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Starting</span>
 <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Reading</span> <span class="nx">version</span><span class="p">...</span>
@@ -80,10 +43,9 @@
 <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Failed</span> <span class="nx">to</span> <span class="nx">init</span> <span class="nx">device</span>
 <span class="p">(</span><span class="nx">VoodooI2CGoodix</span><span class="p">)</span> <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Freeing</span>
 </pre></div>
-</code></pre>
-<p>Meanwhile, back at the secret mountain lab from which THEDEVIOUS1 probably works from, he&#39;d figured out how to modify the custom DSDT to send the reset sequence on initialization. We chatted on <a target="_blank" href="https://gitter.im/lazd/VoodooI2CGoodix">Gitter</a> and worked out the pin addresses by consulting the datasheet and throwing a lot of trial an error at the problem. After some fiddling, we were able to get it to work from a cold boot, no Windows required! There were plenty of issues not worth getting into because they&#39;re beyond my understanding, but it involved setting up the pins correctly and coding the reset sequence into the <code>_PS0</code> method. Finally, I could go back to C code land where I was more comfortable and try to make some more progress.</p>
-<a name="endianness-is-important" class="anchor" href="#endianness-is-important"><h2>Endianness is important</h2>
-</a><p>It seems the touchscreen and I weren&#39;t speaking the same language...</p>
+
+</code></pre><p>Meanwhile, back at the secret mountain lab from which THEDEVIOUS1 probably works from, he&#39;d figured out how to modify the custom DSDT to send the reset sequence on initialization. We chatted on <a target="_blank" href="https://gitter.im/lazd/VoodooI2CGoodix">Gitter</a> and worked out the pin addresses by consulting the datasheet and throwing a lot of trial an error at the problem. After some fiddling, we were able to get it to work from a cold boot, no Windows required! There were plenty of issues not worth getting into because they&#39;re beyond my understanding, but it involved setting up the pins correctly and coding the reset sequence into the <code>_PS0</code> method. Finally, I could go back to C code land where I was more comfortable and try to make some more progress.</p>
+<h2><a name="endianness-is-important.html" class="anchor" href="#endianness-is-important.html"><span class="header-link"></span></a>Endianness is important</h2><p>It seems the touchscreen and I weren&#39;t speaking the same language...</p>
 <p>Puzzled, I continued to read the specifications for the touchscreen driver, and I realized the touchscreen expects the register address in big endian, and the CPU, of course, is little endian! I used the <code>OSSwapHostToBigInt16</code> method to swap the register address to big endian, and to my surprise, I got data back from the touchscreen!</p>
 <pre><code><div class="highlight"><pre><span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Probing</span>
 <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Starting</span>
@@ -91,61 +53,47 @@
 <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">ID</span> <span class="mi">9111</span><span class="p">,</span> <span class="nx">version</span><span class="o">:</span> <span class="mi">2020</span>
 <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Device</span> <span class="nx">initialized</span>
 </pre></div>
-</code></pre>
-<p>This was the breakthrough I needed! I had a working kernel extension that matched on the ID, I was able to communicate over I2C (albeit, only a basic &quot;hello touchscreen&quot;), and now I just needed to... actually implement the entire driver.</p>
-<a name="conversations-with-a-touchscreen" class="anchor" href="#conversations-with-a-touchscreen"><h2>Conversations with a touchscreen</h2>
-</a><p>After <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/6d8270f6fcac56dec165d7203bbf15e57fba4d9a">shoehorning some code from the Linux driver in</a>, I was able to read back configuration data from the touchscreen:</p>
+
+</code></pre><p>This was the breakthrough I needed! I had a working kernel extension that matched on the ID, I was able to communicate over I2C (albeit, only a basic &quot;hello touchscreen&quot;), and now I just needed to... actually implement the entire driver.</p>
+<h2><a name="conversations-with-a-touchscreen.html" class="anchor" href="#conversations-with-a-touchscreen.html"><span class="header-link"></span></a>Conversations with a touchscreen</h2><p>After <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/6d8270f6fcac56dec165d7203bbf15e57fba4d9a">shoehorning some code from the Linux driver in</a>, I was able to read back configuration data from the touchscreen:</p>
 <pre><code><div class="highlight"><pre><span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Config</span> <span class="nx">read</span> <span class="nx">successfully</span>
 <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">ts</span><span class="o">-&gt;</span><span class="nx">abs_x_max</span> <span class="o">=</span> <span class="mi">1920</span>
 <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">ts</span><span class="o">-&gt;</span><span class="nx">abs_y_max</span> <span class="o">=</span> <span class="mi">1080</span>
 <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">ts</span><span class="o">-&gt;</span><span class="nx">int_trigger_type</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">ts</span><span class="o">-&gt;</span><span class="nx">max_touch_num</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
-</code></pre>
-<p>Using the <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/85341d12c861db9ec39880050c7a31064ef25b4e">Atmel driver&#39;s technique for responding to interrupts</a>, I was able to get some information back from the touchscreen, but the coordinates were wrong.</p>
+
+</code></pre><p>Using the <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/85341d12c861db9ec39880050c7a31064ef25b4e">Atmel driver&#39;s technique for responding to interrupts</a>, I was able to get some information back from the touchscreen, but the coordinates were wrong.</p>
 <p>It seems I once again forgot about endianness, but this time when <em>writing</em> data to the touchscreen. After <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/678ac99d0804bcc4a76b77a894f32a4ecf47b553">correcting that</a>, I got actual, correct data out of the touchscreen:</p>
 <pre><code><div class="highlight"><pre><span class="nx">VoodooI2CGoodixTouchDriver</span><span class="o">::</span><span class="nx">Touch</span> <span class="mi">0</span> <span class="nx">at</span> <span class="mi">1889</span><span class="p">,</span> <span class="mi">19</span> <span class="kd">with</span> <span class="nx">width</span> <span class="mi">80</span>
 </pre></div>
-</code></pre>
-<p>Armed with real data, it was time to do something useful with it.</p>
-<a name="now-let-s-make-it-actually-do-something" class="anchor" href="#now-let-s-make-it-actually-do-something"><h2>Now let&#39;s make it actually do something</h2>
-</a><p>The next step was to take this data and turn it into interaction events. macOS exposes methods that let you set up multitouch interfaces, publish events to them, and, in turn, actually control the cursor and interactions in the OS.</p>
+
+</code></pre><p>Armed with real data, it was time to do something useful with it.</p>
+<h2><a name="now-let-39-s-make-it-actually-do-something.html" class="anchor" href="#now-let-39-s-make-it-actually-do-something.html"><span class="header-link"></span></a>Now let&#39;s make it actually do something</h2><p>The next step was to take this data and turn it into interaction events. macOS exposes methods that let you set up multitouch interfaces, publish events to them, and, in turn, actually control the cursor and interactions in the OS.</p>
 <p>Being completely new to this, I started simple and just made the touchscreen act like a gigantic trackpad. This involves <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/06dcecfa73348b6b0c75c44f944c7d342a13af86">using a <code>VoodooI2CDigitiserTransducer</code> and updating coordinates as I get them</a>.</p>
 <p>Because the MiniBook can be flipped into a tablet mode, the touchscreen could be configured to be rotated or flipped, so I had to add some <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/ca1194df9a7d15fa8f8ebb07152a2bfa6657b8e7">basic support for dealing with those values</a>, which was fun because casting, floating point math, and applying inversions and axis swaps in the right order. Most of this was literally poking at the screen and looking at output, as we often do with any code.</p>
 <p>The next step was to <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/baf81bfc1962138f1bbc46bbabe36ed68d623733">refactor the code to use an EventDriver</a> and <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/8a80cab12742943149f4910370f2904e9b0a9c1a">move the code out of actual TouchDriver into the EventDriver</a>. This decoupled the code that reports touch events, sets up and tears down multitouch interfaces, and handles sleep/wake events from the code that communicates with the touch screen. This separation of concerns makes it easier to reason about operations that are going on at the hardware and OS-level. Along the way, I created a <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/8a80cab12742943149f4910370f2904e9b0a9c1a#diff-1d0b5e5ff794d7c86133c9a70c115d199e5a23a40960b20e44ca5b47b91dba7aR30-R35"><code>Touch</code> struct</a> to store information about the current touches, and used this to pass information from the TouchDriver to the EventDriver for reporting.</p>
 <p>Finally, with the correct structure in place and <a target="_blank" href="https://gitter.im/alexandred/VoodooI2CDev?at=5e1242f5a769bf30fd4266ca">some help from alexandred from VoodooI2C</a>, and some fooling around with fixes for crashes on unload and properly releasing the event driver, I was able to implement support for <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/94aea073029d2b5f74b284e7b0f7ac8369b0364f">a touchscreen that moved the mouse to follow your finger</a>! Except it was clicking the entire time...</p>
 <p>The problem was that it was unclear when a touch finally ended. Given that touches come from an interrupt that triggers continuously while the user&#39;s fingers are contacting the display, I couldn&#39;t just assume the finger was lifted after an interrupt was complete. In order to get proper dragging and tapping, I had to assume the finger was down until an amount of time had elapsed, at which point I could dispatch an event that tells the OS the finger has been lifted. This was implemented <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/72238143825361b7d5e3a7d4446d1694d6948af7">using an <code>IOTimerEventSource</code></a>.</p>
-<a name="fine-tuning-touch-behaviors" class="anchor" href="#fine-tuning-touch-behaviors"><h2>Fine-tuning touch behaviors</h2>
-</a><p>With basic touchscreen interactions implemented, there were still some behaviors that needed fine-tuning. Right click and tapping are non-trivial interactions that we take for granted, and <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/380b7de266741212e8cbfe65f35bcfd316bcfb74">a complicated system of timers</a> was necessary to determine whether an interaction was a tap, or a tap and hold to indicate a right click.</p>
-<a name="and-then-there-were-bugs" class="anchor" href="#and-then-there-were-bugs"><h2>And then there were bugs</h2>
-</a><p>Putting together a driver like this using APIs I&#39;d never seen meant tons of opportunities to do things wrong. Luckily, I had help from THEDEVIOUS1, balopez83, hatran0884, and kostaskas to test and find the bugs.</p>
+<h2><a name="fine-tuning-touch-behaviors.html" class="anchor" href="#fine-tuning-touch-behaviors.html"><span class="header-link"></span></a>Fine-tuning touch behaviors</h2><p>With basic touchscreen interactions implemented, there were still some behaviors that needed fine-tuning. Right click and tapping are non-trivial interactions that we take for granted, and <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/380b7de266741212e8cbfe65f35bcfd316bcfb74">a complicated system of timers</a> was necessary to determine whether an interaction was a tap, or a tap and hold to indicate a right click.</p>
+<h2><a name="and-then-there-were-bugs.html" class="anchor" href="#and-then-there-were-bugs.html"><span class="header-link"></span></a>And then there were bugs</h2><p>Putting together a driver like this using APIs I&#39;d never seen meant tons of opportunities to do things wrong. Luckily, I had help from THEDEVIOUS1, balopez83, hatran0884, and kostaskas to test and find the bugs.</p>
 <p>Occasional <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/9451dbecbb94e15b85aa24dfcf0a3fc4aff76a9f">kernel panics and hangs on shutdown</a>, <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/65b90e06b69eb9590316570c4ae88103e65fee66">phantom touches</a>, <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/fe852e1f689bd2a11839671de6ae352ff3293f1c">timing issues that result in reading data from the touchscreen when it&#39;s asleep</a>, <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/50b24ba9bb2fc0bcce3273efb30931f360d0946d">proper handling of portrait mode</a>, and of course, that bug where it used <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/5eb45487aa292924cdf8578c84c57cadd3369d81">100% of the CPU due to spurious interrupts</a>.</p>
-<a name="stylus-support" class="anchor" href="#stylus-support"><h2>Stylus support</h2>
-</a><p>So we&#39;ve got a touchscreen, but what about a stylus? The Minibook supports <a target="_blank" href="https://store.chuwi.com/products/chuwi-hipen-h3">Chuwi&#39;s HiPen H3 active stylus</a>, so naturally I had to acquire one and test it.</p>
+<h2><a name="stylus-support.html" class="anchor" href="#stylus-support.html"><span class="header-link"></span></a>Stylus support</h2><p>So we&#39;ve got a touchscreen, but what about a stylus? The Minibook supports <a target="_blank" href="https://store.chuwi.com/products/chuwi-hipen-h3">Chuwi&#39;s HiPen H3 active stylus</a>, so naturally I had to acquire one and test it.</p>
 <p>Curiously, the stylus worked, but would click the screen even before you touched it to the display. A little logging revealed that the touchscreen reported a touch with a width of <code>0</code> when the stylus was hovering. Armed with this knowledge, I was able to <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/59f1c3871bc3f99b271fee417d6a5ac0b9278ffa">make the stylus move the mouse around</a>.</p>
 <p>Some additional reading of the datasheet revealed how the stylus reported button clicks, and with <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/58a280a1f90f66f2de1aa5b1d47c42177d396a9b">a little work</a>, I was able to get clicking and right clicking working on the stylus. I then <a target="_blank" href="https://github.com/lazd/VoodooI2CGoodix/commit/97f9dcb32e2e322e70ef5f1e66812f6fb6decab9">refactored the stylus to use a separate transducer</a> to avoid confusion with touch events and called it done!</p>
-<a name="demo" class="anchor" href="#demo"><h2>Demo</h2>
-</a><iframe width="560" height="315" src="https://www.youtube.com/embed/Qv6TizEgyfA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2><a name="demo.html" class="anchor" href="#demo.html"><span class="header-link"></span></a>Demo</h2><iframe width="560" height="315" src="https://www.youtube.com/embed/Qv6TizEgyfA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<a name="learnings" class="anchor" href="#learnings"><h2>Learnings</h2>
-</a><p>This project took me completely out of my comfort zone and had me bridging the gap between hardware and software, all the way to the OS-level. I had to consider things like endianness, deal with interrupts and work around quirky hardware that required a little convincing to function right, and work with macOS APIs that weren&#39;t quite documented that well.</p>
+<h2><a name="learnings.html" class="anchor" href="#learnings.html"><span class="header-link"></span></a>Learnings</h2><p>This project took me completely out of my comfort zone and had me bridging the gap between hardware and software, all the way to the OS-level. I had to consider things like endianness, deal with interrupts and work around quirky hardware that required a little convincing to function right, and work with macOS APIs that weren&#39;t quite documented that well.</p>
 <p>The biggest thing, however, was not working in a vacuum. Using Github and Gitter, I was able to communicate with people across the world to help test, give feedback, fix issues, and suggest approaches to problems. Without this kind of instant, global pair programming and collaboration, I&#39;d probably still be scratching my head.</p>
 <p>The process of creating open source software is often thankless, painful, and confusing but, despite all that, beautiful. The way the internet can connect strangers from across the globe is magical, even if we often lose sight of it amid a sea of scams and misinformation. Look for the good in the world, find something fun to hack, and have fun solving problems with internet friends who you&#39;ll never meet and will only ever know by their GitHub username.</p>
-</section>
-      <hr><footer id="disqus_thread"></footer>
-      <script>
-      	var disqus_shortname = 'lazdnet';
-      	  if (window.location.hostname !== 'localhost') {
-      		(function() {
-      			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      		})();
-      	  }
-      </script>
-    </article>
-    <footer class="footer">
-      <hr>&copy; 2022 Larry Davis
-    </footer>
-  </body>
-</html>
+</section><hr><footer id="disqus_thread"></footer>
+<script>
+	var disqus_shortname = 'lazdnet';
+	  if (window.location.hostname !== 'localhost') {
+		(function() {
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	  }
+</script></article><footer class="footer"><hr>&copy; 2024 Larry Davis</footer></body></html>

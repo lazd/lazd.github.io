@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="NaN"><head><meta charset="utf8"><meta name="viewport" content="width=480"><meta name="description" content="The blog of Larry Davis"><meta property="og:title" content="Rebuilding an iBook G3 clamshell battery"><meta property="og:description" content="Get that candy colored nostalgia machine back online"><meta property="og:image" content="https://blog.lazd.net/images/hungry-ibooks.jpg"><meta property="og:image:alt" content="Rebuilt iBook batteries and some iBooks"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.lazd.net/rebuilding-an-ibook-g3-clamshell-battery.html"><meta property="og:site_name" content="lazd's blog"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@lazdnet"><link rel="preconnect" href="https://fonts.gstatic.com/"><link href="http://fonts.googleapis.com/css2?family=Open+Sans:300italic,400italic,400,600,300&amp;display=swap" rel="stylesheet"><link href="/icons/style.css" rel="stylesheet"><link href="/styles/blog.css" rel="stylesheet"><link href="/styles/solarized-dark.syntax.css" rel="stylesheet"><script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-43555016-1', 'lazd.github.io');
+		ga('send', 'pageview');
+</script><title>Rebuilding an iBook G3 clamshell battery - lazdBlog</title></head><script type="application/ld+json">{
+	"@context" : "http://schema.org",
+	"@type" : "Article",
+	"name" : "Rebuilding an iBook G3 clamshell battery",
+	"headline" : "Rebuilding an iBook G3 clamshell battery",
+"description": "Get that candy colored nostalgia machine back online",
+	"author" : {
+		"@type" : "Person",
+		"name" : "Larry Davis",
+		"url": "https://twitter.com/lazdnet"
+	},
+	"datePublished" : "2024-11-25",
+	"image" : "https://blog.lazd.net/images/hungry-ibooks.jpg"
+}</script><body><header class="header"><a href="/" class="topLogo"><i class="icon-blog"></i>lazdBlog</a><nav class="topNav"><a href="https://github.com/lazd" target="_blank" rel="noopener" class="icon-github">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505" target="_blank" rel="noopener" class="icon-linkedin">LinkedIn</a><a href="https://twitter.com/lazdnet" target="_blank" rel="noopener" class="icon-twitter">Twitter</a></nav></header><article class="post"><h1 class="title">Rebuilding an iBook G3 clamshell battery</h1><time datetime="2024-11-25 00:00:00" class="date">November 25th, 2024</time><section><p>The iBook G3 clamshell is, without a doubt, one of the most beautiful computers ever made. The translucent plastic, the bright candy colors, the <em>handle</em> that&#39;s built into it. The keyboard is clicky and responsive, it has WiFi, it can run Mac OS X 10.4 Tiger as well as Mac OS 9, and it gets pretty dang good battery life -- _if_ you have a good battery.</p>
+<p>In the interest of seeing more of these beautiful laptops in use, I put together an iBook battery guide to necromancing. Follow along and let&#39;s get you computing in style!</p>
+<figure>
+  <img src="images/ibook-battery-rebuilb-aftermath.jpg" alt="A workbench with a partially-completed battery, iBook, thumb drive, and spot welder">
+  <figcaption>Let&#39;s get this party started</figcaption>
+</figure>
+
+
+<h2><a name="feeling-lazy-i-sell-these.html" class="anchor" href="#feeling-lazy-i-sell-these.html"><span class="header-link"></span></a>Feeling lazy? I sell these</h2><p>This is sort of hard to do. You need about $165 worth of tools and parts, 1-3 hours of time to build it, and 15+ hours to train it.</p>
+<p>💣 There can be sparks, red hot glowing metal, fires, and cute little explosions if you do it wrong. <a target="_blank" href="https://davidigreen.com/blog/ibook-battery-rebuild">David Green&#39;s battery rebuild resulted in red hot metal</a> while snapping the case together, <a target="_blank" href="https://www.youtube.com/watch?v=8xiy1rxQ1o8">Hrutkay Mods had sparks and a badly mangled battery pack that barely fit</a>, and <a target="_blank" href="https://www.youtube.com/watch?v=VrDnTXqoqjM">others have failed to train their batteries correctly or damaged them by soldering directly on the cells</a>. </p>
+<p>If that sounds like a bad time, then just buy a rebuilt battery from me for $250 + $50 core charge that will be refunded when you send in your <strong>Apple OEM</strong> iBook battery (BTI or other aftermarket batteries are not accepted as a core).</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <input type="hidden" name="hosted_button_id" value="2KJELEV7DA93L" />
+  <input type="hidden" name="currency_code" value="USD" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+</form>
+
+<p>If $250 is too steep or you&#39;re one of those chaps that lives and dies by DIY, roll up those cuffs and let&#39;s continue!</p>
+<h2><a name="parts.html" class="anchor" href="#parts.html"><span class="header-link"></span></a>Parts</h2><p>First, you&#39;re going to need some <strong>flat top</strong>, unprotected 18650 cells. These cells need to be <strong>~65.2mm in length</strong>, and <strong>18.5mm in diameter</strong>, so check <a target="_blank" href="resources/Samsung_32E_Data_Sheet.pdf">the datasheet of the cells</a> before purchasing.</p>
+<ol>
+<li>A dead, Apple OEM iBook battery (BTI or other aftermarket batteries won&#39;t work, the cases crack when opened)</li>
+<li>18650 cells such as <a target="_blank" href="https://amzn.to/4eNq8aD">Samsung 30Q</a> or Samsung 32E</li>
+<li>Nickel strips with a minimum length of 75mm, such as <a target="_blank" href="https://amzn.to/3Ow4Y68">these individual strips</a></li>
+<li>Solder, I prefer <a target="_blank" href="https://amzn.to/4eNmVYP">63/37 rosin core solder</a> for its lower melting temperature</li>
+<li>Some tape, any will do, <a target="_blank" href="https://amzn.to/3VcAD0h">Scotch Vinyl 700 electrical tape</a> is cheap and leaves no residue</li>
+</ol>
+<figure>
+  <img src="images/ibook-battery.jpg" alt="Dead iBook battery">
+  <figcaption>A dead iBook battery</figcaption>
+</figure>
+
+<h2><a name="tools.html" class="anchor" href="#tools.html"><span class="header-link"></span></a>Tools</h2><p>The most important tool you&#39;ll need is a spot welder. Personally, I have <a target="_blank" href="https://amzn.to/4g4S3Ei">a cheap Kerpu model from Amazon</a>. It&#39;s battery powered and comes with some of the nickel strips you&#39;ll need, and you can get these <a target="_blank" href="https://amzn.to/3Ow4Y68">pre-cut nickel strips</a> when you run out.</p>
+<ol>
+<li>Spot welder, such as the <a target="_blank" href="https://amzn.to/4g4S3Ei">Kerpu Mini Spot Welder</a></li>
+<li>Soldering iron, such as the <a target="_blank" href="https://amzn.to/3OsZHww">awesome, USB-C powered TS-101</a></li>
+<li>Tweezers, such as the <a target="_blank" href="https://amzn.to/4eWQEyI">Hakko CHP 00D-SA Fine-Tip Tweezers</a></li>
+<li>Medium sized flathead screwdriver, or even <a target="_blank" href="https://amzn.to/4103QPT">a couple of of them</a></li>
+<li>Multimeter, such as the <a target="_blank" href="https://amzn.to/3Vc0dme">Fluke 101</a></li>
+<li><a target="_blank" href="https://www.ebay.com/sch/177/i.html?_from=R40&amp;_nkw=iBook+g3+clamshell">An iBook</a>, of course to train and test your new battery</li>
+</ol>
+<h2><a name="preparation.html" class="anchor" href="#preparation.html"><span class="header-link"></span></a>Preparation</h2><p>First, put your existing dead battery into your iBook. Run the following comment:</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>system_profiler SPPowerDataType
+</pre></div>
+
+</code></pre>
+<p>You should see the capacity values for your battery:</p>
+<pre><code><div class="highlight"><pre><span class="nx">Battery</span> <span class="nx">Information</span><span class="o">:</span>
+
+  <span class="nx">Battery</span> <span class="nx">Installed</span><span class="o">:</span> <span class="nx">Yes</span>
+  <span class="nx">First</span> <span class="nx">low</span> <span class="nx">Level</span> <span class="nx">warning</span><span class="o">:</span> <span class="nx">No</span>
+  <span class="nx">Full</span> <span class="nx">Charge</span> <span class="nx">Capacity</span> <span class="p">(</span><span class="nx">mAh</span><span class="p">)</span><span class="o">:</span> <span class="mi">509</span>
+  <span class="nx">Remaining</span> <span class="nx">Capacity</span> <span class="p">(</span><span class="nx">mAh</span><span class="p">)</span><span class="o">:</span> <span class="mi">10</span>
+  <span class="nx">Amperage</span> <span class="p">(</span><span class="nx">mA</span><span class="p">)</span><span class="o">:</span> <span class="mi">253</span>
+  <span class="nx">Voltage</span> <span class="p">(</span><span class="nx">mV</span><span class="p">)</span><span class="o">:</span> <span class="mi">14558</span>
+  <span class="nx">Cycle</span> <span class="nx">Count</span><span class="o">:</span> <span class="mi">151</span>
+</pre></div>
+
+</code></pre><p>You can also use <a target="_blank" href="resources/coconutBattery_2.6.6.zip">coconutBattery 2.6.6</a> from <a target="_blank" href="https://coconut-flavour.com/coconutbattery/">coconut-flavor</a> to read this information.</p>
+<figure>
+  <img src="images/coconutbattery.jpg" alt="coconutBattery UI">
+  <figcaption>coconutBattery</figcaption>
+</figure>
+
+<p>✅ If you see a Full Charge Capacity value of any positive number, your controller board is good and you&#39;re ready to rebuild.</p>
+<p>❌ If you see negative numbers, wild numbers like 42124 cycles, or a 10000mAh full charge capacity, or an original capacity of a negative number or insanely high number like 33293mAh, <a target="_blank" href="https://forums.macrumors.com/threads/rebuilt-a-clamshell-ibook-g3-battery-battery-only-charges-for-12-minutes.2274217/post-32761616">your controller board is bad</a> and you should source a different battery to rebuild</p>
+<h2><a name="testing-your-batteries.html" class="anchor" href="#testing-your-batteries.html"><span class="header-link"></span></a>Testing your batteries</h2><p>First, get out your multimeter and ensure that each one of your cells has the same voltage. The charge state of the cells doesn&#39;t matter, they just all have to be really close in voltage; 3.84V and 3.85V is fine, but 3.75V and 3.85V is not.</p>
+<p>If your cells are different voltages, you can charge them with <a target="_blank" href="https://amzn.to/3VepbRR">any old 18650 battery charger</a>.</p>
+<h2><a name="opening-the-pack.html" class="anchor" href="#opening-the-pack.html"><span class="header-link"></span></a>Opening the pack</h2><p>The most important part of this step is to avoid damaging the delicate ribbon cable that runs between the black battery connector and the cells on the thin side of the battery. Under no circumstance should you insert your screwdriver on the side with the connector! The goal here is to break the adhesive on the top of the case free from the batteries so you can remove the top case.</p>
+<ol>
+<li>Start with the black connector of the battery facing <strong>upwards and away from you</strong> (&quot;iBook Lithium Ion Rechargeable Battery&quot; upside down and facing upwards).</li>
+<li>Insert your flathead screwdriver near where the little clear plastic tab is and twist it. Work an inch or so on either side of the tab to get it started</li>
+<li>Slide your flathead between the batteries and the top case and start working you way to the ends of the battery, <strong>only on the side opposite of the black connector</strong></li>
+<li>Work your way around the pack, and when you get to the edges, you can switch to using your hands and finger nails to pull the case apart</li>
+<li>Once you have the top case off, you can insert your screwdriver under the batteries and pop them gently out of the bottom case</li>
+<li>Gently removes the batteries, black connector, and battery board as one piece</li>
+<li>Heat up your soldering iron and desolder the 5 nickel strips from the ribbon cable and PCB. As you remove the cells <strong>be sure to keep them in the same orientation</strong> so you can use them as a guide when you create your new packs.</li>
+</ol>
+<p>Take a deep breath and stretch, that was stressful!</p>
+<h2><a name="rebuilding.html" class="anchor" href="#rebuilding.html"><span class="header-link"></span></a>Rebuilding</h2><p>Before you begin, be sure to note the orientation of the batteries, it&#39;s best to take a photo you can refer to.</p>
+<h3><a name="cut-nickel-strips.html" class="anchor" href="#cut-nickel-strips.html"><span class="header-link"></span></a>Cut nickel strips</h3><p>Straighten out each of the 5 nickel strips on the old packs and cut new nickel strips to to length, leaving 5mm+ of extra length you can trim later. Don&#39;t cut them to be thinner yet, you&#39;ll do that after spot welding. You should end up with:</p>
+<ul>
+<li>1x ~48mm - this connects the outermost positive side of the pack to the PCB</li>
+<li>3x ~35mm - these connect the middle sides of the packs and the outermost negative side to the ribbon cable</li>
+<li>2x ~75mm - these join packs of 2 together and connect to the PCB and ribbon cable</li>
+</ul>
+<h3><a name="assemble-your-first-pair-leftmost.html" class="anchor" href="#assemble-your-first-pair-leftmost.html"><span class="header-link"></span></a>Assemble your first pair (leftmost)</h3><p>We&#39;re going to do this from left to right with black connector facing up and away from you.</p>
+<ol>
+<li>Start by removing the small white plastic piece from between the first pair of batteries, you&#39;ll want to cut or remove the nickel strip to free the plastic piece.</li>
+<li>Take two new cells, face them the same direction, insert the plastic piece between them, and lash them together with some tape.</li>
+<li>With the positive side up, take the <strong>2nd longest nickel strip</strong> (48mm) and place it on top of cells</li>
+<li>💣 At this point, it is <strong>critical</strong> that you double check that both batteries are facing the same direction</li>
+<li>Center the nickel strip across the cells and use a small piece of tape across the strip and one of the batteries to hold it in place</li>
+<li>Turn your spot welder on, and without touching the metal tips of the spot welder or the nickel strips with your fingers, and without touching the tips together, place both of the tips on the nickel strip in the center, 2-3mm apart until the spot welder sparks, then remove the tips</li>
+<li>Make 1-2 more welds on either side in a ⠶ or ⠿ pattern, making sure you&#39;re still above the button on the top of the battery</li>
+<li>Remove the tape and weld the nickel strip to the other battery</li>
+<li>Flip the pair over so the negative side is facing up, take the <strong>longest nickel strip</strong> (75mm) and place it across the the battery, with the long end facing away from the long end on the positive side. If that sounds confusing, just refer to the configuration of the old cells.</li>
+<li>💣 At this point, it is <strong>critical</strong> that you double check that both batteries are facing the same direction. If they&#39;re facing opposite directions right now, you will be making an IED, not a battery.</li>
+<li>Again, center the nickel strip and use a small piece of tape to hold the strip to one of the batteries</li>
+<li>Do the spot welding thing again</li>
+<li>Remove the tape, do the spot welding thing again</li>
+</ol>
+<p>You should now have a nice pair of cells with nickel strips that match the configuration of the leftmost pair in the original pack. Phew!</p>
+<h3><a name="assemble-your-second-pair.html" class="anchor" href="#assemble-your-second-pair.html"><span class="header-link"></span></a>Assemble your second pair</h3><p>This is a lot like the first pair, except you&#39;re going to use the shortest nickel strip on the negative side of the battery, and this pair of batteries doesn&#39;t use a plastic piece as it needs to leave room for the thermistor.</p>
+<ol>
+<li>Take two new cells, face them the same direction, and lash them together with some tape</li>
+<li>With the negative side up, take the <strong>shortest nickel strip</strong> (35mm) and place it on top of cells</li>
+<li>At this point, it is <strong>critical</strong> that you double check that both batteries are facing the same direction</li>
+<li>Center the nickel strip across the cells and use a small piece of tape across the strip and one of the batteries to hold it in place</li>
+<li>Do the spot welding thing</li>
+<li>Remove the tape, do the spot welding thing again</li>
+</ol>
+<p>You should now have a pair of cells that are only connected on the negative side.</p>
+<h3><a name="assemble-your-first-set-leftmost.html" class="anchor" href="#assemble-your-first-set-leftmost.html"><span class="header-link"></span></a>Assemble your first set (leftmost)</h3><p>Now we&#39;re going to turn two pairs into a veritable foursome of 18650s.</p>
+<ol>
+<li>Take the pair of cells with no plastic piece and the shortest nickel strip and place it <strong>positive side up</strong> with the nickel strip facing off to the right.</li>
+<li>Take the pair of cells with the plastic piece, the longest nickel strip, and the 2nd longest nickel strip, and place it <strong>positive side down</strong> with the longest nickel strip facing to the right, hovering over the positive side of the other pair of cells</li>
+<li>You should have 4 batteries side-by-side, standing on end.<ul>
+<li>The left 2 batteries should be negative side up and have a long nickel strip going off to the left.</li>
+<li>The right 2 batteries should be positive side up and have a short nickel strip going off to the right.</li>
+</ul>
+</li>
+<li>Use a piece of tape to hold the nickel strip to the rightmost battery in the rightmost pair.</li>
+<li>Do the spot welding thing again</li>
+<li>Remove the tape, do the spot welding thing again</li>
+<li>Bend the longest nickel strip holding 2 pairs of cells together so they&#39;re positive to negative</li>
+</ol>
+<p>If you did this right, nothing is on fire and you have a battery pack with 2 pairs of 2 cells, the leftmost pair should have a plastic piece and a long nickel strip facing away from you, and the rightmost pair should have no plastic piece, 1 medium nickel strip tab in the middle facing away from you, and one nickel strip tab on the right facing away from you.</p>
+<figure>
+  <img src="images/ibook-battery-left-pair.jpg" alt="Four 18650 batteries joined in a 2S2P configuration">
+  <figcaption>Completed left set of batteries</figcaption>
+</figure>
+
+<h3><a name="assemble-your-third-pair.html" class="anchor" href="#assemble-your-third-pair.html"><span class="header-link"></span></a>Assemble your third pair</h3><p>Follow the same process as above, except your thirs pair will use the <strong>shortest nickel strip</strong> (35mm) to connect the positive sides of the pair.</p>
+<h3><a name="assemble-your-fourth-pair-rightmost.html" class="anchor" href="#assemble-your-fourth-pair-rightmost.html"><span class="header-link"></span></a>Assemble your fourth pair (rightmost)</h3><p>Follow the same process as above, except your fourth pair will use have a plastic piece as well.</p>
+<h3><a name="assemble-your-second-set-rightmost.html" class="anchor" href="#assemble-your-second-set-rightmost.html"><span class="header-link"></span></a>Assemble your second set (rightmost)</h3><p>Follow the same process as above and make it look like this. If you&#39;re ever lost, compare it to your original battery pack (you kept it in the right orientation, right?).</p>
+<figure>
+  <img src="images/ibook-battery-right-pair.jpg" alt="Four 18650 batteries joined in a 2S2P configuration">
+  <figcaption>Completed right set of batteries</figcaption>
+</figure>
+
+<h3><a name="trim-the-nickel-strips.html" class="anchor" href="#trim-the-nickel-strips.html"><span class="header-link"></span></a>Trim the nickel strips</h3><p>Look at your original battery pack -- the nickel strips are thinner where they connect to the ribbon cable and battery board. Trim your nickel strips to match both width and length.</p>
+<p>Now you&#39;re ready to solder it up!</p>
+<h2><a name="solder-both-sets-to-the-ribbon-cable.html" class="anchor" href="#solder-both-sets-to-the-ribbon-cable.html"><span class="header-link"></span></a>Solder both sets to the ribbon cable</h2><p>Now it&#39;s time to bend the nickel strip into place and solder them to the PCB! Start by tinning both sides of each nickel strip tabs with solder, then tin the pads on the ribbon cable and PCB, then slip the ribbon cable/connector/battery board assembly into place and bend the tabs so they line up.</p>
+<p>This is where the tweezers come in -- I like to use them to hold the tabs in in place while I apply heat. I find the tweezers don&#39;t smolder and burn like fingers, and there&#39;s no awful smell or searing pain either. Line up the tabs, heat them up real good, hold them in place, then wait a few seconds before removing your tweezers.</p>
+<p>Ensure you&#39;ve made a positive connection, then rejoice -- you&#39;re (almost) almost done!</p>
+<p>💣 It is imperative that you take care to not touch your soldering iron to the battery while doing this. Your soldering iron will instantly melt the insulation on the battery, and if you&#39;re soldering a positive terminal, will short the battery out, causing a big, scary spark.</p>
+<h2><a name="pre-assembly-testing.html" class="anchor" href="#pre-assembly-testing.html"><span class="header-link"></span></a>Pre-assembly testing</h2><p>First, get out your multimeter measure the voltage between the leftmost nickel strip (connected to the battery board) and the rightmost nickel strip (connected to the ribbon cable).</p>
+<p>You should get a voltage reading corresponding to the individual cell voltage multiplied by 4. For instance, if each of your cells measured 3.85V before you build the pack (you made sure they were all the same voltage, right?), your pack should read 15.4V.</p>
+<p>Next, double check all solder joints are solid, there are no shorts, no dangly bits, nothing that appears sharp or dangerous.</p>
+<h2><a name="assembly.html" class="anchor" href="#assembly.html"><span class="header-link"></span></a>Assembly</h2><p>Drop the completed pack into the bottom battery case, taking care to ensure that the ribbon cable is not pinched by the edge of the case. Align each of the plastic inserts to the tabs that slot into them, then press the batteries in so they&#39;re snug.</p>
+<p>We&#39;re not going to put the top case on yet, first we need to test your pack.</p>
+<figure>
+  <img src="images/ibook-battery-half-assembled.jpg" alt="An iBook battery without the top case">
+  <figcaption>A half-assembled iBook battery</figcaption>
+</figure>
+
+
+<h2><a name="post-assembly-testing.html" class="anchor" href="#post-assembly-testing.html"><span class="header-link"></span></a>Post-assembly testing</h2><p>Insert your partially assembled pack into your iBook and fire it up. Run the following command:</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>system_profiler SPPowerDataType
+</pre></div>
+
+</code></pre>
+<p>The <code>Full Charge Capacity</code> will not have changed, but you should see the same voltage you measure during Pre-assembly testing listed after <code>Voltage</code>.</p>
+<p>If your battery is recognized and the voltage is correct, it&#39;s time to button things up.</p>
+<h2><a name="final-assembly.html" class="anchor" href="#final-assembly.html"><span class="header-link"></span></a>Final assembly</h2><p>Now that we&#39;ve confirmed your pack works, it&#39;s time to install the top case. Line up the grooves in bottom case with the insert on the edges of the top case and work it into place. Squeeze the case and the edges of the case so it slots into place. The adhesive present on the cases will hold the pack together, there&#39;s no need to glue anything.</p>
+<p>💣 Be careful while you&#39;re doing this -- if something is going to short out and explode, it&#39;s probably going to happen now. Be ready to throw your battery our the window.</p>
+<p>Smoosh the edges of the battery one more time to get it as svelte as possible, then insert your freshly rebuilt battery into your iBook. Be careful when putting on the bottom battery cover -- make sure the battery is as far to the edge of the iBook as possible and be gentle when putting the cover on. Rebuilt batteries can be a little thicker than the originals, and if you&#39;re not careful, you&#39;ll crack a tab off your battery cover.</p>
+<p>Fire it up, and take a deep breath! You&#39;re only 15 hours away from being done!</p>
+<h2><a name="retraining.html" class="anchor" href="#retraining.html"><span class="header-link"></span></a>Retraining</h2><p>I <a target="_blank" href="https://forums.macrumors.com/threads/rebuilt-a-clamshell-ibook-g3-battery-battery-only-charges-for-12-minutes.2274217/post-32624445">discovered</a> that retraining the battery involves simply following this little stanza from the <em>Gas gauge operation</em> section of the <a target="_blank" href="resources/bq2040.pdf">bq2040 datasheet</a>:</p>
+<blockquote>
+<p><strong>FullChargeCapacity or learned-battery capacity</strong></p>
+<p>FCC is the last measured discharge capacity of the battery. On initialization (application of VCC or reset), FCC is set to the value stored in the EEPROM. During subsequent discharges, FCC is updated with the latest measured capacity in the Discharge Count Register, representing a discharge from full to below EDV1. A qualified discharge is necessary for a capacity transfer from the DCR to the FCC register. Once updated, the bq2945 writes the new FCC to the EEPROM. The FCC also serves as the 100% reference threshold used by the relative state-of-charge calculation and display.</p>
+</blockquote>
+<p>So you just drop in, slap the EEPROM value into the FCC <em>wha-pop</em>, drop down to EDV1 <em>wha-paaa</em>, and then after that, you just drop the DCR into the FCC, ride the barrel, put the FCC into EEPROM, then <a target="_blank" href="https://www.youtube.com/watch?v=hJdF8DJ70Dc">get pitted, so pitted</a>.</p>
+<p>Put simply, charge the battery all the way, then drain the battery all the way.</p>
+<h3><a name="initial-charge.html" class="anchor" href="#initial-charge.html"><span class="header-link"></span></a>Initial charge</h3><p>Let your iBook charge the battery all the way. By all the way, I don&#39;t mean 100%, I mean to about 16.8V (4.2V multiplied by 4). You&#39;ll want to leave it plugged in for several hours, and you&#39;ll want to be in the same room and relatively lucid during this time in case something happens during charging and you need to throw your flaming iBook out the window.</p>
+<p>Run the following command to monitor battery voltage:</p>
+<pre><code class="lang-sh"><div class="highlight"><pre><span class="k">while</span> <span class="o">[</span> True <span class="o">]</span>
+<span class="k">do</span>
+<span class="k">  </span>system_profiler SPPowerDataType <span class="p">|</span> grep Voltage
+  sleep 10
+<span class="k">done</span>
+</pre></div>
+
+</code></pre>
+<p>Once you see it level out at around 16.8V (or 16,800mV), you&#39;re ready for the next step.</p>
+<h3><a name="initial-drain.html" class="anchor" href="#initial-drain.html"><span class="header-link"></span></a>Initial drain</h3><p>If you simply unplug the power adapter and let your iBook drain the battery, it will never hit EDV1 (12.0V) -- it will sleep long before that. This means the FCC value will never be written to the EEPROM, and your iBook will sleep long before your battery is drained.</p>
+<p>You have two options:</p>
+<ol>
+<li>Boot into OpenFirmware (hold Command + Option + O + F after pressing the power button) or the Boot Picker (hold Option after pressing the power button)</li>
+<li>Boot into the Mac OS X installer (you can <a target="_blank" href="https://forums.macrumors.com/threads/guide-new-method-booting-from-usb-on-powerpc-macs.2403368/">do this from a thumbdrive too</a>)</li>
+</ol>
+<p>Once you&#39;ve booted, unplug the power cord and wait about 9 hours. Once the battery voltage hits 12.0V, the machine will power off.</p>
+<p>I prefer to boot the Mac OS X installer and run the loop command from above to monitor battery voltage while it dies. You may wish to unmount your hard disk after booting into the installer so it&#39;s unmounted cleanly, because, at the end of this process, the machine powers off.</p>
+<h3><a name="the-moment-you-39-ve-been-waiting-for.html" class="anchor" href="#the-moment-you-39-ve-been-waiting-for.html"><span class="header-link"></span></a>The moment you&#39;ve been waiting for</h3><p>After about 9 hours, and once your iBook has powered itself off, we&#39;re ready for the moment of truth.</p>
+<p>Plug your power adapter in, boot your iBook, open the Terminal, take a few deep breaths, and run the following command (or pop open coconutBattery):</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>system_profiler SPPowerDataType
+</pre></div>
+
+</code></pre>
+<p>You should see something like this -- a new value for <code>Full Charge Capacity</code> (somewhere around 5,000mAh), and one more cycle added to the <code>Cycle Count</code>:</p>
+<pre><code><div class="highlight"><pre><span class="nx">Battery</span> <span class="nx">Information</span><span class="o">:</span>
+
+  <span class="nx">Battery</span> <span class="nx">Installed</span><span class="o">:</span> <span class="nx">Yes</span>
+  <span class="nx">First</span> <span class="nx">low</span> <span class="nx">level</span> <span class="nx">warning</span><span class="o">:</span> <span class="nx">No</span>
+  <span class="nx">Full</span> <span class="nx">Charge</span> <span class="nx">Capacity</span> <span class="p">(</span><span class="nx">mAh</span><span class="p">)</span><span class="o">:</span> <span class="mi">5138</span>
+  <span class="nx">Remaining</span> <span class="nx">Capacity</span> <span class="p">(</span><span class="nx">mAh</span><span class="p">)</span><span class="o">:</span> <span class="mi">36</span>
+  <span class="nx">Amperage</span> <span class="p">(</span><span class="nx">mA</span><span class="p">)</span><span class="o">:</span> <span class="mi">1405</span>
+  <span class="nx">Voltage</span> <span class="p">(</span><span class="nx">mV</span><span class="p">)</span><span class="o">:</span> <span class="mi">12787</span>
+  <span class="nx">Cycle</span> <span class="nx">Count</span><span class="o">:</span> <span class="mi">152</span>
+</pre></div>
+
+</code></pre><p>If <code>Full Charge Capacity</code> didn&#39;t update, don&#39;t panic -- just wait a second and run the command again. It can take a minute for it to update sometimes!</p>
+<h2><a name="conclusion.html" class="anchor" href="#conclusion.html"><span class="header-link"></span></a>Conclusion</h2><p>You&#39;re finally done! You can now let your iBook battery charge up and should get <strong>5+ hours of runtime</strong>!</p>
+<figure>
+  <img src="images/ibook-battery-runtime.jpg" alt="Photo of an iBook screen showing coconutBattery and the estimated runtime of 4 hours and 56 minutes">
+  <figcaption>5 hours of runtime!</figcaption>
+</figure>
+
+<p>Be sure to discharge your battery to about 60% and remove it battery from your iBook if you plan on storing it for a long time. iBooks don&#39;t have PRAM battery, so it will slowly sip your batteries precious bodily fluids until it&#39;s beyond empty if you leave it installed during long term storage, which we all know isn&#39;t healthy.</p>
+<h2><a name="word-to-the-wise.html" class="anchor" href="#word-to-the-wise.html"><span class="header-link"></span></a>Word to the wise</h2><p>If all of this sounds like too much, just buy one of the battery packs I have for sale!</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <input type="hidden" name="hosted_button_id" value="2KJELEV7DA93L" />
+  <input type="hidden" name="currency_code" value="USD" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+</form>
+
+
+<h2><a name="credits.html" class="anchor" href="#credits.html"><span class="header-link"></span></a>Credits</h2><p>None of this would be possible without the following resources:</p>
+<ul>
+<li><a target="_blank" href="https://forums.macrumors.com/threads/rebuilt-a-clamshell-ibook-g3-battery-battery-only-charges-for-12-minutes.2274217/"><strong>This MacRumors thread discussing battery rebuilds and retraining</strong></a></li>
+<li><a target="_blank" href="resources/bq2040.pdf"><strong>The datasheet for the magical bq2040</strong></a></li>
+</ul>
+</section><hr><footer id="disqus_thread"></footer>
+<script>
+	var disqus_shortname = 'lazdnet';
+	  if (window.location.hostname !== 'localhost') {
+		(function() {
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	  }
+</script></article><footer class="footer"><hr>&copy; 2024 Larry Davis</footer></body></html>
