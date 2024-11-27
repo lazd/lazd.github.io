@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 27 Nov 2024 02:47:35 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Wed, 27 Nov 2024 02:47:35 GMT</pubDate><copyright><![CDATA[2024 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[Rebuilding an iBook G3 clamshell battery]]></title><description><![CDATA[<p>The iBook G3 clamshell is, without a doubt, one of the most beautiful computers ever made. The translucent plastic, the bright candy colors, the <em>handle</em> that&#39;s built into it. The keyboard is clicky and responsive, it has WiFi, it can run Mac OS X 10.4 Tiger as well as Mac OS 9, and it gets pretty dang good battery life -- _if_ you have a good battery.</p>
-<p>In the interest of seeing more of these beautiful laptops in use, I put together an iBook battery guide to necromancing. Follow along and let&#39;s get you computing in style!</p>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 27 Nov 2024 03:12:04 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Wed, 27 Nov 2024 03:12:04 GMT</pubDate><copyright><![CDATA[2024 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[Rebuilding an iBook G3 clamshell battery]]></title><description><![CDATA[<p>The iBook G3 clamshell is, without a doubt, one of the most beautiful computers ever made. The translucent plastic, the bright candy colors, the <em>handle</em> that&#39;s built into it. The keyboard is clicky and responsive, it has WiFi, it can run Mac OS X 10.4 Tiger as well as Mac OS 9, and it gets pretty dang good battery life -- <em>if you have a good battery</em>.</p>
+<p>In the interest of seeing more of these beautiful laptops in use, I put together a guide to necromancing iBook batteries, the right way. Follow along and let&#39;s get you computing in style!</p>
 <figure>
   <img src="images/ibook-battery-rebuilb-aftermath.jpg" alt="A workbench with a partially-completed battery, iBook, thumb drive, and spot welder">
   <figcaption>Let&#39;s get this party started</figcaption>
@@ -8,16 +8,23 @@
 
 
 <h2><a name="feeling-lazy-i-sell-these.html" class="anchor" href="#feeling-lazy-i-sell-these.html"><span class="header-link"></span></a>Feeling lazy? I sell these</h2><p>This is sort of hard to do. You need about $165 worth of tools and parts, 1-3 hours of time to build it, and 15+ hours to train it.</p>
-<p>💣 There can be sparks, red hot glowing metal, fires, and cute little explosions if you do it wrong. <a href="https://davidigreen.com/blog/ibook-battery-rebuild">David Green&#39;s battery rebuild resulted in red hot metal</a> while snapping the case together, <a href="https://www.youtube.com/watch?v=8xiy1rxQ1o8">Hrutkay Mods had sparks and a badly mangled battery pack that barely fit</a>, and <a href="https://www.youtube.com/watch?v=VrDnTXqoqjM">others have failed to train their batteries correctly or damaged them by soldering directly on the cells</a>. </p>
-<p>If that sounds like a bad time, then just buy a rebuilt battery from me for $250 + $50 core charge that will be refunded when you send in your <strong>Apple OEM</strong> iBook battery (BTI or other aftermarket batteries are not accepted as a core).</p>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<p>💣 There can be sparks, red hot glowing metal, fires, and cute little explosions if you do it wrong. <a href="https://davidigreen.com/blog/ibook-battery-rebuild">David Green&#39;s battery rebuild resulted in red hot metal</a> while snapping the case together, <a href="https://www.youtube.com/watch?v=8xiy1rxQ1o8">Hrutkay Mods said it took over 4 hours and he had sparks and a badly mangled battery pack that barely fit</a>, and <a href="https://www.youtube.com/watch?v=VrDnTXqoqjM">others struggled to train their batteries correctly and possibly damaged them by soldering directly on the cells</a>. These folks are generally pretty good at what they do, and they still struggled.</p>
+<figure>
+  <img src="images/hungry-ibooks.jpg" alt="A gaggle of hungry iBooks surrounds a fertile field full of freshly rebuilt batteries">
+  <figcaption>Oh hey, I sell these</figcaption>
+</figure>
+
+<p>If that sounds like a bad time, then just buy a rebuilt battery from me for $250 + $50 core charge that will be refunded when you send in your <strong>Apple OEM</strong> iBook battery (BTI or other aftermarket batteries are not accepted as a core). Click the button below and I&#39;ll run to the shop and build you a freshie.</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display: flex; align-items: center; justify-content: center;">
   <input type="hidden" name="cmd" value="_s-xclick" />
   <input type="hidden" name="hosted_button_id" value="2KJELEV7DA93L" />
   <input type="hidden" name="currency_code" value="USD" />
-  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" style="height: 2.5rem;" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
 </form>
 
 <p>If $250 is too steep or you&#39;re one of those chaps that lives and dies by DIY, roll up those cuffs and let&#39;s continue!</p>
+<sarcasm>But hey, I believe in you. I know you can take it slow, follow this guide to the letter, build a fresh iBook battery, and not blow yourself up.</sarcasm>
+
 <h2><a name="parts.html" class="anchor" href="#parts.html"><span class="header-link"></span></a>Parts</h2><p>First, you&#39;re going to need some <strong>flat top</strong>, unprotected 18650 cells. These cells need to be <strong>~65.2mm in length</strong>, and <strong>18.5mm in diameter</strong>, so check <a href="resources/Samsung_32E_Data_Sheet.pdf">the datasheet of the cells</a> before purchasing.</p>
 <ol>
 <li>A dead, Apple OEM iBook battery (BTI or other aftermarket batteries won&#39;t work, the cases crack when opened)</li>
@@ -220,7 +227,7 @@
 </figure>
 
 <p>Be sure to discharge your battery to about 60% and remove it battery from your iBook if you plan on storing it for a long time. iBooks don&#39;t have PRAM battery, so it will slowly sip your batteries precious bodily fluids until it&#39;s beyond empty if you leave it installed during long term storage, which we all know isn&#39;t healthy.</p>
-<h2><a name="word-to-the-wise.html" class="anchor" href="#word-to-the-wise.html"><span class="header-link"></span></a>Word to the wise</h2><p>If all of this sounds like too much, just buy one of the battery packs I have for sale!</p>
+<h2><a name="again-i-sell-these.html" class="anchor" href="#again-i-sell-these.html"><span class="header-link"></span></a>Again, I sell these</h2><p>If all of this sounds like too much, just buy one of the battery packs I have for sale!</p>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
   <input type="hidden" name="cmd" value="_s-xclick" />
   <input type="hidden" name="hosted_button_id" value="2KJELEV7DA93L" />
