@@ -89,22 +89,28 @@
   <figcaption>coconutBattery</figcaption>
 </figure>
 
-<p>✅ If you see a Full Charge Capacity value of any positive number, your controller board is good and you&#39;re ready to rebuild.</p>
+<p>✅ If you see a Full Charge Capacity value of a reasonable positive number, your controller board is good and you&#39;re ready to rebuild.</p>
 <p>❌ If you see negative numbers, wild numbers like 42124 cycles, or a 10000mAh full charge capacity, or an original capacity of a negative number or insanely high number like 33293mAh, <a target="_blank" href="https://forums.macrumors.com/threads/rebuilt-a-clamshell-ibook-g3-battery-battery-only-charges-for-12-minutes.2274217/post-32761616">your controller board is bad</a> and you should source a different battery to rebuild</p>
 <h2><a name="testing-your-batteries.html" class="anchor" href="#testing-your-batteries.html"><span class="header-link"></span></a>Testing your batteries</h2><p>First, get out your multimeter and ensure that each one of your cells has the same voltage. The charge state of the cells doesn&#39;t matter, they just all have to be really close in voltage; 3.84V and 3.85V is fine, but 3.75V and 3.85V is not.</p>
 <p>If your cells are different voltages, you can charge them with <a target="_blank" href="https://amzn.to/3VepbRR">any old 18650 battery charger</a>.</p>
-<h2><a name="opening-the-pack.html" class="anchor" href="#opening-the-pack.html"><span class="header-link"></span></a>Opening the pack</h2><p>The most important part of this step is to avoid damaging the delicate ribbon cable that runs between the black battery connector and the cells on the thin side of the battery. Under no circumstance should you insert your screwdriver on the side with the connector! The goal here is to break the adhesive on the top of the case free from the batteries so you can remove the top case.</p>
+<h2><a name="opening-the-pack.html" class="anchor" href="#opening-the-pack.html"><span class="header-link"></span></a>Opening the pack</h2><p>💣 The most important part of this step is to avoid damaging the delicate ribbon cable that runs between the black battery connector and the cells on the thin side of the battery. Under no circumstance should you insert your screwdriver on the side with the connector! </p>
+<p>The goal here is to break the adhesive on the top of the case free from the batteries so you can remove the top case.</p>
 <ol>
-<li>Start with the black connector of the battery facing <strong>upwards and away from you</strong> (&quot;iBook Lithium Ion Rechargeable Battery&quot; upside down and facing upwards).</li>
+<li>Start with the black connector of the battery facing <strong>upwards and away from you</strong> (the &quot;iBook Lithium Ion Rechargeable Battery&quot; text should be facing towards the sky, but read upside down).</li>
 <li>Insert your flathead screwdriver near where the little clear plastic tab is and twist it. Work an inch or so on either side of the tab to get it started</li>
-<li>Slide your flathead between the batteries and the top case and start working you way to the ends of the battery, <strong>only on the side opposite of the black connector</strong></li>
+<li>Slide your flathead between the batteries and the top case and start working your way to the ends of the battery, levering the case away from the cells as you go, but again, <strong>only on the side opposite of the black connector</strong></li>
 <li>Work your way around the pack, and when you get to the edges, you can switch to using your hands and finger nails to pull the case apart</li>
 <li>Once you have the top case off, you can insert your screwdriver under the batteries and pop them gently out of the bottom case</li>
-<li>Gently removes the batteries, black connector, and battery board as one piece</li>
-<li>Heat up your soldering iron and desolder the 5 nickel strips from the ribbon cable and PCB. As you remove the cells <strong>be sure to keep them in the same orientation</strong> so you can use them as a guide when you create your new packs.</li>
+<li>Gently remove the batteries, black connector, and battery board as one piece</li>
+<li>Heat up your soldering iron and desolder the 5 nickel strip tabs from the ribbon cable and PCB. As you remove the cells <strong>be sure to keep them in the same orientation</strong> so you can use them as a guide when you create your new packs.</li>
 </ol>
 <p>Take a deep breath and stretch, that was stressful!</p>
 <h2><a name="rebuilding.html" class="anchor" href="#rebuilding.html"><span class="header-link"></span></a>Rebuilding</h2><p>Before you begin, be sure to note the orientation of the batteries, it&#39;s best to take a photo you can refer to.</p>
+<figure>
+  <img src="images/ibook-battery-reference.jpg" alt="iBook battery reference photo">
+  <figcaption>This is how the batteries are oriented</figcaption>
+</figure>
+
 <h3><a name="cut-nickel-strips.html" class="anchor" href="#cut-nickel-strips.html"><span class="header-link"></span></a>Cut nickel strips</h3><p>Straighten out each of the 5 nickel strips on the old packs and cut new nickel strips to to length, leaving 5mm+ of extra length you can trim later. Don&#39;t cut them to be thinner yet, you&#39;ll do that after spot welding. You should end up with:</p>
 <ul>
 <li>1x ~48mm - this connects the outermost positive side of the pack to the PCB</li>
@@ -168,6 +174,11 @@
 
 <h3><a name="trim-the-nickel-strips.html" class="anchor" href="#trim-the-nickel-strips.html"><span class="header-link"></span></a>Trim the nickel strips</h3><p>Look at your original battery pack -- the nickel strips are thinner where they connect to the ribbon cable and battery board. Trim your nickel strips to match both width and length.</p>
 <p>Now you&#39;re ready to solder it up!</p>
+<figure>
+  <img src="images/ibook-battery-trimmed-tabs.jpg" alt="Eight 18650 batteries joined in a 4S2P configuration">
+  <figcaption>Partially trimmed tabs, almost ready to solder (they&#39;re a touch too long)</figcaption>
+</figure>
+
 <h2><a name="solder-both-sets-to-the-ribbon-cable.html" class="anchor" href="#solder-both-sets-to-the-ribbon-cable.html"><span class="header-link"></span></a>Solder both sets to the ribbon cable</h2><p>Now it&#39;s time to bend the nickel strip into place and solder them to the PCB! Start by tinning both sides of each nickel strip tabs with solder, then tin the pads on the ribbon cable and PCB, then slip the ribbon cable/connector/battery board assembly into place and bend the tabs so they line up.</p>
 <p>This is where the tweezers come in -- I like to use them to hold the tabs in in place while I apply heat. I find the tweezers don&#39;t smolder and burn like fingers, and there&#39;s no awful smell or searing pain either. Line up the tabs, heat them up real good, hold them in place, then wait a few seconds before removing your tweezers.</p>
 <p>Ensure you&#39;ve made a positive connection, then rejoice -- you&#39;re (almost) almost done!</p>
