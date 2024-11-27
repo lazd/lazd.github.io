@@ -44,14 +44,14 @@ If that sounds like a bad time, then just buy a rebuilt battery from me for $250
 
 If $250 is too steep or you're one of those chaps that lives and dies by DIY, roll up those cuffs and let's continue!
 
-<sarcasm>But hey, I believe in you. I know you can take it slow, follow this guide to the letter, build a fresh iBook battery, and not blow yourself up.</sarcasm>
+<sarcasm>And listen, I believe in you. I know you can take it slow, follow this guide to the letter, build a fresh iBook battery, and not blow yourself up.</sarcasm>
 
 ## Parts
 
 First, you're going to need some **flat top**, unprotected 18650 cells. These cells need to be **~65.2mm in length**, and **18.5mm in diameter**, so check [the datasheet of the cells](resources/Samsung_32E_Data_Sheet.pdf) before purchasing.
 
 1. A dead, Apple OEM iBook battery (BTI or other aftermarket batteries won't work, the cases crack when opened)
-1. 18650 cells such as [Samsung 30Q](https://amzn.to/4eNq8aD) or Samsung 32E
+1. 18650 cells such as [Samsung 30Q](https://amzn.to/4eNq8aD) or [Samsung 32E](https://srikobatteries.com/product/samsung-32e-18650-3200mah-6-4a-battery/)
 1. Nickel strips with a minimum length of 75mm, such as [these individual strips](https://amzn.to/3Ow4Y68)
 1. Solder, I prefer [63/37 rosin core solder](https://amzn.to/4eNmVYP) for its lower melting temperature
 1. Some tape, any will do, [Scotch Vinyl 700 electrical tape](https://amzn.to/3VcAD0h) is cheap and leaves no residue
@@ -70,11 +70,11 @@ The most important tool you'll need is a spot welder. Personally, I have [a chea
 1. Tweezers, such as the [Hakko CHP 00D-SA Fine-Tip Tweezers](https://amzn.to/4eWQEyI)
 1. Medium sized flathead screwdriver, or even [a couple of of them](https://amzn.to/4103QPT)
 1. Multimeter, such as the [Fluke 101](https://amzn.to/3Vc0dme)
-1. [An iBook](https://www.ebay.com/sch/177/i.html?_from=R40&_nkw=iBook+g3+clamshell), of course to train and test your new battery
+1. [An iBook](https://www.ebay.com/sch/177/i.html?_from=R40&_nkw=iBook+g3+clamshell), of course, to train and test your new battery
 
 ## Preparation
 
-First, put your existing dead battery into your iBook. Run the following comment:
+First, put your existing dead battery into your iBook. Run the following command:
 
 ```sh
 system_profiler SPPowerDataType
@@ -101,7 +101,7 @@ You can also use [coconutBattery 2.6.6](resources/coconutBattery_2.6.6.zip) from
   <figcaption>coconutBattery</figcaption>
 </figure>
 
-✅ If you see a Full Charge Capacity value of any positive number, your controller board is good and you're ready to rebuild.
+✅ If you see a Full Charge Capacity value of a reasonable positive number, your controller board is good and you're ready to rebuild.
 
 ❌ If you see negative numbers, wild numbers like 42124 cycles, or a 10000mAh full charge capacity, or an original capacity of a negative number or insanely high number like 33293mAh, [your controller board is bad](https://forums.macrumors.com/threads/rebuilt-a-clamshell-ibook-g3-battery-battery-only-charges-for-12-minutes.2274217/post-32761616) and you should source a different battery to rebuild
 
@@ -113,21 +113,28 @@ If your cells are different voltages, you can charge them with [any old 18650 ba
 
 ## Opening the pack
 
-The most important part of this step is to avoid damaging the delicate ribbon cable that runs between the black battery connector and the cells on the thin side of the battery. Under no circumstance should you insert your screwdriver on the side with the connector! The goal here is to break the adhesive on the top of the case free from the batteries so you can remove the top case.
+💣 The most important part of this step is to avoid damaging the delicate ribbon cable that runs between the black battery connector and the cells on the thin side of the battery. Under no circumstance should you insert your screwdriver on the side with the connector! 
 
-1. Start with the black connector of the battery facing **upwards and away from you** ("iBook Lithium Ion Rechargeable Battery" upside down and facing upwards).
+The goal here is to break the adhesive on the top of the case free from the batteries so you can remove the top case.
+
+1. Start with the black connector of the battery facing **upwards and away from you** (the "iBook Lithium Ion Rechargeable Battery" text should be facing towards the sky, but read upside down).
 1. Insert your flathead screwdriver near where the little clear plastic tab is and twist it. Work an inch or so on either side of the tab to get it started
-1. Slide your flathead between the batteries and the top case and start working you way to the ends of the battery, **only on the side opposite of the black connector**
+1. Slide your flathead between the batteries and the top case and start working your way to the ends of the battery, levering the case away from the cells as you go, but again, **only on the side opposite of the black connector**
 1. Work your way around the pack, and when you get to the edges, you can switch to using your hands and finger nails to pull the case apart
 1. Once you have the top case off, you can insert your screwdriver under the batteries and pop them gently out of the bottom case
-1. Gently removes the batteries, black connector, and battery board as one piece
-1. Heat up your soldering iron and desolder the 5 nickel strips from the ribbon cable and PCB. As you remove the cells **be sure to keep them in the same orientation** so you can use them as a guide when you create your new packs.
+1. Gently remove the batteries, black connector, and battery board as one piece
+1. Heat up your soldering iron and desolder the 5 nickel strip tabs from the ribbon cable and PCB. As you remove the cells **be sure to keep them in the same orientation** so you can use them as a guide when you create your new packs.
 
 Take a deep breath and stretch, that was stressful!
 
 ## Rebuilding
 
 Before you begin, be sure to note the orientation of the batteries, it's best to take a photo you can refer to.
+
+<figure>
+  <img src="images/ibook-battery-reference.jpg" alt="iBook battery reference photo">
+  <figcaption>This is how the batteries are oriented</figcaption>
+</figure>
 
 ### Cut nickel strips
 
@@ -213,6 +220,11 @@ Follow the same process as above and make it look like this. If you're ever lost
 Look at your original battery pack -- the nickel strips are thinner where they connect to the ribbon cable and battery board. Trim your nickel strips to match both width and length.
 
 Now you're ready to solder it up!
+
+<figure>
+  <img src="images/ibook-battery-trimmed-tabs.jpg" alt="Eight 18650 batteries joined in a 4S2P configuration">
+  <figcaption>Partially trimmed tabs, almost ready to solder (they're a touch too long)</figcaption>
+</figure>
 
 ## Solder both sets to the ribbon cable
 
