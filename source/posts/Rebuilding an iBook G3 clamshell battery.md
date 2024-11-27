@@ -174,7 +174,7 @@ This is a lot like the first pair, except you're going to use the shortest nicke
 
 1. Take two new cells, face them the same direction, and lash them together with some tape
 2. With the negative side up, take the **shortest nickel strip** (35mm) and place it on top of cells
-1. At this point, it is **critical** that you double check that both batteries are facing the same direction
+1. 💣 At this point, it is **critical** that you double check that both batteries are facing the same direction
 1. Center the nickel strip across the cells and use a small piece of tape across the strip and one of the batteries to hold it in place
 1. Do the spot welding thing
 1. Remove the tape, do the spot welding thing again
