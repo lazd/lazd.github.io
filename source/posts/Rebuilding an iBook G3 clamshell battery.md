@@ -26,7 +26,7 @@ In the interest of seeing more of these beautiful laptops in use, I put together
 
 This is sort of hard to do. You need about $165 worth of tools and parts, 1-3 hours of time to build it, and 15+ hours to train it.
 
-💣 There can be sparks, red hot glowing metal, fires, and cute little explosions if you do it wrong. [David Green's battery rebuild resulted in red hot metal](https://davidigreen.com/blog/ibook-battery-rebuild) while snapping the case together, [Hrutkay Mods said it took over 4 hours and he had sparks and a badly mangled battery pack that barely fit](https://www.youtube.com/watch?v=8xiy1rxQ1o8), and [others struggled to train their batteries correctly and possibly damaged them by soldering directly on the cells](https://www.youtube.com/watch?v=VrDnTXqoqjM). These folks are generally pretty good at what they do, and they still struggled.
+💣 There can be [sparks](https://www.youtube.com/watch?v=8xiy1rxQ1o8), [red hot glowing metal](https://davidigreen.com/blog/ibook-battery-rebuild), fires, and cute little explosions if you do it wrong. Folks that are generally pretty good at what they do have attempted this and they still struggled. But they didn't have this guide ;)
 
 <figure>
   <img src="images/hungry-ibooks.jpg" alt="A gaggle of hungry iBooks surrounds a fertile field full of freshly rebuilt batteries">
@@ -39,7 +39,7 @@ If that sounds like a bad time, then just buy a rebuilt battery from me for $250
   <input type="hidden" name="cmd" value="_s-xclick" />
   <input type="hidden" name="hosted_button_id" value="2KJELEV7DA93L" />
   <input type="hidden" name="currency_code" value="USD" />
-  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" style="height: 2.5rem;" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
 </form>
 
 If $250 is too steep or you're one of those chaps that lives and dies by DIY, roll up those cuffs and let's continue!
@@ -105,15 +105,17 @@ You can also use [coconutBattery 2.6.6](resources/coconutBattery_2.6.6.zip) from
 
 ❌ If you see negative numbers, wild numbers like 42124 cycles, or a 10000mAh full charge capacity, or an original capacity of a negative number or insanely high number like 33293mAh, [your controller board is bad](https://forums.macrumors.com/threads/rebuilt-a-clamshell-ibook-g3-battery-battery-only-charges-for-12-minutes.2274217/post-32761616) and you should source a different battery to rebuild
 
-## Testing your batteries
+## Testing your new batteries
 
-First, get out your multimeter and ensure that each one of your cells has the same voltage. The charge state of the cells doesn't matter, they just all have to be really close in voltage; 3.84V and 3.85V is fine, but 3.75V and 3.85V is not.
+First, get out your multimeter and ensure that each one of your new cells has the same voltage. The charge state of the cells doesn't matter, they just all have to be really close in voltage; 3.84V and 3.85V is fine, but 3.75V and 3.85V is not.
 
 If your cells are different voltages, you can charge them with [any old 18650 battery charger](https://amzn.to/3VepbRR).
 
+💣 If you skip this step, your battery will never charge to its full capacity (the iBook BMS doesn't balance well, if at all), and you risk creating an expensive and dangerous handwarmer if you join a fully charged cell and fully discharged cell together in parallel.
+
 ## Opening the pack
 
-💣 The most important part of this step is to avoid damaging the delicate ribbon cable that runs between the black battery connector and the cells on the thin side of the battery. Under no circumstance should you insert your screwdriver on the side with the connector! 
+💣 The most important part of this step is to avoid damaging the delicate ribbon cable that runs between the black battery connector and the cells on the thin side of the battery. **Under no circumstance should you insert your screwdriver on the side with the connector!**
 
 The goal here is to break the adhesive on the top of the case free from the batteries so you can remove the top case.
 
@@ -144,6 +146,8 @@ Straighten out each of the 5 nickel strips on the old packs and cut new nickel s
 * 3x ~35mm - these connect the middle sides of the packs and the outermost negative side to the ribbon cable
 * 2x ~75mm - these join packs of 2 together and connect to the PCB and ribbon cable
 
+Set these aside, or better yet, line them up with their corresponding locations next to your old pack.
+
 ### Assemble your first pair (leftmost)
 
 We're going to do this from left to right with black connector facing up and away from you.
@@ -153,7 +157,7 @@ We're going to do this from left to right with black connector facing up and awa
 1. With the positive side up, take the **2nd longest nickel strip** (48mm) and place it on top of cells
 1. 💣 At this point, it is **critical** that you double check that both batteries are facing the same direction
 1. Center the nickel strip across the cells and use a small piece of tape across the strip and one of the batteries to hold it in place
-1. Turn your spot welder on, and without touching the metal tips of the spot welder or the nickel strips with your fingers, and without touching the tips together, place both of the tips on the nickel strip in the center, 2-3mm apart until the spot welder sparks, then remove the tips
+1. Turn your spot welder on, without touching the metal tips of the spot welder or the nickel strips with your fingers, and without touching the tips together, place both of the tips on the nickel strip in the center of the battery, 2-3mm apart, and hold them there until the spot welder sparks, then remove the tips
 1. Make 1-2 more welds on either side in a ⠶ or ⠿ pattern, making sure you're still above the button on the top of the battery
 1. Remove the tape and weld the nickel strip to the other battery
 1. Flip the pair over so the negative side is facing up, take the **longest nickel strip** (75mm) and place it across the the battery, with the long end facing away from the long end on the positive side. If that sounds confusing, just refer to the configuration of the old cells.
@@ -179,7 +183,7 @@ You should now have a pair of cells that are only connected on the negative side
 
 ### Assemble your first set (leftmost)
 
-Now we're going to turn two pairs into a veritable foursome of 18650s.
+Now we're going to turn two pairs into a veritable foursome of 18650s in a 2S2P configuration.
 
 1. Take the pair of cells with no plastic piece and the shortest nickel strip and place it **positive side up** with the nickel strip facing off to the right.
 1. Take the pair of cells with the plastic piece, the longest nickel strip, and the 2nd longest nickel strip, and place it **positive side down** with the longest nickel strip facing to the right, hovering over the positive side of the other pair of cells
@@ -200,11 +204,11 @@ If you did this right, nothing is on fire and you have a battery pack with 2 pai
 
 ### Assemble your third pair
 
-Follow the same process as above, except your thirs pair will use the **shortest nickel strip** (35mm) to connect the positive sides of the pair.
+Follow the same process as above for the first pair, except this pair will use the **shortest nickel strip** (35mm) to connect the positive sides of the pair.
 
 ### Assemble your fourth pair (rightmost)
 
-Follow the same process as above, except your fourth pair will use have a plastic piece as well.
+Follow the same process as above for the second pair, except your fourth pair will use a plastic piece as well.
 
 ### Assemble your second set (rightmost)
 
@@ -217,7 +221,7 @@ Follow the same process as above and make it look like this. If you're ever lost
 
 ### Trim the nickel strips
 
-Look at your original battery pack -- the nickel strips are thinner where they connect to the ribbon cable and battery board. Trim your nickel strips to match both width and length.
+Look at your original battery pack -- the nickel strips are thinner where they connect to the ribbon cable and battery board. Trim your nickel strips to match both width and length, and be sure to pay attention to orientation so the thin part you cut is on the correct side. Compare to the old pack every step of the way!
 
 Now you're ready to solder it up!
 
@@ -244,7 +248,7 @@ You should get a voltage reading corresponding to the individual cell voltage mu
 
 Next, double check all solder joints are solid, there are no shorts, no dangly bits, nothing that appears sharp or dangerous.
 
-## Assembly
+## Partial assembly
 
 Drop the completed pack into the bottom battery case, taking care to ensure that the ribbon cable is not pinched by the edge of the case. Align each of the plastic inserts to the tabs that slot into them, then press the batteries in so they're snug.
 
@@ -256,7 +260,7 @@ We're not going to put the top case on yet, first we need to test your pack.
 </figure>
 
 
-## Post-assembly testing
+## Post-partial assembly testing
 
 Insert your partially assembled pack into your iBook and fire it up. Run the following command:
 
@@ -313,7 +317,7 @@ If you simply unplug the power adapter and let your iBook drain the battery, it 
 You have two options:
 
 1. Boot into OpenFirmware (hold Command + Option + O + F after pressing the power button) or the Boot Picker (hold Option after pressing the power button)
-2. Boot into the Mac OS X installer (you can [do this from a thumbdrive too](https://forums.macrumors.com/threads/guide-new-method-booting-from-usb-on-powerpc-macs.2403368/))
+2. Boot into the Mac OS X installer (you can [do this from a thumb drive too](https://forums.macrumors.com/threads/guide-new-method-booting-from-usb-on-powerpc-macs.2403368/))
 
 Once you've booted, unplug the power cord and wait about 9 hours. Once the battery voltage hits 12.0V, the machine will power off.
 
