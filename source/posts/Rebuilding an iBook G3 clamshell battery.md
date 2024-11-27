@@ -94,7 +94,7 @@ Battery Information:
   Cycle Count: 151
 ```
 
-You can also use [coconutBattery 2.6.6](resources/coconutBattery_2.6.6.zip) from [coconut-flavor](https://coconut-flavour.com/coconutbattery/) to read this information.
+You can also open up System Profiler to get this info, or even use [coconutBattery 2.6.6](resources/coconutBattery_2.6.6.zip) from [coconut-flavor](https://coconut-flavour.com/coconutbattery/) to read this information.
 
 <figure>
   <img src="images/coconutbattery.jpg" alt="coconutBattery UI">
@@ -250,7 +250,7 @@ Next, double check all solder joints are solid, there are no shorts, no dangly b
 
 ## Partial assembly
 
-Drop the completed pack into the bottom battery case, taking care to ensure that the ribbon cable is not pinched by the edge of the case. Align each of the plastic inserts to the tabs that slot into them, then press the batteries in so they're snug.
+Drop the completed pack into the bottom battery case, taking care to ensure that the ribbon cable is not pinched by the edge of the case. Align each of the plastic inserts to the tabs that slot into them, then press the batteries in so they're snug. The black connector slots right in, and everything should fit nicely.
 
 We're not going to put the top case on yet, first we need to test your pack.
 
