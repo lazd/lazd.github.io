@@ -4,6 +4,9 @@
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
 	gtag('config', 'G-FK0W9C2DS4');
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() { document.getElementById("email").setAttribute("href", "mailto:"+"l"+"a"+"z"+"d"+"n"+"e"+"t"+"@"+"g"+"m"+"a"+"i"+"l"+"."+"c"+"o"+"m") })
 </script><title>Gamepad enhancements in yquake2 - lazdBlog</title></head><script type="application/ld+json">{
 	"@context" : "http://schema.org",
 	"@type" : "Article",
@@ -17,7 +20,7 @@
 	},
 	"datePublished" : "2020-12-11",
 	"image" : "https://blog.lazd.net/images/yquake2.png"
-}</script><body><header class="header"><a href="/" class="topLogo"><i class="icon-blog"></i>lazdBlog</a><nav class="topNav"><a href="https://github.com/lazd" target="_blank" rel="noopener" class="icon-github">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505" target="_blank" rel="noopener" class="icon-linkedin">LinkedIn</a><a href="https://twitter.com/lazdnet" target="_blank" rel="noopener" class="icon-twitter">Twitter</a></nav></header><article class="post"><h1 class="title">Gamepad enhancements in yquake2</h1><time datetime="2020-12-11 00:00:00" class="date">December 11th, 2020</time><section><p>A recent obsession with retro gaming on Raspberry Pi using <a target="_blank" href="https://retropie.org.uk/">RetroPie</a> led me to play through a few old favorites, starting of course with Wolfenstein 3D (and my subsequent work on <a target="_blank" href="./splitwolf-split-screen-wolfenstien-3d-on-raspberry-pi.html">Splitwolf</a>).</p>
+}</script><body><header class="header"><a href="/" class="topLogo"><i class="icon-blog"></i>lazdBlog</a><nav class="topNav"><a href="https://github.com/lazd" target="_blank" rel="noopener" class="icon-github">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505" target="_blank" rel="noopener" class="icon-linkedin">LinkedIn</a><a href="https://twitter.com/lazdnet" target="_blank" rel="noopener" class="icon-twitter">Twitter</a><a href="https://bsky.app/profile/lazd.net" target="_blank" rel="noopener" class="icon-bluesky">Bsky</a><a id="email" href="#" class="icon-mail">Email</a></nav></header><article class="post"><h1 class="title">Gamepad enhancements in yquake2</h1><time datetime="2020-12-11 00:00:00" class="date">December 11th, 2020</time><section><p>A recent obsession with retro gaming on Raspberry Pi using <a target="_blank" href="https://retropie.org.uk/">RetroPie</a> led me to play through a few old favorites, starting of course with Wolfenstein 3D (and my subsequent work on <a target="_blank" href="./splitwolf-split-screen-wolfenstien-3d-on-raspberry-pi.html">Splitwolf</a>).</p>
 <p>After making my way through history with Doom and Quake I, it was only natural that I load up Quake II...</p>
 <h2><a name="a-bug-right-out-of-the-gate.html" class="anchor" href="#a-bug-right-out-of-the-gate.html"><span class="header-link"></span></a>A bug right out of the gate</h2><p>RetroPie ships with support for the yquake2 engine, so it was easy to get up and running. However, I found moving the sticks made my head spin uncontrollably in circles! After a little poking around, I realized yquake2 was interpreting gamepad input as both joystick and mouse events. I found that setting the <code>sensitivity</code> cvar to <code>0</code> fixed it, but realized there was no way to set it to <code>0</code> using the UI.</p>
 <p>Time to fork and clone! A <a target="_blank" href="https://github.com/yquake2/yquake2/pull/632/commits/693803c7640708c7a2da27d9119c44f48c593d38">one line fix</a> made it possible to use the sliders in the UI to set <code>sensitivity</code> to <code>0</code>.</p>
