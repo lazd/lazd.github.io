@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="en-us"><head><meta charset="utf8"><meta name="viewport" content="width=480"><meta name="description" content="The blog of Larry Davis"><meta property="og:title" content="Install OS X and OS 9 on an iBook G3 clamshell with a thumb drive"><meta property="og:description" content="No need for CDs and DVDs, all you need is a thumb drive to install OS X and OS 9"><meta property="og:image" content="https://blog.lazd.net/images/macinpi.png"><meta property="og:image:alt" content="An iBook running Mac OS X Tiger"><meta property="og:type" content="article"><meta property="og:url" content="https://blog.lazd.net/install-os-x-and-os-9-on-an-ibook-g3-clamshell-with-a-thumb-drive.html"><meta property="og:site_name" content="lazd's blog"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@lazdnet"><link rel="preconnect" href="https://fonts.gstatic.com/"><link href="http://fonts.googleapis.com/css2?family=Open+Sans:300italic,400italic,400,600,300&amp;display=swap" rel="stylesheet"><link href="/icons/style.css" rel="stylesheet"><link href="/styles/blog.css" rel="stylesheet"><link href="/styles/solarized-dark.syntax.css" rel="stylesheet"><script async src="https://www.googletagmanager.com/gtag/js?id=G-FK0W9C2DS4"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-FK0W9C2DS4');
+</script>
+<script>
+function r(e, t) { var r = e.substr(t, 2); return parseInt(r, 16) }
+function n(n,c){for(var o="",a=r(n,c),i=c+2;i<n.length;i+=2){var l=r(n,i)^a;o+=String.fromCharCode(l)}try{o=decodeURIComponent(escape(o))}catch(u){e(u)}return o}
+document.addEventListener("DOMContentLoaded", function() { document.getElementById("email").setAttribute("href", "mailto:"+n("abc7cad1cfc5cedfebccc6cac2c785c8c4c6", 0)) })
+</script><title>Install OS X and OS 9 on an iBook G3 clamshell with a thumb drive - lazdBlog</title></head><script type="application/ld+json">{
+	"@context" : "http://schema.org",
+	"@type" : "Article",
+	"name" : "Install OS X and OS 9 on an iBook G3 clamshell with a thumb drive",
+	"headline" : "Install OS X and OS 9 on an iBook G3 clamshell with a thumb drive",
+"description": "No need for CDs and DVDs, all you need is a thumb drive to install OS X and OS 9",
+	"author" : {
+		"@type" : "Person",
+		"name" : "Larry Davis",
+		"url": "https://twitter.com/lazdnet"
+	},
+	"datePublished" : "2025-01-06",
+	"image" : "https://blog.lazd.net/images/macinpi.png"
+}</script><body><header class="header"><a href="/" class="topLogo"><i class="icon-blog"></i>lazdBlog</a><nav class="topNav"><a href="https://github.com/lazd" target="_blank" rel="noopener" class="icon-github">Github</a><a href="http://www.linkedin.com/pub/larry-davis/30/b10/505" target="_blank" rel="noopener" class="icon-linkedin">LinkedIn</a><a href="https://twitter.com/lazdnet" target="_blank" rel="noopener" class="icon-twitter">Twitter</a><a href="https://bsky.app/profile/lazd.net" target="_blank" rel="noopener" class="icon-bluesky">Bsky</a><a id="email" href="#" class="icon-mail">Email</a></nav></header><article class="post"><h1 class="title">Install OS X and OS 9 on an iBook G3 clamshell with a thumb drive</h1><time datetime="2025-01-06 00:00:00" class="date">January 6th, 2025</time><section><p>There&#39;s no need to struggle with burning multiple CDs, and yes, your Blueberry and Tangerine can run Mac OS X Tiger! Follow along and you&#39;ll be swimming in Aqua in no time. Follow every step of this guide and you&#39;ll be able to dual-boot OS 9 as well!</p>
+<figure>
+  <img src="images/ibook-with-tiger.jpg" alt="An iBook running Mac OS X Tiger">
+  <figcaption>Aqua never looked so right</figcaption>
+</figure>
+
+<h2><a name="requirements.html" class="anchor" href="#requirements.html"><span class="header-link"></span></a>Requirements</h2><ol>
+<li>The <a target="_blank" href="https://archive.org/details/mac-osx.-4">Tiger install DVD .iso image</a> from Archive.org</li>
+<li>The <a target="_blank" href="https://support.apple.com/en-us/106535">Mac OS X 10.4.11 Combo Update (PPC) .dmg file</a> from Apple</li>
+<li>A modern Mac running macOS, logged into an admin account</li>
+<li>A 4GB USB thumb drive (USB 2.0 is OK) <a target="_blank" href="https://amzn.to/4jqqKXI">like these in a color that matches your iBook</a> or <a target="_blank" href="https://amzn.to/49F6Bdc">these sleek metal ones</a></li>
+<li>A <a target="_blank" href="https://amzn.to/4qFWDy0">USB-A to USB-C adapter</a> to plug the thumb drive into your modern Mac</li>
+</ol>
+<h2><a name="installing-an-ssd.html" class="anchor" href="#installing-an-ssd.html"><span class="header-link"></span></a>Installing an SSD</h2><p>First and foremost, you&#39;re going to want to replace the internal drive with a high-capacity, high-speed SSD so you&#39;ll have plenty of room for activities. You&#39;ll need two parts:</p>
+<ol>
+<li><a target="_blank" href="https://amzn.to/4jsZjwq">A known-compatible M.2 mSATA SSD from Transcend</a></li>
+<li><a target="_blank" href="https://amzn.to/3YogsOj">A known-compatible mSATA to IDE adapter</a></li>
+</ol>
+<p><strong>Note:</strong> Don&#39;t cheap out and get a brand like Dogfish, or you&#39;ll suffer from crashes on wake! Stick to the <a target="_blank" href="https://amzn.to/4jsZjwq">known-compatible SSD</a>!</p>
+<p>You&#39;ll need a couple tools for this job:</p>
+<ol>
+<li><a target="_blank" href="https://amzn.to/4bnmzdb">5mm hex nut driver</a></li>
+<li><a target="_blank" href="https://amzn.to/4qaysIg">A decent set of precision screwdrivers</a></li>
+<li><a target="_blank" href="https://amzn.to/44TsOSg">A paperclip</a></li>
+<li><a target="_blank" href="https://amzn.to/3LAsbq5">A crushed ice tray to hold screws</a> (I swear by this and use it every time I disassemble an iBook)</li>
+</ol>
+<p>Follow the <a target="_blank" href="https://www.ifixit.com/Guide/iBook+G3+Clamshell+Hard+Drive+Replacement/116">iFixIt guide</a> to swap the hard drive out. As you follow the guide, use one row of the <a target="_blank" href="https://amzn.to/3LAsbq5">crushed ice tray</a> for each step and one column for each different screw type mentioned in the step, then go backwards to reassemble. With this technique, you&#39;re guaranteed to never screw your screws up!</p>
+<h2><a name="making-the-bootable-thumb-drive.html" class="anchor" href="#making-the-bootable-thumb-drive.html"><span class="header-link"></span></a>Making the bootable thumb drive</h2><p>First, download the <a target="_blank" href="https://archive.org/details/mac-osx.-4">Tiger install DVD .iso</a>. It&#39;ll show up in <code>~/Downloads</code>.</p>
+<p>Then, plug your USB thumb drive into your modern Mac using your <a target="_blank" href="https://amzn.to/4qFWDy0">USB-A to USB-C adapter</a>.</p>
+<p>Next, open <code>Terminal</code> and type the following command:</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>diskutil list
+</pre></div>
+
+</code></pre>
+<p>Generally, your thumb drive will be the last entry and will say <code>(external, physical)</code>:</p>
+<pre><code><div class="highlight"><pre><span class="err">/dev/disk9 (external, physical):</span>
+   <span class="err">#</span><span class="o">:</span>                       <span class="nx">TYPE</span> <span class="nx">NAME</span>                    <span class="nx">SIZE</span>       <span class="nx">IDENTIFIER</span>
+   <span class="mi">0</span><span class="o">:</span>                            <span class="nx">UNTITLED</span>                <span class="o">*</span><span class="mf">15.5</span> <span class="nx">GB</span>   <span class="nx">disk9</span>
+</pre></div>
+
+</code></pre><p>Remember the value under <code>IDENTIFIER</code> -- that&#39;s how we&#39;ll refer to the disk going forward. In my case, it&#39;s <code>disk9</code>.</p>
+<p>Then, we&#39;ll unmount the disk to get it ready to copy (<strong>be sure to replace <code>diskX</code> with your disk identifier</strong>):</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>sudo diskutil umountDisk /dev/diskX
+</pre></div>
+
+</code></pre>
+<p>Next, we&#39;ll copy the <code>.iso</code> to the raw disk using <code>dd</code>. Again, <strong>be sure to replace <code>diskX</code> with your disk identifier</strong>.</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>sudo dd <span class="nv">bs</span><span class="o">=</span>1m <span class="k">if</span><span class="o">=</span>~/Downloads/MacOSX.4.iso <span class="nv">of</span><span class="o">=</span>/dev/rdiskX
+</pre></div>
+
+</code></pre>
+<p>This can take around 15 minutes. At any time, you can press ⌃ + T (Control + T) to see progress.</p>
+<p>When it&#39;s done, you&#39;ll see something like this:</p>
+<pre><code><div class="highlight"><pre><span class="mi">3615</span><span class="o">+</span><span class="mi">1</span> <span class="nx">records</span> <span class="k">in</span>
+<span class="mi">3615</span><span class="o">+</span><span class="mi">1</span> <span class="nx">records</span> <span class="nx">out</span>
+<span class="mi">3791523840</span> <span class="nx">bytes</span> <span class="nx">transferred</span> <span class="k">in</span> <span class="mf">852.228331</span> <span class="nx">secs</span> <span class="p">(</span><span class="mi">4448953</span> <span class="nx">bytes</span><span class="o">/</span><span class="nx">sec</span><span class="p">)</span>
+</pre></div>
+
+</code></pre><p>And your thumb drive will mount up as <code>Mac OS X Install DVD</code> on your desktop!</p>
+<p>But you&#39;re not done yet, it&#39;s time to modify the installer to work on your old iBook!</p>
+<h2><a name="modifying-the-thumb-drive-to-install-on-older-ibooks.html" class="anchor" href="#modifying-the-thumb-drive-to-install-on-older-ibooks.html"><span class="header-link"></span></a>Modifying the thumb drive to install on older iBooks</h2><p>Your new USB thumb drive will install nicely on any Firewire equipped iBook, but if you want to boot it on older Apple hardware, you&#39;ll need to modify a file inside of the <code>OSInstall.mpkg</code>.</p>
+<p>Open the file directly in TextEdit with the following command:</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>open -a TextEdit /Volumes/Mac<span class="se">\ </span>OS<span class="se">\ </span>X<span class="se">\ </span>Install<span class="se">\ </span>DVD/System/Installation/Packages/OSInstall.mpkg/Contents/OSInstall.dist
+</pre></div>
+
+</code></pre>
+<p>Find the line that looks like this:</p>
+<pre><code><div class="highlight"><pre><span class="kd">function</span> <span class="nx">checkSupportedMachine</span><span class="p">(</span><span class="nx">machineType</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">badMachines</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;iMac&#39;</span><span class="p">,</span><span class="s1">&#39;PowerBook1,1&#39;</span><span class="p">,</span><span class="s1">&#39;PowerBook2,1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;AAPL,Gossamer&#39;</span><span class="p">,</span> <span class="s1">&#39;AAPL,PowerMac G3&#39;</span><span class="p">,</span> <span class="s1">&#39;AAPL,PowerBook1998&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;AAPL,PowerBook1999&#39;</span><span class="p">];</span>
+</pre></div>
+
+</code></pre><p>Remove everything between <code>[</code> and <code>]</code> so it looks like this, then save changes:</p>
+<pre><code><div class="highlight"><pre><span class="kd">function</span> <span class="nx">checkSupportedMachine</span><span class="p">(</span><span class="nx">machineType</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">badMachines</span> <span class="o">=</span> <span class="p">[];</span>
+</pre></div>
+
+</code></pre><h2><a name="preparing-files-to-update-to-10-4-11.html" class="anchor" href="#preparing-files-to-update-to-10-4-11.html"><span class="header-link"></span></a>Preparing files to update to 10.4.11</h2><p>Download the <a target="_blank" href="https://support.apple.com/en-us/106535">Mac OS X 10.4.11 Combo Update (PPC) .dmg file</a>, then copy it to your thumb drive.</p>
+<p>After the install is complete, we&#39;ll simply mount this disk image and run the updater.</p>
+<h2><a name="preparing-files-to-install-mac-os-9-optional.html" class="anchor" href="#preparing-files-to-install-mac-os-9-optional.html"><span class="header-link"></span></a>Preparing files to install Mac OS 9 (optional)</h2><p>Download the <a target="_blank" href="https://www.macintoshrepository.org/23373-mac-os-9-2-2-boot-kit-for-booting-your-g3-g4-from-an-usb-stick">Mac OS 9 Boot kit</a>, unzip the file, rename it so it has a <code>.dmg</code> extension, then copy it to your thumb drive.</p>
+<h2><a name="adding-software.html" class="anchor" href="#adding-software.html"><span class="header-link"></span></a>Adding software</h2><p>I like to include a few pieces of software from <a target="_blank" href="https://macintoshgarden.org/apps">Macintosh Garden</a> on my thumb drive so I can get started using my fresh iBook right away. Download whatever you need and drag it to your thumb drive!</p>
+<p><strong>Note:</strong> Be sure to leave at least 20 MB of free space on your thumb drive or you may find that the installer never boots. When this happens, verbose mode (hold ⌘ + V when booting) will show a message saying that <code>/private/var/tmp</code> is full. If this happens, simply delete some of your extra software and it will boot right up.</p>
+<h2><a name="booting-your-thumb-drive.html" class="anchor" href="#booting-your-thumb-drive.html"><span class="header-link"></span></a>Booting your thumb drive</h2><p>Using <a target="_blank" href="https://forums.macrumors.com/threads/guide-new-method-booting-from-usb-on-powerpc-macs.2403368/post-32620628">the the new <code>probe-usb boot</code> method</a>, we can boot your new installer thumb drive on any G3 Mac:</p>
+<p>First, plug the thumb drive into your iBook.</p>
+<p>Next, power the iBook on and immediately hold ⌘ + ⌥ + O + F (Command + Option + O + F) until the machine boots into OpenFirmware and shows a command prompt.</p>
+<p>Finally, type this (exactly as written!) and hit Enter:</p>
+<pre><code><div class="highlight"><pre><span class="nx">probe</span><span class="o">-</span><span class="nx">usb</span> <span class="nx">boot</span> <span class="nx">usb0</span><span class="o">/</span><span class="nx">disk</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span><span class="err">\\</span><span class="o">:</span><span class="nx">tbxi</span>
+</pre></div>
+
+</code></pre><p>Your iBook will then begin to boot the Mac OS X installer!</p>
+<p>But before you rush through the wizard, partition your drive to dual boot OS X and OS 9!</p>
+<h2><a name="partitioning-your-drive-to-dual-boot-os-x-and-os-9.html" class="anchor" href="#partitioning-your-drive-to-dual-boot-os-x-and-os-9.html"><span class="header-link"></span></a>Partitioning your drive to dual-boot OS X and OS 9</h2><p>If you plan on dual-booting, I recommend using <code>Disk Utility</code> in the installer to partition your drive to have two separate partitions. This way, you can hold down ⌥ (Option) after powering on your machine to choose which OS to boot.</p>
+<p><strong>Note:</strong> Obviously, this erases everything on your iBook&#39;s hard drive.</p>
+<ol>
+<li>Select <code>Utilities</code> -&gt; <code>Disk Utility</code> from the main menubar</li>
+<li>Click your internal drive in the left pane</li>
+<li>Click the <code>Partition</code> tab</li>
+<li>Select <code>Volume Scheme</code>: <code>2 Partitions</code></li>
+<li>Click on the first partition, set its name to <code>Mac OS X</code></li>
+<li>Click on the second partition, set its name to <code>Mac OS 9</code></li>
+<li>Use the slider to give <code>Mac OS X</code> 3/4 or more of the drive space (even 8GB is plenty for OS 9)</li>
+<li>Check the <code>Install Mac OS 9 Disk Drivers</code> checkbox</li>
+<li>Click the <code>Partition</code> button</li>
+</ol>
+<p><img class="prettyPicture" src="images/ibook-dual-boot-parition-config.jpg" alt="iBook dual boot partition configuration"></p>
+<p>Then, continue with the installation as normal.</p>
+<h2><a name="updating-to-10-4-11.html" class="anchor" href="#updating-to-10-4-11.html"><span class="header-link"></span></a>Updating to 10.4.11</h2><p>After your install it complete (remember, you can skip registration with ⌘ + Q), double click your <code>Mac OS X Install DVD</code> thumb drive on the desktop, then double click the <code>MacOSXUpdCombo10.4.11PPC.dmg</code> file.</p>
+<p>Follow the wizard, let it reboot, and you&#39;re done!</p>
+<h2><a name="installing-os-9-optional.html" class="anchor" href="#installing-os-9-optional.html"><span class="header-link"></span></a>Installing OS 9 (optional)</h2><p>Download the <a target="_blank" href="https://www.macintoshrepository.org/23373-mac-os-9-2-2-boot-kit-for-booting-your-g3-g4-from-an-usb-stick">Mac OS 9 Boot kit</a>, unzip the file, rename it so it has a <code>.dmg</code> extension, then, boot into your Mac OS X installation and use <code>Disk Utility</code> to restore it to your <code>Mac OS 9</code> partition.</p>
+<p><img class="prettyPicture" src="images/ibook-mac-os-9-disk-utility-restore.jpg" alt="Disk Utility setup to clone Mac OS 9"></p>
+<p>After that, run the following command to bless the System file:</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>bless --folder /Volumes/Mac<span class="se">\ </span>OS<span class="se">\ </span>9/System<span class="se">\ </span>Folder/ --setBoot
+</pre></div>
+
+</code></pre>
+<p>Then, you&#39;ll be able to boot into either Mac OS X or Mac OS 9 by holding ⌥ (Option) after powering on your machine:</p>
+<figure>
+  <img src="images/ibook-dual-boot-os-selection-screen.jpg" alt="iBook dual boot OS selection screen">
+  <figcaption>Hold ⌥ (Option) after powering on to choose which OS to boot</figcaption>
+</figure>
+</section><hr><footer id="disqus_thread"></footer>
+<script>
+	var disqus_shortname = 'lazdnet';
+	  if (window.location.hostname !== 'localhost') {
+		(function() {
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	  }
+</script></article><footer class="footer"><hr>&copy; 2026 Larry Davis</footer></body></html>

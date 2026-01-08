@@ -1,5 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Fri, 29 Nov 2024 22:12:06 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Fri, 29 Nov 2024 22:12:06 GMT</pubDate><copyright><![CDATA[2024 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[Rebuilding an iBook G3 clamshell battery]]></title><description><![CDATA[<p>The iBook G3 clamshell is, without a doubt, one of the most beautiful computers ever made. The translucent plastic, the bright candy colors, the <em>handle</em> that&#39;s built into it. The keyboard is clicky and responsive, it has WiFi, it can run Mac OS X 10.4 Tiger as well as Mac OS 9, and it gets pretty dang good battery life -- <em>if you have a good battery</em>.</p>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[lazdBlog]]></title><description><![CDATA[The blog of Larry Davis]]></description><link>http://lazd.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Thu, 08 Jan 2026 08:36:58 GMT</lastBuildDate><atom:link href="http://lazd.github.io/feed.xml" rel="self" type="application/rss+xml"/><author><![CDATA[Larry Davis]]></author><pubDate>Thu, 08 Jan 2026 08:36:58 GMT</pubDate><copyright><![CDATA[2026 Larry Davis]]></copyright><language><![CDATA[en]]></language><managingEditor><![CDATA[Larry Davis]]></managingEditor><webMaster><![CDATA[Larry Davis]]></webMaster><ttl>60</ttl><item><title><![CDATA[Install OS X and OS 9 on an iBook G3 clamshell with a thumb drive]]></title><description><![CDATA[<p>There&#39;s no need to struggle with burning multiple CDs, and yes, your Blueberry and Tangerine can run Mac OS X Tiger! Follow along and you&#39;ll be swimming in Aqua in no time. Follow every step of this guide and you&#39;ll be able to dual-boot OS 9 as well!</p>
+<figure>
+  <img src="images/ibook-with-tiger.jpg" alt="An iBook running Mac OS X Tiger">
+  <figcaption>Aqua never looked so right</figcaption>
+</figure>
+
+<h2><a name="requirements.html" class="anchor" href="#requirements.html"><span class="header-link"></span></a>Requirements</h2><ol>
+<li>The <a href="https://archive.org/details/mac-osx.-4">Tiger install DVD .iso image</a> from Archive.org</li>
+<li>The <a href="https://support.apple.com/en-us/106535">Mac OS X 10.4.11 Combo Update (PPC) .dmg file</a> from Apple</li>
+<li>A modern Mac running macOS, logged into an admin account</li>
+<li>A 4GB USB thumb drive (USB 2.0 is OK) <a href="https://amzn.to/4jqqKXI">like these in a color that matches your iBook</a> or <a href="https://amzn.to/49F6Bdc">these sleek metal ones</a></li>
+<li>A <a href="https://amzn.to/4qFWDy0">USB-A to USB-C adapter</a> to plug the thumb drive into your modern Mac</li>
+</ol>
+<h2><a name="installing-an-ssd.html" class="anchor" href="#installing-an-ssd.html"><span class="header-link"></span></a>Installing an SSD</h2><p>First and foremost, you&#39;re going to want to replace the internal drive with a high-capacity, high-speed SSD so you&#39;ll have plenty of room for activities. You&#39;ll need two parts:</p>
+<ol>
+<li><a href="https://amzn.to/4jsZjwq">A known-compatible M.2 mSATA SSD from Transcend</a></li>
+<li><a href="https://amzn.to/3YogsOj">A known-compatible mSATA to IDE adapter</a></li>
+</ol>
+<p><strong>Note:</strong> Don&#39;t cheap out and get a brand like Dogfish, or you&#39;ll suffer from crashes on wake! Stick to the <a href="https://amzn.to/4jsZjwq">known-compatible SSD</a>!</p>
+<p>You&#39;ll need a couple tools for this job:</p>
+<ol>
+<li><a href="https://amzn.to/4bnmzdb">5mm hex nut driver</a></li>
+<li><a href="https://amzn.to/4qaysIg">A decent set of precision screwdrivers</a></li>
+<li><a href="https://amzn.to/44TsOSg">A paperclip</a></li>
+<li><a href="https://amzn.to/3LAsbq5">A crushed ice tray to hold screws</a> (I swear by this and use it every time I disassemble an iBook)</li>
+</ol>
+<p>Follow the <a href="https://www.ifixit.com/Guide/iBook+G3+Clamshell+Hard+Drive+Replacement/116">iFixIt guide</a> to swap the hard drive out. As you follow the guide, use one row of the <a href="https://amzn.to/3LAsbq5">crushed ice tray</a> for each step and one column for each different screw type mentioned in the step, then go backwards to reassemble. With this technique, you&#39;re guaranteed to never screw your screws up!</p>
+<h2><a name="making-the-bootable-thumb-drive.html" class="anchor" href="#making-the-bootable-thumb-drive.html"><span class="header-link"></span></a>Making the bootable thumb drive</h2><p>First, download the <a href="https://archive.org/details/mac-osx.-4">Tiger install DVD .iso</a>. It&#39;ll show up in <code>~/Downloads</code>.</p>
+<p>Then, plug your USB thumb drive into your modern Mac using your <a href="https://amzn.to/4qFWDy0">USB-A to USB-C adapter</a>.</p>
+<p>Next, open <code>Terminal</code> and type the following command:</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>diskutil list
+</pre></div>
+
+</code></pre>
+<p>Generally, your thumb drive will be the last entry and will say <code>(external, physical)</code>:</p>
+<pre><code><div class="highlight"><pre><span class="err">/dev/disk9 (external, physical):</span>
+   <span class="err">#</span><span class="o">:</span>                       <span class="nx">TYPE</span> <span class="nx">NAME</span>                    <span class="nx">SIZE</span>       <span class="nx">IDENTIFIER</span>
+   <span class="mi">0</span><span class="o">:</span>                            <span class="nx">UNTITLED</span>                <span class="o">*</span><span class="mf">15.5</span> <span class="nx">GB</span>   <span class="nx">disk9</span>
+</pre></div>
+
+</code></pre><p>Remember the value under <code>IDENTIFIER</code> -- that&#39;s how we&#39;ll refer to the disk going forward. In my case, it&#39;s <code>disk9</code>.</p>
+<p>Then, we&#39;ll unmount the disk to get it ready to copy (<strong>be sure to replace <code>diskX</code> with your disk identifier</strong>):</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>sudo diskutil umountDisk /dev/diskX
+</pre></div>
+
+</code></pre>
+<p>Next, we&#39;ll copy the <code>.iso</code> to the raw disk using <code>dd</code>. Again, <strong>be sure to replace <code>diskX</code> with your disk identifier</strong>.</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>sudo dd <span class="nv">bs</span><span class="o">=</span>1m <span class="k">if</span><span class="o">=</span>~/Downloads/MacOSX.4.iso <span class="nv">of</span><span class="o">=</span>/dev/rdiskX
+</pre></div>
+
+</code></pre>
+<p>This can take around 15 minutes. At any time, you can press ⌃ + T (Control + T) to see progress.</p>
+<p>When it&#39;s done, you&#39;ll see something like this:</p>
+<pre><code><div class="highlight"><pre><span class="mi">3615</span><span class="o">+</span><span class="mi">1</span> <span class="nx">records</span> <span class="k">in</span>
+<span class="mi">3615</span><span class="o">+</span><span class="mi">1</span> <span class="nx">records</span> <span class="nx">out</span>
+<span class="mi">3791523840</span> <span class="nx">bytes</span> <span class="nx">transferred</span> <span class="k">in</span> <span class="mf">852.228331</span> <span class="nx">secs</span> <span class="p">(</span><span class="mi">4448953</span> <span class="nx">bytes</span><span class="o">/</span><span class="nx">sec</span><span class="p">)</span>
+</pre></div>
+
+</code></pre><p>And your thumb drive will mount up as <code>Mac OS X Install DVD</code> on your desktop!</p>
+<p>But you&#39;re not done yet, it&#39;s time to modify the installer to work on your old iBook!</p>
+<h2><a name="modifying-the-thumb-drive-to-install-on-older-ibooks.html" class="anchor" href="#modifying-the-thumb-drive-to-install-on-older-ibooks.html"><span class="header-link"></span></a>Modifying the thumb drive to install on older iBooks</h2><p>Your new USB thumb drive will install nicely on any Firewire equipped iBook, but if you want to boot it on older Apple hardware, you&#39;ll need to modify a file inside of the <code>OSInstall.mpkg</code>.</p>
+<p>Open the file directly in TextEdit with the following command:</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>open -a TextEdit /Volumes/Mac<span class="se">\ </span>OS<span class="se">\ </span>X<span class="se">\ </span>Install<span class="se">\ </span>DVD/System/Installation/Packages/OSInstall.mpkg/Contents/OSInstall.dist
+</pre></div>
+
+</code></pre>
+<p>Find the line that looks like this:</p>
+<pre><code><div class="highlight"><pre><span class="kd">function</span> <span class="nx">checkSupportedMachine</span><span class="p">(</span><span class="nx">machineType</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">badMachines</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;iMac&#39;</span><span class="p">,</span><span class="s1">&#39;PowerBook1,1&#39;</span><span class="p">,</span><span class="s1">&#39;PowerBook2,1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;AAPL,Gossamer&#39;</span><span class="p">,</span> <span class="s1">&#39;AAPL,PowerMac G3&#39;</span><span class="p">,</span> <span class="s1">&#39;AAPL,PowerBook1998&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;AAPL,PowerBook1999&#39;</span><span class="p">];</span>
+</pre></div>
+
+</code></pre><p>Remove everything between <code>[</code> and <code>]</code> so it looks like this, then save changes:</p>
+<pre><code><div class="highlight"><pre><span class="kd">function</span> <span class="nx">checkSupportedMachine</span><span class="p">(</span><span class="nx">machineType</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">badMachines</span> <span class="o">=</span> <span class="p">[];</span>
+</pre></div>
+
+</code></pre><h2><a name="preparing-files-to-update-to-10-4-11.html" class="anchor" href="#preparing-files-to-update-to-10-4-11.html"><span class="header-link"></span></a>Preparing files to update to 10.4.11</h2><p>Download the <a href="https://support.apple.com/en-us/106535">Mac OS X 10.4.11 Combo Update (PPC) .dmg file</a>, then copy it to your thumb drive.</p>
+<p>After the install is complete, we&#39;ll simply mount this disk image and run the updater.</p>
+<h2><a name="preparing-files-to-install-mac-os-9-optional.html" class="anchor" href="#preparing-files-to-install-mac-os-9-optional.html"><span class="header-link"></span></a>Preparing files to install Mac OS 9 (optional)</h2><p>Download the <a href="https://www.macintoshrepository.org/23373-mac-os-9-2-2-boot-kit-for-booting-your-g3-g4-from-an-usb-stick">Mac OS 9 Boot kit</a>, unzip the file, rename it so it has a <code>.dmg</code> extension, then copy it to your thumb drive.</p>
+<h2><a name="adding-software.html" class="anchor" href="#adding-software.html"><span class="header-link"></span></a>Adding software</h2><p>I like to include a few pieces of software from <a href="https://macintoshgarden.org/apps">Macintosh Garden</a> on my thumb drive so I can get started using my fresh iBook right away. Download whatever you need and drag it to your thumb drive!</p>
+<p><strong>Note:</strong> Be sure to leave at least 20 MB of free space on your thumb drive or you may find that the installer never boots. When this happens, verbose mode (hold ⌘ + V when booting) will show a message saying that <code>/private/var/tmp</code> is full. If this happens, simply delete some of your extra software and it will boot right up.</p>
+<h2><a name="booting-your-thumb-drive.html" class="anchor" href="#booting-your-thumb-drive.html"><span class="header-link"></span></a>Booting your thumb drive</h2><p>Using <a href="https://forums.macrumors.com/threads/guide-new-method-booting-from-usb-on-powerpc-macs.2403368/post-32620628">the the new <code>probe-usb boot</code> method</a>, we can boot your new installer thumb drive on any G3 Mac:</p>
+<p>First, plug the thumb drive into your iBook.</p>
+<p>Next, power the iBook on and immediately hold ⌘ + ⌥ + O + F (Command + Option + O + F) until the machine boots into OpenFirmware and shows a command prompt.</p>
+<p>Finally, type this (exactly as written!) and hit Enter:</p>
+<pre><code><div class="highlight"><pre><span class="nx">probe</span><span class="o">-</span><span class="nx">usb</span> <span class="nx">boot</span> <span class="nx">usb0</span><span class="o">/</span><span class="nx">disk</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span><span class="err">\\</span><span class="o">:</span><span class="nx">tbxi</span>
+</pre></div>
+
+</code></pre><p>Your iBook will then begin to boot the Mac OS X installer!</p>
+<p>But before you rush through the wizard, partition your drive to dual boot OS X and OS 9!</p>
+<h2><a name="partitioning-your-drive-to-dual-boot-os-x-and-os-9.html" class="anchor" href="#partitioning-your-drive-to-dual-boot-os-x-and-os-9.html"><span class="header-link"></span></a>Partitioning your drive to dual-boot OS X and OS 9</h2><p>If you plan on dual-booting, I recommend using <code>Disk Utility</code> in the installer to partition your drive to have two separate partitions. This way, you can hold down ⌥ (Option) after powering on your machine to choose which OS to boot.</p>
+<p><strong>Note:</strong> Obviously, this erases everything on your iBook&#39;s hard drive.</p>
+<ol>
+<li>Select <code>Utilities</code> -&gt; <code>Disk Utility</code> from the main menubar</li>
+<li>Click your internal drive in the left pane</li>
+<li>Click the <code>Partition</code> tab</li>
+<li>Select <code>Volume Scheme</code>: <code>2 Partitions</code></li>
+<li>Click on the first partition, set its name to <code>Mac OS X</code></li>
+<li>Click on the second partition, set its name to <code>Mac OS 9</code></li>
+<li>Use the slider to give <code>Mac OS X</code> 3/4 or more of the drive space (even 8GB is plenty for OS 9)</li>
+<li>Check the <code>Install Mac OS 9 Disk Drivers</code> checkbox</li>
+<li>Click the <code>Partition</code> button</li>
+</ol>
+<p><img class="prettyPicture" src="images/ibook-dual-boot-parition-config.jpg" alt="iBook dual boot partition configuration"></p>
+<p>Then, continue with the installation as normal.</p>
+<h2><a name="updating-to-10-4-11.html" class="anchor" href="#updating-to-10-4-11.html"><span class="header-link"></span></a>Updating to 10.4.11</h2><p>After your install it complete (remember, you can skip registration with ⌘ + Q), double click your <code>Mac OS X Install DVD</code> thumb drive on the desktop, then double click the <code>MacOSXUpdCombo10.4.11PPC.dmg</code> file.</p>
+<p>Follow the wizard, let it reboot, and you&#39;re done!</p>
+<h2><a name="installing-os-9-optional.html" class="anchor" href="#installing-os-9-optional.html"><span class="header-link"></span></a>Installing OS 9 (optional)</h2><p>Download the <a href="https://www.macintoshrepository.org/23373-mac-os-9-2-2-boot-kit-for-booting-your-g3-g4-from-an-usb-stick">Mac OS 9 Boot kit</a>, unzip the file, rename it so it has a <code>.dmg</code> extension, then, boot into your Mac OS X installation and use <code>Disk Utility</code> to restore it to your <code>Mac OS 9</code> partition.</p>
+<p><img class="prettyPicture" src="images/ibook-mac-os-9-disk-utility-restore.jpg" alt="Disk Utility setup to clone Mac OS 9"></p>
+<p>After that, run the following command to bless the System file:</p>
+<pre><code class="lang-sh"><div class="highlight"><pre>bless --folder /Volumes/Mac<span class="se">\ </span>OS<span class="se">\ </span>9/System<span class="se">\ </span>Folder/ --setBoot
+</pre></div>
+
+</code></pre>
+<p>Then, you&#39;ll be able to boot into either Mac OS X or Mac OS 9 by holding ⌥ (Option) after powering on your machine:</p>
+<figure>
+  <img src="images/ibook-dual-boot-os-selection-screen.jpg" alt="iBook dual boot OS selection screen">
+  <figcaption>Hold ⌥ (Option) after powering on to choose which OS to boot</figcaption>
+</figure>
+]]></description><link>http://lazd.github.io/install-os-x-and-os-9-on-an-ibook-g3-clamshell-with-a-thumb-drive.html</link><guid isPermaLink="true">http://lazd.github.io/install-os-x-and-os-9-on-an-ibook-g3-clamshell-with-a-thumb-drive.html</guid><category><![CDATA[retro computing]]></category><category><![CDATA[macintosh]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Mon, 06 Jan 2025 08:00:00 GMT</pubDate></item><item><title><![CDATA[Rebuilding an iBook G3 clamshell battery]]></title><description><![CDATA[<p>The iBook G3 clamshell is, without a doubt, one of the most beautiful computers ever made. The translucent plastic, the bright candy colors, the <em>handle</em> that&#39;s built into it. The keyboard is clicky and responsive, it has WiFi, it can run Mac OS X 10.4 Tiger as well as Mac OS 9, and it gets pretty dang good battery life -- <em>if you have a good battery</em>.</p>
 <p>In the interest of seeing more of these beautiful laptops in use, I put together a guide to necromancing iBook batteries, the right way. Follow along and let&#39;s get you computing in style!</p>
 <figure>
   <img src="images/ibook-battery-rebuilb-aftermath.jpg" alt="A workbench with a partially-completed battery, iBook, thumb drive, and spot welder">
@@ -28,23 +149,24 @@
 <h2><a name="parts.html" class="anchor" href="#parts.html"><span class="header-link"></span></a>Parts</h2><p>First, you&#39;re going to need some <strong>flat top</strong>, unprotected 18650 cells. These cells need to be <strong>~65.2mm in length</strong>, and <strong>18.5mm in diameter</strong>, so check <a href="resources/Samsung_32E_Data_Sheet.pdf">the datasheet of the cells</a> before purchasing.</p>
 <ol>
 <li>A dead, Apple OEM iBook battery (BTI or other aftermarket batteries won&#39;t work, the cases crack when opened)</li>
-<li>18650 cells such as <a href="https://amzn.to/4eNq8aD">Samsung 30Q</a> or <a href="https://srikobatteries.com/product/samsung-32e-18650-3200mah-6-4a-battery/">Samsung 32E</a></li>
-<li>Nickel strips with a minimum length of 75mm, such as <a href="https://amzn.to/3Ow4Y68">these individual strips</a></li>
+<li>18650 cells such as <a href="https://amzn.to/4eNq8aD">Samsung 30Q</a> or <a href="https://www.18650batterystore.com/products/samsung-35e-18650-3500mah-8a-battery">Samsung 35E</a></li>
+<li>Nickel strips with a minimum length of 75mm, such as <a href="https://amzn.to/4jsnKtT">these individual strips</a></li>
 <li>Solder, I prefer <a href="https://amzn.to/4eNmVYP">63/37 rosin core solder</a> for its lower melting temperature</li>
-<li>Some tape, any will do, <a href="https://amzn.to/3VcAD0h">Scotch Vinyl 700 electrical tape</a> is cheap and leaves no residue</li>
+<li>Some electrical tape, any will do, <a href="https://amzn.to/3VcAD0h">Scotch Vinyl 700 electrical tape</a> is cheap and leaves no residue</li>
+<li>Optionally, some <a href="https://amzn.to/3NycG2s">kapton tape</a> to replace the tape you&#39;ll remove when you disassemble certain styles of battery packs</li>
 </ol>
 <figure>
   <img src="images/ibook-battery.jpg" alt="Dead iBook battery">
   <figcaption>A dead iBook battery</figcaption>
 </figure>
 
-<h2><a name="tools.html" class="anchor" href="#tools.html"><span class="header-link"></span></a>Tools</h2><p>The most important tool you&#39;ll need is a spot welder. Personally, I have <a href="https://amzn.to/4g4S3Ei">a cheap Kerpu model from Amazon</a>. It&#39;s battery powered and comes with some of the nickel strips you&#39;ll need, and you can get these <a href="https://amzn.to/3Ow4Y68">pre-cut nickel strips</a> when you run out.</p>
+<h2><a name="tools.html" class="anchor" href="#tools.html"><span class="header-link"></span></a>Tools</h2><p>The most important tool you&#39;ll need is a spot welder. Personally, I have <a href="https://amzn.to/4g4S3Ei">a cheap Kerpu model from Amazon</a>. It&#39;s battery powered and comes with some of the nickel strips you&#39;ll need, and you can get these <a href="https://amzn.to/4jsnKtT">pre-cut nickel strips</a> when you run out.</p>
 <ol>
 <li>Spot welder, such as the <a href="https://amzn.to/4g4S3Ei">Kerpu Mini Spot Welder</a></li>
 <li>Soldering iron, such as the <a href="https://amzn.to/3OsZHww">awesome, USB-C powered TS-101</a></li>
 <li>Tweezers, such as the <a href="https://amzn.to/4eWQEyI">Hakko CHP 00D-SA Fine-Tip Tweezers</a></li>
 <li>Medium sized flathead screwdriver, or even <a href="https://amzn.to/4103QPT">a couple of of them</a></li>
-<li>Multimeter, such as the <a href="https://amzn.to/3Vc0dme">Fluke 101</a></li>
+<li>Multimeter, such as the <a href="https://amzn.to/3NaabU3">Fluke 101</a></li>
 <li><a href="https://www.ebay.com/sch/177/i.html?_from=R40&amp;_nkw=iBook+g3+clamshell">An iBook</a>, of course, to train and test your new battery</li>
 </ol>
 <h2><a name="preparation.html" class="anchor" href="#preparation.html"><span class="header-link"></span></a>Preparation</h2><p>First, put your existing dead battery into your iBook. Run the following command:</p>
@@ -1185,73 +1307,4 @@ Whenever you need to look something up on the <a href="https://developer.mozilla
 
 </code></pre>
 <h2><a name="show-me-the-code.html" class="anchor" href="#show-me-the-code.html"><span class="header-link"></span></a>Show me the code</h2><p>Take a look at the source of <a href="https://github.com/lazd/iOCSS">iOCSS</a> and <a href="https://github.com/lazd/lazd.github.io/tree/build">this blog</a> for a few examples that combine rem units with media queries, ems, and CSS preprocessors.</p>
-]]></description><link>http://lazd.github.io/scaleable-interfaces-with-rem-units.html</link><guid isPermaLink="true">http://lazd.github.io/scaleable-interfaces-with-rem-units.html</guid><category><![CDATA[css3]]></category><category><![CDATA[mobile]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Sat, 10 Aug 2013 07:00:00 GMT</pubDate></item><item><title><![CDATA[And so it began]]></title><description><![CDATA[<p>I turned the knob to channel 4 and flicked the switch to <code>ON</code>. A  blue screen faded in as the old Zenith TV warmed up.</p>
-<pre class="code c64 c64_width fade animate">
-<div class="center">
-**** COMMODORE 64 BASIC V2 ****
-64K RAM SYSTEM  38911 BASIC BYTES FREE</div>
-READY.
-<span class="c64_cursor"></span>
-</pre>
-
-<p>A white block blinked below.</p>
-<p>I picked up <a href="http://www.commodore.ca/manuals/c64_users_guide/c64-users_guide.htm">the book</a>. It was spiral bound with a colorful cardboard cover decorated with graphs and a photo of the machine. It looked a bit cheesy even to my 10-year-old self, but I was curious and itching to learn what it had to offer.</p>
-<p>I leafed through the pages. <code>PRINT</code>, <code>GOTO</code>, <code>BASIC</code>. It was Greek to me, but there was a section in black and white that looked like a screenshot. I carefully typed the contents, substituting my name for the text between the quotes.</p>
-<pre class="code c64 c64_width">
-10 PRINT "LARRY"
-20 GOTO 10
-RUN
-</pre>
-
-<p>I pressed <code>RETURN</code> eagerly. The screen filled with my name as the machine executed the first computer program I ever wrote.</p>
-<pre class="code c64 c64_width">
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-LARRY
-<span class="c64_flash">LARRY</span>
-</pre>
-
-<p>All I had really done was instruct the computer to print <code>LARRY</code> in an infinite loop, but I felt empowered. It was as if I could instruct this little machine to work miracles and it would instantly oblige, in capital letters, of course.</p>
-<p>That book had opened the door to a new world. I pressed the <code>RUN/STOP</code> key.</p>
-<pre class="code c64 c64_width animate">
-BREAK IN 10
-READY.
-<span class="c64_cursor"></span>
-</pre>
-
-<p>A white block blinked below. And so it began.</p>
-<hr>
-
-<p>Flip a switch and start coding. Using a computer meant writing code, and a casual user could become a hobbyist programmer in an afternoon with no additional equipment or materials.</p>
-<p>As computing became more common place, graphical user interfaces gave us clickable icons in place of the commands we used to type. Computing became accessible to everyone as the workings of the machine were hidden by layer upon layer of abstraction. This transformation was amazing and beautiful, but it came at a cost: The machine transformed from a playground that encouraged tinkering to an appliance that forbade it.</p>
-<p>Eventually, computers began to ship with no development environment and no casual path for a user to transition to a hobbyist.</p>
-<h2><a name="the-renaissance.html" class="anchor" href="#the-renaissance.html"><span class="header-link"></span></a>The renaissance</h2><p>JavaScript is everywhere. Nearly every device we own is capable of running human-readable JavaScript code. Hit Command + Option + i <em>right now</em> and you&#39;ll drop to the console. Type this and hit enter:</p>
-<pre><code class="lang-javascript"><div class="highlight"><pre><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">);</span>
-</pre></div>
-
-</code></pre>
-<p>You just wrote your first computer program.</p>
-<p>Things are different now. You won&#39;t have to leaf through the dusty pages of an old spiral bound user&#39;s guide. Thousands of tutorials and resources are available for free, and you have the most powerful knowledge search system mankind has ever created beneath your fingertips, ready to find them.</p>
-<p>Your journey begins <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">here</a>.</p>
-]]></description><link>http://lazd.github.io/and-so-it-began.html</link><guid isPermaLink="true">http://lazd.github.io/and-so-it-began.html</guid><category><![CDATA[programming]]></category><category><![CDATA[commodore]]></category><category><![CDATA[c64]]></category><category><![CDATA[basic]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Mon, 01 Jul 2013 07:00:00 GMT</pubDate></item></channel></rss>
+]]></description><link>http://lazd.github.io/scaleable-interfaces-with-rem-units.html</link><guid isPermaLink="true">http://lazd.github.io/scaleable-interfaces-with-rem-units.html</guid><category><![CDATA[css3]]></category><category><![CDATA[mobile]]></category><dc:creator><![CDATA[Larry Davis]]></dc:creator><pubDate>Sat, 10 Aug 2013 07:00:00 GMT</pubDate></item></channel></rss>
