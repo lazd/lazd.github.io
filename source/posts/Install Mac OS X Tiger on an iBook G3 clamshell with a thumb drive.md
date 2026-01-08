@@ -175,17 +175,19 @@ Then, continue with the installation as normal.
 
 ## Updating to 10.4.11
 
-After your install it complete (remember, you can skip registration with ⌘ + Q), double click your `Mac OS X Install DVD` thumb drive on the desktop, then double click the `MacOSXUpdCombo10.4.11PPC.dmg` file.
+After your install is complete (remember, you can skip registration with ⌘ + Q), double click your `Mac OS X Install DVD` thumb drive on the desktop, then double click the `MacOSXUpdCombo10.4.11PPC.dmg` file.
 
 Follow the wizard, let it reboot, and you're done!
 
 ## Installing OS 9 (optional)
 
-Download the [Mac OS 9 Boot kit](https://www.macintoshrepository.org/23373-mac-os-9-2-2-boot-kit-for-booting-your-g3-g4-from-an-usb-stick), unzip the file, rename it so it has a `.dmg` extension, then, boot into your Mac OS X installation and use `Disk Utility` to restore it to your `Mac OS 9` partition.
+You can install OS 9 directly from your Mac OS X installation, no need for boot disks!
+
+Launch `Disk Utility` and use it to restore the [Mac OS 9 Boot kit](https://www.macintoshrepository.org/23373-mac-os-9-2-2-boot-kit-for-booting-your-g3-g4-from-an-usb-stick) you prepared in the previous step to your `Mac OS 9` partition:
 
 <img class="prettyPicture" src="images/ibook-mac-os-9-disk-utility-restore.jpg" alt="Disk Utility setup to clone Mac OS 9">
 
-After that, run the following command to bless the System file:
+After that, run the following command to bless the System file (otherwise it won't boot!):
 
 ```sh
 bless --folder /Volumes/Mac\ OS\ 9/System\ Folder/ --setBoot
@@ -197,3 +199,7 @@ Then, you'll be able to boot into either Mac OS X or Mac OS 9 by holding ⌥ (Op
   <img src="images/ibook-dual-boot-os-selection-screen.jpg" alt="iBook dual boot OS selection screen">
   <figcaption>Hold ⌥ (Option) after powering on to choose which OS to boot</figcaption>
 </figure>
+
+## What's next?
+
+Now that you're all set and have a booting iBook, consider [rebuilding your iBook's battery](/rebuilding-an-ibook-g3-clamshell-battery.html), or paying me to do it for ya!
