@@ -51,10 +51,11 @@ If $250 is too steep or you're one of those chaps that lives and dies by DIY, ro
 First, you're going to need some **flat top**, unprotected 18650 cells. These cells need to be **~65.2mm in length**, and **18.5mm in diameter**, so check [the datasheet of the cells](resources/Samsung_32E_Data_Sheet.pdf) before purchasing.
 
 1. A dead, Apple OEM iBook battery (BTI or other aftermarket batteries won't work, the cases crack when opened)
-1. 18650 cells such as [Samsung 30Q](https://amzn.to/4eNq8aD) or [Samsung 32E](https://srikobatteries.com/product/samsung-32e-18650-3200mah-6-4a-battery/)
-1. Nickel strips with a minimum length of 75mm, such as [these individual strips](https://amzn.to/3Ow4Y68)
+1. 18650 cells such as [Samsung 30Q](https://amzn.to/4eNq8aD) or [Samsung 35E](https://www.18650batterystore.com/products/samsung-35e-18650-3500mah-8a-battery)
+1. Nickel strips with a minimum length of 75mm, such as [these individual strips](https://amzn.to/4jsnKtT)
 1. Solder, I prefer [63/37 rosin core solder](https://amzn.to/4eNmVYP) for its lower melting temperature
-1. Some tape, any will do, [Scotch Vinyl 700 electrical tape](https://amzn.to/3VcAD0h) is cheap and leaves no residue
+1. Some electrical tape, any will do, [Scotch Vinyl 700 electrical tape](https://amzn.to/3VcAD0h) is cheap and leaves no residue
+1. Optionally, some [kapton tape](https://amzn.to/3NycG2s) to replace the tape you'll remove when you disassemble certain styles of battery packs
 
 <figure>
   <img src="images/ibook-battery.jpg" alt="Dead iBook battery">
@@ -63,13 +64,13 @@ First, you're going to need some **flat top**, unprotected 18650 cells. These ce
 
 ## Tools
 
-The most important tool you'll need is a spot welder. Personally, I have [a cheap Kerpu model from Amazon](https://amzn.to/4g4S3Ei). It's battery powered and comes with some of the nickel strips you'll need, and you can get these [pre-cut nickel strips](https://amzn.to/3Ow4Y68) when you run out.
+The most important tool you'll need is a spot welder. Personally, I have [a cheap Kerpu model from Amazon](https://amzn.to/4g4S3Ei). It's battery powered and comes with some of the nickel strips you'll need, and you can get these [pre-cut nickel strips](https://amzn.to/4jsnKtT) when you run out.
 
 1. Spot welder, such as the [Kerpu Mini Spot Welder](https://amzn.to/4g4S3Ei)
 1. Soldering iron, such as the [awesome, USB-C powered TS-101](https://amzn.to/3OsZHww)
 1. Tweezers, such as the [Hakko CHP 00D-SA Fine-Tip Tweezers](https://amzn.to/4eWQEyI)
 1. Medium sized flathead screwdriver, or even [a couple of of them](https://amzn.to/4103QPT)
-1. Multimeter, such as the [Fluke 101](https://amzn.to/3Vc0dme)
+1. Multimeter, such as the [Fluke 101](https://amzn.to/3NaabU3)
 1. [An iBook](https://www.ebay.com/sch/177/i.html?_from=R40&_nkw=iBook+g3+clamshell), of course, to train and test your new battery
 
 ## Preparation
